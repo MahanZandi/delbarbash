@@ -1,8 +1,16 @@
 {
+  "name": "delbarbash",
+  "version": "1.0.0",
+  "description": "A simple vanilla HTML, CSS, JS project with Tailwind CSS v4",
+  "main": "index.html",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+    "dev": "npx tailwindcss -i ./styles/main.css -o ./dist/main.css --watch",
+    "build": "npx tailwindcss -i ./styles/main.css -o ./dist/main.css --minify"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.17"
-  }
+    "@tailwindcss/cli": "^4.0.0-alpha.25"
+  },
+  "keywords": ["html", "css", "javascript", "tailwindcss"],
+  "author": "",
+  "license": "MIT"
 }
