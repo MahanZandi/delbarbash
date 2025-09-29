@@ -62,9 +62,10 @@ coverage/
 # Optional stylelint cache
 .stylelintcache
 
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
+# Lock files (اختیاری - بر اساس ترجیح تیم)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
 
 # Backup files
 *.bak
