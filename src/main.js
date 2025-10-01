@@ -65,7 +65,7 @@ function renderAccordionItems() {
                 <a href="${item.href}" class="flex items-center justify-between transition-all">
                     <img src="${item.icon}" alt="${item.title}" class="size-[24px] object-contain pl-[5px]">
                     <span class="text-sm ">${item.title}</span>
-                    <i class="fa-solid fa-angle-down pr-2"></i>
+                    <i class="fa-solid fa-angle-down size-[16px] pr-2"></i>
                 </a>
             `;
             accordionList.appendChild(listItem);
