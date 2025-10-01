@@ -107,80 +107,121 @@
         </div>
     </div>
 
-    <!-- slider -->
-     <div class="container">
-       <div class="embla relative w-[351px] top-[27px]">
-         <!-- dots -->
-         <div class="absolute left-1/2 p-1.5 rounded-b-xl -translate-x-1/2 bg-white z-10">
-           <div id="slider-dots" class="flex justify-center gap-2"></div>
-         </div>
-         <div class="embla__viewport">
-           <div class="embla__container">
-               <div class="embla__slide">
-                 <div class="embla__slide__number bg-primary-300">
-                    <img class="w-[241px] h-[344px] object-cover" src="/public/images/product-1.png" alt="heart icon">
+    <!-- product -->
+    <div class="flex gap-5 mt-[27px] container">
+      <!-- slider -->
+      <div class="embla relative w-[351px]">
+           <!-- dots -->
+           <div class="absolute left-1/2 p-1.5 rounded-b-xl -translate-x-1/2 bg-white z-10">
+             <div id="slider-dots" class="flex justify-center gap-2"></div>
+           </div>
+           <div class="embla__viewport">
+             <div class="embla__container">
+                 <div class="embla__slide">
+                   <div class="embla__slide__number bg-primary-300">
+                      <img class="w-[241px] h-[344px] object-cover" src="/public/images/product-1.png" alt="heart icon">
+                   </div>
                  </div>
-               </div>
-               <div class="embla__slide">
-                 <div class="embla__slide__number bg-primary-300">
-                    <img class="w-[241px] h-[344px] object-cover" src="/public/images/product-2.png" alt="heart icon">
+                 <div class="embla__slide">
+                   <div class="embla__slide__number bg-primary-300">
+                      <img class="w-[241px] h-[344px] object-cover" src="/public/images/product-2.png" alt="heart icon">
+                   </div>
                  </div>
-               </div>
-               <div class="embla__slide">
-                 <div class="embla__slide__number bg-primary-300">
-                    <img class="w-[241px] h-[344px] object-cover" src="/public/images/product-3.png" alt="heart icon">
+                 <div class="embla__slide">
+                   <div class="embla__slide__number bg-primary-300">
+                      <img class="w-[241px] h-[344px] object-cover" src="/public/images/product-3.png" alt="heart icon">
+                   </div>
                  </div>
-               </div>
-               <div class="embla__slide">
-                 <div class="embla__slide__number bg-primary-300">
-                    <img class="w-[241px] h-[344px] object-cover" src="/public/images/product-4.png" alt="heart icon">
+                 <div class="embla__slide">
+                   <div class="embla__slide__number bg-primary-300">
+                      <img class="w-[241px] h-[344px] object-cover" src="/public/images/product-4.png" alt="heart icon">
+                   </div>
                  </div>
                </div>
              </div>
-           </div>
-           <div class="embla-thumbs">
-             <div class="embla-thumbs__viewport">
-               <div class="embla-thumbs__container gap-2">
-                 <div class="embla-thumbs__slide  embla-thumbs__slide--selected bg-primary-300 flex justify-center items-center">
-                   <button type="button" class="">
-                     <img class="object-contain size-[80px]" src="/public/images/product-1.png" alt="product-1">
-                   </button>
-                 </div>
-                 <div class="embla-thumbs__slide bg-primary-300 flex justify-center items-center">
-                   <button type="button" class="">
-                     <img class="object-contain size-[80px]" src="/public/images/product-2.png" alt="product-2">
-                   </button>
-                 </div>
-                 <div class="embla-thumbs__slide bg-primary-300 flex justify-center items-center">
-                   <button type="button" class="">
-                     <img class="object-contain size-[80px]" src="/public/images/product-3.png" alt="product-3">
-                   </button>
-                 </div>
-                 <div class="embla-thumbs__slide bg-primary-300 flex justify-center items-center">
-                   <button type="button" class="">
-                    <img class="object-contain size-[80px]" src="/public/images/product-4.png" alt="product-3">
-                   </button>
+             <div class="embla-thumbs">
+               <div class="embla-thumbs__viewport">
+                 <div class="embla-thumbs__container gap-2">
+                   <div class="embla-thumbs__slide  embla-thumbs__slide--selected bg-primary-300 flex justify-center items-center">
+                     <button type="button" class="">
+                       <img class="object-contain size-[80px]" src="/public/images/product-1.png" alt="product-1">
+                     </button>
+                   </div>
+                   <div class="embla-thumbs__slide bg-primary-300 flex justify-center items-center">
+                     <button type="button" class="">
+                       <img class="object-contain size-[80px]" src="/public/images/product-2.png" alt="product-2">
+                     </button>
+                   </div>
+                   <div class="embla-thumbs__slide bg-primary-300 flex justify-center items-center">
+                     <button type="button" class="">
+                       <img class="object-contain size-[80px]" src="/public/images/product-3.png" alt="product-3">
+                     </button>
+                   </div>
+                   <div class="embla-thumbs__slide bg-primary-300 flex justify-center items-center">
+                     <button type="button" class="">
+                      <img class="object-contain size-[80px]" src="/public/images/product-4.png" alt="product-3">
+                     </button>
+                   </div>
                  </div>
                </div>
              </div>
-           </div>
-           
-           <!-- arrows button -->
-           <button id="embla-prev" class="absolute top-[181px] -right-5 bg-white py-6 rounded-l-full p-3 transition-all duration-300 z-10" aria-label="previous">
-             <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-             </svg>
-           </button>
-           
-           <button id="embla-next" class="absolute top-[181px] -left-5 bg-white py-7 rounded-r-full p-3 transition-all duration-300 z-10" aria-label="next">
-             <svg class="w-6 h-6 text-primary-600 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-             </svg>
-           </button>
+             
+             <!-- arrows button -->
+             <button id="embla-prev" class="absolute top-[181px] -right-5 bg-white rounded-l-full p-3 transition-all duration-300 z-10" aria-label="previous">
+               <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+               </svg>
+             </button>
+             
+             <button id="embla-next" class="absolute top-[181px] -left-5 bg-white rounded-r-full p-3 transition-all duration-300 z-10" aria-label="next">
+               <svg class="w-6 h-6 text-primary-600 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+               </svg>
+             </button>
+      </div>
+      <!-- product info desktop -->
+      <div class="border text-[#2D2D2D] py-[22px] px-[29px] rounded-xl border-[#E8E8E8] w-[479px] desktop:block hidden">
+        <!-- FIXME i dont have font lahzeh -->
+        <h2 class="text-[32px] font-bold">رژمدادی پیچی ویولت</h2>
+        <div class="mt-6 text-xs">توضیحات محصول :</div>
+        <p class="leading-[250%] mt-[10px] text-xs">
+          -   طراحی مدادی با قابلیت چرخشی (پیچی) برای استفاده آسان
+          <br>
+          -   بدون نیاز به تراش
+          <br>
+          -   بافت نرم و کرمی با پخش یکنواخت روی لب
+          <br>
+          -   رنگدانه‌های قوی و ماندگاری بالا
+          <br>
+          -   مناسب استفاده روزانه و آرایش حرفه‌ای
+          <br>
+          -   مرطوب‌کننده لب و جلوگیری از خشکی
+          <br>
+          -   در طیف رنگ‌های متنوع و پرطرفدار
+          <br>
+          -   فاقد سرب و مواد مضر
+        </p>
+        <div class="flex font-light text-xs gap-4 mt-[23px]">
+          <span>دسته :</span>
+          <span class="text-primary-500">خرید لوازم آرایشی اصل, رژ لب جامد, لب, همه محصولات</span>
         </div>
-     </div>
+        <div class="mt-[14px] text-secondary-600 font-medium text-xs">
+          موجودی و قیمت کالا بروز میباشد.
+        </div>
+        <div class="flex text-[10px] mt-[22px] gap-[15px] text-[#2D2D2D]">
+          <button class="border cursor-pointer border-[#E8E8E8] w-[172px] h-[38px] rounded-[10px] flex items-center justify-center gap-[10px]">
+            <i class="fa-regular fa-bookmark size-[10px]"></i>
+            <span>افزودن به علاقه مندی</span>
+          </button>
+          <button class="border cursor-pointer border-[#E8E8E8] w-[172px] h-[38px] rounded-[10px] flex items-center justify-center gap-[10px]">
+            <i class="fa-regular fa-share-from-square size-[10px]"></i>
+            <span>اشتراک گذاری محصول</span>
+          </button>
+        </div>
+      </div>
+    </div>
 
-      
+      <!-- product info -->
     <script src="https://kit.fontawesome.com/be8de18b59.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/embla-carousel@8.6.0/embla-carousel.umd.js"></script>
     <script src="./src/main.js"></script>

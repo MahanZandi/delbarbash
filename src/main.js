@@ -83,7 +83,7 @@ const createDots = () => {
   
   for (let i = 0; i < slideCount; i++) {
     const dot = document.createElement('button')
-    dot.className = 'w-2 h-2 rounded-full transition-all duration-300'
+    dot.className = 'size-1 rounded-full transition-all duration-300'
     dot.style.backgroundColor = '#C5B2B3'
     dot.setAttribute('aria-label', `اسلاید ${i + 1}`)
     
@@ -106,10 +106,10 @@ const updateDots = () => {
   dots.forEach((dot, index) => {
     if (index === selectedIndex) {
       dot.style.backgroundColor = '#A44A50' 
-      dot.className = 'w-8 h-2 rounded-full transition-all duration-300'
+      dot.className = 'w-[26px] h-1 rounded-full transition-all duration-300'
     } else {
       dot.style.backgroundColor = '#C5B2B3'
-      dot.className = 'w-2 h-2 rounded-full cursor-pointer transition-all duration-300'
+      dot.className = 'size-1 rounded-full cursor-pointer transition-all duration-300'
     }
   })
 }
