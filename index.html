@@ -7,11 +7,80 @@
     <link rel="stylesheet" href="./dist/main.css">
     <link rel="icon" type="image/x-icon" href="/public/favicon.png">
 </head>
-<body class="bg-gray-100 min-h-screen font-sans">
+<body class="min-h-screen font-sans">
 
-    <div class="container">
-        <h1 class=" desktop:text-4xl ss04">خوبی</h1>
-    </div>
+    <!-- top navbar desktop -->
+    <nav class="flex items-center justify-between container mt-[26px]">
+        <!-- link & search bar & logo container -->
+        <div class="flex gap-5">
+            <div class="flex gap-6"> 
+                <!-- logo -->
+                <div class="flex items-center gap-1.5">
+                    <img src="./public/favicon.png" alt="logo" class="size-[36px]">
+                    <div>
+                        <h1 class="text-[16px] ss01 text-primary-600">
+                            دلبرباش
+                        </h1>
+                        <h2 class="text-[10px] text-primary-700">
+                            فروشگاه اینترنتی
+                        </h2>
+                    </div>
+                </div>
+                <!-- search bar -->
+                <div class="w-[332px] h-[37px] rounded-[9px] border border-[#E8E8E8] relative">
+                    <input type="text" placeholder="جستجوی کنید" class="w-full h-full rounded-[9px] border-none outline-none p-2">
+                    <i class="fa-solid fa-magnifying-glass text-[#BABABA] absolute left-[12px] top-[50%] translate-y-[-50%] bg-white"></i>
+                </div>
+            </div>
+            <ul class="flex items-center gap-[36px]">
+                <li>
+                    <a href="#">
+                        محصولات
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        جدیدترین
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        پرفروش ترین
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        ٪ تخفیف دار
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        محصولات رایگان
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- nav buttons -->
+        <div class="flex gap-1.5">
+            <div class="rounded-[8px] border border-[#E8E8E8] p-1.5">
+                <img class="size-[24px]" src="./public/icons/save-icon.png" alt="save icon">
+            </div>
+            <div class="rounded-[8px] border border-[#E8E8E8] p-1.5">
+                <img class="size-[24px]" src="./public/icons/cart-icon.png" alt="cart icon">
+            </div>
+            <button type="button" class="bg-primary-600 text-white w-[107px] h-[36px] flex items-center font-medium justify-center rounded-[8px] text-[12px]">
+                ورود / ثبت نام
+            </button>
+        </div>
+
+    </nav>
+    <!-- nav links accordion desktop -->
+    <nav class="nav-accordion-link container mt-8">
+        <ul id="accordion-list" class="flex gap-4">
+            <!-- Items will be rendered here by JavaScript -->
+        </ul>
+    </nav>
+    <script src="https://kit.fontawesome.com/be8de18b59.js" crossorigin="anonymous"></script>
     <script src="./src/main.js"></script>
 </body>
 </html>

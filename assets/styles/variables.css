@@ -12,3 +12,8 @@
     --breakpoint-desktop: 1280px;
 }
 
+@theme {
+    --color-primary-600: #C41818;
+    --color-primary-700: #860A0A;
+}
+
