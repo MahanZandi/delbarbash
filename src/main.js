@@ -62,9 +62,10 @@ function renderAccordionItems() {
         accordionItems.forEach(item => {
             const listItem = document.createElement('li');
             listItem.innerHTML = `
-                <a href="${item.href}" class="flex items-center gap-2 px-4 py-2 transition-all">
-                    <img src="${item.icon}" alt="${item.title}" class="size-[24px]">
-                    <span class="text-sm">${item.title}</span>
+                <a href="${item.href}" class="flex items-center justify-between transition-all">
+                    <img src="${item.icon}" alt="${item.title}" class="size-[24px] object-contain pl-[5px]">
+                    <span class="text-sm ">${item.title}</span>
+                    <i class="fa-solid fa-angle-down pr-2"></i>
                 </a>
             `;
             accordionList.appendChild(listItem);
