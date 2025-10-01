@@ -10,7 +10,7 @@
 <body class="min-h-screen font-sans">
 
     <!-- top navbar desktop -->
-    <nav class="flex items-center justify-between container mt-[26px]">
+    <nav class="desktop:flex hidden items-center justify-between container mt-[26px]">
         <!-- link & search bar & logo container -->
         <div class="flex gap-5">
             <div class="flex gap-6"> 
@@ -72,15 +72,117 @@
                 ورود / ثبت نام
             </button>
         </div>
-
     </nav>
     <!-- nav links accordion desktop -->
-    <nav class="nav-accordion-link container mt-8">
-        <ul id="accordion-list" class="flex gap-[35px] py-3 px-[21px] border border-[#E8E8E8] rounded-[8px]">
+    <nav class="nav-accordion-link container mt-1.5 desktop:flex hidden">
+        <ul id="accordion-list" class="flex w-full gap-[35px] py-3 px-[21px] border border-[#E8E8E8] rounded-[8px]">
             <!-- Items will be rendered here by JavaScript -->
         </ul>
     </nav>
+    <!-- raete && category -->
+    <div class="container flex justify-between items-center mt-[26px]">
+        <ul class="flex items-center gap-[9px] text-[#2D2D2D] text-[12px]">
+            <li class="flex items-center gap-[9px]">
+                <span>آرایشی</span>
+                <img src="/public/icons/icon-arrow-left.png" alt="icon-arrow-left">
+            </li>
+            <li class="flex items-center gap-[9px]">
+                <span>رژ جامد</span>
+                <img src="/public/icons/icon-arrow-left.png" alt="icon-arrow-left">
+            </li>
+            <li class="flex items-center gap-[9px]">
+                <span class="text-primary-600">رژمدادی پیچی ویولت</span>
+                <img src="/public/icons/icon-arrow-left.png" alt="icon-arrow-left">
+            </li>
+        </ul>
+        <div class="desktop:flex hidden flex-col gap-1">
+            <ul class="flex">
+                <img src="/public/icons/icon-full-star.png" alt="star icon">
+                <img src="public/icons/icon-full-star.png" alt="star icon">
+                <img src="/public/icons/icon-full-star.png" alt="star icon">
+                <img src="/public/icons/icon-full-star.png" alt="star icon">
+                <img src="/public/icons/icon-mini-star.png" alt="star icon">
+            </ul>
+            <span class="text-[7px] text-[#898989]">۴.۵  از   ۷,۷۸۹   دیدگاه</span>
+        </div>
+    </div>
+
+    <!-- slider -->
+     <div class="container">
+       <div class="embla relative w-[351px] top-[27px]">
+         <!-- dots -->
+         <div class="absolute left-1/2 p-1.5 rounded-b-xl -translate-x-1/2 bg-white z-10">
+           <div id="slider-dots" class="flex justify-center gap-2"></div>
+         </div>
+         <div class="embla__viewport">
+           <div class="embla__container">
+               <div class="embla__slide">
+                 <div class="embla__slide__number bg-primary-300">
+                    <img class="w-[241px] h-[344px] object-cover" src="/public/images/product-1.png" alt="heart icon">
+                 </div>
+               </div>
+               <div class="embla__slide">
+                 <div class="embla__slide__number bg-primary-300">
+                    <img class="w-[241px] h-[344px] object-cover" src="/public/images/product-2.png" alt="heart icon">
+                 </div>
+               </div>
+               <div class="embla__slide">
+                 <div class="embla__slide__number bg-primary-300">
+                    <img class="w-[241px] h-[344px] object-cover" src="/public/images/product-3.png" alt="heart icon">
+                 </div>
+               </div>
+               <div class="embla__slide">
+                 <div class="embla__slide__number bg-primary-300">
+                    <img class="w-[241px] h-[344px] object-cover" src="/public/images/product-4.png" alt="heart icon">
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="embla-thumbs">
+             <div class="embla-thumbs__viewport">
+               <div class="embla-thumbs__container gap-2">
+                 <div class="embla-thumbs__slide  embla-thumbs__slide--selected bg-primary-300 flex justify-center items-center">
+                   <button type="button" class="">
+                     <img class="object-contain size-[80px]" src="/public/images/product-1.png" alt="product-1">
+                   </button>
+                 </div>
+                 <div class="embla-thumbs__slide bg-primary-300 flex justify-center items-center">
+                   <button type="button" class="">
+                     <img class="object-contain size-[80px]" src="/public/images/product-2.png" alt="product-2">
+                   </button>
+                 </div>
+                 <div class="embla-thumbs__slide bg-primary-300 flex justify-center items-center">
+                   <button type="button" class="">
+                     <img class="object-contain size-[80px]" src="/public/images/product-3.png" alt="product-3">
+                   </button>
+                 </div>
+                 <div class="embla-thumbs__slide bg-primary-300 flex justify-center items-center">
+                   <button type="button" class="">
+                    <img class="object-contain size-[80px]" src="/public/images/product-4.png" alt="product-3">
+                   </button>
+                 </div>
+               </div>
+             </div>
+           </div>
+           
+           <!-- arrows button -->
+           <button id="embla-prev" class="absolute top-[181px] -right-5 bg-white py-6 rounded-l-full p-3 transition-all duration-300 z-10" aria-label="previous">
+             <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+             </svg>
+           </button>
+           
+           <button id="embla-next" class="absolute top-[181px] -left-5 bg-white py-7 rounded-r-full p-3 transition-all duration-300 z-10" aria-label="next">
+             <svg class="w-6 h-6 text-primary-600 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+             </svg>
+           </button>
+        </div>
+     </div>
+
+      
     <script src="https://kit.fontawesome.com/be8de18b59.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/embla-carousel@8.6.0/embla-carousel.umd.js"></script>
     <script src="./src/main.js"></script>
 </body>
 </html>

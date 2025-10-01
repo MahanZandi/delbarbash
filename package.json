@@ -10,7 +10,15 @@
   "devDependencies": {
     "@tailwindcss/cli": "^4.0.0-alpha.25"
   },
-  "keywords": ["html", "css", "javascript", "tailwindcss"],
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "tailwindcss"
+  ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "embla-carousel": "^8.6.0"
+  }
 }

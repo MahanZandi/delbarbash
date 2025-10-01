@@ -2,6 +2,7 @@
 @import "../fonts/Webfonts/fontiran.css";
 @import "./variables.css";
 @import "./utility.css";
+@import "./embla.css";
 /* Custom styles can be added here */
 .custom-gradient {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
