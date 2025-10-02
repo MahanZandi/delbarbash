@@ -219,7 +219,38 @@
           </button>
         </div>
       </div>
-    </div>
+
+       <!-- add to cart component -->
+       <div class="border border-[#E8E8E8] rounded-xl p-[15px] w-[305px]">
+         <!-- title -->
+         <h3 class="text-xs text-[#2D2D2D] mb-[17px] text-center">انتخاب مدل محصول</h3>
+         
+         <!-- color selection -->
+         <div id="color-options" class="flex flex-col gap-3">
+           <!-- Color items will be rendered by JavaScript -->
+         </div>
+         
+         <!-- quantity selector -->
+         <div class="flex items-center justify-between my-[25px] text-[#2D2D2D]">
+           <div class="flex items-center gap-4">
+             <button id="decrease-btn" class="w-10 h-10 rounded-lg border border-[#E8E8E8] flex items-center justify-center text-xl">-</button>
+             <span id="quantity-display" class="text-2xl font-bold text-primary-600">1</span>
+             <button id="increase-btn" class="w-10 h-10 rounded-lg border border-[#E8E8E8] flex items-center justify-center text-xl">+</button>
+           </div>
+           <div class="flex">
+             <div id="price-display" class="text-[26px] font-bold text-[#2D2D2D]">۱۴۵,۰۰۰</div>
+             <div class="text-xs text-gray-500 -rotate-90">تومان</div>
+           </div>
+         </div>
+
+         <!-- add to cart button -->
+         <button id="add-to-cart-btn" class="w-full bg-red-600 font-medium hover:bg-red-700 text-white h-[51px] rounded-[10px] flex items-center justify-center gap-3 transition-all duration-300 text-[16px]" disabled>
+           <i class="fa-solid fa-cart-shopping"></i>
+           <span>افزودن به سبد خرید</span>
+         </button>
+       </div>
+        
+     </div>
 
       <!-- product info -->
     <script src="https://kit.fontawesome.com/be8de18b59.js" crossorigin="anonymous"></script>

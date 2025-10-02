@@ -158,6 +158,130 @@ const updateButtonStates = () => {
 emblaApiMain.on('init', updateButtonStates)
 emblaApiMain.on('select', updateButtonStates)
 
+// Product Color Selection Component
+const productColors = [
+  { id: 1, name: "رنگ شماره 1", available: true, price: 145000 },
+  { id: 2, name: "رنگ شماره 2", available: true, price: 145000 },
+  { id: 3, name: "رنگ شماره 3", available: true, price: 145000 },
+  { id: 4, name: "رنگ شماره 4", available: false, price: 145000 },
+  { id: 5, name: "رنگ شماره 5", available: false, price: 145000 },
+  { id: 6, name: "رنگ شماره 6", available: true, price: 145000 }
+]
+
+let selectedColor = null
+let quantity = 1
+
+// Render color options
+function renderColorOptions() {
+  const container = document.getElementById('color-options')
+  if (!container) return
+  
+  container.innerHTML = ''
+  
+  productColors.forEach(color => {
+    const colorItem = document.createElement('div')
+    colorItem.className = `relative border rounded-[10px] py-[10px] px-[14px] cursor-pointer transition-all ${
+      color.available ? 'border-[#E8E8E8]' : 'border-[#E8E8E8] opacity-50 cursor-not-allowed'
+    } ${selectedColor?.id === color.id ? 'border-red-500 border-2 bg-red-50' : ''}`
+    
+    colorItem.innerHTML = `
+      <div class="flex items-center justify-between text-xs text-[#2D2D2D]">
+        <span>${color.name}</span>
+        ${!color.available ? '<span class="text-xs text-red-600">اتمام موجودی</span>' : ''}
+        ${selectedColor?.id === color.id ? '<i class="fa-solid fa-check text-red-600"></i>' : ''}
+      </div>
+    `
+    
+    if (color.available) {
+      colorItem.addEventListener('click', () => selectColor(color))
+    }
+    
+    container.appendChild(colorItem)
+  })
+}
+
+// Select color
+function selectColor(color) {
+  if (!color.available) return
+  
+  selectedColor = color
+  renderColorOptions()
+  updateAddToCartButton()
+  updatePrice()
+}
+
+// Update quantity
+function updateQuantity(change) {
+  const newQuantity = quantity + change
+  if (newQuantity < 1) return
+  if (newQuantity > 99) return // max limit
+  
+  quantity = newQuantity
+  document.getElementById('quantity-display').textContent = quantity
+  updatePrice()
+}
+
+// Update price display
+function updatePrice() {
+  const priceDisplay = document.getElementById('price-display')
+  if (!priceDisplay || !selectedColor) return
+  
+  const totalPrice = selectedColor.price * quantity
+  priceDisplay.textContent = totalPrice.toLocaleString('fa-IR')
+}
+
+// Update add to cart button state
+function updateAddToCartButton() {
+  const btn = document.getElementById('add-to-cart-btn')
+  if (!btn) return
+  
+  if (selectedColor) {
+    btn.disabled = false
+    btn.classList.remove('opacity-50', 'cursor-not-allowed')
+  } else {
+    btn.disabled = true
+    btn.classList.add('opacity-50', 'cursor-not-allowed')
+  }
+}
+
+// Add to cart action
+function addToCart() {
+  if (!selectedColor) {
+    alert('لطفاً یک رنگ انتخاب کنید')
+    return
+  }
+  
+  console.log('افزودن به سبد خرید:', {
+    color: selectedColor,
+    quantity: quantity,
+    totalPrice: selectedColor.price * quantity
+  })
+  
+  alert(`${quantity} عدد ${selectedColor.name} به سبد خرید اضافه شد`)
+}
+
+// Initialize product selection
+document.addEventListener('DOMContentLoaded', function() {
+  renderColorOptions()
+  
+  // Quantity buttons
+  const decreaseBtn = document.getElementById('decrease-btn')
+  const increaseBtn = document.getElementById('increase-btn')
+  const addToCartBtn = document.getElementById('add-to-cart-btn')
+  
+  if (decreaseBtn) {
+    decreaseBtn.addEventListener('click', () => updateQuantity(-1))
+  }
+  
+  if (increaseBtn) {
+    increaseBtn.addEventListener('click', () => updateQuantity(1))
+  }
+  
+  if (addToCartBtn) {
+    addToCartBtn.addEventListener('click', addToCart)
+  }
+})
+
 const accordionItems = [
     {
         id: 1,
