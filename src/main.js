@@ -160,12 +160,12 @@ emblaApiMain.on('select', updateButtonStates)
 
 // Product Color Selection Component
 const productColors = [
-  { id: 1, name: "رنگ شماره 1", available: true, price: 145000 },
-  { id: 2, name: "رنگ شماره 2", available: true, price: 145000 },
-  { id: 3, name: "رنگ شماره 3", available: true, price: 145000 },
-  { id: 4, name: "رنگ شماره 4", available: false, price: 145000 },
-  { id: 5, name: "رنگ شماره 5", available: false, price: 145000 },
-  { id: 6, name: "رنگ شماره 6", available: true, price: 145000 }
+  { id: 1, name: "رنگ شماره ۱", available: true, price: 145000 },
+  { id: 2, name: "رنگ شماره ۲", available: true, price: 145000 },
+  { id: 3, name: "رنگ شماره ۳", available: true, price: 145000 },
+  { id: 4, name: "رنگ شماره ۴", available: false, price: 145000 },
+  { id: 5, name: "رنگ شماره ۵", available: false, price: 145000 },
+  { id: 6, name: "رنگ شماره ۶", available: true, price: 145000 }
 ]
 
 let selectedColor = null
@@ -217,7 +217,7 @@ function updateQuantity(change) {
   if (newQuantity > 99) return // max limit
   
   quantity = newQuantity
-  document.getElementById('quantity-display').textContent = quantity
+  document.getElementById('quantity-display').textContent = quantity.toLocaleString('fa-IR')
   updatePrice()
 }
 
