@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./dist/main.css">
     <link rel="icon" type="image/x-icon" href="/public/favicon.png">
 </head>
-<body class="min-h-screen font-sans">
+<body class="font-sans">
 
     <!-- top navbar desktop -->
     <nav class="desktop:flex hidden items-center justify-between container mt-[26px]">
@@ -253,10 +253,61 @@
            <span>افزودن به سبد خرید</span>
          </button>
        </div>
-        
-     </div>
+    </div>
 
-      <!-- product info -->
+    <!-- banners -->
+    <div class="container">
+      <div class="flex gap-[9px] mt-10">
+        <div class="bg-[#FFF3E3] w-[243px] flex rounded-[20px] items-center">
+          <img class="w-[80px] h-[71px] object-contain" src="/public/images/motor.png" alt="motor">
+          <div class="flex flex-col gap-1.5">
+            <span class="text-[15px] font-bold text-primary-450 ss01">ارسال فوری یک ساعته</span>
+            <span class="text-xs font-medium text-primary-450">مخصوص تهران</span>
+          </div>
+        </div>
+        <div class="bg-[#FFF3E3] w-[243px] flex rounded-[20px] items-center">
+          <img class="w-[65px] h-[98px] object-contain" src="/public/images/product-5.png" alt="product">
+          <div class="flex flex-col gap-1.5">
+            <span class="text-[15px] font-bold text-primary-450 ss01">محصول هدیه برای</span>
+            <span class="text-xs font-medium text-primary-450">سفارش بالای ۱ میلیون</span>
+          </div>
+        </div>
+        <div class="bg-[#FFF3E3] w-[243px] flex rounded-[20px] items-center">
+          <img class="w-[76px] h-[110px] object-contain" src="/public/images/pack.png" alt="pack">
+          <div class="flex flex-col gap-1.5">
+            <span class="text-[15px] font-bold text-primary-450 ss01">ارسال با پک کادویی</span>
+            <span class="text-xs font-medium text-primary-450">درصورت انتخاب</span>
+          </div>
+        </div>
+  
+        <!-- discount banner -->
+        <div class="bg-secondary-400 relative flex-1 flex rounded-[20px] items-center">
+          <img class="w-[80px] h-[71px] object-contain" src="/public/images/product-6.png" alt="discount">
+          <div class="flex flex-col gap-1.5 text-secondary-500">
+            <span class="text-xl font-bold ss01">کرم دور چشم Milk</span>
+            <div class="flex gap-1.5">
+              <span class="text-[15px] line-through">۵۵,۹۰۰</span>
+              <span class="text-[16px] ss01 font-bold">
+                ۴۴,۸۰۰
+                <span class="text-[8px] font-normal">تومان</span>
+              </span>
+            </div>
+          </div>
+          <div class="absolute top-2 -left-5 w-[80px] h-[24px] bg-[#FF0051] transform -rotate-46 flex justify-center items-center text-white font-medium"> %۳۰ <div class="absolute top-0 left-0"> <div class="w-0 h-0 border border-t-[24px] border-r-[24px] border-l-0 border-b-0 border-l-white border-r-transparent border-t-white border-b-white"></div> </div> <div class="absolute top-0 right-0"> <div class="inline-block w-0 h-0 border-solid border-t-0 border-r-[24px] border-l-0 border-b-[24px] border-l-transparent border-r-[#ffffff] border-t-transparent border-b-transparent"></div> </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- comments -->
+    <div class="container my-16">
+      <!-- title -->
+      <div class="flex gap-4 items-center">
+        <h2 class="text-xl desktop:w-[158px]">نظرات مشتریان</h2>
+        <div class="w-full bg-[#E8E8E8] h-px"></div>
+        <span class="text-primary-600 text-xs font-medium desktop:w-[100px]">مشاهده بیشتر</span>
+      </div>
+    </div>
+
     <script src="https://kit.fontawesome.com/be8de18b59.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/embla-carousel@8.6.0/embla-carousel.umd.js"></script>
     <script src="./src/main.js"></script>

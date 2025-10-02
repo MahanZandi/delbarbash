@@ -15,10 +15,13 @@
 @theme {
     --color-primary-300: #FDDDDF;
     --color-primary-400: #9A6767;
+    --color-primary-450: #984F53;
     --color-primary-500: #A44A50;
     --color-primary-600: #C41818;
     --color-primary-700: #860A0A;
 
+    --color-secondary-400: #E5F8D2;
+    --color-secondary-500: #508F43;
     --color-secondary-600: #4BA100;
 }
 
