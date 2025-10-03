@@ -19,6 +19,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "embla-carousel": "^8.6.0"
+    "embla-carousel": "^8.6.0",
+    "tailwindcss": "^4.1.14"
   }
 }
