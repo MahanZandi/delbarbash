@@ -14,6 +14,7 @@
 
 @theme {
     --color-primary-100: #FFF5F5;
+    --color-primary-200: #EDE0D0;
     --color-primary-300: #FDDDDF;
     --color-primary-350: #CF7668;
     --color-primary-400: #9A6767;
@@ -22,9 +23,13 @@
     --color-primary-550: #924335;
     --color-primary-600: #C41818;
     --color-primary-700: #860A0A;
-
+    --color-primary-800: #840B35;
+    
+    --color-secondary-200: #D2F8DE;
     --color-secondary-400: #E5F8D2;
     --color-secondary-500: #508F43;
     --color-secondary-600: #4BA100;
+    --color-secondary-800: #3E644A;
+    --color-secondary-900: #34954E;
 }
 
