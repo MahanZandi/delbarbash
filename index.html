@@ -143,22 +143,22 @@
                <div class="embla-thumbs__viewport">
                  <div class="embla-thumbs__container gap-2">
                    <div class="embla-thumbs__slide  embla-thumbs__slide--selected bg-primary-300 flex justify-center items-center">
-                     <button type="button" class="">
+                     <button type="button">
                        <img class="object-contain size-[80px]" src="/public/images/product-1.png" alt="product-1">
                      </button>
                    </div>
                    <div class="embla-thumbs__slide bg-primary-300 flex justify-center items-center">
-                     <button type="button" class="">
+                     <button type="button">
                        <img class="object-contain size-[80px]" src="/public/images/product-2.png" alt="product-2">
                      </button>
                    </div>
                    <div class="embla-thumbs__slide bg-primary-300 flex justify-center items-center">
-                     <button type="button" class="">
+                     <button type="button">
                        <img class="object-contain size-[80px]" src="/public/images/product-3.png" alt="product-3">
                      </button>
                    </div>
                    <div class="embla-thumbs__slide bg-primary-300 flex justify-center items-center">
-                     <button type="button" class="">
+                     <button type="button">
                       <img class="object-contain size-[80px]" src="/public/images/product-4.png" alt="product-3">
                      </button>
                    </div>
@@ -299,13 +299,101 @@
     </div>
 
     <!-- comments -->
-    <div class="container my-16">
+    <div class="container mt-[50px]">
       <!-- title -->
       <div class="flex gap-4 items-center">
         <h2 class="text-xl desktop:w-[158px]">نظرات مشتریان</h2>
         <div class="w-full bg-[#E8E8E8] h-px"></div>
         <span class="text-primary-600 text-xs font-medium desktop:w-[100px] cursor-pointer">مشاهده بیشتر</span>
       </div>
+      <div id="reviews-container" class="flex desktop:gap-5 gap-1 mt-6 overflow-x-scroll"></div>
+    </div>
+
+    <!-- same products -->
+    <div class="container my-16">
+      <!-- title -->
+      <div class="flex gap-4 items-center mt-6">
+        <h2 class="text-xl desktop:w-[168px]">محصولات مرتبط</h2>
+        <div class="w-full bg-[#E8E8E8] h-px"></div>
+        <span class="text-primary-600 text-xs font-medium desktop:w-[100px] cursor-pointer">مشاهده بیشتر</span>
+      </div>
+      <!-- products -->
+      <div class="flex flex-wrap gap-[30px]">
+        <div class="w-[268px] h-[405px] mt-[35px] bg-[#FCFCFC] rounded-[20px] border border-[#E8E8E8] relative">
+          <div class="bg-[#FCFCFC] border rounded-[8px] p-[6px] border-[#E8E8E8] w-fit absolute top-4 right-[13px]">
+            <img class="size-[24px] object-contain" src="/public/icons/icon-save-bold.png" alt="save icon">
+          </div>
+          <div class="px-[39px] pt-[26px]">
+            <img class="object-contain w-[190px] h-[180px]" src="/public/images/product-7.png" alt="product">
+          </div>
+          <div class="mt-[34px] flex items-center flex-col gap-1.5">
+            <span class="text-[16px] font-medium text-[#2D2D2D]">رژلب جامد ویولیت</span>
+            <span class="text-[12px] text-primary-500">در ۴ مدل مختلف</span>
+          </div>
+          <div class="mt-6 flex justify-end pl-[7px]">
+            <div class="text-xl font-medium">۴۵,۰۰۰</div>
+            <div class="text-[8px] text-[#8B8B8B] -rotate-90 font-medium relative left-2">تومان</div>
+          </div>
+          <button class="w-[164px] h-[45px] absolute cursor-pointer -bottom-4 left-1/2 -translate-x-1/2 rounded-xl bg-primary-600 font-medium text-white" type="button">مشاهده و خرید</button>
+        </div>
+
+        <div class="w-[268px] h-[405px] mt-[35px] bg-[#FCFCFC] rounded-[20px] border border-[#E8E8E8] relative">
+          <div class="bg-[#FCFCFC] border rounded-[8px] p-[6px] border-[#E8E8E8] w-fit absolute top-4 right-[13px]">
+            <img class="size-[24px] object-contain" src="/public/icons/icon-save-bold.png" alt="save icon">
+          </div>
+          <div class="px-[39px] pt-[26px]">
+            <img class="object-contain w-[190px] h-[180px]" src="/public/images/product-7.png" alt="product">
+          </div>
+          <div class="mt-[34px] flex items-center flex-col gap-1.5">
+            <span class="text-[16px] font-medium text-[#2D2D2D]">رژلب جامد ویولیت</span>
+            <span class="text-[12px] text-primary-500">در ۴ مدل مختلف</span>
+          </div>
+          <div class="mt-6 flex justify-end pl-[7px]">
+            <div class="text-xl font-medium">۴۵,۰۰۰</div>
+            <div class="text-[8px] text-[#8B8B8B] -rotate-90 font-medium relative left-2">تومان</div>
+          </div>
+          <button class="w-[164px] h-[45px] absolute cursor-pointer -bottom-4 left-1/2 -translate-x-1/2 rounded-xl bg-primary-600 font-medium text-white" type="button">مشاهده و خرید</button>
+        </div>
+
+        <div class="w-[268px] h-[405px] mt-[35px] bg-[#FCFCFC] rounded-[20px] border border-[#E8E8E8] relative">
+          <div class="bg-[#FCFCFC] border rounded-[8px] p-[6px] border-[#E8E8E8] w-fit absolute top-4 right-[13px]">
+            <img class="size-[24px] object-contain" src="/public/icons/icon-save-bold.png" alt="save icon">
+          </div>
+          <div class="px-[39px] pt-[26px]">
+            <img class="object-contain w-[190px] h-[180px]" src="/public/images/product-7.png" alt="product">
+          </div>
+          <div class="mt-[34px] flex items-center flex-col gap-1.5">
+            <span class="text-[16px] font-medium text-[#2D2D2D]">رژلب جامد ویولیت</span>
+            <span class="text-[12px] text-primary-500">در ۴ مدل مختلف</span>
+          </div>
+          <div class="mt-6 flex justify-end pl-[7px]">
+            <div class="text-xl font-medium">۴۵,۰۰۰</div>
+            <div class="text-[8px] text-[#8B8B8B] -rotate-90 font-medium relative left-2">تومان</div>
+          </div>
+          <button class="w-[164px] h-[45px] absolute cursor-pointer -bottom-4 left-1/2 -translate-x-1/2 rounded-xl bg-primary-600 font-medium text-white" type="button">مشاهده و خرید</button>
+        </div>
+
+        <div class="w-[268px] h-[405px] mt-[35px] bg-[#FCFCFC] rounded-[20px] border border-[#E8E8E8] relative">
+          <div class="bg-[#FCFCFC] border rounded-[8px] p-[6px] border-[#E8E8E8] w-fit absolute top-4 right-[13px]">
+            <img class="size-[24px] object-contain" src="/public/icons/icon-save-bold.png" alt="save icon">
+          </div>
+          <div class="px-[39px] pt-[26px]">
+            <img class="object-contain w-[190px] h-[180px]" src="/public/images/product-7.png" alt="product">
+          </div>
+          <div class="mt-[34px] flex items-center flex-col gap-1.5">
+            <span class="text-[16px] font-medium text-[#2D2D2D]">رژلب جامد ویولیت</span>
+            <span class="text-[12px] text-primary-500">در ۴ مدل مختلف</span>
+          </div>
+          <div class="mt-6 flex justify-end pl-[7px]">
+            <div class="text-xl font-medium">۴۵,۰۰۰</div>
+            <div class="text-[8px] text-[#8B8B8B] -rotate-90 font-medium relative left-2">تومان</div>
+          </div>
+          <button class="w-[164px] h-[45px] absolute cursor-pointer -bottom-4 left-1/2 -translate-x-1/2 rounded-xl bg-primary-600 font-medium text-white" type="button">مشاهده و خرید</button>
+        </div>
+      </div>
+
+
+      
     </div>
 
     <script src="https://kit.fontawesome.com/be8de18b59.js" crossorigin="anonymous"></script>

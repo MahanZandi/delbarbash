@@ -13,10 +13,13 @@
 }
 
 @theme {
+    --color-primary-100: #FFF5F5;
     --color-primary-300: #FDDDDF;
+    --color-primary-350: #CF7668;
     --color-primary-400: #9A6767;
     --color-primary-450: #984F53;
     --color-primary-500: #A44A50;
+    --color-primary-550: #924335;
     --color-primary-600: #C41818;
     --color-primary-700: #860A0A;
 

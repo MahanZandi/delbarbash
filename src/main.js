@@ -360,3 +360,81 @@ function renderAccordionItems() {
 document.addEventListener('DOMContentLoaded', function() {
     renderAccordionItems();
 });
+
+
+// comments
+const reviews = [
+  {
+      name: "میترا احمدی",
+      date: "۱۲ تیر ۱۴۰۴",
+      rating: 5,
+      comment: "خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌",
+      avatar: ""
+  },
+  {
+      name: "علیرضا رضایی",
+      date: "۱۵ مرداد ۱۴۰۴",
+      rating: 4,
+      comment: "بسیار خوب، فقط کمی زمان تحویل طول کشید.",
+      avatar: "/public/images/motor.png" 
+  },
+  {
+    name: "میترا احمدی",
+    date: "۱۲ تیر ۱۴۰۴",
+    rating: 5,
+    comment: "خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌",
+    avatar: ""
+},
+{
+    name: "علیرضا رضایی",
+    date: "۱۵ مرداد ۱۴۰۴",
+    rating: 4,
+    comment: "بسیار خوب، فقط کمی زمان تحویل طول کشید.",
+    avatar: "/public/images/motor.png" 
+},
+{
+  name: "میترا احمدی",
+  date: "۱۲ تیر ۱۴۰۴",
+  rating: 5,
+  comment: "خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌",
+  avatar: ""
+},
+{
+  name: "علیرضا رضایی",
+  date: "۱۵ مرداد ۱۴۰۴",
+  rating: 4,
+  comment: "بسیار خوب، فقط کمی زمان تحویل طول کشید.",
+  avatar: "/public/images/motor.png" 
+},
+];
+
+const reviewsContainer = document.getElementById("reviews-container");
+
+reviews.forEach(review => {
+  const reviewDiv = document.createElement("div");
+  reviewDiv.classList.add("w-[374px]", "h-[139px]", "flex", "flex-col", "gap-4", "bg-primary-100", "rounded-[20px]", "pr-[28px]", "pt-[20px]", "pl-[23px]", "pb-[25px]", "shrink-0");
+
+  const avatar = review.avatar || "/public/icons/icon-person.png"; 
+
+  reviewDiv.innerHTML = `
+      <div class="flex justify-between">
+          <div class="flex gap-4">
+              <div class="bg-primary-300 p-[11px] rounded-full">
+                  <img class="size-[32px]" src="${avatar}" alt="person">
+              </div>
+              <div class="flex-col flex">
+                  <span class="font-medium text-primary-550">${review.name}</span>
+                  <span class="text-[10px] text-primary-350">${review.date}</span>
+              </div>
+          </div>
+          <div class="text-primary-350">
+              <span class="text-[10px]">۵/</span>
+              <span class="text-[12px] font-semibold">${review.rating}</span>
+          </div>
+      </div>
+      <p class="text-[12px] text-[#2D2D2D]">${review.comment}</p>
+  `;
+
+  reviewsContainer.appendChild(reviewDiv);
+});
+
