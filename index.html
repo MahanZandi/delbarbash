@@ -73,6 +73,23 @@
             </button>
         </div>
     </nav>
+    <!-- top navbar mobile -->
+     <nav class="desktop:hidden container px-4 mt-8">
+      <div class="flex justify-between">
+        <div class="size-[36px] items-center justify-center rounded-[8px] border border-[#E8E8E8] flex">
+          <i class="fa-solid fa-bars fa-lg text-primary-500"></i>
+        </div>
+        <img src="./public/favicon.png" alt="logo" class="size-[36px]">
+        <div class="flex gap-2">
+          <div class="rounded-[8px] border border-[#E8E8E8] p-1.5">
+            <img class="size-[24px]" src="./public/icons/save-icon.png" alt="save icon">
+          </div>
+          <div class="rounded-[8px] border border-[#E8E8E8] p-1.5">
+            <img class="size-[24px]" src="./public/icons/cart-icon.png" alt="cart icon">
+          </div>
+        </div>
+      </div>
+     </nav>
     <!-- nav links accordion desktop -->
     <nav class="nav-accordion-link container mt-1.5 desktop:flex hidden">
         <ul id="accordion-list" class="flex w-full gap-[35px] py-3 px-[21px] border border-[#E8E8E8] rounded-[8px]">
@@ -108,9 +125,9 @@
     </div>
 
     <!-- product -->
-    <div class="flex gap-5 mt-[27px] container">
+    <div class="flex gap-5 mt-[27px] container desktop:justify-start justify-center">
       <!-- slider -->
-      <div class="embla relative w-[351px]">
+      <div class="embla relative w-[320px] desktop:w-[351px]">
            <!-- dots -->
            <div class="absolute left-1/2 p-1.5 rounded-b-xl -translate-x-1/2 bg-white z-10">
              <div id="slider-dots" class="flex justify-center gap-2"></div>
@@ -119,22 +136,22 @@
              <div class="embla__container">
                  <div class="embla__slide">
                    <div class="embla__slide__number bg-primary-300">
-                      <img class="w-[241px] h-[344px] object-cover" src="/public/images/product-1.png" alt="heart icon">
+                      <img class="w-[205px] h-[292px] desktop:w-[241px] desktop:h-[344px] object-contain" src="/public/images/product-1.png" alt="heart icon">
                    </div>
                  </div>
                  <div class="embla__slide">
                    <div class="embla__slide__number bg-primary-300">
-                      <img class="w-[241px] h-[344px] object-cover" src="/public/images/product-2.png" alt="heart icon">
+                      <img class="w-[205px] h-[292px] desktop:w-[241px] desktop:h-[344px] object-contain" src="/public/images/product-2.png" alt="heart icon">
                    </div>
                  </div>
                  <div class="embla__slide">
                    <div class="embla__slide__number bg-primary-300">
-                      <img class="w-[241px] h-[344px] object-cover" src="/public/images/product-3.png" alt="heart icon">
+                      <img class="w-[205px] h-[292px] desktop:w-[241px] desktop:h-[344px] object-contain" src="/public/images/product-3.png" alt="heart icon">
                    </div>
                  </div>
                  <div class="embla__slide">
                    <div class="embla__slide__number bg-primary-300">
-                      <img class="w-[241px] h-[344px] object-cover" src="/public/images/product-4.png" alt="heart icon">
+                      <img class="w-[205px] h-[292px] desktop:w-[241px] desktop:h-[344px] object-contain" src="/public/images/product-4.png" alt="heart icon">
                    </div>
                  </div>
                </div>
@@ -167,13 +184,13 @@
              </div>
              
              <!-- arrows button -->
-             <button id="embla-prev" class="absolute top-[181px] -right-5 bg-white rounded-l-full p-3 transition-all duration-300 z-10" aria-label="previous">
+             <button id="embla-prev" class="absolute top-[133px] desktop:top-[181px] -right-5 bg-white rounded-l-full p-3 transition-all duration-300 z-10" aria-label="previous">
                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                </svg>
              </button>
              
-             <button id="embla-next" class="absolute top-[181px] -left-5 bg-white rounded-r-full p-3 transition-all duration-300 z-10" aria-label="next">
+             <button id="embla-next" class="absolute top-[133px] desktop:top-[181px] -left-5 bg-white rounded-r-full p-3 transition-all duration-300 z-10" aria-label="next">
                <svg class="w-6 h-6 text-primary-600 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                </svg>
@@ -220,8 +237,8 @@
         </div>
       </div>
 
-       <!-- add to cart component -->
-       <div class="border border-[#E8E8E8] rounded-xl p-[15px] w-[305px]">
+       <!-- add to cart component desktop -->
+       <div class="border border-[#E8E8E8] rounded-xl p-[15px] w-[305px] desktop:block hidden">
          <!-- title -->
          <h3 class="text-xs text-[#2D2D2D] mb-[17px] text-center">انتخاب مدل محصول</h3>
          
@@ -254,6 +271,51 @@
          </button>
        </div>
     </div>
+
+    <!-- product info mobile -->
+    <div class="flex desktop:hidden justify-center mt-[11px]">
+       <h1 class="text-2xl font-bold ss01 text-[#2D2D2D]">رژمدادی پیچی ویولت</h1>
+    </div>
+    <div class="container mt-[18px] desktop:hidden">
+      <div class="flex justify-center text-primary-600">
+        <div id="price-display" class="text-[26px] font-bold">۱۴۵,۰۰۰</div>
+        <div class="text-xs -rotate-90 relative left-[10px]">تومان</div>
+      </div>
+      <div class="flex justify-between mt-[35px]">
+          <div class="text-[#2D2D2D] font-medium">توضیحات محصول:</div>
+          <div class="flex">
+            <div class="w-[158px] h-[38px] rounded-[10px] text-[#2D2D2D] border border-[#E8E8E8] items-center justify-center flex gap-2">
+              <i class="fa-regular fa-bookmark fa-sm"></i>
+              <span class="text-[10px]">افزودن به علاقه مندی</span>
+            </div>
+            <div class="size-[38px] rounded-[10px] border border-[#E8E8E8] text-[#2D2D2D] flex justify-center items-center">
+              <i class="fa-solid fa-share-nodes"></i>
+            </div>
+          </div>
+      </div>
+      <p class="leading-[250%] mt-[19px] text-[#2D2D2D] text-[12px]">
+        -   طراحی مدادی با قابلیت چرخشی (پیچی) برای استفاده آسان
+        <br>
+        -   بدون نیاز به تراش
+        <br>
+        -   بافت نرم و کرمی با پخش یکنواخت روی لب
+        <br>
+        -   رنگدانه‌های قوی و ماندگاری بالا
+        <br>
+        -   مناسب استفاده روزانه و آرایش حرفه‌ای
+        <br>
+        -   مرطوب‌کننده لب و جلوگیری از خشکی
+        <br>
+        -   در طیف رنگ‌های متنوع و پرطرفدار
+        <br>
+        -   فاقد سرب و مواد مضر
+      </p>
+      <div class="flex gap-2 mt-[19px] text-[12px]">
+        <span>دسته :</span>
+        <span class="text-primary-500">خرید لوازم آرایشی اصل, رژ لب جامد, لب, همه محصولات</span>
+      </div>
+    </div>
+    
 
     <!-- banners -->
     <div class="container">
