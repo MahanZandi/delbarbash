@@ -260,11 +260,143 @@ function addToCart() {
   alert(`${quantity} عدد ${selectedColor.name} به سبد خرید اضافه شد`)
 }
 
+// Mobile Modal Variables
+let mobileSelectedColor = null
+let mobileQuantity = 1
+
+// Render mobile color options
+function renderMobileColorOptions() {
+  const container = document.getElementById('mobile-color-options')
+  if (!container) return
+  
+  container.innerHTML = ''
+  
+  productColors.forEach(color => {
+    const colorItem = document.createElement('div')
+    colorItem.className = `relative border rounded-[10px] py-[10px] px-[14px] cursor-pointer transition-all ${
+      color.available ? 'border-[#E8E8E8]' : 'border-[#E8E8E8] opacity-50 cursor-not-allowed'
+    } ${mobileSelectedColor?.id === color.id ? 'border-red-500 border-2 bg-red-50' : ''}`
+    
+    colorItem.innerHTML = `
+      <div class="flex items-center justify-between text-xs text-[#2D2D2D]">
+        <span>${color.name}</span>
+        ${!color.available ? '<span class="text-xs text-red-600">اتمام موجودی</span>' : ''}
+        ${mobileSelectedColor?.id === color.id ? '<i class="fa-solid fa-check text-red-600"></i>' : ''}
+      </div>
+    `
+    
+    if (color.available) {
+      colorItem.addEventListener('click', () => selectMobileColor(color))
+    }
+    
+    container.appendChild(colorItem)
+  })
+}
+
+// Select mobile color
+function selectMobileColor(color) {
+  if (!color.available) return
+  
+  mobileSelectedColor = color
+  renderMobileColorOptions()
+  updateMobileAddToCartButton()
+}
+
+// Update mobile quantity
+function updateMobileQuantity(change) {
+  const newQuantity = mobileQuantity + change
+  if (newQuantity < 1) return
+  if (newQuantity > 99) return // max limit
+  
+  mobileQuantity = newQuantity
+  document.getElementById('mobile-quantity-display').textContent = mobileQuantity.toLocaleString('fa-IR')
+}
+
+// Update mobile price display
+
+
+// Update mobile add to cart button state
+function updateMobileAddToCartButton() {
+  const btn = document.getElementById('mobile-add-to-cart-btn')
+  if (!btn) return
+  
+  if (mobileSelectedColor) {
+    btn.disabled = false
+    btn.classList.remove('opacity-50', 'cursor-not-allowed')
+  } else {
+    btn.disabled = true
+    btn.classList.add('opacity-50', 'cursor-not-allowed')
+  }
+}
+
+// Add to cart action for mobile
+function addToCartMobile() {
+  if (!mobileSelectedColor) {
+    alert('لطفاً یک رنگ انتخاب کنید')
+    return
+  }
+  
+  console.log('افزودن به سبد خرید (موبایل):', {
+    color: mobileSelectedColor,
+    quantity: mobileQuantity,
+    totalPrice: mobileSelectedColor.price * mobileQuantity
+  })
+  
+  alert(`${mobileQuantity} عدد ${mobileSelectedColor.name} به سبد خرید اضافه شد`)
+  
+  // Close modal after adding to cart
+  closeMobileModal()
+}
+
+// Open mobile modal with animation
+function openMobileModal() {
+  const modal = document.getElementById('mobile-product-modal')
+  const modalContent = document.getElementById('mobile-modal-content')
+  const backdrop = document.getElementById('mobile-modal-backdrop')
+  
+  if (modal && modalContent && backdrop) {
+    modal.classList.remove('hidden')
+    document.body.style.overflow = 'hidden'
+    
+    // Trigger animations after a small delay to ensure the modal is visible
+    setTimeout(() => {
+      backdrop.classList.remove('opacity-0')
+      backdrop.classList.add('opacity-100')
+      
+      modalContent.classList.remove('translate-y-full')
+      modalContent.classList.add('translate-y-0')
+    }, 10)
+  }
+}
+
+// Close mobile modal with animation
+function closeMobileModal() {
+  const modal = document.getElementById('mobile-product-modal')
+  const modalContent = document.getElementById('mobile-modal-content')
+  const backdrop = document.getElementById('mobile-modal-backdrop')
+  
+  if (modal && modalContent && backdrop) {
+    // Start closing animations
+    backdrop.classList.remove('opacity-100')
+    backdrop.classList.add('opacity-0')
+    
+    modalContent.classList.remove('translate-y-0')
+    modalContent.classList.add('translate-y-full')
+    
+    // Hide modal after animation completes
+    setTimeout(() => {
+      modal.classList.add('hidden')
+      document.body.style.overflow = 'auto'
+    }, 300) // Match the duration-300 class
+  }
+}
+
 // Initialize product selection
 document.addEventListener('DOMContentLoaded', function() {
   renderColorOptions()
+  renderMobileColorOptions()
   
-  // Quantity buttons
+  // Desktop quantity buttons
   const decreaseBtn = document.getElementById('decrease-btn')
   const increaseBtn = document.getElementById('increase-btn')
   const addToCartBtn = document.getElementById('add-to-cart-btn')
@@ -279,6 +411,40 @@ document.addEventListener('DOMContentLoaded', function() {
   
   if (addToCartBtn) {
     addToCartBtn.addEventListener('click', addToCart)
+  }
+  
+  // Mobile modal buttons
+  const mobileSelectBtn = document.getElementById('mobile-select-model-btn')
+  const mobileModalClose = document.getElementById('mobile-modal-close')
+  const mobileModal = document.getElementById('mobile-product-modal')
+  const mobileDecreaseBtn = document.getElementById('mobile-decrease-btn')
+  const mobileIncreaseBtn = document.getElementById('mobile-increase-btn')
+  const mobileAddToCartBtn = document.getElementById('mobile-add-to-cart-btn')
+  
+  if (mobileSelectBtn) {
+    mobileSelectBtn.addEventListener('click', openMobileModal)
+  }
+  
+  if (mobileModalClose) {
+    mobileModalClose.addEventListener('click', closeMobileModal)
+  }
+  
+  // Add click listener to backdrop for closing modal
+  const mobileModalBackdrop = document.getElementById('mobile-modal-backdrop')
+  if (mobileModalBackdrop) {
+    mobileModalBackdrop.addEventListener('click', closeMobileModal)
+  }
+  
+  if (mobileDecreaseBtn) {
+    mobileDecreaseBtn.addEventListener('click', () => updateMobileQuantity(-1))
+  }
+  
+  if (mobileIncreaseBtn) {
+    mobileIncreaseBtn.addEventListener('click', () => updateMobileQuantity(1))
+  }
+  
+  if (mobileAddToCartBtn) {
+    mobileAddToCartBtn.addEventListener('click', addToCartMobile)
   }
 })
 
