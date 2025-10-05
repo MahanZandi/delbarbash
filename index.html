@@ -224,9 +224,6 @@
           <span>دسته :</span>
           <span class="text-primary-500">خرید لوازم آرایشی اصل, رژ لب جامد, لب, همه محصولات</span>
         </div>
-        <div class="mt-[14px] text-secondary-600 font-medium text-xs">
-          موجودی و قیمت کالا بروز میباشد.
-        </div>
         <div class="flex text-[10px] mt-[22px] gap-[15px] text-[#2D2D2D]">
           <button class="border cursor-pointer border-[#E8E8E8] w-[172px] h-[38px] rounded-[10px] flex items-center justify-center gap-[10px]">
             <i class="fa-regular fa-bookmark size-[10px]"></i>
@@ -240,7 +237,7 @@
       </div>
 
        <!-- add to cart component desktop -->
-       <div class="border border-[#E8E8E8] rounded-xl p-[15px] w-[305px] desktop:block hidden">
+       <div class="border border-[#E8E8E8] rounded-xl p-[15px] w-[375px] desktop:block hidden">
          <!-- title -->
          <h3 class="text-xs text-[#2D2D2D] mb-[17px] text-center">انتخاب مدل محصول</h3>
          
@@ -469,56 +466,58 @@
     </div>
 
     <!-- banners -->
-    <div class="container">
-      <div class="flex desktop:flex-row flex-col-reverse gap-[9px] mt-10">
-        <div class="desktop:flex grid grid-cols-2 gap-[9px]">
-          <a href="#" class="bg-[#FFF3E3] desktop:w-[243px] flex rounded-[13px] desktop:rounded-[20px] items-center">
-            <img class="w-[64px] h-[58px] desktop:w-[80px] desktop:h-[71px] object-contain" src="/public/images/motor.png" alt="motor">
-            <div class="flex flex-col gap-1.5">
-              <span class="text-xs desktop:text-[15px] font-bold text-primary-450 ss01">ارسال فوری یک ساعته</span>
-              <span class="text-[8px] desktop:text-xs font-medium text-primary-450">مخصوص تهران</span>
-            </div>
-          </a>
-          <a href="#" class="bg-[#FFF3E3] desktop:w-[243px] flex rounded-[13px] desktop:rounded-[20px] items-center">
-            <img class="w-[46px] h-[68px] desktop:w-[65px] desktop:h-[98px] object-contain" src="/public/images/product-5.png" alt="product">
-            <div class="flex flex-col gap-1.5">
-              <span class="text-xs desktop:text-[15px] font-bold text-primary-450 ss01">محصول هدیه برای</span>
-              <span class="text-[8px] desktop:text-xs font-medium text-primary-450">سفارش بالای ۱ میلیون</span>
-            </div>
-          </a>
-          <a href="#" class="bg-[#FFF3E3] desktop:w-[243px] flex rounded-[13px] desktop:rounded-[20px] items-center">
-            <img class="w-[53px] h-[77px] desktop:w-[76px] desktop:h-[110px] object-contain" src="/public/images/pack.png" alt="pack">
-            <div class="flex flex-col gap-1.5">
-              <span class="text-xs desktop:text-[15px] font-bold text-primary-450 ss01">ارسال با پک کادویی</span>
-              <span class="text-[8px] desktop:text-xs font-medium text-primary-450">درصورت انتخاب</span>
-            </div>
-          </a>
-          <a href="#" class="bg-[#FFF3E3] desktop:w-[243px] desktop:hidden flex rounded-[13px] desktop:rounded-[20px] items-center">
-            <img class="w-[53px] h-[77px] desktop:w-[76px] desktop:h-[110px] object-contain" src="/public/images/pack.png" alt="pack">
-            <div class="flex flex-col gap-1.5">
-              <span class="text-xs desktop:text-[15px] font-bold text-primary-450 ss01">ارسال با پک کادویی</span>
-              <span class="text-[8px] desktop:text-xs font-medium text-primary-450">درصورت انتخاب</span>
-            </div>
-          </a>
-        </div>
-  
-        <!-- discount banner -->
-        <a href="#" class="bg-secondary-400 relative w-full desktop:w-[417px] flex rounded-[20px] items-center">
-          <img class="w-[80px] h-[71px] object-contain" src="/public/images/product-6.png" alt="discount">
-          <div class="flex flex-col gap-1.5 text-secondary-500">
-            <span class="text-xl font-bold ss01">کرم دور چشم Milk</span>
-            <div class="flex gap-1.5">
-              <span class="text-[15px] line-through">۵۵,۹۰۰</span>
-              <span class="text-[16px] ss01 font-bold">
-                ۴۴,۸۰۰
-                <span class="text-[8px] font-normal">تومان</span>
-              </span>
-            </div>
-          </div>
-          <div class="absolute top-2 -left-5 w-[80px] h-[24px] bg-[#FF0051] transform -rotate-46 flex justify-center items-center text-white font-medium"> %۳۰ <div class="absolute top-0 left-0"> <div class="w-0 h-0 border border-t-[24px] border-r-[24px] border-l-0 border-b-0 border-l-white border-r-transparent border-t-white border-b-white"></div> </div> <div class="absolute top-0 right-0"> <div class="inline-block w-0 h-0 border-solid border-t-0 border-r-[24px] border-l-0 border-b-[24px] border-l-transparent border-r-[#ffffff] border-t-transparent border-b-transparent"></div> </div>
-        </div>
-        </a>
-    </div>
+     <div>
+       <div class="container">
+           <div class="flex desktop:flex-row flex-col-reverse gap-[9px] mt-10">
+             <div class="desktop:flex grid grid-cols-2 gap-[9px]">
+               <a href="#" class="bg-[#FFF3E3] desktop:w-[243px] flex rounded-[13px] desktop:rounded-[20px] items-center">
+                 <img class="w-[64px] h-[58px] desktop:w-[80px] desktop:h-[71px] object-contain" src="/public/images/motor.png" alt="motor">
+                 <div class="flex flex-col gap-1.5">
+                   <span class="text-xs desktop:text-[15px] font-bold text-primary-450 ss01">ارسال فوری یک ساعته</span>
+                   <span class="text-[8px] desktop:text-xs font-medium text-primary-450">مخصوص تهران</span>
+                 </div>
+               </a>
+               <a href="#" class="bg-[#FFF3E3] desktop:w-[243px] flex rounded-[13px] desktop:rounded-[20px] items-center">
+                 <img class="w-[46px] h-[68px] desktop:w-[65px] desktop:h-[98px] object-contain" src="/public/images/product-5.png" alt="product">
+                 <div class="flex flex-col gap-1.5">
+                   <span class="text-xs desktop:text-[15px] font-bold text-primary-450 ss01">محصول هدیه برای</span>
+                   <span class="text-[8px] desktop:text-xs font-medium text-primary-450">سفارش بالای ۱ میلیون</span>
+                 </div>
+               </a>
+               <a href="#" class="bg-[#FFF3E3] desktop:w-[243px] flex rounded-[13px] desktop:rounded-[20px] items-center">
+                 <img class="w-[53px] h-[77px] desktop:w-[76px] desktop:h-[110px] object-contain" src="/public/images/pack.png" alt="pack">
+                 <div class="flex flex-col gap-1.5">
+                   <span class="text-xs desktop:text-[15px] font-bold text-primary-450 ss01">ارسال با پک کادویی</span>
+                   <span class="text-[8px] desktop:text-xs font-medium text-primary-450">درصورت انتخاب</span>
+                 </div>
+               </a>
+               <a href="#" class="bg-[#FFF3E3] desktop:w-[243px] desktop:hidden flex rounded-[13px] desktop:rounded-[20px] items-center">
+                 <img class="w-[53px] h-[77px] desktop:w-[76px] desktop:h-[110px] object-contain" src="/public/images/pack.png" alt="pack">
+                 <div class="flex flex-col gap-1.5">
+                   <span class="text-xs desktop:text-[15px] font-bold text-primary-450 ss01">ارسال با پک کادویی</span>
+                   <span class="text-[8px] desktop:text-xs font-medium text-primary-450">درصورت انتخاب</span>
+                 </div>
+               </a>
+             </div>
+       
+             <!-- discount banner -->
+             <a href="#" class="bg-secondary-400 relative w-full flex rounded-[20px] items-center">
+               <img class="w-[80px] h-[71px] object-contain" src="/public/images/product-6.png" alt="discount">
+               <div class="flex flex-col gap-1.5 text-secondary-500">
+                 <span class="text-xl font-bold ss01">کرم دور چشم Milk</span>
+                 <div class="flex gap-1.5">
+                   <span class="text-[15px] line-through">۵۵,۹۰۰</span>
+                   <span class="text-[16px] ss01 font-bold">
+                     ۴۴,۸۰۰
+                     <span class="text-[8px] font-normal">تومان</span>
+                   </span>
+                 </div>
+               </div>
+               <div class="absolute top-2 -left-5 w-[80px] h-[24px] bg-[#FF0051] transform -rotate-46 flex justify-center items-center text-white font-medium"> %۳۰ <div class="absolute top-0 left-0"> <div class="w-0 h-0 border border-t-[24px] border-r-[24px] border-l-0 border-b-0 border-l-white border-r-transparent border-t-white border-b-white"></div> </div> <div class="absolute top-0 right-0"> <div class="inline-block w-0 h-0 border-solid border-t-0 border-r-[24px] border-l-0 border-b-[24px] border-l-transparent border-r-[#ffffff] border-t-transparent border-b-transparent"></div> </div>
+             </div>
+             </a>
+         </div>
+     </div>
 
     <!-- comments -->
     <div class="container mt-[50px]">
@@ -807,7 +806,7 @@
       </div>
 
       <!-- footer -->
-    <div class="border mb-[21px] border-[#ECECEC] rounded-[20px] bg-gray-50 desktop:mt-[93px] mt-11">
+    <div class="border container mb-[21px] border-[#ECECEC] rounded-[20px] bg-gray-50 desktop:mt-[93px] mt-11">
       <div class="flex justify-between desktop:pr-[46px] desktop:pl-[25px] desktop:pt-[26px] desktop:pb-[37px] pt-[18px] pb-[15px] pr-[19px] pl-[23px]">
         <div class="flex items-center gap-[26px]">
           <div class="flex items-center gap-1.5">
