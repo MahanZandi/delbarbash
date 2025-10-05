@@ -614,9 +614,159 @@ function renderAccordionItems() {
     }
 }
 
+// Desktop Category Modal Functions
+function openDesktopModal(categoryData) {
+  const modal = document.getElementById('desktop-category-modal')
+  const content = document.getElementById('desktop-modal-content')
+  const backdrop = document.getElementById('desktop-modal-backdrop')
+  const title = document.getElementById('desktop-modal-title')
+  const body = document.getElementById('desktop-modal-body')
+  
+  if (modal && content && backdrop && body) {
+    // Render modal content
+    body.innerHTML = `
+      <div class="grid grid-cols-6 gap-6">
+        ${categoryData.subcategories.map(subcategory => `
+          <div class="space-y-3">
+            <div class="bg-primary-600 text-white px-4 py-3 rounded-lg text-center font-bold text-base">
+              ${subcategory.name}
+            </div>
+            <div class="space-y-2">
+              ${subcategory.items.map(item => `
+                <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-2 rounded-lg text-right text-sm transition-colors">
+                  ${item}
+                </button>
+              `).join('')}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `
+    
+    modal.classList.remove('hidden')
+    document.body.style.overflow = 'hidden'
+    
+    // Trigger animations
+    setTimeout(() => {
+      backdrop.classList.remove('opacity-0')
+      backdrop.classList.add('opacity-100')
+      
+      content.classList.remove('opacity-0', 'scale-95')
+      content.classList.add('opacity-100', 'scale-100')
+    }, 10)
+  }
+}
+
+function closeDesktopModal() {
+  const modal = document.getElementById('desktop-category-modal')
+  const content = document.getElementById('desktop-modal-content')
+  const backdrop = document.getElementById('desktop-modal-backdrop')
+  
+  if (modal && content && backdrop) {
+    // Start closing animations
+    backdrop.classList.remove('opacity-100')
+    backdrop.classList.add('opacity-0')
+    
+    content.classList.remove('opacity-100', 'scale-100')
+    content.classList.add('opacity-0', 'scale-95')
+    
+    // Hide modal after animation completes
+    setTimeout(() => {
+      modal.classList.add('hidden')
+      document.body.style.overflow = 'auto'
+    }, 300)
+  }
+}
+
+// Category data for desktop modal
+const categoryData = {
+  'skincare': {
+    title: 'مراقبت از پوست',
+    subcategories: [
+      {
+        name: 'پاک‌کننده',
+        items: ['پن صابون', 'ژل شستشو', 'میکسلار واتر', 'تونر', 'اسکراب', 'همه محصولات پاک‌کننده']
+      },
+      {
+        name: 'مرطوب‌کننده',
+        items: ['کرم روز', 'کرم شب', 'سرم', 'لوسیون بدن', 'کرم دور چشم', 'همه محصولات مرطوب‌کننده']
+      },
+      {
+        name: 'محافظت',
+        items: ['کرم ضد آفتاب', 'کرم ضد لک', 'کرم ضد چروک', 'کرم دور چشم', 'همه محصولات محافظت']
+      },
+      {
+        name: 'ماسک',
+        items: ['ماسک صورت', 'ماسک دور چشم', 'ماسک لب', 'ماسک بدن', 'همه محصولات ماسک']
+      },
+      {
+        name: 'ابزار',
+        items: ['براش صورت', 'اسفنج', 'دستگاه پاکسازی', 'ابزار ماساژ', 'همه ابزار مراقبت']
+      },
+      {
+        name: 'تخصصی',
+        items: ['محصولات ضد پیری', 'محصولات روشن‌کننده', 'محصولات آکنه', 'محصولات حساس', 'همه محصولات تخصصی']
+      }
+    ]
+  },
+  'cosmetics': {
+    title: 'آرایشی و بهداشتی',
+    subcategories: [
+      {
+        name: 'چشم',
+        items: ['سایه', 'ریمل', 'ریمل رنگی', 'خط چشم', 'خط چشم رنگی', 'مداد چشم', 'مداد هاشور ابرو', 'مژه', 'فرمژه', 'صابون ابرو', 'همه محصولات چشم']
+      },
+      {
+        name: 'لب',
+        items: ['رژ لب جامد', 'رژ لب مایع', 'پک رژ لب', 'بالم لب', 'برق لب', 'تینت لب', 'لیپ گلاس', 'خط لب', 'حجم دهنده لب', 'همه محصولات لب']
+      },
+      {
+        name: 'صورت',
+        items: ['کرم پودر', 'کوشن', 'بی بی کرم', 'کانتور و کانسیلر', 'هایلایتر', 'پنکک', 'پرایمر', 'رژگونه', 'فیکساتور', 'لیفت صورت', 'همه محصولات صورت']
+      },
+      {
+        name: 'ناخن',
+        items: ['لاک', 'ناخن مصنوعی', 'ابزار ناخن', 'ست مانیکور', 'همه محصولات ناخن']
+      },
+      {
+        name: 'ابزار آرایشی',
+        items: ['براش پد', 'کیف آرایش', 'تراش', 'همه ابزار آرایشی']
+      },
+      {
+        name: 'دیگر ملزومات',
+        items: ['پک آرایشی', 'رنگ مو', 'مو کلیپسی', 'همه محصولات آرایشی']
+      }
+    ]
+  }
+}
+
 // Initialize accordion when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     renderAccordionItems();
+    
+    // Add click listeners to accordion items
+    const accordionList = document.getElementById('accordion-list')
+    if (accordionList) {
+      accordionList.addEventListener('click', (e) => {
+        const link = e.target.closest('a')
+        if (link) {
+          e.preventDefault()
+          const href = link.getAttribute('href')
+          const categoryKey = href.replace('#', '')
+          
+          if (categoryData[categoryKey]) {
+            openDesktopModal(categoryData[categoryKey])
+          }
+        }
+      })
+    }
+    
+    // Desktop modal event listeners
+    const desktopModalBackdrop = document.getElementById('desktop-modal-backdrop')
+    
+    if (desktopModalBackdrop) {
+      desktopModalBackdrop.addEventListener('click', closeDesktopModal)
+    }
 });
 
 
