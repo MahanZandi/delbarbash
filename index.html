@@ -76,9 +76,9 @@
     <!-- top navbar mobile -->
      <nav class="desktop:hidden container px-4 mt-8">
       <div class="flex justify-between">
-        <div class="size-[36px] items-center justify-center rounded-[8px] border border-[#E8E8E8] flex">
+        <button id="hamburger-btn" class="size-[36px] items-center justify-center rounded-[8px] border border-[#E8E8E8] flex">
           <i class="fa-solid fa-bars fa-lg text-primary-500"></i>
-        </div>
+        </button>
         <img src="./public/favicon.png" alt="logo" class="size-[36px]">
         <div class="flex gap-2">
           <div class="rounded-[8px] border border-[#E8E8E8] p-1.5">
@@ -128,6 +128,8 @@
     <div class="flex gap-5 mt-[27px] container desktop:justify-start justify-center">
       <!-- slider -->
       <div class="embla relative w-[320px] desktop:w-[351px]">
+        <!-- Product slider backdrop for mobile -->
+        <div id="product-slider-backdrop" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-40 hidden desktop:hidden"></div>
            <!-- dots -->
            <div class="absolute left-1/2 p-1.5 rounded-b-xl -translate-x-1/2 bg-white z-10">
              <div id="slider-dots" class="flex justify-center gap-2"></div>
@@ -320,6 +322,89 @@
         <i class="fa-solid fa-cart-shopping"></i>
         <span>انتخاب مدل و خرید (۶ مدل)</span>
       </button>
+    </div>
+    
+    <!-- Hamburger Menu -->
+    <div id="hamburger-menu" class="fixed inset-0 z-50 hidden">
+      <!-- Backdrop -->
+      <div id="hamburger-backdrop" class="absolute inset-0 bg-black/20 bg-opacity-50 backdrop-blur-sm transition-opacity duration-300 opacity-0"></div>
+      
+      <!-- Menu Content -->
+      <div id="hamburger-content" class="absolute right-0 top-0 h-full w-[280px] bg-white rounded-l-3xl transform translate-x-full transition-transform duration-300 ease-out">
+        <!-- Header -->
+        <div class="flex items-center justify-between p-6">
+          <div class="flex items-center gap-2">
+            <img src="./public/favicon.png" alt="logo" class="size-8">
+            <div>
+              <h1 class="text-lg font-bold text-primary-600">دلبرباش</h1>
+              <p class="text-xs text-primary-700">فروشگاه اینترنت</p>
+            </div>
+          </div>
+          <button id="hamburger-close" class="w-8 h-8 border-primary-600 border rounded-full flex items-center justify-center">
+            <i class="fa-solid fa-xmark text-primary-600"></i>
+          </button>
+        </div>
+        
+        <!-- Menu Items -->
+        <div class="p-6">
+          <nav class="flex flex-col gap-[34px]">
+            <a href="#" class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors">
+              <span>دسته بندی محصولات</span>
+              <i class="fa-solid fa-chevron-left text-primary-600"></i>
+            </a>
+            <a href="#" class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors">
+              <span>فروشگاه دلبرباش</span>
+              <i class="fa-solid fa-chevron-left text-primary-600"></i>
+            </a>
+            <a href="#" class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors">
+              <span>مجله دلبرباش</span>
+              <i class="fa-solid fa-chevron-left text-primary-600"></i>
+            </a>
+            <a href="#" class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors">
+              <span>کد مرسولات</span>
+              <i class="fa-solid fa-chevron-left text-primary-600"></i>
+            </a>
+            <a href="#" class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors">
+              <span>شرایط ارسال</span>
+              <i class="fa-solid fa-chevron-left text-primary-600"></i>
+            </a>
+            <a href="#" class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors">
+              <span>تماس با ما</span>
+              <i class="fa-solid fa-chevron-left text-primary-600"></i>
+            </a>
+            <a href="#" class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors">
+              <span>تخفیف دار</span>
+              <i class="fa-solid fa-chevron-left text-primary-600"></i>
+            </a>
+            <a href="#" class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors">
+              <span>محصولات جدید</span>
+              <i class="fa-solid fa-chevron-left text-primary-600"></i>
+            </a>
+            <a href="#" class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors">
+              <span>محصولات رایگان</span>
+              <i class="fa-solid fa-chevron-left text-primary-600"></i>
+            </a>
+          </nav>
+          
+          <!-- Social Media Icons -->
+          <div class="flex justify-center gap-4 mt-8">
+            <a href="#" class="size-[55px] bg-primary-300 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
+              <i class="fa-brands fa-telegram text-primary-600 fa-2xl"></i>
+            </a>
+            <a href="#" class="size-[55px] bg-primary-300 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
+              <i class="fa-brands fa-whatsapp text-primary-600 fa-2xl"></i>
+            </a>
+            <a href="#" class="size-[55px] bg-primary-300 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
+              <i class="fa-brands fa-instagram text-primary-600 fa-2xl"></i>
+            </a>
+          </div>
+          
+          <!-- Login Button -->
+          <button class="w-full bg-primary-600 text-white py-3 rounded-lg font-medium hover:bg-primary-700 transition-colors mt-8">
+            ورود / ثبت نام
+          </button>
+        </div>
+      </div>
     </div>
     
     <!-- Mobile Product Selection Modal -->

@@ -120,6 +120,39 @@ emblaApiMain.on('init', () => {
 })
 emblaApiMain.on('select', updateDots)
 
+// Product slider backdrop functions
+function showProductSliderBackdrop() {
+  const backdrop = document.getElementById('product-slider-backdrop')
+  if (backdrop) {
+    backdrop.classList.remove('hidden')
+    document.body.style.overflow = 'hidden'
+  }
+}
+
+function hideProductSliderBackdrop() {
+  const backdrop = document.getElementById('product-slider-backdrop')
+  if (backdrop) {
+    backdrop.classList.add('hidden')
+    document.body.style.overflow = 'auto'
+  }
+}
+
+// Show backdrop when slider is active (mobile only)
+emblaApiMain.on('select', () => {
+  if (window.innerWidth < 1024) { // mobile only
+    showProductSliderBackdrop()
+  }
+})
+
+// Add click listener to backdrop for closing slider
+const productSliderBackdrop = document.getElementById('product-slider-backdrop')
+if (productSliderBackdrop) {
+  productSliderBackdrop.addEventListener('click', () => {
+    hideProductSliderBackdrop()
+    emblaApiMain.scrollTo(0) // Reset to first slide
+  })
+}
+
 const prevButton = document.getElementById('embla-prev')
 const nextButton = document.getElementById('embla-next')
 
@@ -391,6 +424,48 @@ function closeMobileModal() {
   }
 }
 
+// Hamburger Menu Functions
+function openHamburgerMenu() {
+  const menu = document.getElementById('hamburger-menu')
+  const content = document.getElementById('hamburger-content')
+  const backdrop = document.getElementById('hamburger-backdrop')
+  
+  if (menu && content && backdrop) {
+    menu.classList.remove('hidden')
+    document.body.style.overflow = 'hidden'
+    
+    // Trigger animations after a small delay
+    setTimeout(() => {
+      backdrop.classList.remove('opacity-0')
+      backdrop.classList.add('opacity-100')
+      
+      content.classList.remove('translate-x-full')
+      content.classList.add('translate-x-0')
+    }, 10)
+  }
+}
+
+function closeHamburgerMenu() {
+  const menu = document.getElementById('hamburger-menu')
+  const content = document.getElementById('hamburger-content')
+  const backdrop = document.getElementById('hamburger-backdrop')
+  
+  if (menu && content && backdrop) {
+    // Start closing animations
+    backdrop.classList.remove('opacity-100')
+    backdrop.classList.add('opacity-0')
+    
+    content.classList.remove('translate-x-0')
+    content.classList.add('translate-x-full')
+    
+    // Hide menu after animation completes
+    setTimeout(() => {
+      menu.classList.add('hidden')
+      document.body.style.overflow = 'auto'
+    }, 300)
+  }
+}
+
 // Initialize product selection
 document.addEventListener('DOMContentLoaded', function() {
   renderColorOptions()
@@ -445,6 +520,23 @@ document.addEventListener('DOMContentLoaded', function() {
   
   if (mobileAddToCartBtn) {
     mobileAddToCartBtn.addEventListener('click', addToCartMobile)
+  }
+  
+  // Hamburger menu buttons
+  const hamburgerBtn = document.getElementById('hamburger-btn')
+  const hamburgerClose = document.getElementById('hamburger-close')
+  const hamburgerBackdrop = document.getElementById('hamburger-backdrop')
+  
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('click', openHamburgerMenu)
+  }
+  
+  if (hamburgerClose) {
+    hamburgerClose.addEventListener('click', closeHamburgerMenu)
+  }
+  
+  if (hamburgerBackdrop) {
+    hamburgerBackdrop.addEventListener('click', closeHamburgerMenu)
   }
 })
 
