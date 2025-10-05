@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// comments
+// Reviews Embla Carousel
 const reviews = [
   {
       name: "میترا احمدی",
@@ -408,33 +408,104 @@ const reviews = [
 },
 ];
 
-const reviewsContainer = document.getElementById("reviews-container");
+// Initialize Reviews Embla Carousel
+const REVIEWS_OPTIONS = {
+  direction: 'rtl',
+  loop: true,
+  slidesToScroll: 1,
+  containScroll: 'trimSnaps'
+}
 
-reviews.forEach(review => {
-  const reviewDiv = document.createElement("div");
-  reviewDiv.classList.add("w-[374px]", "h-[139px]", "flex", "flex-col", "gap-4", "bg-primary-100", "rounded-[20px]", "pr-[28px]", "pt-[20px]", "pl-[23px]", "pb-[25px]", "shrink-0");
+const viewportNodeReviews = document.querySelector('.embla-reviews__viewport')
+const emblaApiReviews = EmblaCarousel(viewportNodeReviews, REVIEWS_OPTIONS)
 
-  const avatar = review.avatar || "/public/icons/icon-person.png"; 
+// Render reviews as slides
+function renderReviews() {
+  const reviewsContainer = document.getElementById("reviews-container");
+  if (!reviewsContainer) return;
+  
+  reviewsContainer.innerHTML = '';
+  
+  reviews.forEach(review => {
+    const reviewSlide = document.createElement("div");
+    reviewSlide.classList.add("embla-reviews__slide");
+    
+    const reviewDiv = document.createElement("div");
+    reviewDiv.classList.add("w-[374px]", "h-[139px]", "flex", "flex-col", "gap-4", "bg-primary-100", "rounded-[20px]", "pr-[28px]", "pt-[20px]", "pl-[23px]", "pb-[25px]", "shrink-0");
 
-  reviewDiv.innerHTML = `
-      <div class="flex justify-between">
-          <div class="flex gap-4">
-              <div class="bg-primary-300 p-[11px] rounded-full">
-                  <img class="size-[32px]" src="${avatar}" alt="person">
-              </div>
-              <div class="flex-col flex">
-                  <span class="font-medium text-primary-550">${review.name}</span>
-                  <span class="text-[10px] text-primary-350">${review.date}</span>
-              </div>
-          </div>
-          <div class="text-primary-350">
-              <span class="text-[10px]">۵/</span>
-              <span class="text-[12px] font-semibold">${review.rating}</span>
-          </div>
-      </div>
-      <p class="text-[12px] text-[#2D2D2D]">${review.comment}</p>
-  `;
+    const avatar = review.avatar || "/public/icons/icon-person.png"; 
 
-  reviewsContainer.appendChild(reviewDiv);
-});
+    reviewDiv.innerHTML = `
+        <div class="flex justify-between">
+            <div class="flex gap-4">
+                <div class="bg-primary-300 p-[11px] rounded-full">
+                    <img class="size-[32px]" src="${avatar}" alt="person">
+                </div>
+                <div class="flex-col flex">
+                    <span class="font-medium text-primary-550">${review.name}</span>
+                    <span class="text-[10px] text-primary-350">${review.date}</span>
+                </div>
+            </div>
+            <div class="text-primary-350">
+                <span class="text-[10px]">۵/</span>
+                <span class="text-[12px] font-semibold">${review.rating}</span>
+            </div>
+        </div>
+        <p class="text-[12px] text-[#2D2D2D]">${review.comment}</p>
+    `;
+
+    reviewSlide.appendChild(reviewDiv);
+    reviewsContainer.appendChild(reviewSlide);
+  });
+}
+
+// Create dots for reviews
+const createReviewsDots = () => {
+  const dotsContainer = document.getElementById('reviews-dots')
+  if (!dotsContainer) return
+  
+  const slideCount = emblaApiReviews.slideNodes().length
+  dotsContainer.innerHTML = ''
+  
+  for (let i = 0; i < slideCount; i++) {
+    const dot = document.createElement('button')
+    dot.className = 'size-1 rounded-full transition-all duration-300'
+    dot.style.backgroundColor = '#C5B2B3'
+    dot.setAttribute('aria-label', `نقد و بررسی ${i + 1}`)
+    
+    dot.addEventListener('click', () => {
+      emblaApiReviews.scrollTo(i)
+    })
+    
+    dotsContainer.appendChild(dot)
+  }
+}
+
+// Update dots for reviews
+const updateReviewsDots = () => {
+  const dotsContainer = document.getElementById('reviews-dots')
+  if (!dotsContainer) return
+  
+  const selectedIndex = emblaApiReviews.selectedScrollSnap()
+  const dots = dotsContainer.querySelectorAll('button')
+  
+  dots.forEach((dot, index) => {
+    if (index === selectedIndex) {
+      dot.style.backgroundColor = '#A44A50' 
+      dot.className = 'w-[26px] h-1 rounded-full transition-all duration-300'
+    } else {
+      dot.style.backgroundColor = '#C5B2B3'
+      dot.className = 'size-1 rounded-full cursor-pointer transition-all duration-300'
+    }
+  })
+}
+
+// Initialize reviews carousel
+emblaApiReviews.on('init', () => {
+  renderReviews()
+  createReviewsDots()
+  updateReviewsDots()
+})
+
+emblaApiReviews.on('select', updateReviewsDots)
 

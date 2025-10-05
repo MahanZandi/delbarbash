@@ -385,7 +385,16 @@
         <div class="w-full bg-[#E8E8E8] h-px"></div>
         <span class="text-primary-600 text-xs font-medium desktop:w-[100px] cursor-pointer">مشاهده بیشتر</span>
       </div>
-      <div id="reviews-container" class="flex desktop:gap-5 gap-1 mt-6 overflow-x-scroll"></div>
+      <!-- Reviews Embla Carousel -->
+      <div class="relative mt-6">
+          <div id="reviews-dots" class="flex justify-center gap-2"></div>
+        </div>
+        <div class="embla-reviews__viewport">
+          <div class="embla-reviews__container" id="reviews-container">
+            <!-- Reviews will be rendered here by JavaScript -->
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- same products -->

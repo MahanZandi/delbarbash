@@ -43,4 +43,27 @@
     @apply rounded-[15px] h-[91px] desktop:h-[108px]
   }
 
+  /* Reviews Embla Carousel */
+  .embla-reviews__viewport {
+    overflow: hidden;
+  }
+  .embla-reviews__container {
+    display: flex;
+    touch-action: pan-y pinch-zoom;
+    gap: 0.25rem; /* gap-1 for mobile */
+    padding-right: 0.25rem; /* padding for first item */
+  }
+  
+  @media (min-width: 1024px) {
+    .embla-reviews__container {
+      gap: 1.25rem; /* desktop:gap-5 */
+      padding-right: 1.25rem; /* desktop padding */
+    }
+  }
+  .embla-reviews__slide {
+    transform: translate3d(0, 0, 0);
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+
   
