@@ -917,3 +917,39 @@ emblaApiReviews.on('init', () => {
 
 emblaApiReviews.on('select', updateReviewsDots)
 
+// Sticky Navbar and Accordion on Scroll
+window.addEventListener('scroll', () => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+  // Desktop
+  const navbar = document.getElementById('desktop-navbar');
+  const accordion = document.getElementById('desktop-accordion');
+  const backdrop = document.getElementById('sticky-backdrop');
+  
+  if (navbar && accordion && backdrop) {
+    if (scrollTop > 100) {
+      navbar.classList.add('sticky-navbar');
+      accordion.classList.add('sticky-accordion');
+      backdrop.classList.add('active');
+    } else {
+      navbar.classList.remove('sticky-navbar');
+      accordion.classList.remove('sticky-accordion');
+      backdrop.classList.remove('active');
+    }
+  }
+  
+  // Mobile
+  const mobileNavbar = document.getElementById('mobile-navbar');
+  const mobileBackdrop = document.getElementById('sticky-backdrop-mobile');
+  
+  if (mobileNavbar && mobileBackdrop) {
+    if (scrollTop > 50) {
+      mobileNavbar.classList.add('sticky-mobile-navbar');
+      mobileBackdrop.classList.add('active');
+    } else {
+      mobileNavbar.classList.remove('sticky-mobile-navbar');
+      mobileBackdrop.classList.remove('active');
+    }
+  }
+});
+

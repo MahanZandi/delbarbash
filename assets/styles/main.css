@@ -15,6 +15,69 @@
     text-align: right;
 }
 
+/* Sticky navbar backdrop */
+#sticky-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    z-index: 35;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.7);
+    transition: height 0.3s ease;
+}
+
+#sticky-backdrop.active {
+    height: 140px;
+}
+
+/* Sticky mobile navbar backdrop */
+#sticky-backdrop-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    z-index: 35;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.7);
+    transition: height 0.3s ease;
+}
+
+#sticky-backdrop-mobile.active {
+    height: 68px;
+}
+
+.sticky-mobile-navbar {
+    position: fixed;
+    top: -16px;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: transparent;
+}
+
+.sticky-navbar {
+    position: fixed;
+    top: 26px;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: transparent;
+}
+
+.sticky-accordion {
+    position: fixed;
+    top: 94px;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    background: transparent;
+}
+
 ::-webkit-scrollbar {
     width: 6px; 
     height: 6px; 

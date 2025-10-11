@@ -9,8 +9,12 @@
 </head>
 <body class="font-sans">
 
+    <!-- Sticky backdrop -->
+    <div id="sticky-backdrop" class="desktop:block hidden"></div>
+    <div id="sticky-backdrop-mobile" class="desktop:hidden"></div>
+    
     <!-- top navbar desktop -->
-    <nav class="desktop:flex hidden items-center justify-between container mt-[26px]">
+    <nav id="desktop-navbar" class="desktop:flex hidden items-center justify-between container mt-[26px] transition-all duration-300">
         <!-- link & search bar & logo container -->
         <div class="flex gap-5">
             <div class="flex gap-6"> 
@@ -74,25 +78,25 @@
         </div>
     </nav>
     <!-- top navbar mobile -->
-     <nav class="desktop:hidden container px-4 mt-8">
+     <nav id="mobile-navbar" class="desktop:hidden container px-4 mt-8 transition-all duration-300">
       <div class="flex justify-between">
-        <button id="hamburger-btn" class="size-[36px] items-center justify-center rounded-[8px] border border-[#E8E8E8] flex">
+        <button id="hamburger-btn" class="size-[36px] items-center justify-center rounded-[8px] border border-[#E8E8E8] flex bg-white">
           <i class="fa-solid fa-bars fa-lg text-primary-500"></i>
         </button>
         <img src="./public/favicon.png" alt="logo" class="size-[36px]">
         <div class="flex gap-2">
-          <div class="rounded-[8px] border border-[#E8E8E8] p-1.5">
+          <div class="rounded-[8px] border border-[#E8E8E8] p-1.5 bg-white">
             <img class="size-[24px]" src="./public/icons/save-icon.png" alt="save icon">
           </div>
-          <div class="rounded-[8px] border border-[#E8E8E8] p-1.5">
+          <div class="rounded-[8px] border border-[#E8E8E8] p-1.5 bg-white">
             <img class="size-[24px]" src="./public/icons/cart-icon.png" alt="cart icon">
           </div>
         </div>
       </div>
      </nav>
     <!-- nav links accordion desktop -->
-    <nav class="nav-accordion-link container mt-1.5 desktop:flex hidden">
-        <ul id="accordion-list" class="flex w-full gap-[35px] py-3 px-[21px] border border-[#E8E8E8] rounded-[8px]">
+    <nav id="desktop-accordion" class="nav-accordion-link container mt-1.5 desktop:flex hidden transition-all duration-300">
+        <ul id="accordion-list" class="flex w-full gap-[35px] py-3 px-[21px] border border-[#E8E8E8] rounded-[8px] bg-white">
             <!-- Items will be rendered here by JavaScript -->
         </ul>
     </nav>
@@ -275,12 +279,12 @@
     <div class="flex desktop:hidden justify-center mt-[11px]">
        <h1 class="text-2xl font-bold ss01 text-[#2D2D2D]">رژمدادی پیچی ویولت</h1>
     </div>
-    <div class="container mt-[18px] desktop:hidden">
+    <div class="container mt-[18px] desktop:hidden pb-[100px]">
       <div class="flex justify-center text-primary-600">
         <div id="price-display" class="text-[26px] font-bold">۱۴۵,۰۰۰</div>
         <div class="text-xs -rotate-90 relative left-[10px]">تومان</div>
       </div>
-      <div class="flex justify-between mt-[35px]">
+      <div class="flex justify-between items-center mt-[35px]">
           <div class="text-[#2D2D2D] font-medium">توضیحات محصول:</div>
           <div class="flex">
             <div class="w-[158px] h-[38px] rounded-[10px] text-[#2D2D2D] border border-[#E8E8E8] items-center justify-center flex gap-2">
@@ -314,8 +318,11 @@
         <span class="text-primary-500">خرید لوازم آرایشی اصل, رژ لب جامد, لب, همه محصولات</span>
       </div>
       
-      <!-- Mobile Product Selection Button -->
-      <button id="mobile-select-model-btn" class="w-full bg-red-600 font-medium hover:bg-red-700 text-white h-[51px] rounded-[10px] flex items-center justify-center gap-3 cursor-pointer text-[16px] mt-6">
+    </div>
+    
+    <!-- Mobile Product Selection Button - Fixed -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white pt-[30px] pb-10 px-[37px] desktop:hidden shadow-2xl rounded-t-3xl shadow-black z-40">
+      <button id="mobile-select-model-btn" class="w-full bg-[#C41818] font-medium hover:bg-red-700 text-white h-[51px] rounded-[12px] flex items-center justify-center gap-3 cursor-pointer text-[16px]">
         <i class="fa-solid fa-cart-shopping"></i>
         <span>انتخاب مدل و خرید (۶ مدل)</span>
       </button>
@@ -501,7 +508,7 @@
              </div>
        
              <!-- discount banner -->
-             <a href="#" class="bg-secondary-400 relative w-full flex rounded-[20px] items-center">
+             <a href="#" class="bg-secondary-400 relative w-full flex rounded-[20px] items-center overflow-hidden">
                <img class="w-[80px] h-[71px] object-contain" src="/public/images/product-6.png" alt="discount">
                <div class="flex flex-col gap-1.5 text-secondary-500">
                  <span class="text-xl font-bold ss01">کرم دور چشم Milk</span>
@@ -513,8 +520,11 @@
                    </span>
                  </div>
                </div>
-               <div class="absolute top-2 -left-5 w-[80px] h-[24px] bg-[#FF0051] transform -rotate-46 flex justify-center items-center text-white font-medium"> %۳۰ <div class="absolute top-0 left-0"> <div class="w-0 h-0 border border-t-[24px] border-r-[24px] border-l-0 border-b-0 border-l-white border-r-transparent border-t-white border-b-white"></div> </div> <div class="absolute top-0 right-0"> <div class="inline-block w-0 h-0 border-solid border-t-0 border-r-[24px] border-l-0 border-b-[24px] border-l-transparent border-r-[#ffffff] border-t-transparent border-b-transparent"></div> </div>
-             </div>
+               <div class="absolute top-2 -left-5 w-[80px] h-[24px] bg-[#FF0051] transform -rotate-45 flex justify-center items-center text-white font-medium">
+                 %۳۰
+                 <div class="absolute top-0 left-0 w-0 h-0 border-t-[12px] border-r-[12px] border-b-[12px] border-l-0 border-t-transparent border-r-[#FF0051] border-b-transparent"></div>
+                 <div class="absolute top-0 right-0 w-0 h-0 border-t-[12px] border-r-0 border-b-[12px] border-l-[12px] border-t-transparent border-l-[#FF0051] border-b-transparent"></div>
+               </div>
              </a>
          </div>
      </div>
@@ -554,7 +564,7 @@
       <!-- title -->
       <div class="flex items-center desktop:hidden">
         <div class="w-full h-px bg-[#E8E8E8]"></div>
-        <div class="flex flex-col text-[16px] w-[300px] items-center justify-center font-medium ">
+        <div class="flex flex-col text-[16px] w-[340px] items-center justify-center font-medium ">
           <span class="text-[#2D2D2D]">محصولات مرتبط</span>
         </div>
         <div class="w-full h-px bg-[#E8E8E8]"></div>
@@ -654,7 +664,7 @@
        <div class="grid mt-6 desktop:grid-cols-2 gap-4 desktop:gap-[27px]">
         <a href="#" class="text-primary-800 h-[131px] desktop:h-[194px] flex items-center justify-between bg-primary-200 rounded-xl pr-[43px]">
           <div class="flex flex-col gap-[15px]">
-            <h2 class="desktop:text-[28px] text-xl font-bold ss01">انواع عطر ، ادکلن و اسپری</h2>
+            <h2 class="desktop:text-[28px] text-[18px] sm:text-xl font-bold ss01">انواع عطر ، ادکلن و اسپری</h2>
             <div class="flex gap-1 desktop:text-[16px] text-[10px] font-medium items-center">
               <span>مشاهده کنید</span>
               <i class="fa-solid fa-arrow-left"></i>
@@ -664,7 +674,7 @@
         </a>
         <a href="#" class="text-secondary-800 h-[131px] desktop:h-[194px] flex items-center justify-between bg-secondary-200 rounded-xl pr-[43px]">
           <div class="flex flex-col gap-[15px]">
-            <h2 class="text-xl desktop:text-[28px] font-bold ss01">محصولات مراقبتی پوست</h2>
+            <h2 class="text-[18px] sm:text-xl desktop:text-[28px] font-bold ss01">محصولات مراقبتی پوست</h2>
             <div class="flex gap-1 text-[10px] desktop:text-[16px] font-medium items-center">
               <span>مشاهده کنید</span>
               <i class="fa-solid fa-arrow-left"></i>
@@ -674,7 +684,7 @@
         </a>
         <a href="#" class="text-secondary-800 h-[131px] desktop:h-[194px] flex items-center justify-between bg-secondary-200 rounded-xl pr-[43px]">
           <div class="flex flex-col gap-[15px]">
-            <h2 class="text-xl desktop:text-[28px] font-bold ss01">اکسسوری های کاربردی</h2>
+            <h2 class="text-[18px] sm:text-xl desktop:text-[28px] font-bold ss01">اکسسوری های کاربردی</h2>
             <div class="flex gap-1 text-[10px] desktop:text-[16px] font-medium items-center">
               <span>مشاهده کنید</span>
               <i class="fa-solid fa-arrow-left"></i>
@@ -684,7 +694,7 @@
         </a>
         <a href="#" class="text-[#A85725] h-[131px] desktop:h-[194px] flex items-center justify-between bg-[#E9DCBB] rounded-xl pr-[43px]">
           <div class="flex flex-col gap-[15px]">
-            <h2 class="text-xl desktop:text-[28px] font-bold ss01">لوازم خانه و آشپزخانه</h2>
+            <h2 class="text-[18px] sm:text-xl desktop:text-[28px] font-bold ss01">لوازم خانه و آشپزخانه</h2>
             <div class="flex gap-1 text-[10px] desktop:text-[16px] font-medium items-center">
               <span>مشاهده کنید</span>
               <i class="fa-solid fa-arrow-left"></i>
@@ -750,6 +760,8 @@
               ارسال کدرهگیری مرسوله
             </span>
           </div>
+          <!-- mobile arrow -->
+          <img class="w-[113px] h-[30px] object-contain sm:hidden block" src="/public/images/arrows/mobile-arrow-1.png" alt="arrow">
           <!-- arrow -->
           <img class="object-contain desktop:block hidden" src="/public/images/arrows/arrow-desktop-1.png" alt="arrow">
           <div class="flex flex-col gap-1.5">
@@ -762,7 +774,7 @@
             <span class="text-xs desktop:text-[10px] desktop:font-normal font-medium">
               ارسال کدرهگیری مرسوله
             </span>
-          </div>
+          </div>  
           <!-- arrow -->
           <img class="object-contain desktop:block hidden" src="/public/images/arrows/arrow-desktop-2.png" alt="arrow">
           <div class="flex flex-col gap-1.5">
@@ -776,6 +788,8 @@
               ارسال کدرهگیری مرسوله
             </span>
           </div>
+          <!-- mobile arrow -->
+          <img class="w-[100px] h-[90px] object-contain sm:hidden block" src="/public/images/arrows/mobile-arrow-3.png" alt="arrow">
           <!-- arrow -->
           <img class="object-contain desktop:block hidden" src="/public/images/arrows/arrow-desktop-3.png" alt="arrow">
           <div class="flex flex-col gap-1.5">
@@ -837,7 +851,7 @@
           </div>
         </div>
       </div>
-      <p class="text-[10px] leading-[100%] pt-[12px] pr-[19px] pl-[23px] desktop:hidden block mb-[50px]">
+      <p class="text-[10px] sm:text-[12px] pt-[12px] pr-[19px] pl-[23px] desktop:hidden block mb-[50px] leading-6">
         فروشگاه دلبرباش از سال ۱۳۹۷ تامین محصولات آرایشی و بهداشتی آغاز نمود ، هم اینک مفتخر این هستیم در تامین سایر نیازهای بانوان کشور عزیزمان خدمت رسانی کنیم.
       </p>
       <div class="desktop:hidden block mb-[14px]">
