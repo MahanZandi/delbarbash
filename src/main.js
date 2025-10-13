@@ -137,21 +137,7 @@ function hideProductSliderBackdrop() {
   }
 }
 
-// Show backdrop when slider is active (mobile only)
-emblaApiMain.on('select', () => {
-  if (window.innerWidth < 1024) { // mobile only
-    showProductSliderBackdrop()
-  }
-})
 
-// Add click listener to backdrop for closing slider
-const productSliderBackdrop = document.getElementById('product-slider-backdrop')
-if (productSliderBackdrop) {
-  productSliderBackdrop.addEventListener('click', () => {
-    hideProductSliderBackdrop()
-    emblaApiMain.scrollTo(0) // Reset to first slide
-  })
-}
 
 const prevButton = document.getElementById('embla-prev')
 const nextButton = document.getElementById('embla-next')
