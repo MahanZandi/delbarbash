@@ -1100,7 +1100,7 @@
       ></div>
 
       <!-- Modal content with animation -->
-      <div id="mobile-product-modal" class="flex items-end h-full relative">
+      <div class="flex items-end h-full relative">
         <div
           id="mobile-modal-content"
           class="bg-white w-full rounded-t-3xl p-6 max-h-[80vh] overflow-y-auto transform translate-y-full transition-transform duration-300 ease-out"
@@ -1118,7 +1118,7 @@
             </button>
           </div>
           <!-- color selection one Row Item -->
-          <div class="w-full grid grid-cols-1 gap-3">
+          <div class="w-full hidden grid grid-cols-1 gap-3">
             <div
               id="color-1"
               class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
@@ -1203,7 +1203,7 @@
             </div>
           </div>
           <!-- color selection two Row Item -->
-          <div class="w-full hidden grid grid-cols-2 gap-3">
+          <div class="w-full grid grid-cols-2 gap-3">
             <div
               id="color-1"
               class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
@@ -1591,7 +1591,9 @@
             </div>
           </div>
           <!-- Quantity Selector -->
-          <div class="flex items-center justify-between mb-6 text-[#2D2D2D]">
+          <div
+            class="flex items-center justify-between mb-6 text-[#2D2D2D] mt-4"
+          >
             <div class="flex items-center gap-4">
               <button
                 id="mobile-increase-btn"
@@ -1634,6 +1636,84 @@
             <i class="fa-solid fa-cart-shopping"></i>
             <span>افزودن به سبد خرید</span>
           </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Add Comment Modal -->
+    <div id="comment-modal" class="fixed inset-0 z-50 hidden">
+      <!-- Backdrop with blur effect -->
+      <div
+        id="comment-modal-backdrop"
+        class="absolute inset-0 bg-black/20 bg-opacity-20 backdrop-blur-sm transition-opacity duration-300 opacity-0"
+      ></div>
+
+      <!-- Modal content with animation -->
+      <div
+        class="flex items-end lg:items-center justify-center h-full relative"
+      >
+        <div
+          id="comment-modal-content"
+          class="bg-white w-[480px] max-w-full rounded-3xl py-6 px-3  lg:p-6 max-h-[80vh] overflow-y-auto transform translate-y-full transition-transform duration-300 ease-out justify-between"
+        >
+          <!-- Modal Header -->
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-lg font-semibold text-[#2D2D2D]">
+              ثبت دیدگاه برای محصول
+            </h3>
+            <button
+              id="comment-close"
+              class="text-gray-500 hover:text-gray-700"
+            >
+              <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+          </div>
+          <form class="flex flex-col">
+            <span class="block text-center text-xs text-[#2D2D2D]"
+              >امتیاز شما به این محصول</span
+            >
+            <div class="flex items-center justify-center my-7">
+              <img src="./public/images/star.png" alt="Star" />
+            </div>
+            <div class="grid grid-cols-2 gap-3 mb-3">
+              <div class="flex flex-col gap-2">
+                <label for="name" class="text-sm text-[#2D2D2D]"
+                  >نام نمایشی</label
+                >
+                <input
+                  id="name"
+                  type="text"
+                  class="border indent-3 border-[#E8E8E8] rounded-lg outline-0 h-[45px] placeholder:text-xs placeholder:text-[#9A9A9A]"
+                  placeholder="نام نمایشی"
+                />
+              </div>
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center gap-3 text-sm">
+                  <label for="email" class="text-[#2D2D2D]">ایمیل</label>
+                  <span class="text-[#7E7E7E] text-[8px]"
+                    >نشانی ایمیل شما منتشر نخواهد شد. </span
+                  >
+                </div>
+
+                <input
+                  id="email"
+                  type="email"
+                  class="border indent-3 border-[#E8E8E8] rounded-lg outline-0 h-[45px] placeholder:text-xs placeholder:text-[#9A9A9A]"
+                  placeholder="example@gmail.com"
+                />
+              </div>
+            </div>
+            <textarea
+              class="p-4 outline-0 border border-[#E8E8E8] rounded-xl resize-none placeholder:text-xs placeholder:text-[#9A9A9A]"
+              rows="7"
+              placeholder="بنویسید"
+            ></textarea>
+            <button
+              class="text-lg text-white font-semibold w-full bg-[#860A0A] h-[60px] rounded-xl mt-6 cursor-pointer"
+            >
+              ثبت دیدگاه
+            </button>
+          </form>
         </div>
       </div>
     </div>
@@ -1764,21 +1844,27 @@
       <!-- title -->
       <div class="flex items-center desktop:hidden">
         <div class="w-full h-px bg-[#E8E8E8]"></div>
-        <div
-          class="flex text-[16px] gap-2 w-[300px] items-center justify-center font-medium text-primary-600"
+        <div class="flex text-[16px] gap-2 w-[300px] items-center justify-center font-medium text-primary-600">
+          <button
+          id="openComment"
+          class="flex items-center gap-2 whitespace-nowrap cursor-pointer"
         >
-          <i class="fa-regular fa-comment-dots"></i>
-          <span>ثبت دیدگاه</span>
+          <img src="./public/images/comment.svg" alt="comment" />
+          <span class="text-[#C41818] text-sm">ثبت دیدگاه</span>
+        </button>
         </div>
         <div class="w-full h-px bg-[#E8E8E8]"></div>
       </div>
       <div class="desktop:flex gap-4 items-center hidden">
         <h2 class="text-xl desktop:w-[158px]">نظرات مشتریان</h2>
         <div class="w-full bg-[#E8E8E8] h-px"></div>
-        <span
-          class="text-primary-600 text-xs font-medium desktop:w-[100px] cursor-pointer"
-          >مشاهده بیشتر</span
+        <button
+          id="openComment"
+          class="flex items-center gap-2 whitespace-nowrap cursor-pointer"
         >
+          <img src="./public/images/comment.svg" alt="comment" />
+          <span class="text-[#C41818] text-sm">ثبت دیدگاه</span>
+        </button>
       </div>
       <!-- Reviews Embla Carousel -->
       <div class="relative mt-6">
@@ -1790,7 +1876,166 @@
         </div>
         <div class="embla-reviews__viewport">
           <div class="embla-reviews__container" id="reviews-container">
-            <!-- Reviews will be rendered here by JavaScript -->
+            <!-- <div class="embla-reviews__slide">
+              <div class="w-[374px] h-[139px] flex flex-col gap-4 bg-primary-100 rounded-[20px] pr-[28px] pt-[20px] pl-[23px] pb-[25px] shrink-0">
+                <div class="flex justify-between">
+                  <div class="flex gap-4">
+                    <div class="bg-primary-300 p-[11px] rounded-full">
+                      <img
+                        class="size-[32px]"
+                        src="/public/icons/icon-person.png"
+                        alt="avatar"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="font-medium text-primary-550"
+                        >میترا احمدی</span
+                      >
+                      <span class="text-[10px] text-primary-350"
+                        >۱۲ تیر ۱۴۰۴</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="text-primary-350">
+                    <span class="text-[10px]">۵/</span>
+                    <span class="text-[12px] font-semibold">5</span>
+                  </div>
+                </div>
+
+                <p class="text-[12px] text-[#2D2D2D]">
+                  خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌
+                </p>
+              </div>
+            </div>
+            <div class="embla-reviews__slide">
+              <div class="w-[374px] h-[139px] flex flex-col gap-4 bg-primary-100 rounded-[20px] pr-[28px] pt-[20px] pl-[23px] pb-[25px] shrink-0">
+                <div class="flex justify-between">
+                  <div class="flex gap-4">
+                    <div class="bg-primary-300 p-[11px] rounded-full">
+                      <img
+                        class="size-[32px]"
+                        src="/public/icons/icon-person.png"
+                        alt="avatar"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="font-medium text-primary-550"
+                        >میترا احمدی</span
+                      >
+                      <span class="text-[10px] text-primary-350"
+                        >۱۲ تیر ۱۴۰۴</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="text-primary-350">
+                    <span class="text-[10px]">۵/</span>
+                    <span class="text-[12px] font-semibold">5</span>
+                  </div>
+                </div>
+
+                <p class="text-[12px] text-[#2D2D2D]">
+                  خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌
+                </p>
+              </div>
+            </div>
+            <div class="embla-reviews__slide">
+              <div class="w-[374px] h-[139px] flex flex-col gap-4 bg-primary-100 rounded-[20px] pr-[28px] pt-[20px] pl-[23px] pb-[25px] shrink-0">
+                <div class="flex justify-between">
+                  <div class="flex gap-4">
+                    <div class="bg-primary-300 p-[11px] rounded-full">
+                      <img
+                        class="size-[32px]"
+                        src="/public/icons/icon-person.png"
+                        alt="avatar"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="font-medium text-primary-550"
+                        >میترا احمدی</span
+                      >
+                      <span class="text-[10px] text-primary-350"
+                        >۱۲ تیر ۱۴۰۴</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="text-primary-350">
+                    <span class="text-[10px]">۵/</span>
+                    <span class="text-[12px] font-semibold">5</span>
+                  </div>
+                </div>
+
+                <p class="text-[12px] text-[#2D2D2D]">
+                  خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌
+                </p>
+              </div>
+            </div>
+            <div class="embla-reviews__slide">
+              <div class="w-[374px] h-[139px] flex flex-col gap-4 bg-primary-100 rounded-[20px] pr-[28px] pt-[20px] pl-[23px] pb-[25px] shrink-0">
+                <div class="flex justify-between">
+                  <div class="flex gap-4">
+                    <div class="bg-primary-300 p-[11px] rounded-full">
+                      <img
+                        class="size-[32px]"
+                        src="/public/icons/icon-person.png"
+                        alt="avatar"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="font-medium text-primary-550"
+                        >میترا احمدی</span
+                      >
+                      <span class="text-[10px] text-primary-350"
+                        >۱۲ تیر ۱۴۰۴</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="text-primary-350">
+                    <span class="text-[10px]">۵/</span>
+                    <span class="text-[12px] font-semibold">5</span>
+                  </div>
+                </div>
+
+                <p class="text-[12px] text-[#2D2D2D]">
+                  خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌
+                </p>
+              </div>
+            </div>
+            <div class="embla-reviews__slide">
+              <div class="w-[374px] h-[139px] flex flex-col gap-4 bg-primary-100 rounded-[20px] pr-[28px] pt-[20px] pl-[23px] pb-[25px] shrink-0">
+                <div class="flex justify-between">
+                  <div class="flex gap-4">
+                    <div class="bg-primary-300 p-[11px] rounded-full">
+                      <img
+                        class="size-[32px]"
+                        src="/public/icons/icon-person.png"
+                        alt="avatar"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="font-medium text-primary-550"
+                        >میترا احمدی</span
+                      >
+                      <span class="text-[10px] text-primary-350"
+                        >۱۲ تیر ۱۴۰۴</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="text-primary-350">
+                    <span class="text-[10px]">۵/</span>
+                    <span class="text-[12px] font-semibold">5</span>
+                  </div>
+                </div>
+
+                <p class="text-[12px] text-[#2D2D2D]">
+                  خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌
+                </p>
+              </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -2283,20 +2528,20 @@
       <div class="flex lg:hidden flex-col gap-y-10 mt-7">
         <div class="flex items-center justify-between relative">
           <div class="flex flex-col items-center gap-1.5">
-          <div
-            class="rounded-full size-[100px] bg-[#FDDDDF] flex justify-center items-center"
-          >
-            <img src="./public/images/buy-step-4.png" alt="step" />
-          </div>
-          <div class="flex flex-col items-center gap-1">
-            <span class="text-xs font-medium">انتخاب محصول هدیه</span>
-            <span
-              class="text-xs desktop:text-[10px] desktop:font-normal font-medium"
+            <div
+              class="rounded-full size-[100px] bg-[#FDDDDF] flex justify-center items-center"
             >
-              سفارش بالای ۱ میلیون
-            </span>
+              <img src="./public/images/buy-step-4.png" alt="step" />
+            </div>
+            <div class="flex flex-col items-center gap-1">
+              <span class="text-xs font-medium">انتخاب محصول هدیه</span>
+              <span
+                class="text-xs desktop:text-[10px] desktop:font-normal font-medium"
+              >
+                سفارش بالای ۱ میلیون
+              </span>
+            </div>
           </div>
-        </div>
           <div class="flex flex-col items-center gap-1.5">
             <div
               class="rounded-full size-[100px] bg-[#FDDDDF] flex justify-center items-center"
@@ -2312,67 +2557,73 @@
               </span>
             </div>
           </div>
-          <div class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
-            <img src="./public/images/buy-mobile-one.svg"/>
+          <div
+            class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+          >
+            <img src="./public/images/buy-mobile-one.svg" />
           </div>
         </div>
         <div class="flex items-center justify-between relative">
           <div class="flex flex-col items-center gap-1.5">
-          <div
-            class="rounded-full size-[100px] bg-[#FDDDDF] flex justify-center items-center"
-          >
-            <img src="./public/images/buy-step-2.png" alt="step" />
-          </div>
-          <div class="flex flex-col items-center gap-1">
-            <span class="text-xs font-medium">درگاه پرداخت</span>
-            <span
-              class="text-xs desktop:text-[10px] desktop:font-normal font-medium"
+            <div
+              class="rounded-full size-[100px] bg-[#FDDDDF] flex justify-center items-center"
             >
-              بر بستر شاپرک
-            </span>
+              <img src="./public/images/buy-step-2.png" alt="step" />
+            </div>
+            <div class="flex flex-col items-center gap-1">
+              <span class="text-xs font-medium">درگاه پرداخت</span>
+              <span
+                class="text-xs desktop:text-[10px] desktop:font-normal font-medium"
+              >
+                بر بستر شاپرک
+              </span>
+            </div>
           </div>
-        </div>
           <div class="flex flex-col items-center gap-1.5">
-          <div
-            class="rounded-full size-[100px] bg-[#FDDDDF] flex justify-center items-center"
-          >
-            <img src="./public/images/buy-step-3.png" alt="step" />
-          </div>
-          <div class="flex flex-col items-center gap-1">
-            <span class="text-xs font-medium">انتخاب شیوه‌ی ارسال</span>
-            <span
-              class="text-xs desktop:text-[10px] desktop:font-normal font-medium"
+            <div
+              class="rounded-full size-[100px] bg-[#FDDDDF] flex justify-center items-center"
             >
-              و نوع بسته بندی
-            </span>
+              <img src="./public/images/buy-step-3.png" alt="step" />
+            </div>
+            <div class="flex flex-col items-center gap-1">
+              <span class="text-xs font-medium">انتخاب شیوه‌ی ارسال</span>
+              <span
+                class="text-xs desktop:text-[10px] desktop:font-normal font-medium"
+              >
+                و نوع بسته بندی
+              </span>
+            </div>
           </div>
-        </div>
-          <div class="absolute -top-5 left-1/2 -translate-y-1/2 -translate-x-1/2">
-            <img src="./public/images/buy-mobile-two.svg"/>
+          <div
+            class="absolute -top-5 left-1/2 -translate-y-1/2 -translate-x-1/2"
+          >
+            <img src="./public/images/buy-mobile-two.svg" />
           </div>
-           <div class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
-            <img src="./public/images/buy-mobile-three.svg"/>
+          <div
+            class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+          >
+            <img src="./public/images/buy-mobile-three.svg" />
           </div>
           <div class="absolute top-[72%] right-[27%]">
-            <img src="./public/images/buy-mobile-four.svg"/>
+            <img src="./public/images/buy-mobile-four.svg" />
           </div>
         </div>
         <div class="flex items-center justify-center">
           <div class="flex flex-col items-center gap-1.5">
-          <div
-            class="rounded-full size-[100px] bg-[#FDDDDF] flex justify-center items-center"
-          >
-            <img src="./public/images/buy-step-1.png" alt="step" />
-          </div>
-          <div class="flex flex-col items-center gap-1">
-            <span class="text-xs font-medium">ثبت سفارش و رهگیری</span>
-            <span
-              class="text-xs desktop:text-[10px] desktop:font-normal font-medium"
+            <div
+              class="rounded-full size-[100px] bg-[#FDDDDF] flex justify-center items-center"
             >
-              ارسال کدرهگیری مرسوله
-            </span>
+              <img src="./public/images/buy-step-1.png" alt="step" />
+            </div>
+            <div class="flex flex-col items-center gap-1">
+              <span class="text-xs font-medium">ثبت سفارش و رهگیری</span>
+              <span
+                class="text-xs desktop:text-[10px] desktop:font-normal font-medium"
+              >
+                ارسال کدرهگیری مرسوله
+              </span>
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </div>
