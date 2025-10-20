@@ -31,7 +31,7 @@ let mobileQuantity = 1;
    توابع کمکی Embla (thumbs)
    =========================== */
 const addThumbBtnsClickHandlers = (emblaApiMainLocal, emblaApiThumbLocal) => {
-  if (!emblaApiThumbLocal) return () => {};
+  if (!emblaApiThumbLocal) return () => { };
   const slidesThumbs = emblaApiThumbLocal.slideNodes();
   const handlers = slidesThumbs.map((_, index) => () =>
     emblaApiMainLocal.scrollTo(index)
@@ -49,7 +49,7 @@ const addThumbBtnsClickHandlers = (emblaApiMainLocal, emblaApiThumbLocal) => {
 };
 
 const addToggleThumbBtnsActive = (emblaApiMainLocal, emblaApiThumbLocal) => {
-  if (!emblaApiThumbLocal) return () => {};
+  if (!emblaApiThumbLocal) return () => { };
   const slidesThumbs = emblaApiThumbLocal.slideNodes();
 
   const toggleThumbBtnsState = () => {
@@ -164,25 +164,22 @@ function renderColorOptions() {
 
   productColors.forEach((color) => {
     const colorItem = document.createElement("div");
-    colorItem.className = `relative border rounded-[10px] py-[10px] px-2 cursor-pointer transition-all ${
-      color.available
-        ? "border-[#E8E8E8]"
-        : "border-[#E8E8E8] opacity-50 cursor-not-allowed"
-    } ${selectedColor?.id === color.id ? "border-red-500 bg-red-50" : ""}`;
+    colorItem.className = `relative border rounded-[10px] py-[10px] px-2 cursor-pointer transition-all ${color.available
+      ? "border-[#E8E8E8]"
+      : "border-[#E8E8E8] opacity-50 cursor-not-allowed"
+      } ${selectedColor?.id === color.id ? "border-red-500 bg-red-50" : ""}`;
 
     colorItem.innerHTML = `
       <div class="flex items-center justify-between text-xs text-[#2D2D2D]">
         <span>${color.name}</span>
-        ${
-          !color.available
-            ? '<span class="text-xs text-red-600">اتمام موجودی</span>'
-            : ""
-        }
-        ${
-          selectedColor?.id === color.id
-            ? '<div class="bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"> <i class="fa-solid fa-check text-red-600"></i> </div>'
-            : ""
-        }
+        ${!color.available
+        ? '<span class="text-xs text-red-600">اتمام موجودی</span>'
+        : ""
+      }
+        ${selectedColor?.id === color.id
+        ? '<div class="bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"> <i class="fa-solid fa-check text-red-600"></i> </div>'
+        : ""
+      }
       </div>
     `;
 
@@ -259,25 +256,22 @@ function renderMobileColorOptions() {
 
   productColors.forEach((color) => {
     const colorItem = document.createElement("div");
-    colorItem.className = `relative border rounded-[10px] py-[10px] px-[14px] cursor-pointer transition-all ${
-      color.available
-        ? "border-[#E8E8E8]"
-        : "border-[#E8E8E8] opacity-50 cursor-not-allowed"
-    } ${mobileSelectedColor?.id === color.id ? "border-red-500 border-2 bg-red-50" : ""}`;
+    colorItem.className = `relative border rounded-[10px] py-[10px] px-[14px] cursor-pointer transition-all ${color.available
+      ? "border-[#E8E8E8]"
+      : "border-[#E8E8E8] opacity-50 cursor-not-allowed"
+      } ${mobileSelectedColor?.id === color.id ? "border-red-500 border-2 bg-red-50" : ""}`;
 
     colorItem.innerHTML = `
       <div class="flex items-center justify-between text-xs text-[#2D2D2D]">
         <span>${color.name}</span>
-        ${
-          !color.available
-            ? '<span class="text-xs text-red-600">اتمام موجودی</span>'
-            : ""
-        }
-        ${
-          mobileSelectedColor?.id === color.id
-            ? '<i class="fa-solid fa-check text-red-600"></i>'
-            : ""
-        }
+        ${!color.available
+        ? '<span class="text-xs text-red-600">اتمام موجودی</span>'
+        : ""
+      }
+        ${mobileSelectedColor?.id === color.id
+        ? '<i class="fa-solid fa-check text-red-600"></i>'
+        : ""
+      }
       </div>
     `;
 
@@ -478,7 +472,7 @@ function renderAccordionItems() {
   accordionItems.forEach((item) => {
     const listItem = document.createElement("li");
     listItem.innerHTML = `
-      <a href="${item.href}" class="flex items-center justify-between transition-all text-primary-400">
+      <a href="${item.href}" class="flex items-center cursor-pointer  justify-between transition-all text-primary-400">
           <img src="${item.icon}" alt="${item.title}" class="size-[24px] object-contain pl-[5px]">
           <span class="text-sm">${item.title}</span>
           <i class="fa-solid fa-angle-down size-[16px] pr-2"></i>
@@ -501,27 +495,27 @@ function openDesktopModal(categoryData) {
     body.innerHTML = `
       <div class="grid grid-cols-6 gap-6">
         ${categoryData.subcategories
-          .map(
-            (subcategory) => `
+        .map(
+          (subcategory) => `
           <div class="space-y-3">
             <div class="bg-primary-600 text-white px-4 py-3 rounded-lg text-center font-bold text-base">
               ${subcategory.name}
             </div>
             <div class="space-y-2">
               ${subcategory.items
-                .map(
-                  (item) => `
+              .map(
+                (item) => `
                 <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-2 rounded-lg text-right text-sm transition-colors">
                   ${item}
                 </button>
               `
-                )
-                .join("")}
+              )
+              .join("")}
             </div>
           </div>
         `
-          )
-          .join("")}
+        )
+        .join("")}
       </div>
     `;
 
@@ -561,23 +555,23 @@ const categoryData = {
   skincare: {
     title: "مراقبت از پوست",
     subcategories: [
-      { name: "پاک‌کننده", items: ["پن صابون","ژل شستشو","میکسلار واتر","تونر","اسکراب","همه محصولات پاک‌کننده"] },
-      { name: "مرطوب‌کننده", items: ["کرم روز","کرم شب","سرم","لوسیون بدن","کرم دور چشم","همه محصولات مرطوب‌کننده"] },
-      { name: "محافظت", items: ["کرم ضد آفتاب","کرم ضد لک","کرم ضد چروک","کرم دور چشم","همه محصولات محافظت"] },
-      { name: "ماسک", items: ["ماسک صورت","ماسک دور چشم","ماسک لب","ماسک بدن","همه محصولات ماسک"] },
-      { name: "ابزار", items: ["براش صورت","اسفنج","دستگاه پاکسازی","ابزار ماساژ","همه ابزار مراقبت"] },
-      { name: "تخصصی", items: ["محصولات ضد پیری","محصولات روشن‌کننده","محصولات آکنه","محصولات حساس","همه محصولات تخصصی"] },
+      { name: "پاک‌کننده", items: ["پن صابون", "ژل شستشو", "میکسلار واتر", "تونر", "اسکراب", "همه محصولات پاک‌کننده"] },
+      { name: "مرطوب‌کننده", items: ["کرم روز", "کرم شب", "سرم", "لوسیون بدن", "کرم دور چشم", "همه محصولات مرطوب‌کننده"] },
+      { name: "محافظت", items: ["کرم ضد آفتاب", "کرم ضد لک", "کرم ضد چروک", "کرم دور چشم", "همه محصولات محافظت"] },
+      { name: "ماسک", items: ["ماسک صورت", "ماسک دور چشم", "ماسک لب", "ماسک بدن", "همه محصولات ماسک"] },
+      { name: "ابزار", items: ["براش صورت", "اسفنج", "دستگاه پاکسازی", "ابزار ماساژ", "همه ابزار مراقبت"] },
+      { name: "تخصصی", items: ["محصولات ضد پیری", "محصولات روشن‌کننده", "محصولات آکنه", "محصولات حساس", "همه محصولات تخصصی"] },
     ],
   },
   cosmetics: {
     title: "آرایشی و بهداشتی",
     subcategories: [
-      { name: "چشم", items: ["سایه","ریمل","ریمل رنگی","خط چشم","خط چشم رنگی","مداد چشم","مداد هاشور ابرو","مژه","فرمژه","صابون ابرو","همه محصولات چشم"] },
-      { name: "لب", items: ["رژ لب جامد","رژ لب مایع","پک رژ لب","بالم لب","برق لب","تینت لب","لیپ گلاس","خط لب","حجم دهنده لب","همه محصولات لب"] },
-      { name: "صورت", items: ["کرم پودر","کوشن","بی بی کرم","کانتور و کانسیلر","هایلایتر","پنکک","پرایمر","رژگونه","فیکساتور","لیفت صورت","همه محصولات صورت"] },
-      { name: "ناخن", items: ["لاک","ناخن مصنوعی","ابزار ناخن","ست مانیکور","همه محصولات ناخن"] },
-      { name: "ابزار آرایشی", items: ["براش پد","کیف آرایش","تراش","همه ابزار آرایشی"] },
-      { name: "دیگر ملزومات", items: ["پک آرایشی","رنگ مو","مو کلیپسی","همه محصولات آرایشی"] },
+      { name: "چشم", items: ["سایه", "ریمل", "ریمل رنگی", "خط چشم", "خط چشم رنگی", "مداد چشم", "مداد هاشور ابرو", "مژه", "فرمژه", "صابون ابرو", "همه محصولات چشم"] },
+      { name: "لب", items: ["رژ لب جامد", "رژ لب مایع", "پک رژ لب", "بالم لب", "برق لب", "تینت لب", "لیپ گلاس", "خط لب", "حجم دهنده لب", "همه محصولات لب"] },
+      { name: "صورت", items: ["کرم پودر", "کوشن", "بی بی کرم", "کانتور و کانسیلر", "هایلایتر", "پنکک", "پرایمر", "رژگونه", "فیکساتور", "لیفت صورت", "همه محصولات صورت"] },
+      { name: "ناخن", items: ["لاک", "ناخن مصنوعی", "ابزار ناخن", "ست مانیکور", "همه محصولات ناخن"] },
+      { name: "ابزار آرایشی", items: ["براش پد", "کیف آرایش", "تراش", "همه ابزار آرایشی"] },
+      { name: "دیگر ملزومات", items: ["پک آرایشی", "رنگ مو", "مو کلیپسی", "همه محصولات آرایشی"] },
     ],
   },
 };
@@ -586,18 +580,30 @@ const categoryData = {
    Reviews carousel
    =========================== */
 const reviews = [
-  { name: "میترا احمدی", date: "۱۲ تیر ۱۴۰۴", rating: 5, comment: "خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌", 
-    avatar: "" },
-  { name: "علیرضا رضایی", date: "۱۵ مرداد ۱۴۰۴", rating: 4, comment: "بسیار خوب، فقط کمی زمان تحویل طول کشید.", 
-    avatar: "/public/images/motor.png" },
-  { name: "میترا احمدی", date: "۱۲ تیر ۱۴۰۴", rating: 5, comment: "خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌", 
-    avatar: "" },
-  { name: "علیرضا رضایی", date: "۱۵ مرداد ۱۴۰۴", rating: 4, comment: "بسیار خوب، فقط کمی زمان تحویل طول کشید.", 
-    avatar: "/public/images/motor.png" },
-  { name: "میترا احمدی", date: "۱۲ تیر ۱۴۰۴", rating: 5, comment: "خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌", 
-    avatar: "" },
-  { name: "علیرضا رضایی", date: "۱۵ مرداد ۱۴۰۴", rating: 4, comment: "بسیار خوب، فقط کمی زمان تحویل طول کشید.", 
-    avatar: "/public/images/motor.png" },
+  {
+    name: "میترا احمدی", date: "۱۲ تیر ۱۴۰۴", rating: 5, comment: "خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌",
+    avatar: ""
+  },
+  {
+    name: "علیرضا رضایی", date: "۱۵ مرداد ۱۴۰۴", rating: 4, comment: "بسیار خوب، فقط کمی زمان تحویل طول کشید.",
+    avatar: "/public/images/motor.png"
+  },
+  {
+    name: "میترا احمدی", date: "۱۲ تیر ۱۴۰۴", rating: 5, comment: "خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌",
+    avatar: ""
+  },
+  {
+    name: "علیرضا رضایی", date: "۱۵ مرداد ۱۴۰۴", rating: 4, comment: "بسیار خوب، فقط کمی زمان تحویل طول کشید.",
+    avatar: "/public/images/motor.png"
+  },
+  {
+    name: "میترا احمدی", date: "۱۲ تیر ۱۴۰۴", rating: 5, comment: "خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌",
+    avatar: ""
+  },
+  {
+    name: "علیرضا رضایی", date: "۱۵ مرداد ۱۴۰۴", rating: 4, comment: "بسیار خوب، فقط کمی زمان تحویل طول کشید.",
+    avatar: "/public/images/motor.png"
+  },
 ];
 
 function renderReviews() {
@@ -860,27 +866,47 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Desktop accordion click handling (open modals)
+  // // Desktop accordion click handling (open modals)
+  // const accordionList = document.getElementById("accordion-list");
+  // if (accordionList) {
+  //   accordionList.addEventListener("click", (e) => {
+  //     const link = e.target.closest("a");
+  //     if (link) {
+  //       e.preventDefault();
+  //       const href = link.getAttribute("href");
+  //       const categoryKey = href.replace("#", "");
+  //       if (categoryData[categoryKey]) {
+  //         openDesktopModal(categoryData[categoryKey]);
+  //       }
+  //     }
+  //   });
+  // }
+
+  // Desktop accordion hover handling (open modals)
   const accordionList = document.getElementById("accordion-list");
+
   if (accordionList) {
-    accordionList.addEventListener("click", (e) => {
+    accordionList.addEventListener("mouseenter", (e) => {
       const link = e.target.closest("a");
       if (link) {
-        e.preventDefault();
         const href = link.getAttribute("href");
         const categoryKey = href.replace("#", "");
         if (categoryData[categoryKey]) {
-          openDesktopModal(categoryData[categoryKey]);
+          setTimeout(() => {
+            openDesktopModal(categoryData[categoryKey]);
+          }, 500);
         }
       }
-    });
+    }, true);
   }
+
 
   // Desktop modal backdrop close
   const desktopModalBackdrop = document.getElementById("desktop-modal-backdrop");
   if (desktopModalBackdrop) {
     desktopModalBackdrop.addEventListener("click", closeDesktopModal);
   }
+
 });
 
 
