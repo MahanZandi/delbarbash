@@ -127,7 +127,7 @@
         <!-- Items will be rendered here by JavaScript -->
       </ul>
     </nav>
-
+    
     <!-- raete && category -->
     <div class="container flex justify-between items-center mt-[26px]">
       <ul class="flex items-center gap-[9px] text-[#2D2D2D] text-[12px]">
@@ -158,7 +158,7 @@
 
     <!-- product -->
     <div
-      class="flex mt-[27px] container desktop:justify-between justify-center"
+      class="flex gap-5 mt-[27px] container desktop:justify-start justify-center"
     >
       <!-- slider -->
       <div class="embla relative w-[320px] desktop:w-[351px]">
@@ -1655,7 +1655,7 @@
       >
         <div
           id="comment-modal-content"
-          class="bg-white w-[480px] max-w-full rounded-3xl py-6 px-3 lg:p-6 max-h-[80vh] overflow-y-auto transform translate-y-full transition-transform duration-300 ease-out justify-between"
+          class="bg-white w-[480px] max-w-full rounded-3xl py-6 px-3  lg:p-6 max-h-[80vh] overflow-y-auto transform translate-y-full transition-transform duration-300 ease-out justify-between"
         >
           <!-- Modal Header -->
           <div class="flex justify-between items-center mb-6">
@@ -1845,16 +1845,14 @@
       <!-- title -->
       <div class="flex items-center desktop:hidden">
         <div class="w-full h-px bg-[#E8E8E8]"></div>
-        <div
-          class="flex text-[16px] gap-2 w-[300px] items-center justify-center font-medium text-primary-600"
-        >
+        <div class="flex text-[16px] gap-2 w-[300px] items-center justify-center font-medium text-primary-600">
           <button
-            id="openCommentMobile"
-            class="openComment flex items-center gap-2 whitespace-nowrap cursor-pointer"
-          >
-            <img src="./public/images/comment.svg" alt="comment" />
-            <span class="text-[#C41818] text-sm">ثبت دیدگاه</span>
-          </button>
+          id="openComment"
+          class="flex items-center gap-2 whitespace-nowrap cursor-pointer"
+        >
+          <img src="./public/images/comment.svg" alt="comment" />
+          <span class="text-[#C41818] text-sm">ثبت دیدگاه</span>
+        </button>
         </div>
         <div class="w-full h-px bg-[#E8E8E8]"></div>
       </div>
@@ -1862,11 +1860,10 @@
         <h2 class="text-xl desktop:w-[158px]">نظرات مشتریان</h2>
         <div class="w-full bg-[#E8E8E8] h-px"></div>
         <button
-          id="openCommentDesktop"
-          class="openComment desktop:w-[120px] flex items-center gap-2 whitespace-nowrap cursor-pointer "
+          id="openComment"
+          class="flex items-center gap-2 whitespace-nowrap cursor-pointer"
         >
           <img src="./public/images/comment.svg" alt="comment" />
-
           <span class="text-[#C41818] text-sm">ثبت دیدگاه</span>
         </button>
       </div>

@@ -375,8 +375,11 @@ function openCommentModal() {
   const modal = document.getElementById("comment-modal");
   const modalContent = document.getElementById("comment-modal-content");
   const backdrop = document.getElementById("comment-modal-backdrop");
+  const stickyAccordion = document.querySelector('.sticky-accordion');
+
 
   if (modal && modalContent && backdrop) {
+    stickyAccordion.classList.add("!z-40");
     modal.classList.remove("hidden");
     document.body.style.overflow = "hidden";
 
@@ -394,8 +397,11 @@ function closeCommentModal() {
   const modal = document.getElementById("comment-modal");
   const modalContent = document.getElementById("comment-modal-content");
   const backdrop = document.getElementById("comment-modal-backdrop");
+  const stickyAccordion = document.querySelector('.sticky-accordion');
+
 
   if (modal && modalContent && backdrop) {
+    stickyAccordion.classList.remove("!z-40");
     backdrop.classList.remove("opacity-100");
     backdrop.classList.add("opacity-0");
 
@@ -474,7 +480,7 @@ function renderAccordionItems() {
     listItem.innerHTML = `
       <a href="${item.href}" class="flex items-center cursor-pointer  justify-between transition-all text-primary-400">
           <img src="${item.icon}" alt="${item.title}" class="size-[24px] object-contain pl-[5px]">
-          <span class="text-sm">${item.title}</span>
+          <span class="text-sm ">${item.title}</span>
           <i class="fa-solid fa-angle-down size-[16px] pr-2"></i>
       </a>
     `;
@@ -707,13 +713,16 @@ window.addEventListener("scroll", () => {
   const navbar = document.getElementById("desktop-navbar");
   const accordion = document.getElementById("desktop-accordion");
   const backdrop = document.getElementById("sticky-backdrop");
+  const desktopModalContent = document.getElementById("desktop-modal-content");
 
   if (navbar && accordion && backdrop) {
     if (scrollTop > 100) {
+      desktopModalContent.style.top = "160px";
       navbar.classList.add("sticky-navbar");
       accordion.classList.add("sticky-accordion");
       backdrop.classList.add("active");
     } else {
+      desktopModalContent.style.top = "130px";
       navbar.classList.remove("sticky-navbar");
       accordion.classList.remove("sticky-accordion");
       backdrop.classList.remove("active");
@@ -754,14 +763,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const decreaseBtn = document.getElementById("decrease-btn");
   const increaseBtn = document.getElementById("increase-btn");
   const addToCartBtn = document.getElementById("add-to-cart-btn");
+  const openCommentDesktop = document.getElementById("openCommentDesktop");
+
 
   if (decreaseBtn) decreaseBtn.addEventListener("click", () => updateQuantity(-1));
   if (increaseBtn) increaseBtn.addEventListener("click", () => updateQuantity(1));
   if (addToCartBtn) addToCartBtn.addEventListener("click", addToCart);
+  if (openCommentDesktop) openCommentDesktop.addEventListener("click", openCommentModal);
+
 
   // mobile modal buttons
   const mobileSelectBtn = document.getElementById("mobile-select-model-btn");
-  const commentSelectBtn = document.getElementById("openComment");
+  const commentSelectBtn = document.getElementById("openCommentMobile");
   const commentCloseModal = document.getElementById("comment-close");
   const mobileModalClose = document.getElementById("mobile-modal-close");
   const mobileDecreaseBtn = document.getElementById("mobile-decrease-btn");
@@ -866,45 +879,49 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // // Desktop accordion click handling (open modals)
-  // const accordionList = document.getElementById("accordion-list");
-  // if (accordionList) {
-  //   accordionList.addEventListener("click", (e) => {
-  //     const link = e.target.closest("a");
-  //     if (link) {
-  //       e.preventDefault();
-  //       const href = link.getAttribute("href");
-  //       const categoryKey = href.replace("#", "");
-  //       if (categoryData[categoryKey]) {
-  //         openDesktopModal(categoryData[categoryKey]);
-  //       }
-  //     }
-  //   });
-  // }
-
   // Desktop accordion hover handling (open modals)
   const accordionList = document.getElementById("accordion-list");
+  const desktopModalBackdrop = document.getElementById("desktop-modal-backdrop");
+
+  let currentLink = null;
+  let currentIcon = null;
 
   if (accordionList) {
-    accordionList.addEventListener("mouseenter", (e) => {
-      const link = e.target.closest("a");
-      if (link) {
+    accordionList.addEventListener(
+      "mouseenter",
+      (e) => {
+        accordionList.classList.add("relative", "bg-white", "z-60");
+        const link = e.target.closest("a");
+        if (!link) return;
+        currentIcon?.classList.remove("rotate-180", "pl-5");
+        currentLink = link;
+        currentIcon = link.querySelector("i");
+
+        if (currentIcon) currentIcon.classList.add("rotate-180", "pl-5", "transition-transform", "duration-300");
+
         const href = link.getAttribute("href");
-        const categoryKey = href.replace("#", "");
+        const categoryKey = href?.replace("#", "");
         if (categoryData[categoryKey]) {
-          setTimeout(() => {
-            openDesktopModal(categoryData[categoryKey]);
-          }, 500);
+          setTimeout(() => openDesktopModal(categoryData[categoryKey]), 300);
+        } else {
+          closeModal();
         }
-      }
-    }, true);
+      },
+      true
+    );
   }
 
-
   // Desktop modal backdrop close
-  const desktopModalBackdrop = document.getElementById("desktop-modal-backdrop");
   if (desktopModalBackdrop) {
-    desktopModalBackdrop.addEventListener("click", closeDesktopModal);
+    desktopModalBackdrop.addEventListener("click", () => {
+      closeModal();
+    });
+  }
+
+  function closeModal() {
+    closeDesktopModal();
+    currentIcon?.classList.remove("rotate-180", "pl-5");
+    accordionList.classList.remove("relative", "bg-white", "z-60");
   }
 
 });
