@@ -161,7 +161,9 @@
       class="flex mt-[27px] container desktop:justify-between justify-center"
     >
       <!-- slider -->
-      <div class="embla relative w-[320px] desktop:w-[351px]">
+      <div
+        class="embla relative w-[90%] min-[480px]:w-[65%] sm:w-[50%] md:w-[35%] lg:w-[30%] desktop:w-[351px]"
+      >
         <!-- Product slider backdrop for mobile -->
         <div
           id="product-slider-backdrop"
@@ -169,96 +171,103 @@
         ></div>
         <!-- dots -->
         <div
-          class="absolute left-1/2 p-1.5 rounded-b-xl -translate-x-1/2 bg-white z-10"
+          class="absolute max-[480px]:left-[40%] min-[481px]:left-1/2 p-1.5 rounded-b-xl -translate-x-1/2 bg-white z-10"
         >
           <div id="slider-dots" class="flex justify-center gap-2"></div>
         </div>
-        <div class="embla__viewport">
-          <div class="embla__container">
-            <div class="embla__slide">
-              <div class="embla__slide__number bg-primary-300">
-                <img
-                  class="w-[205px] h-[292px] desktop:w-[241px] desktop:h-[344px] object-contain"
-                  src="./public/images/product-1.png"
-                  alt="heart icon"
-                />
+
+        <div
+          class="max-[480px]:flex max-[480px]:flex-row-reverse justify-between min-[481px]:flex-col"
+        >
+          <div class="embla__viewport max-[480px]:w-[80%]">
+            <div class="embla__container">
+              <div class="embla__slide">
+                <div class="embla__slide__number bg-primary-300">
+                  <img
+                    class="w-[205px] h-[335px] desktop:w-[241px] desktop:h-[344px] object-contain"
+                    src="./public/images/product-1.png"
+                    alt="heart icon"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="embla__slide">
-              <div class="embla__slide__number bg-primary-300">
-                <img
-                  class="w-[205px] h-[292px] desktop:w-[241px] desktop:h-[344px] object-contain"
-                  src="./public/images/product-2.png"
-                  alt="heart icon"
-                />
+              <div class="embla__slide">
+                <div class="embla__slide__number bg-primary-300">
+                  <img
+                    class="w-[205px] h-[335px] desktop:w-[241px] desktop:h-[344px] object-contain"
+                    src="./public/images/product-2.png"
+                    alt="heart icon"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="embla__slide">
-              <div class="embla__slide__number bg-primary-300">
-                <img
-                  class="w-[205px] h-[292px] desktop:w-[241px] desktop:h-[344px] object-contain"
-                  src="./public/images/product-3.png"
-                  alt="heart icon"
-                />
+              <div class="embla__slide">
+                <div class="embla__slide__number bg-primary-300">
+                  <img
+                    class="w-[205px] h-[335px] desktop:w-[241px] desktop:h-[344px] object-contain"
+                    src="./public/images/product-3.png"
+                    alt="heart icon"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="embla__slide">
-              <div class="embla__slide__number bg-primary-300">
-                <img
-                  class="w-[205px] h-[292px] desktop:w-[241px] desktop:h-[344px] object-contain"
-                  src="./public/images/product-4.png"
-                  alt="heart icon"
-                />
+              <div class="embla__slide">
+                <div class="embla__slide__number bg-primary-300">
+                  <img
+                    class="w-[205px] h-[335px] desktop:w-[241px] desktop:h-[344px] object-contain"
+                    src="./public/images/product-4.png"
+                    alt="heart icon"
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="embla-thumbs">
-          <div class="embla-thumbs__viewport">
-            <div class="embla-thumbs__container gap-2">
-              <div
-                class="embla-thumbs__slide embla-thumbs__slide--selected bg-primary-300 flex justify-center items-center"
-              >
-                <button type="button">
-                  <img
-                    class="object-contain size-[80px]"
-                    src="./public/images/product-1.png"
-                    alt="product-1"
-                  />
-                </button>
-              </div>
-              <div
-                class="embla-thumbs__slide bg-primary-300 flex justify-center items-center"
-              >
-                <button type="button">
-                  <img
-                    class="object-contain size-[80px]"
-                    src="./public/images/product-2.png"
-                    alt="product-2"
-                  />
-                </button>
-              </div>
-              <div
-                class="embla-thumbs__slide bg-primary-300 flex justify-center items-center"
-              >
-                <button type="button">
-                  <img
-                    class="object-contain size-[80px]"
-                    src="./public/images/product-3.png"
-                    alt="product-3"
-                  />
-                </button>
-              </div>
-              <div
-                class="embla-thumbs__slide bg-primary-300 flex justify-center items-center"
-              >
-                <button type="button">
-                  <img
-                    class="object-contain size-[80px]"
-                    src="./public/images/product-4.png"
-                    alt="product-3"
-                  />
-                </button>
+          <div
+            class="embla-thumbs max-[480px]:!mt-0 max-[480px]:w-[18%] max-[480px]:ml-2 max-[480px]:flex max-[480px]:flex-col min-[481px]:w-full"
+          >
+            <div class="embla-thumbs__viewport">
+              <div class="embla-thumbs__container gap-2">
+                <div
+                  class="embla-thumbs__slide embla-thumbs__slide--selected bg-primary-300 flex justify-center items-center"
+                >
+                  <button type="button">
+                    <img
+                      class="object-contain size-[50px] min-[480px]:size-[80px]"
+                      src="./public/images/product-1.png"
+                      alt="product-1"
+                    />
+                  </button>
+                </div>
+                <div
+                  class="embla-thumbs__slide bg-primary-300 flex justify-center items-center"
+                >
+                  <button type="button">
+                    <img
+                      class="object-contain size-[50px] min-[480px]:size-[80px]"
+                      src="./public/images/product-2.png"
+                      alt="product-2"
+                    />
+                  </button>
+                </div>
+                <div
+                  class="embla-thumbs__slide bg-primary-300 flex justify-center items-center"
+                >
+                  <button type="button">
+                    <img
+                      class="object-contain size-[50px] min-[480px]:size-[80px]"
+                      src="./public/images/product-3.png"
+                      alt="product-3"
+                    />
+                  </button>
+                </div>
+                <div
+                  class="embla-thumbs__slide bg-primary-300 flex justify-center items-center"
+                >
+                  <button type="button">
+                    <img
+                      class="object-contain size-[50px] min-[480px]:size-[80px]"
+                      src="./public/images/product-4.png"
+                      alt="product-3"
+                    />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -267,7 +276,7 @@
         <!-- arrows button -->
         <button
           id="embla-prev"
-          class="absolute top-[133px] desktop:top-[181px] -right-5 bg-white rounded-l-full p-3 transition-all duration-300 z-10"
+          class="absolute max-[480px]:hidden block top-[133px] desktop:top-[181px] -right-5 bg-white rounded-l-full p-3 transition-all duration-300 z-10"
           aria-label="previous"
         >
           <svg
@@ -305,6 +314,7 @@
           </svg>
         </button>
       </div>
+
       <!-- product info desktop -->
       <div
         class="border text-[#2D2D2D] py-[22px] px-[29px] rounded-xl border-[#E8E8E8] w-[479px] desktop:block hidden"
@@ -962,8 +972,8 @@
       </div>
     </div>
 
-    <!-- Hamburger Menu -->
-    <div id="hamburger-menu" class="fixed inset-0 z-50 hidden">
+     <!-- Hamburger Menu -->
+    <div id="hamburger-menu" class="fixed inset-0 z-50 block">
       <!-- Backdrop -->
       <div
         id="hamburger-backdrop"
@@ -997,65 +1007,72 @@
           <nav class="flex flex-col gap-[34px]">
             <a
               href="#"
+              id="open-categories"
               class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors"
             >
-              <span>دسته بندی محصولات</span>
+              <span class="text-[#9A6767]">دسته بندی محصولات</span>
               <i class="fa-solid fa-chevron-left text-primary-600"></i>
             </a>
             <a
               href="#"
               class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors"
             >
-              <span>فروشگاه دلبرباش</span>
+              <span class="text-[#9A6767]">فروشگاه دلبرباش</span>
               <i class="fa-solid fa-chevron-left text-primary-600"></i>
             </a>
             <a
               href="#"
               class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors"
             >
-              <span>مجله دلبرباش</span>
+              <span class="text-[#9A6767]">مجله دلبرباش</span>
               <i class="fa-solid fa-chevron-left text-primary-600"></i>
             </a>
             <a
               href="#"
               class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors"
             >
-              <span>کد مرسولات</span>
+              <span class="text-[#9A6767]" class="text-[#9A6767]"
+                >کد مرسولات</span
+              >
               <i class="fa-solid fa-chevron-left text-primary-600"></i>
             </a>
             <a
               href="#"
               class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors"
             >
-              <span>شرایط ارسال</span>
+              <span class="text-[#9A6767]" class="text-[#9A6767]"
+                >شرایط ارسال</span
+              >
               <i class="fa-solid fa-chevron-left text-primary-600"></i>
             </a>
             <a
               href="#"
               class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors"
             >
-              <span>تماس با ما</span>
+              <span class="text-[#9A6767]" class="text-[#9A6767]"
+                >تماس با ما</span
+              >
               <i class="fa-solid fa-chevron-left text-primary-600"></i>
             </a>
             <a
               href="#"
               class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors"
             >
-              <span>تخفیف دار</span>
+              <span class="text-[#9A6767]">تخفیف دار</span>
               <i class="fa-solid fa-chevron-left text-primary-600"></i>
             </a>
             <a
               href="#"
               class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors"
             >
-              <span>محصولات جدید</span>
+              <span class="text-[#9A6767]">محصولات جدید</span>
               <i class="fa-solid fa-chevron-left text-primary-600"></i>
             </a>
             <a
               href="#"
               class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors"
             >
-              <span>محصولات رایگان</span>
+              <span class="text-[#9A6767]">محصولات رایگان</span>
               <i class="fa-solid fa-chevron-left text-primary-600"></i>
             </a>
           </nav>
@@ -1090,6 +1107,10 @@
           </button>
         </div>
       </div>
+      <div
+        id="subMenuhamburger-content"
+        class="absolute right-0 top-0 h-full w-[280px] bg-white rounded-l-3xl transform translate-x-full transition-transform duration-300 ease-out"
+      ></div>
     </div>
 
     <!-- Mobile Product Selection Modal -->
@@ -1863,7 +1884,7 @@
         <div class="w-full bg-[#E8E8E8] h-px"></div>
         <button
           id="openCommentDesktop"
-          class="openComment desktop:w-[120px] flex items-center gap-2 whitespace-nowrap cursor-pointer "
+          class="openComment desktop:w-[120px] flex items-center gap-2 whitespace-nowrap cursor-pointer"
         >
           <img src="./public/images/comment.svg" alt="comment" />
 
@@ -2813,5 +2834,6 @@
     ></script>
     <script src="https://unpkg.com/embla-carousel@8.6.0/embla-carousel.umd.js"></script>
     <script src="./src/main.js"></script>
+    <script src="./src/menuMobile.js"></script>
   </body>
 </html>
