@@ -907,7 +907,8 @@
             <i class="fa-regular fa-bookmark fa-sm"></i>
             <span class="text-[10px]">افزودن به علاقه مندی</span>
           </div>
-          <div
+          <div             id="openShareMobile"
+
             class="size-[38px] rounded-[10px] border border-[#E8E8E8] text-[#2D2D2D] flex justify-center items-center"
           >
             <i class="fa-solid fa-share-nodes"></i>
@@ -972,8 +973,8 @@
       </div>
     </div>
 
-     <!-- Hamburger Menu -->
-    <div id="hamburger-menu" class="fixed inset-0 z-50 block">
+    <!-- Hamburger Menu -->
+    <div id="hamburger-menu" class="fixed inset-0 z-50 hidden">
       <!-- Backdrop -->
       <div
         id="hamburger-backdrop"
@@ -983,7 +984,7 @@
       <!-- Menu Content -->
       <div
         id="hamburger-content"
-        class="absolute right-0 top-0 h-full w-[280px] bg-white rounded-l-3xl transform translate-x-full transition-transform duration-300 ease-out"
+        class="absolute right-0 top-0 h-full w-[280px] bg-white overflow-y-auto  rounded-l-3xl transform translate-x-full transition-transform duration-300 ease-out"
       >
         <!-- Header -->
         <div class="flex items-center justify-between p-6">
@@ -1003,11 +1004,11 @@
         </div>
 
         <!-- Menu Items -->
-        <div class="p-6">
+        <div id="menu-items" class="p-6">
           <nav class="flex flex-col gap-[34px]">
             <a
               href="#"
-              id="open-categories"
+              id="open-product-categories"
               class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors"
             >
               <span class="text-[#9A6767]">دسته بندی محصولات</span>
@@ -1107,10 +1108,19 @@
           </button>
         </div>
       </div>
+
       <div
         id="subMenuhamburger-content"
-        class="absolute right-0 top-0 h-full w-[280px] bg-white rounded-l-3xl transform translate-x-full transition-transform duration-300 ease-out"
-      ></div>
+        class="absolute right-0 top-0 overflow-y-auto  h-full w-[280px] bg-white rounded-l-3xl transform translate-x-full transition-transform duration-300 ease-out"
+      > 
+        <!-- Items will be rendered here by JavaScript -->
+      </div>
+      <div
+        id="subcategories-subMenu-content"
+        class="absolute right-0 top-0 overflow-y-auto  h-full w-[280px] bg-white rounded-l-3xl transform translate-x-full transition-transform duration-300 ease-out"
+      >
+        <!-- Items will be rendered here by JavaScript -->
+      </div>
     </div>
 
     <!-- Mobile Product Selection Modal -->
@@ -1736,6 +1746,145 @@
               ثبت دیدگاه
             </button>
           </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Share Product  Modal -->
+    <div id="mobile-share-product-modal" class="fixed inset-0 z-50 hidden">
+      <!-- Backdrop with blur effect -->
+      <div
+        id="mobile-share-modal-backdrop"
+        class="absolute inset-0 bg-black/20 bg-opacity-20 backdrop-blur-sm transition-opacity duration-300 opacity-0"
+      ></div>
+
+      <!-- Modal content with animation -->
+      <div class="flex items-end h-full relative">
+        <div
+          id="mobile-share-modal-content"
+          class="bg-white w-full rounded-t-3xl p-6 max-h-[80vh] overflow-y-auto transform translate-y-full transition-transform duration-300 ease-out"
+        >
+          <!-- Modal Header -->
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-lg font-semibold text-[#2D2D2D]">
+              اشتراک گذاری محصول
+            </h3>
+            <button
+              id="mobile-modal-share-close"
+              class="text-gray-500 hover:text-gray-700"
+            >
+              <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+          </div>
+
+          <!-- Modal Content -->
+          <div class="flex flex-col gap-2.5">
+            <div
+              class="flex items-center justify-between rounded-2xl border border-[#EAECFF] px-5 py-3"
+            >
+              <div class="flex items-center gap-3">
+                <img src="./public/icons/telegram-icons.png" alt="telegram" />
+                <span class="flex flex-col gap-2">
+                  <span class="text-sm font-medium">تلگرام</span>
+                  <span class="text-xs text-[#3B8FFE]">اشتراک گذاری</span>
+                </span>
+              </div>
+              <img
+                src="./public/icons/back-share-icons.png"
+                alt="back-share-icons"
+              />
+            </div>
+            <div
+              class="flex items-center justify-between rounded-2xl border border-[#EAECFF] px-5 py-3"
+            >
+              <div class="flex items-center gap-3">
+                <img
+                  src="./public/icons/whatsapp-icons.png"
+                  alt="whatsapp-icons"
+                />
+                <span class="flex flex-col gap-2">
+                  <span class="text-sm font-medium">واتس آپ</span>
+                  <span class="text-xs text-[#60D669]">اشتراک گذاری</span>
+                </span>
+              </div>
+              <img
+                src="./public/icons/back-share-icons.png"
+                alt="back-share-icons"
+              />
+            </div>
+            <div
+              class="flex items-center justify-between rounded-2xl border border-[#EAECFF] px-5 py-3"
+            >
+              <div class="flex items-center gap-3">
+                <img src="./public/icons/eita-icons.png" alt="eita-icons" />
+                <span class="flex flex-col gap-2">
+                  <span class="text-sm font-medium">ایتا</span>
+                  <span class="text-xs text-[#F07C00]">اشتراک گذاری</span>
+                </span>
+              </div>
+              <img
+                src="./public/icons/back-share-icons.png"
+                alt="back-share-icons"
+              />
+            </div>
+            <div
+              class="flex items-center justify-between rounded-2xl border border-[#EAECFF] px-5 py-3"
+            >
+              <div class="flex items-center gap-3">
+                <img src="./public/icons/bale-icons.png" alt="bale-icons" />
+                <span class="flex flex-col gap-2">
+                  <span class="text-sm font-medium">بله</span>
+                  <span class="text-xs text-[#44BAA3]">اشتراک گذاری</span>
+                </span>
+              </div>
+              <img
+                src="./public/icons/back-share-icons.png"
+                alt="back-share-icons"
+              />
+            </div>
+            <div
+              class="flex items-center justify-between rounded-2xl border border-[#EAECFF] px-5 py-3"
+            >
+              <div class="flex items-center gap-3">
+                <img src="./public/icons/X-icons.png" alt="X-icons" />
+                <span class="flex flex-col gap-2">
+                  <span class="text-sm font-medium">ایکس</span>
+                  <span class="text-xs text-[#212E45]">اشتراک گذاری</span>
+                </span>
+              </div>
+              <img
+                src="./public/icons/back-share-icons.png"
+                alt="back-share-icons"
+              />
+            </div>
+            <div
+              class="flex items-center justify-between rounded-2xl border border-[#EAECFF] px-5 py-3 mb-6"
+            >
+              <div class="flex items-center gap-3">
+                <img
+                  src="./public/icons/link-product-icons.png"
+                  alt="link-product-icons"
+                />
+                <span class="flex flex-col gap-2">
+                  <span class="text-sm font-medium">لینک صفحه محصول</span>
+                  <span class="text-xs text-[#3B8FFE]">اشتراک گذاری</span>
+                </span>
+              </div>
+              <img
+                src="./public/icons/back-share-icons.png"
+                alt="back-share-icons"
+              />
+            </div>
+          </div>
+
+          <!-- Add to Cart Button -->
+          <button
+            id="mobile-add-to-cart-btn"
+            class="w-full bg-red-600 font-medium hover:bg-red-700 text-white h-[51px] rounded-[10px] flex items-center justify-center gap-3 transition-all duration-300 text-[16px]"
+            disabled
+          >
+            <span>بازگشت</span>
+          </button>
         </div>
       </div>
     </div>

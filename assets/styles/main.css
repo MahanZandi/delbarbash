@@ -3,6 +3,7 @@
 @import "./variables.css";
 @import "./utility.css";
 @import "./embla.css";
+
 /* Custom styles can be added here */
 .custom-gradient {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -30,7 +31,7 @@
 }
 
 #sticky-backdrop.active {
-    height: 140px;
+    height:165px;
 }
 
 /* Sticky mobile navbar backdrop */
@@ -78,20 +79,22 @@
     background: transparent;
 }
 
+.caret {
+    transition: transform 0.25s ease;
+}
+
+
 ::-webkit-scrollbar {
-    width: 6px; 
-    height: 6px; 
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background-color: rgba(90, 90, 90, 0.2);  
-    border-radius: 10px;  
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: rgba(70, 70, 70, 0.1);  
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(90, 90, 90, 0.2);
     border-radius: 10px;
-  }
-  
+}
 
-
+::-webkit-scrollbar-track {
+    background: rgba(70, 70, 70, 0.1);
+    border-radius: 10px;
+}

@@ -415,42 +415,41 @@ function closeCommentModal() {
   }
 }
 
-/* ===========================
-   Hamburger menu
-   =========================== */
-function openHamburgerMenu() {
-  const menu = document.getElementById("hamburger-menu");
-  const content = document.getElementById("hamburger-content");
-  const backdrop = document.getElementById("hamburger-backdrop");
+function openshareModal() {
+  if (window.innerWidth > 640) return;
 
-  if (menu && content && backdrop) {
-    menu.classList.remove("hidden");
+  const modal = document.getElementById("mobile-share-product-modal");
+  const modalContent = document.getElementById("mobile-share-modal-content");
+  const backdrop = document.getElementById("mobile-share-modal-backdrop"); 
+
+  if (modal && modalContent && backdrop) {
+    modal.classList.remove("hidden");
     document.body.style.overflow = "hidden";
 
     setTimeout(() => {
       backdrop.classList.remove("opacity-0");
       backdrop.classList.add("opacity-100");
 
-      content.classList.remove("translate-x-full");
-      content.classList.add("translate-x-0");
+      modalContent.classList.remove("translate-y-full");
+      modalContent.classList.add("translate-y-0");
     }, 10);
   }
 }
 
-function closeHamburgerMenu() {
-  const menu = document.getElementById("hamburger-menu");
-  const content = document.getElementById("hamburger-content");
-  const backdrop = document.getElementById("hamburger-backdrop");
+function closeshareModal() {
+  const modal = document.getElementById("mobile-share-product-modal");
+  const modalContent = document.getElementById("mobile-share-modal-content");
+  const backdrop = document.getElementById("mobile-share-modal-backdrop"); 
 
-  if (menu && content && backdrop) {
+  if (modal && modalContent && backdrop) {
     backdrop.classList.remove("opacity-100");
     backdrop.classList.add("opacity-0");
 
-    content.classList.remove("translate-x-0");
-    content.classList.add("translate-x-full");
+    modalContent.classList.remove("translate-y-0");
+    modalContent.classList.add("translate-y-full");
 
     setTimeout(() => {
-      menu.classList.add("hidden");
+      modal.classList.add("hidden");
       document.body.style.overflow = "auto";
     }, 300);
   }
@@ -776,6 +775,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const mobileSelectBtn = document.getElementById("mobile-select-model-btn");
   const commentSelectBtn = document.getElementById("openCommentMobile");
   const commentCloseModal = document.getElementById("comment-close");
+  const openShareMobile = document.getElementById("openShareMobile");
+  const ShareCloseModal = document.getElementById("mobile-modal-share-close");
+
   const mobileModalClose = document.getElementById("mobile-modal-close");
   const mobileDecreaseBtn = document.getElementById("mobile-decrease-btn");
   const mobileIncreaseBtn = document.getElementById("mobile-increase-btn");
@@ -786,19 +788,14 @@ document.addEventListener("DOMContentLoaded", function () {
   if (commentSelectBtn) commentSelectBtn.addEventListener("click", openCommentModal);
   if (mobileModalClose) mobileModalClose.addEventListener("click", closeMobileModal);
   if (commentCloseModal) commentCloseModal.addEventListener("click", closeCommentModal);
+  if (openShareMobile) openShareMobile.addEventListener("click", openshareModal);
+  if (ShareCloseModal) ShareCloseModal.addEventListener("click", closeshareModal);
+
   if (mobileModalBackdrop) mobileModalBackdrop.addEventListener("click", closeMobileModal);
   if (mobileDecreaseBtn) mobileDecreaseBtn.addEventListener("click", () => updateMobileQuantity(-1));
   if (mobileIncreaseBtn) mobileIncreaseBtn.addEventListener("click", () => updateMobileQuantity(1));
   if (mobileAddToCartBtn) mobileAddToCartBtn.addEventListener("click", addToCartMobile);
 
-  // hamburger
-  const hamburgerBtn = document.getElementById("hamburger-btn");
-  const hamburgerClose = document.getElementById("hamburger-close");
-  const hamburgerBackdrop = document.getElementById("hamburger-backdrop");
-
-  if (hamburgerBtn) hamburgerBtn.addEventListener("click", openHamburgerMenu);
-  if (hamburgerClose) hamburgerClose.addEventListener("click", closeHamburgerMenu);
-  if (hamburgerBackdrop) hamburgerBackdrop.addEventListener("click", closeHamburgerMenu);
 
   /* =============
      Initialize Embla — only if viewports exist
