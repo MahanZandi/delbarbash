@@ -126,20 +126,22 @@ function renderSubMenu(title, items) {
 
   items.forEach((item) => {
     const hasSubs = !!item.subcategories;
-    const btn = document.createElement("button");
-    btn.className = "flex items-center justify-between  text-gray-800 hover:text-primary-600 transition-colors w-full text-right";
-    btn.innerHTML = `
-      <span class="flex items-center gap-2">
-        <img src="${item.icon}" alt="${item.title}" class="w-7 h-7 object-contain" />
-        <span class="text-[#9A6767]">${item.title}</span>
-      </span>
-      ${hasSubs ? '<i class="fa-solid fa-chevron-left text-primary-600"></i>' : ""}
-    `;
-    btn.addEventListener("click", (e) => {
+    const link = document.createElement("a");
+    link.href = "#";
+    link.className =
+      "flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors w-full text-right";
+    link.innerHTML = `
+    <span class="flex items-center gap-2">
+      <img src="${item.icon}" alt="${item.title}" class="w-7 h-7 object-contain" />
+      <span class="text-[#9A6767]">${item.title}</span>
+    </span>
+    ${hasSubs ? '<i class="fa-solid fa-chevron-left text-primary-600"></i>' : ""}
+  `;
+    link.addEventListener("click", (e) => {
       e.preventDefault();
       if (hasSubs) openSubCategories(item.title, item.subcategories);
     });
-    nav.appendChild(btn);
+    nav.appendChild(link);
   });
 
   els.subMenu.querySelector("#subMenu-close").addEventListener("click", closeSubMenu);
@@ -235,8 +237,8 @@ function renderSubCategories(title, subcategories) {
    8. EVENT BINDINGS
    =============================== */
 function initMenuEvents() {
-  const  openBtn= document.getElementById("hamburger-btn");
-  console.log("openBtn :",openBtn)
+  const openBtn = document.getElementById("hamburger-btn");
+  console.log("openBtn :", openBtn)
   openBtn?.addEventListener("click", openHamburgerMenu);
   els.closeBtn?.addEventListener("click", closeHamburgerMenu);
   els.backdrop?.addEventListener("click", closeHamburgerMenu);
