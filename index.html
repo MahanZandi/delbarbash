@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+  <!-- https://www.figma.com/design/asbMnK2Nrrc5MQpqxxCohA/DelbarBash?node-id=220-198&t=j6RmBDpt3VKTfFPO-0 -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -90,12 +91,23 @@
       class="desktop:hidden container px-4 mt-8 transition-all duration-300"
     >
       <div class="flex justify-between">
-        <button
-          id="hamburger-btn"
-          class="size-[36px] items-center justify-center rounded-[8px] border border-[#E8E8E8] flex bg-white"
-        >
-          <i class="fa-solid fa-bars fa-lg text-primary-500"></i>
-        </button>
+        <div class="flex items-center gap-2">
+          <button
+            id="hamburger-btn"
+            class="size-[36px] items-center justify-center rounded-[8px] border border-[#E8E8E8] flex bg-white"
+          >
+            <i class="fa-solid fa-bars fa-lg text-primary-500"></i>
+          </button>
+          <button
+            id="searchburger-btn"
+            class="size-[36px] items-center justify-center rounded-[8px] border border-[#E8E8E8] flex bg-white"
+          >
+            <i
+              class="fa-solid fa-magnifying-glass text-primary-500"
+              aria-hidden="true"
+            ></i>
+          </button>
+        </div>
         <img src="./public/favicon.png" alt="logo" class="size-[36px]" />
         <div class="flex gap-2">
           <div class="rounded-[8px] border border-[#E8E8E8] p-1.5 bg-white">
@@ -113,6 +125,26 @@
             />
           </div>
         </div>
+      </div>
+      <div
+        id="searchbox-Mobile"
+        class= "w-full h-[37px] mt-2 rounded-[9px] border border-[#E8E8E8] relative flex items-center "
+      >
+        <button
+          id="mobile-search-close"
+          class="text-[#BABABA] hover:text-gray-700 pt-2 px-2"
+        >
+          <i class="fa-solid fa-xmark text-xl" aria-hidden="true"></i>
+        </button>
+        <input
+          type="text"
+          placeholder="جستجوی کنید"
+          class="w-full h-full rounded-[9px] border-none outline-none p-2"
+        />
+        <i
+          class="fa-solid fa-magnifying-glass text-[#BABABA]  bg-white px-2"
+          aria-hidden="true"
+        ></i>
       </div>
     </nav>
     <!-- nav links accordion desktop -->
@@ -907,8 +939,8 @@
             <i class="fa-regular fa-bookmark fa-sm"></i>
             <span class="text-[10px]">افزودن به علاقه مندی</span>
           </div>
-          <div             id="openShareMobile"
-
+          <div
+            id="openShareMobile"
             class="size-[38px] rounded-[10px] border border-[#E8E8E8] text-[#2D2D2D] flex justify-center items-center"
           >
             <i class="fa-solid fa-share-nodes"></i>
@@ -964,10 +996,10 @@
       <!-- Modal Content -->
       <div
         id="desktop-modal-content"
-        class="absolute top-[120px] pt-2.5  left-1/2 transform -translate-x-1/2 container transition-all duration-300 opacity-0 scale-95"
+        class="absolute top-[120px] pt-2.5 left-1/2 transform -translate-x-1/2 container transition-all duration-300 opacity-0 scale-95"
       >
         <!-- Modal Body -->
-        <div id="desktop-modal-body" class="p-8 bg-white rounded-xl shadow-2xl ">
+        <div id="desktop-modal-body" class="p-8 bg-white rounded-xl shadow-2xl">
           <!-- Content will be rendered here by JavaScript -->
         </div>
       </div>
@@ -984,7 +1016,7 @@
       <!-- Menu Content -->
       <div
         id="hamburger-content"
-        class="absolute right-0 top-0 h-full w-[280px] bg-white overflow-y-auto  rounded-l-3xl transform translate-x-full transition-transform duration-300 ease-out"
+        class="absolute right-0 top-0 h-full w-[280px] bg-white overflow-y-auto rounded-l-3xl transform translate-x-full transition-transform duration-300 ease-out"
       >
         <!-- Header -->
         <div class="flex items-center justify-between p-6">
@@ -1111,13 +1143,13 @@
 
       <div
         id="subMenuhamburger-content"
-        class="absolute right-0 top-0 overflow-y-auto  h-full w-[280px] bg-white rounded-l-3xl transform translate-x-full transition-transform duration-300 ease-out"
-      > 
+        class="absolute right-0 top-0 overflow-y-auto h-full w-[280px] bg-white rounded-l-3xl transform translate-x-full transition-transform duration-300 ease-out"
+      >
         <!-- Items will be rendered here by JavaScript -->
       </div>
       <div
         id="subcategories-subMenu-content"
-        class="absolute right-0 top-0 overflow-y-auto  h-full w-[280px] bg-white rounded-l-3xl transform translate-x-full transition-transform duration-300 ease-out"
+        class="absolute right-0 top-0 overflow-y-auto h-full w-[280px] bg-white rounded-l-3xl transform translate-x-full transition-transform duration-300 ease-out"
       >
         <!-- Items will be rendered here by JavaScript -->
       </div>
@@ -1235,7 +1267,7 @@
             </div>
           </div>
           <!-- color selection two Row Item -->
-          <div class="w-full grid grid-cols-2 gap-3">
+          <div class="w-full  grid grid-cols-2 gap-3">
             <div
               id="color-1"
               class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
@@ -1286,10 +1318,10 @@
               class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
             >
               <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                class="flex pt-0.5 items-center justify-between text-xs text-[#2D2D2D]"
               >
                 <span class="text-[#A6A6A6]">رنگ شماره 4</span>
-                <span class="text-[#A00000]">اتمام موجودی</span>
+                <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
               </div>
             </div>
             <div
@@ -1297,10 +1329,10 @@
               class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
             >
               <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                class="flex pt-0.5 items-center justify-between text-xs text-[#2D2D2D]"
               >
                 <span class="text-[#A6A6A6]">رنگ شماره 5</span>
-                <span class="text-[#A00000]">اتمام موجودی</span>
+                <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
               </div>
             </div>
             <div
@@ -1368,10 +1400,10 @@
               class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
             >
               <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                class="flex pt-0.5 items-center justify-between text-xs text-[#2D2D2D]"
               >
                 <span class="text-[#A6A6A6]">رنگ شماره 10</span>
-                <span class="text-[#A00000]">اتمام موجودی</span>
+                <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
               </div>
             </div>
           </div>
@@ -1426,22 +1458,18 @@
               id="color-4"
               class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
             >
-              <div
-                class="flex items-center flex-col justify-center text-xs text-[#2D2D2D]"
-              >
+              <div class="flex flex-col justify-center text-xs text-[#2D2D2D]">
                 <span class="text-[#A6A6A6]">رنگ شماره 4</span>
-                <span class="text-[#A00000]">اتمام موجودی</span>
+                <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
               </div>
             </div>
             <div
               id="color-5"
               class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
             >
-              <div
-                class="flex items-center flex-col justify-center text-xs text-[#2D2D2D]"
-              >
+              <div class="flex flex-col justify-center text-xs text-[#2D2D2D]">
                 <span class="text-[#A6A6A6]">رنگ شماره 5</span>
-                <span class="text-[#A00000]">اتمام موجودی</span>
+                <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
               </div>
             </div>
             <div
@@ -1508,11 +1536,9 @@
               id="color-10"
               class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
             >
-              <div
-                class="flex items-center flex-col justify-center text-xs text-[#2D2D2D]"
-              >
+              <div class="flex flex-col justify-center text-xs text-[#2D2D2D]">
                 <span class="text-[#A6A6A6]">رنگ شماره 10</span>
-                <span class="text-[#A00000]">اتمام موجودی</span>
+                <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
               </div>
             </div>
           </div>
@@ -1553,10 +1579,10 @@
               class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
             >
               <div
-                class="flex items-center flex-col justify-center text-[10px] text-[#2D2D2D]"
+                class="flex flex-col justify-center text-[8px] text-[#2D2D2D]"
               >
                 <span class="text-[#A6A6A6]">رنگ شماره 4</span>
-                <span class="text-[#A00000]">اتمام موجودی</span>
+                <span class="text-[#A00000] text-[7px]">اتمام موجودی</span>
               </div>
             </div>
             <div
@@ -1564,10 +1590,10 @@
               class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
             >
               <div
-                class="flex items-center flex-col justify-center text-[10px] text-[#2D2D2D]"
+                class="flex flex-col justify-center text-[8px] text-[#2D2D2D]"
               >
                 <span class="text-[#A6A6A6]">رنگ شماره 5</span>
-                <span class="text-[#A00000]">اتمام موجودی</span>
+                <span class="text-[#A00000] text-[7px]">اتمام موجودی</span>
               </div>
             </div>
             <div
@@ -1615,10 +1641,10 @@
               class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
             >
               <div
-                class="flex items-center flex-col justify-center text-[10px] text-[#2D2D2D]"
+                class="flex flex-col justify-center text-[8px] text-[#2D2D2D]"
               >
                 <span class="text-[#A6A6A6]">رنگ شماره 10</span>
-                <span class="text-[#A00000]">اتمام موجودی</span>
+                <span class="text-[#A00000] text-[7px]">اتمام موجودی</span>
               </div>
             </div>
           </div>
@@ -2541,13 +2567,17 @@
         <p class="text-[#A44A50]">در رابطه با شیوه‌ی خرید و محصولات</p>
       </div>
       <!-- support items -->
-      <div class="grid grid-cols-2 desktop:gap-[27px] gap-4 mt-6">
+      <div
+        class="overflow-hidden grid grid-cols-2 desktop:gap-[27px] gap-4 mt-6"
+      >
         <a
           href="#"
-          class="flex desktop:flex-row flex-col pt-[19px] desktop:pt-0 desktop:h-[194px] justify-between desktop:px-[40px] bg-[#DDF8D2] rounded-[20px] items-center"
+          class="relative flex desktop:flex-row flex-col pt-[19px] desktop:pt-0 h-[180px] sm:h-[194px] justify-between desktop:px-[40px] bg-[#DDF8D2] rounded-[20px] items-center"
         >
           <div class="flex flex-col gap-[15px] text-secondary-900">
-            <p class="text-[15px] desktop:text-[28px] font-bold ss01">
+            <p
+              class="text-[15px] md:text-[20px] desktop:text-[28px] font-bold ss01"
+            >
               پشتیبانی در واتس آپ
             </p>
             <div
@@ -2559,17 +2589,24 @@
               <i class="fa-solid fa-arrow-left"></i>
             </div>
           </div>
-          <i
-            class="fa-brands fa-whatsapp fa-8x mt-2"
-            style="color: #71d971"
-          ></i>
+          <div
+            class="absolute bottom-[-20px] left-2 sm:left-7 w-24 h-24 md:w-40 md:h-40 bg-[#71d971] rounded-full"
+          >
+            <img
+              src="./public/icons/logos_whatsapp-icon.png"
+              alt="logos_whatsapp-icon"
+              class="w-20 h-20 md:w-auto md:h-auto mt-[15px] md:mt-[45px] mr-[-15px]"
+            />
+          </div>
         </a>
         <a
           href="#"
-          class="flex desktop:flex-row flex-col pt-[19px] desktop:pt-0 desktop:h-[194px] justify-between desktop:px-[40px] bg-[#FAE0F2] rounded-[20px] items-center"
+          class="relative flex desktop:flex-row flex-col pt-[19px] desktop:pt-0 h-[180px] sm:h-[194px] justify-between desktop:px-[40px] bg-[#FAE0F2] rounded-[20px] items-center"
         >
           <div class="flex flex-col gap-[15px] text-[#E53665]">
-            <p class="text-[15px] desktop:text-[28px] font-bold ss01">
+            <p
+              class="text-[15px] md:text-[20px] desktop:text-[28px] font-bold ss01"
+            >
               دلبرباش در اینستاگرام
             </p>
             <div class="flex items-center gap-1 text-[16px] font-medium">
@@ -2579,10 +2616,15 @@
               <i class="fa-solid fa-arrow-left"></i>
             </div>
           </div>
-          <i
-            class="fa-brands fa-instagram fa-8x mt-2"
-            style="color: #e53665"
-          ></i>
+          <div
+            class="absolute bottom-[-20px] left-2 sm:left-7 w-24 h-24 md:w-40 md:h-40 bg-[#e53665] rounded-full"
+          >
+            <img
+              src="./public/icons/logos_instagrom-icon.png"
+              alt="logos_instagrom-icon"
+              class="w-20 h-20 md:w-auto md:h-auto mt-[15px] md:mt-[45px] mr-[-10px] md:mr-[-15px]"
+            />
+          </div>
         </a>
       </div>
     </div>
@@ -2734,7 +2776,10 @@
           <div
             class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
           >
-            <img src="./public/images/buy-mobile-one.svg" />
+            <img
+              src="./public/images/buy-mobile-one.svg"
+              class="w-20 min-[400px]:w-auto"
+            />
           </div>
         </div>
         <div class="flex items-center justify-between relative">
@@ -2771,15 +2816,24 @@
           <div
             class="absolute -top-5 left-1/2 -translate-y-1/2 -translate-x-1/2"
           >
-            <img src="./public/images/buy-mobile-two.svg" />
+            <img
+              src="./public/images/buy-mobile-two.svg"
+              class="w-20 min-[400px]:w-auto"
+            />
           </div>
           <div
             class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
           >
-            <img src="./public/images/buy-mobile-three.svg" />
+            <img
+              src="./public/images/buy-mobile-three.svg"
+              class="w-20 min-[400px]:w-auto"
+            />
           </div>
           <div class="absolute top-[72%] right-[27%]">
-            <img src="./public/images/buy-mobile-four.svg" />
+            <img
+              src="./public/images/buy-mobile-four.svg"
+              class="mr-[10px] w-20 min-[400px]:w-auto"
+            />
           </div>
         </div>
         <div class="flex items-center justify-center">

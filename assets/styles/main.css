@@ -52,6 +52,12 @@
     height: 68px;
 }
 
+#sticky-backdrop-mobile.active.search-active {
+  height: 110px !important;
+  transition: height 0.3s ease;
+}
+
+
 .sticky-mobile-navbar {
     position: fixed;
     top: -16px;
