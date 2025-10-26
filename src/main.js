@@ -716,12 +716,12 @@ window.addEventListener("scroll", () => {
 
   if (navbar && accordion && backdrop) {
     if (scrollTop > 100) {
-      desktopModalContent.style.top = "160px";
+      desktopModalContent.style.top = "150px";
       navbar.classList.add("sticky-navbar");
       accordion.classList.add("sticky-accordion");
       backdrop.classList.add("active");
     } else {
-      desktopModalContent.style.top = "130px";
+      desktopModalContent.style.top = "120px";
       navbar.classList.remove("sticky-navbar");
       accordion.classList.remove("sticky-accordion");
       backdrop.classList.remove("active");
@@ -910,7 +910,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Desktop modal backdrop close
   if (desktopModalBackdrop) {
-    desktopModalBackdrop.addEventListener("click", () => {
+    desktopModalBackdrop.addEventListener("mouseenter", () => {
       closeModal();
     });
   }
