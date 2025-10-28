@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./dist/main.css" />
     <link rel="icon" type="image/x-icon" href="./public/favicon.png" />
   </head>
-  <body class="font-sans">
+  <body class="font-sans overflow-x-hidden">
     <!-- Sticky backdrop -->
     <div id="sticky-backdrop" class="desktop:block hidden"></div>
     <div id="sticky-backdrop-mobile" class="desktop:hidden"></div>
@@ -23,7 +23,9 @@
         <div class="flex gap-6">
           <!-- logo -->
           <div class="flex items-center gap-1.5">
-            <img src="./public/favicon.png" alt="logo" class="size-[36px]" />
+            <a href="#">
+              <img src="./public/favicon.png" alt="logo" class="size-[36px]" />
+            </a>
             <div>
               <h1 class="text-[16px] ss01 text-primary-600">دلبرباش</h1>
               <h2 class="text-[10px] text-primary-700">فروشگاه اینترنتی</h2>
@@ -35,8 +37,8 @@
           >
             <input
               type="text"
-              placeholder="جستجوی کنید"
-              class="w-full h-full rounded-[9px] border-none outline-none p-2"
+              placeholder="جستجو کنید ...."
+              class="w-full h-full rounded-[9px] border-none outline-none p-2 placeholder:font-light placeholder:text-[#9A9A9A] placeholder:text-[10px]"
             />
             <i
               class="fa-solid fa-magnifying-glass text-[#BABABA] absolute left-[12px] top-[50%] translate-y-[-50%] bg-white"
@@ -45,44 +47,45 @@
         </div>
         <ul class="flex items-center gap-[26px]">
           <li>
-            <a href="#"> محصولات </a>
+            <a href="#" class="hover:text-[#C41818]"> محصولات </a>
           </li>
           <li>
-            <a href="#"> جدیدترین </a>
+            <a href="#" class="hover:text-[#C41818]"> جدیدترین </a>
           </li>
           <li>
-            <a href="#"> پرفروش ترین </a>
+            <a href="#" class="hover:text-[#C41818]"> پرفروش ترین </a>
           </li>
           <li>
-            <a href="#"> ٪ تخفیف دار </a>
+            <a href="#" class="hover:text-[#C41818]"> ٪ تخفیف دار </a>
           </li>
           <li>
-            <a href="#"> محصولات رایگان </a>
+            <a href="#" class="hover:text-[#C41818]"> محصولات رایگان </a>
           </li>
         </ul>
       </div>
       <!-- nav buttons -->
       <div class="flex gap-1.5">
-        <div class="rounded-[8px] border border-[#E8E8E8] p-1.5">
+        <a href="#" class="rounded-[8px] border border-[#E8E8E8] p-1.5">
           <img
             class="size-[24px]"
             src="./public/icons/save-icon.png"
             alt="save icon"
           />
-        </div>
-        <div class="rounded-[8px] border border-[#E8E8E8] p-1.5">
+        </a>
+        <a href="#" class="rounded-[8px] border border-[#E8E8E8] p-1.5">
           <img
             class="size-[24px]"
             src="./public/icons/cart-icon.png"
             alt="cart icon"
           />
-        </div>
-        <button
+        </a>
+        <a
+          href="#"
           type="button"
           class="bg-primary-600 text-white w-[107px] h-[36px] flex items-center font-medium justify-center rounded-[8px] text-[12px]"
         >
           ورود / ثبت نام
-        </button>
+        </a>
       </div>
     </nav>
     <!-- top navbar mobile -->
@@ -91,7 +94,7 @@
       class="desktop:hidden container px-4 mt-8 transition-all duration-300"
     >
       <div class="flex justify-between">
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2 w-20">
           <button
             id="hamburger-btn"
             class="size-[36px] items-center justify-center rounded-[8px] border border-[#E8E8E8] flex bg-white"
@@ -108,7 +111,9 @@
             ></i>
           </button>
         </div>
-        <img src="./public/favicon.png" alt="logo" class="size-[36px]" />
+        <a href="#">
+          <img src="./public/favicon.png" alt="logo" class="size-[36px]" />
+        </a>
         <div class="flex gap-2">
           <div class="rounded-[8px] border border-[#E8E8E8] p-1.5 bg-white">
             <img
@@ -128,7 +133,7 @@
       </div>
       <div
         id="searchbox-Mobile"
-        class= "w-full h-[37px] mt-2 rounded-[9px] border border-[#E8E8E8] relative flex items-center "
+        class="hidden w-full h-[37px] mt-2 rounded-[9px] border border-[#E8E8E8] relative flex items-center"
       >
         <button
           id="mobile-search-close"
@@ -142,7 +147,7 @@
           class="w-full h-full rounded-[9px] border-none outline-none p-2"
         />
         <i
-          class="fa-solid fa-magnifying-glass text-[#BABABA]  bg-white px-2"
+          class="fa-solid fa-magnifying-glass text-[#BABABA] bg-white px-2"
           aria-hidden="true"
         ></i>
       </div>
@@ -164,16 +169,16 @@
     <div class="container flex justify-between items-center mt-[26px]">
       <ul class="flex items-center gap-[9px] text-[#2D2D2D] text-[12px]">
         <li class="flex items-center gap-[9px]">
-          <span>آرایشی</span>
+          <a href="#">آرایشی</a>
           <img src="./public/icons/icon-arrow-left.png" alt="icon-arrow-left" />
         </li>
         <li class="flex items-center gap-[9px]">
-          <span>رژ جامد</span>
+          <a href="#">رژ جامد</a>
           <img src="./public/icons/icon-arrow-left.png" alt="icon-arrow-left" />
         </li>
         <li class="flex items-center gap-[9px]">
           <span class="text-primary-600">رژمدادی پیچی ویولت</span>
-          <img src="./public/icons/icon-arrow-left.png" alt="icon-arrow-left" />
+          <!-- <img src="./public/icons/icon-arrow-left.png" alt="icon-arrow-left" /> -->
         </li>
       </ul>
       <div class="desktop:flex hidden flex-col gap-1">
@@ -194,7 +199,7 @@
     >
       <!-- slider -->
       <div
-        class="embla relative w-[90%] min-[480px]:w-[65%] sm:w-[50%] md:w-[35%] lg:w-[30%] desktop:w-[351px]"
+        class="embla relative w-[95%] min-[480px]:w-[65%] sm:w-[50%] md:w-[35%] lg:w-[30%] desktop:w-[360px]"
       >
         <!-- Product slider backdrop for mobile -->
         <div
@@ -203,13 +208,13 @@
         ></div>
         <!-- dots -->
         <div
-          class="absolute max-[480px]:left-[40%] min-[481px]:left-1/2 p-1.5 rounded-b-xl -translate-x-1/2 bg-white z-10"
+          class="absolute max-[480px]:left-[40%] min-[481px]:left-1/2 p-1.5 rounded-b-xl -translate-x-1/2 -top-0.5 p-2 bg-white z-10"
         >
           <div id="slider-dots" class="flex justify-center gap-2"></div>
         </div>
 
         <div
-          class="max-[480px]:flex max-[480px]:flex-row-reverse justify-between min-[481px]:flex-col"
+          class="max-[480px]:h-[335px] max-[480px]:flex max-[480px]:flex-row-reverse justify-between min-[481px]:flex-col"
         >
           <div class="embla__viewport max-[480px]:w-[80%]">
             <div class="embla__container">
@@ -245,6 +250,15 @@
                   <img
                     class="w-[205px] h-[335px] desktop:w-[241px] desktop:h-[344px] object-contain"
                     src="./public/images/product-4.png"
+                    alt="heart icon"
+                  />
+                </div>
+              </div>
+              <div class="embla__slide">
+                <div class="embla__slide__number bg-primary-300">
+                  <img
+                    class="w-[205px] h-[335px] desktop:w-[241px] desktop:h-[344px] object-contain"
+                    src="./public/images/product-2.png"
                     alt="heart icon"
                   />
                 </div>
@@ -300,6 +314,17 @@
                     />
                   </button>
                 </div>
+                <div
+                  class="embla-thumbs__slide bg-primary-300 flex justify-center items-center"
+                >
+                  <button type="button">
+                    <img
+                      class="object-contain size-[50px] min-[480px]:size-[80px]"
+                      src="./public/images/product-2.png"
+                      alt="product-2"
+                    />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -312,17 +337,20 @@
           aria-label="previous"
         >
           <svg
-            class="w-6 h-6 text-primary-600"
-            fill="none"
-            stroke="currentColor"
+            class="text-primary-600"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
+              d="M4 12H6.5M20 12L14 6M20 12L14 18M20 12H9.5"
+              stroke="#9A6767"
+              stroke-width="1.5"
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 5l7 7-7 7"
-            ></path>
+            />
           </svg>
         </button>
 
@@ -332,24 +360,27 @@
           aria-label="next"
         >
           <svg
-            class="w-6 h-6 text-primary-600 rotate-180"
-            fill="none"
-            stroke="currentColor"
+            class="text-primary-600 rotate-180"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
+              d="M4 12H6.5M20 12L14 6M20 12L14 18M20 12H9.5"
+              stroke="#9A6767"
+              stroke-width="1.5"
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 5l7 7-7 7"
-            ></path>
+            />
           </svg>
         </button>
       </div>
 
       <!-- product info desktop -->
       <div
-        class="border text-[#2D2D2D] py-[22px] px-[29px] rounded-xl border-[#E8E8E8] w-[479px] desktop:block hidden"
+        class="border text-[#2D2D2D] py-[20px] px-[29px] rounded-xl border-[#E8E8E8] w-[490px] desktop:block hidden"
       >
         <!-- FIXME i dont have font lahzeh -->
         <h2 class="text-[32px] font-bold">رژمدادی پیچی ویولت</h2>
@@ -371,23 +402,68 @@
           <br />
           - فاقد سرب و مواد مضر
         </p>
-        <div class="flex font-light text-xs gap-4 mt-[23px]">
+        <div class="flex font-light text-xs gap-4 mt-[22px]">
           <span>دسته :</span>
-          <span class="text-primary-500"
-            >خرید لوازم آرایشی اصل, رژ لب جامد, لب, همه محصولات</span
+          <span class="text-primary-500">
+            <a href="#" class="hover:underline">خرید لوازم آرایشی اصل</a>,
+            <a href="#" class="hover:underline">رژ لب جامد</a>,
+            <a href="#" class="hover:underline">لب, همه محصولات</a></span
           >
+        </div>
+        <div>
+          <p class="text-xs font-medium text-[#4BA100] mt-[22px]">
+            موجودی و قیمت کالا بروز میباشد.
+          </p>
         </div>
         <div class="flex text-[10px] mt-[22px] gap-[15px] text-[#2D2D2D]">
           <button
             class="border cursor-pointer border-[#E8E8E8] w-[172px] h-[38px] rounded-[10px] flex items-center justify-center gap-[10px]"
           >
-            <i class="fa-regular fa-bookmark size-[10px]"></i>
+            <svg
+              width="11"
+              height="12"
+              viewBox="0 0 11 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.350006 5.27806V7.9826C0.350006 9.6596 0.350006 10.4986 0.747589 10.8648C0.937173 11.0398 1.17659 11.1497 1.43171 11.179C1.96634 11.2402 2.59088 10.6877 3.83942 9.58323C4.39192 9.09518 4.66763 8.85089 4.98667 8.78698C5.14376 8.75448 5.30626 8.75448 5.46334 8.78698C5.78292 8.85089 6.05863 9.09518 6.61059 9.58323C7.85913 10.6877 8.48367 11.2402 9.0183 11.1784C9.27288 11.1497 9.51284 11.0398 9.70242 10.8648C10.1 10.4986 10.1 9.66014 10.1 7.9826V5.27752C10.1 2.95485 10.1 1.79352 9.38609 1.07148C8.67217 0.349434 7.52276 0.349976 5.22501 0.349976C2.92726 0.349976 1.77784 0.349976 1.06392 1.07148C0.626798 1.51348 0.457256 2.12123 0.391714 3.05831M6.85001 2.51664H3.60001"
+                stroke="black"
+                stroke-width="0.7"
+                stroke-linecap="round"
+              />
+            </svg>
+
             <span>افزودن به علاقه مندی</span>
           </button>
           <button
             class="border cursor-pointer border-[#E8E8E8] w-[172px] h-[38px] rounded-[10px] flex items-center justify-center gap-[10px]"
           >
-            <i class="fa-regular fa-share-from-square size-[10px]"></i>
+            <svg
+              width="11"
+              height="12"
+              viewBox="0 0 11 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.47501 5.97498C3.47501 6.38938 3.31039 6.7868 3.01736 7.07983C2.72433 7.37286 2.32691 7.53748 1.91251 7.53748C1.49811 7.53748 1.10068 7.37286 0.807652 7.07983C0.514626 6.7868 0.350006 6.38938 0.350006 5.97498C0.350006 5.56057 0.514626 5.16315 0.807652 4.87012C1.10068 4.5771 1.49811 4.41248 1.91251 4.41248C2.32691 4.41248 2.72433 4.5771 3.01736 4.87012C3.31039 5.16315 3.47501 5.56057 3.47501 5.97498Z"
+                stroke="black"
+                stroke-width="0.7"
+              />
+              <path
+                d="M6.60001 2.53748L3.47501 4.72498M6.60001 9.41248L3.47501 7.22498"
+                stroke="black"
+                stroke-width="0.7"
+                stroke-linecap="round"
+              />
+              <path
+                d="M9.72501 10.0375C9.72501 10.4519 9.56039 10.8493 9.26736 11.1423C8.97433 11.4354 8.57691 11.6 8.16251 11.6C7.74811 11.6 7.35068 11.4354 7.05765 11.1423C6.76463 10.8493 6.60001 10.4519 6.60001 10.0375C6.60001 9.62307 6.76463 9.22565 7.05765 8.93262C7.35068 8.6396 7.74811 8.47498 8.16251 8.47498C8.57691 8.47498 8.97433 8.6396 9.26736 8.93262C9.56039 9.22565 9.72501 9.62307 9.72501 10.0375ZM9.72501 1.91248C9.72501 2.32688 9.56039 2.7243 9.26736 3.01733C8.97433 3.31036 8.57691 3.47498 8.16251 3.47498C7.74811 3.47498 7.35068 3.31036 7.05765 3.01733C6.76463 2.7243 6.60001 2.32688 6.60001 1.91248C6.60001 1.49807 6.76463 1.10065 7.05765 0.807621C7.35068 0.514596 7.74811 0.349976 8.16251 0.349976C8.57691 0.349976 8.97433 0.514596 9.26736 0.807621C9.56039 1.10065 9.72501 1.49807 9.72501 1.91248Z"
+                stroke="black"
+                stroke-width="0.7"
+              />
+            </svg>
+
             <span>اشتراک گذاری محصول</span>
           </button>
         </div>
@@ -925,25 +1001,61 @@
     <div class="flex desktop:hidden justify-center mt-[11px]">
       <h1 class="text-2xl font-bold ss01 text-[#2D2D2D]">رژمدادی پیچی ویولت</h1>
     </div>
-    <div class="container mt-[18px] desktop:hidden pb-[100px]">
+    <div class="container mt-[18px] desktop:hidden">
       <div class="flex justify-center text-primary-600">
         <div id="price-display" class="text-[26px] font-bold">۱۴۵,۰۰۰</div>
         <div class="text-xs -rotate-90 relative left-[10px]">تومان</div>
       </div>
       <div class="flex justify-between items-center mt-[35px]">
         <div class="text-[#2D2D2D] font-medium">توضیحات محصول:</div>
-        <div class="flex">
+        <div class="flex gap-1">
           <div
             class="w-[158px] h-[38px] rounded-[10px] text-[#2D2D2D] border border-[#E8E8E8] items-center justify-center flex gap-2"
           >
-            <i class="fa-regular fa-bookmark fa-sm"></i>
+            <svg
+              width="11"
+              height="12"
+              viewBox="0 0 11 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.349976 5.27806V7.9826C0.349976 9.6596 0.349976 10.4986 0.747559 10.8648C0.937142 11.0398 1.17656 11.1497 1.43168 11.179C1.96631 11.2402 2.59085 10.6877 3.83939 9.58323C4.39189 9.09518 4.6676 8.85089 4.98664 8.78698C5.14373 8.75448 5.30623 8.75448 5.46331 8.78698C5.78289 8.85089 6.0586 9.09518 6.61056 9.58323C7.8591 10.6877 8.48364 11.2402 9.01827 11.1784C9.27285 11.1497 9.51281 11.0398 9.70239 10.8648C10.1 10.4986 10.1 9.66014 10.1 7.9826V5.27752C10.1 2.95485 10.1 1.79352 9.38606 1.07148C8.67214 0.349434 7.52273 0.349976 5.22498 0.349976C2.92723 0.349976 1.77781 0.349976 1.06389 1.07148C0.626767 1.51348 0.457226 2.12123 0.391684 3.05831M6.84998 2.51664H3.59998"
+                stroke="black"
+                stroke-width="0.7"
+                stroke-linecap="round"
+              />
+            </svg>
             <span class="text-[10px]">افزودن به علاقه مندی</span>
           </div>
           <div
             id="openShareMobile"
             class="size-[38px] rounded-[10px] border border-[#E8E8E8] text-[#2D2D2D] flex justify-center items-center"
           >
-            <i class="fa-solid fa-share-nodes"></i>
+            <svg
+              width="11"
+              height="12"
+              viewBox="0 0 11 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.47498 5.97498C3.47498 6.38938 3.31036 6.7868 3.01733 7.07983C2.7243 7.37286 2.32688 7.53748 1.91248 7.53748C1.49807 7.53748 1.10065 7.37286 0.807621 7.07983C0.514596 6.7868 0.349976 6.38938 0.349976 5.97498C0.349976 5.56057 0.514596 5.16315 0.807621 4.87012C1.10065 4.5771 1.49807 4.41248 1.91248 4.41248C2.32688 4.41248 2.7243 4.5771 3.01733 4.87012C3.31036 5.16315 3.47498 5.56057 3.47498 5.97498Z"
+                stroke="black"
+                stroke-width="0.7"
+              />
+              <path
+                d="M6.59998 2.53748L3.47498 4.72498M6.59998 9.41248L3.47498 7.22498"
+                stroke="black"
+                stroke-width="0.7"
+                stroke-linecap="round"
+              />
+              <path
+                d="M9.72498 10.0375C9.72498 10.4519 9.56036 10.8493 9.26733 11.1423C8.9743 11.4354 8.57688 11.6 8.16248 11.6C7.74807 11.6 7.35065 11.4354 7.05762 11.1423C6.7646 10.8493 6.59998 10.4519 6.59998 10.0375C6.59998 9.62307 6.7646 9.22565 7.05762 8.93262C7.35065 8.6396 7.74807 8.47498 8.16248 8.47498C8.57688 8.47498 8.9743 8.6396 9.26733 8.93262C9.56036 9.22565 9.72498 9.62307 9.72498 10.0375ZM9.72498 1.91248C9.72498 2.32688 9.56036 2.7243 9.26733 3.01733C8.9743 3.31036 8.57688 3.47498 8.16248 3.47498C7.74807 3.47498 7.35065 3.31036 7.05762 3.01733C6.7646 2.7243 6.59998 2.32688 6.59998 1.91248C6.59998 1.49807 6.7646 1.10065 7.05762 0.807621C7.35065 0.514596 7.74807 0.349976 8.16248 0.349976C8.57688 0.349976 8.9743 0.514596 9.26733 0.807621C9.56036 1.10065 9.72498 1.49807 9.72498 1.91248Z"
+                stroke="black"
+                stroke-width="0.7"
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -965,16 +1077,19 @@
         - فاقد سرب و مواد مضر
       </p>
       <div class="flex gap-2 mt-[19px] text-[12px]">
-        <span>دسته :</span>
-        <span class="text-primary-500"
-          >خرید لوازم آرایشی اصل, رژ لب جامد, لب, همه محصولات</span
-        >
+        <span class="w-9.5">دسته :</span>
+        <span class="text-primary-500">
+          <a href="#" class="hover:underline">خرید لوازم آرایشی اصل</a>,
+          <a href="#" class="hover:underline">رژ لب جامد</a>,
+          <a href="#" class="hover:underline">لب, همه محصولات</a>
+        </span>
       </div>
     </div>
 
     <!-- Mobile Product Selection Button - Fixed -->
     <div
-      class="fixed bottom-0 left-0 right-0 bg-white pt-[30px] pb-10 px-[37px] desktop:hidden shadow-2xl rounded-t-3xl shadow-black z-40"
+      id="mobile-product-selection"
+      class="fixed hidden bottom-0 left-0 right-0 bg-white pt-[30px] pb-10 px-[37px] desktop:hidden shadow-2xl rounded-t-3xl shadow-black z-40"
     >
       <button
         id="mobile-select-model-btn"
@@ -985,6 +1100,7 @@
       </button>
     </div>
 
+    <!-- ************************************** -->
     <!-- Desktop Category Modal -->
     <div id="desktop-category-modal" class="fixed inset-0 z-50 hidden">
       <!-- Backdrop -->
@@ -1021,7 +1137,10 @@
         <!-- Header -->
         <div class="flex items-center justify-between p-6">
           <div class="flex items-center gap-2">
-            <img src="./public/favicon.png" alt="logo" class="size-8" />
+            <a href="#">
+              <img src="./public/favicon.png" alt="logo" class="size-8" />
+            </a>
+
             <div>
               <h1 class="text-lg font-bold text-primary-600">دلبرباش</h1>
               <p class="text-xs text-primary-700">فروشگاه اینترنت</p>
@@ -1154,7 +1273,7 @@
         <!-- Items will be rendered here by JavaScript -->
       </div>
     </div>
-
+    <!-- //////////////////////////////// -->
     <!-- Mobile Product Selection Modal -->
     <div id="mobile-product-modal" class="fixed inset-0 z-50 hidden">
       <!-- Backdrop with blur effect -->
@@ -1167,7 +1286,7 @@
       <div class="flex items-end h-full relative">
         <div
           id="mobile-modal-content"
-          class="bg-white w-full rounded-t-3xl p-6 max-h-[80vh] overflow-y-auto transform translate-y-full transition-transform duration-300 ease-out"
+          class="bg-white w-full rounded-t-3xl p-6 max-h-[65vh] transform translate-y-full transition-transform duration-300 ease-out flex flex-col overflow-hidden"
         >
           <!-- Modal Header -->
           <div class="flex justify-between items-center mb-6">
@@ -1181,470 +1300,478 @@
               <i class="fa-solid fa-xmark text-xl"></i>
             </button>
           </div>
-          <!-- color selection one Row Item -->
-          <div class="w-full hidden grid grid-cols-1 gap-3">
-            <div
-              id="color-1"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
+          <div class="flex-1 min-h-0 overflow-y-auto">
+            <!-- color selection one Row Item -->
+            <div class="w-full hidden grid grid-cols-1 gap-3">
               <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                id="color-1"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
               >
-                <span class="title">رنگ شماره ۱</span>
                 <div
-                  class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
                 >
-                  <i class="fa-solid fa-check text-[#C41818]"></i>
+                  <span class="title">رنگ شماره ۱</span>
+                  <div
+                    class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  >
+                    <i class="fa-solid fa-check text-[#C41818]"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="color-2"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="title">رنگ شماره 2</span>
+                  <div
+                    class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  >
+                    <i class="fa-solid fa-check text-[#C41818]"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="color-3"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="title">رنگ شماره 3</span>
+                  <div
+                    class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  >
+                    <i class="fa-solid fa-check text-[#C41818]"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="color-4"
+                class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="text-[#A6A6A6]">رنگ شماره 4</span>
+                  <span class="text-[#A00000]">اتمام موجودی</span>
+                </div>
+              </div>
+              <div
+                id="color-5"
+                class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="text-[#A6A6A6]">رنگ شماره 5</span>
+                  <span class="text-[#A00000]">اتمام موجودی</span>
+                </div>
+              </div>
+              <div
+                id="color-6"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="title">رنگ شماره 6</span>
+                  <div
+                    class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  >
+                    <i class="fa-solid fa-check text-[#C41818]"></i>
+                  </div>
                 </div>
               </div>
             </div>
-            <div
-              id="color-2"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
+            <!-- color selection two Row Item -->
+            <div class="w-full grid grid-cols-2 gap-3">
               <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                id="color-1"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
               >
-                <span class="title">رنگ شماره 2</span>
                 <div
-                  class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
                 >
-                  <i class="fa-solid fa-check text-[#C41818]"></i>
+                  <span class="title">رنگ شماره ۱</span>
+                  <div
+                    class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  >
+                    <i class="fa-solid fa-check text-[#C41818]"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="color-2"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="title">رنگ شماره 2</span>
+                  <div
+                    class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  >
+                    <i class="fa-solid fa-check text-[#C41818]"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="color-3"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="title">رنگ شماره 3</span>
+                  <div
+                    class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  >
+                    <i class="fa-solid fa-check text-[#C41818]"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="color-4"
+                class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex pt-0.5 items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="text-[#A6A6A6]">رنگ شماره 4</span>
+                  <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
+                </div>
+              </div>
+              <div
+                id="color-5"
+                class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex pt-0.5 items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="text-[#A6A6A6]">رنگ شماره 5</span>
+                  <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
+                </div>
+              </div>
+              <div
+                id="color-6"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="title">رنگ شماره 6</span>
+                  <div
+                    class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  >
+                    <i class="fa-solid fa-check text-[#C41818]"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="color-7"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="title">رنگ شماره 7</span>
+                  <div
+                    class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  >
+                    <i class="fa-solid fa-check text-[#C41818]"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="color-8"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="title">رنگ شماره 8</span>
+                  <div
+                    class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  >
+                    <i class="fa-solid fa-check text-[#C41818]"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="color-9"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="title">رنگ شماره 9</span>
+                  <div
+                    class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  >
+                    <i class="fa-solid fa-check text-[#C41818]"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="color-10"
+                class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex pt-0.5 items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="text-[#A6A6A6]">رنگ شماره 10</span>
+                  <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
                 </div>
               </div>
             </div>
-            <div
-              id="color-3"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
+            <!-- color selection Three Row Item -->
+            <div class="w-full hidden grid grid-cols-3 gap-3">
               <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                id="color-1"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
               >
-                <span class="title">رنگ شماره 3</span>
                 <div
-                  class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
                 >
-                  <i class="fa-solid fa-check text-[#C41818]"></i>
+                  <span class="title">رنگ شماره ۱</span>
+                  <div
+                    class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  >
+                    <i class="fa-solid fa-check text-[#C41818]"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="color-2"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="title">رنگ شماره 2</span>
+                  <div
+                    class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  >
+                    <i class="fa-solid fa-check text-[#C41818]"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="color-3"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="title">رنگ شماره 3</span>
+                  <div
+                    class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  >
+                    <i class="fa-solid fa-check text-[#C41818]"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="color-4"
+                class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex flex-col justify-center text-xs text-[#2D2D2D]"
+                >
+                  <span class="text-[#A6A6A6]">رنگ شماره 4</span>
+                  <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
+                </div>
+              </div>
+              <div
+                id="color-5"
+                class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex flex-col justify-center text-xs text-[#2D2D2D]"
+                >
+                  <span class="text-[#A6A6A6]">رنگ شماره 5</span>
+                  <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
+                </div>
+              </div>
+              <div
+                id="color-6"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="title">رنگ شماره 6</span>
+                  <div
+                    class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  >
+                    <i class="fa-solid fa-check text-[#C41818]"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="color-7"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="title">رنگ شماره 7</span>
+                  <div
+                    class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  >
+                    <i class="fa-solid fa-check text-[#C41818]"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="color-8"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="title">رنگ شماره 8</span>
+                  <div
+                    class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  >
+                    <i class="fa-solid fa-check text-[#C41818]"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="color-9"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                >
+                  <span class="title">رنگ شماره 9</span>
+                  <div
+                    class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  >
+                    <i class="fa-solid fa-check text-[#C41818]"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="color-10"
+                class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
+              >
+                <div
+                  class="flex flex-col justify-center text-xs text-[#2D2D2D]"
+                >
+                  <span class="text-[#A6A6A6]">رنگ شماره 10</span>
+                  <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
                 </div>
               </div>
             </div>
-            <div
-              id="color-4"
-              class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
+            <!-- color selection Four Row Item -->
+            <div class="w-full hidden grid grid-cols-4 gap-3">
               <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                id="color-1"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
               >
-                <span class="text-[#A6A6A6]">رنگ شماره 4</span>
-                <span class="text-[#A00000]">اتمام موجودی</span>
-              </div>
-            </div>
-            <div
-              id="color-5"
-              class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
-              >
-                <span class="text-[#A6A6A6]">رنگ شماره 5</span>
-                <span class="text-[#A00000]">اتمام موجودی</span>
-              </div>
-            </div>
-            <div
-              id="color-6"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
-              >
-                <span class="title">رنگ شماره 6</span>
                 <div
-                  class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
                 >
-                  <i class="fa-solid fa-check text-[#C41818]"></i>
+                  <span class="title">رنگ شماره ۱</span>
                 </div>
               </div>
-            </div>
-          </div>
-          <!-- color selection two Row Item -->
-          <div class="w-full  grid grid-cols-2 gap-3">
-            <div
-              id="color-1"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
               <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                id="color-2"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
               >
-                <span class="title">رنگ شماره ۱</span>
                 <div
-                  class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
                 >
-                  <i class="fa-solid fa-check text-[#C41818]"></i>
+                  <span class="title">رنگ شماره 2</span>
                 </div>
               </div>
-            </div>
-            <div
-              id="color-2"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
               <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                id="color-3"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
               >
-                <span class="title">رنگ شماره 2</span>
                 <div
-                  class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
                 >
-                  <i class="fa-solid fa-check text-[#C41818]"></i>
+                  <span class="title">رنگ شماره 3</span>
                 </div>
               </div>
-            </div>
-            <div
-              id="color-3"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
               <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                id="color-4"
+                class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
               >
-                <span class="title">رنگ شماره 3</span>
                 <div
-                  class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  class="flex flex-col justify-center text-[8px] text-[#2D2D2D]"
                 >
-                  <i class="fa-solid fa-check text-[#C41818]"></i>
+                  <span class="text-[#A6A6A6]">رنگ شماره 4</span>
+                  <span class="text-[#A00000] text-[7px]">اتمام موجودی</span>
                 </div>
               </div>
-            </div>
-            <div
-              id="color-4"
-              class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
               <div
-                class="flex pt-0.5 items-center justify-between text-xs text-[#2D2D2D]"
+                id="color-5"
+                class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
               >
-                <span class="text-[#A6A6A6]">رنگ شماره 4</span>
-                <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
-              </div>
-            </div>
-            <div
-              id="color-5"
-              class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex pt-0.5 items-center justify-between text-xs text-[#2D2D2D]"
-              >
-                <span class="text-[#A6A6A6]">رنگ شماره 5</span>
-                <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
-              </div>
-            </div>
-            <div
-              id="color-6"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
-              >
-                <span class="title">رنگ شماره 6</span>
                 <div
-                  class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  class="flex flex-col justify-center text-[8px] text-[#2D2D2D]"
                 >
-                  <i class="fa-solid fa-check text-[#C41818]"></i>
+                  <span class="text-[#A6A6A6]">رنگ شماره 5</span>
+                  <span class="text-[#A00000] text-[7px]">اتمام موجودی</span>
                 </div>
               </div>
-            </div>
-            <div
-              id="color-7"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
               <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                id="color-6"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
               >
-                <span class="title">رنگ شماره 7</span>
                 <div
-                  class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
                 >
-                  <i class="fa-solid fa-check text-[#C41818]"></i>
+                  <span class="title">رنگ شماره 6</span>
                 </div>
               </div>
-            </div>
-            <div
-              id="color-8"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
               <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                id="color-7"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
               >
-                <span class="title">رنگ شماره 8</span>
                 <div
-                  class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
                 >
-                  <i class="fa-solid fa-check text-[#C41818]"></i>
+                  <span class="title">رنگ شماره 7</span>
                 </div>
               </div>
-            </div>
-            <div
-              id="color-9"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
               <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                id="color-8"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
               >
-                <span class="title">رنگ شماره 9</span>
                 <div
-                  class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
                 >
-                  <i class="fa-solid fa-check text-[#C41818]"></i>
+                  <span class="title">رنگ شماره 8</span>
                 </div>
               </div>
-            </div>
-            <div
-              id="color-10"
-              class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
               <div
-                class="flex pt-0.5 items-center justify-between text-xs text-[#2D2D2D]"
+                id="color-9"
+                class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
               >
-                <span class="text-[#A6A6A6]">رنگ شماره 10</span>
-                <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
-              </div>
-            </div>
-          </div>
-          <!-- color selection Three Row Item -->
-          <div class="w-full hidden grid grid-cols-3 gap-3">
-            <div
-              id="color-1"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
-              >
-                <span class="title">رنگ شماره ۱</span>
                 <div
-                  class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
                 >
-                  <i class="fa-solid fa-check text-[#C41818]"></i>
+                  <span class="title">رنگ شماره 9</span>
                 </div>
               </div>
-            </div>
-            <div
-              id="color-2"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
               <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
+                id="color-10"
+                class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
               >
-                <span class="title">رنگ شماره 2</span>
                 <div
-                  class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
+                  class="flex flex-col justify-center text-[8px] text-[#2D2D2D]"
                 >
-                  <i class="fa-solid fa-check text-[#C41818]"></i>
+                  <span class="text-[#A6A6A6]">رنگ شماره 10</span>
+                  <span class="text-[#A00000] text-[7px]">اتمام موجودی</span>
                 </div>
-              </div>
-            </div>
-            <div
-              id="color-3"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
-              >
-                <span class="title">رنگ شماره 3</span>
-                <div
-                  class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
-                >
-                  <i class="fa-solid fa-check text-[#C41818]"></i>
-                </div>
-              </div>
-            </div>
-            <div
-              id="color-4"
-              class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div class="flex flex-col justify-center text-xs text-[#2D2D2D]">
-                <span class="text-[#A6A6A6]">رنگ شماره 4</span>
-                <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
-              </div>
-            </div>
-            <div
-              id="color-5"
-              class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div class="flex flex-col justify-center text-xs text-[#2D2D2D]">
-                <span class="text-[#A6A6A6]">رنگ شماره 5</span>
-                <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
-              </div>
-            </div>
-            <div
-              id="color-6"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
-              >
-                <span class="title">رنگ شماره 6</span>
-                <div
-                  class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
-                >
-                  <i class="fa-solid fa-check text-[#C41818]"></i>
-                </div>
-              </div>
-            </div>
-            <div
-              id="color-7"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
-              >
-                <span class="title">رنگ شماره 7</span>
-                <div
-                  class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
-                >
-                  <i class="fa-solid fa-check text-[#C41818]"></i>
-                </div>
-              </div>
-            </div>
-            <div
-              id="color-8"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
-              >
-                <span class="title">رنگ شماره 8</span>
-                <div
-                  class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
-                >
-                  <i class="fa-solid fa-check text-[#C41818]"></i>
-                </div>
-              </div>
-            </div>
-            <div
-              id="color-9"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex items-center justify-between text-xs text-[#2D2D2D]"
-              >
-                <span class="title">رنگ شماره 9</span>
-                <div
-                  class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
-                >
-                  <i class="fa-solid fa-check text-[#C41818]"></i>
-                </div>
-              </div>
-            </div>
-            <div
-              id="color-10"
-              class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div class="flex flex-col justify-center text-xs text-[#2D2D2D]">
-                <span class="text-[#A6A6A6]">رنگ شماره 10</span>
-                <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
-              </div>
-            </div>
-          </div>
-          <!-- color selection Four Row Item -->
-          <div class="w-full hidden grid grid-cols-4 gap-3">
-            <div
-              id="color-1"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
-              >
-                <span class="title">رنگ شماره ۱</span>
-              </div>
-            </div>
-            <div
-              id="color-2"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
-              >
-                <span class="title">رنگ شماره 2</span>
-              </div>
-            </div>
-            <div
-              id="color-3"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
-              >
-                <span class="title">رنگ شماره 3</span>
-              </div>
-            </div>
-            <div
-              id="color-4"
-              class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex flex-col justify-center text-[8px] text-[#2D2D2D]"
-              >
-                <span class="text-[#A6A6A6]">رنگ شماره 4</span>
-                <span class="text-[#A00000] text-[7px]">اتمام موجودی</span>
-              </div>
-            </div>
-            <div
-              id="color-5"
-              class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex flex-col justify-center text-[8px] text-[#2D2D2D]"
-              >
-                <span class="text-[#A6A6A6]">رنگ شماره 5</span>
-                <span class="text-[#A00000] text-[7px]">اتمام موجودی</span>
-              </div>
-            </div>
-            <div
-              id="color-6"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
-              >
-                <span class="title">رنگ شماره 6</span>
-              </div>
-            </div>
-            <div
-              id="color-7"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
-              >
-                <span class="title">رنگ شماره 7</span>
-              </div>
-            </div>
-            <div
-              id="color-8"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
-              >
-                <span class="title">رنگ شماره 8</span>
-              </div>
-            </div>
-            <div
-              id="color-9"
-              class="color-item available relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
-              >
-                <span class="title">رنگ شماره 9</span>
-              </div>
-            </div>
-            <div
-              id="color-10"
-              class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
-            >
-              <div
-                class="flex flex-col justify-center text-[8px] text-[#2D2D2D]"
-              >
-                <span class="text-[#A6A6A6]">رنگ شماره 10</span>
-                <span class="text-[#A00000] text-[7px]">اتمام موجودی</span>
               </div>
             </div>
           </div>
@@ -1688,7 +1815,7 @@
           <!-- Add to Cart Button -->
           <button
             id="mobile-add-to-cart-btn"
-            class="w-full bg-red-600 font-medium hover:bg-red-700 text-white h-[51px] rounded-[10px] flex items-center justify-center gap-3 transition-all duration-300 text-[16px]"
+            class="w-full bg-[#E0E0E0] font-medium text-[#B1B1B1] h-[61px] rounded-[10px] flex items-center justify-center gap-3 transition-all duration-300 text-[16px]"
             disabled
           >
             <i class="fa-solid fa-cart-shopping"></i>
@@ -1712,7 +1839,7 @@
       >
         <div
           id="comment-modal-content"
-          class="bg-white w-[480px] max-w-full rounded-3xl py-6 px-3 lg:p-6 max-h-[80vh] overflow-y-auto transform translate-y-full transition-transform duration-300 ease-out justify-between"
+          class="bg-white w-full min-[480px]:w-[400px] rounded-3xl py-6 px-3 lg:p-6 max-h-[80vh] overflow-y-auto transform translate-y-full transition-transform duration-300 ease-out justify-between"
         >
           <!-- Modal Header -->
           <div class="flex justify-between items-center mb-6">
@@ -1761,11 +1888,15 @@
                 />
               </div>
             </div>
-            <textarea
-              class="p-4 outline-0 border border-[#E8E8E8] rounded-xl resize-none placeholder:text-xs placeholder:text-[#9A9A9A]"
-              rows="7"
-              placeholder="بنویسید"
-            ></textarea>
+            <div class="flex flex-col gap-2">
+              <label for="name" class="text-sm text-[#2D2D2D]">دیدگاه* </label>
+              <textarea
+                class="p-4 outline-0 border border-[#E8E8E8] rounded-xl resize-none placeholder:text-xs placeholder:text-[#9A9A9A]"
+                rows="7"
+                placeholder="بنویسید"
+              ></textarea>
+            </div>
+
             <button
               class="text-lg text-white font-semibold w-full bg-[#860A0A] h-[60px] rounded-xl mt-6 cursor-pointer"
             >
@@ -1805,7 +1936,10 @@
 
           <!-- Modal Content -->
           <div class="flex flex-col gap-2.5">
-            <div
+            <!-- Telegram -->
+            <a
+              href="https://t.me/share/url?url=https://example.com/product/123&text=محصول%20جدید"
+              target="_blank"
               class="flex items-center justify-between rounded-2xl border border-[#EAECFF] px-5 py-3"
             >
               <div class="flex items-center gap-3">
@@ -1819,8 +1953,12 @@
                 src="./public/icons/back-share-icons.png"
                 alt="back-share-icons"
               />
-            </div>
-            <div
+            </a>
+
+            <!-- WhatsApp -->
+            <a
+              href="https://api.whatsapp.com/send?text=https://example.com/product/123"
+              target="_blank"
               class="flex items-center justify-between rounded-2xl border border-[#EAECFF] px-5 py-3"
             >
               <div class="flex items-center gap-3">
@@ -1829,7 +1967,7 @@
                   alt="whatsapp-icons"
                 />
                 <span class="flex flex-col gap-2">
-                  <span class="text-sm font-medium">واتس آپ</span>
+                  <span class="text-sm font-medium">واتس‌اپ</span>
                   <span class="text-xs text-[#60D669]">اشتراک گذاری</span>
                 </span>
               </div>
@@ -1837,8 +1975,12 @@
                 src="./public/icons/back-share-icons.png"
                 alt="back-share-icons"
               />
-            </div>
-            <div
+            </a>
+
+            <!-- Eitaa -->
+            <a
+              href="https://eitaa.com/share/url?url=https://example.com/product/123&text=محصول%20جدید"
+              target="_blank"
               class="flex items-center justify-between rounded-2xl border border-[#EAECFF] px-5 py-3"
             >
               <div class="flex items-center gap-3">
@@ -1852,8 +1994,12 @@
                 src="./public/icons/back-share-icons.png"
                 alt="back-share-icons"
               />
-            </div>
-            <div
+            </a>
+
+            <!-- Bale -->
+            <a
+              href="https://bale.ai/share?url=https://example.com/product/123&text=محصول%20جدید"
+              target="_blank"
               class="flex items-center justify-between rounded-2xl border border-[#EAECFF] px-5 py-3"
             >
               <div class="flex items-center gap-3">
@@ -1867,8 +2013,12 @@
                 src="./public/icons/back-share-icons.png"
                 alt="back-share-icons"
               />
-            </div>
-            <div
+            </a>
+
+            <!-- X (Twitter) -->
+            <a
+              href="https://twitter.com/intent/tweet?url=https://example.com/product/123&text=محصول%20جدید"
+              target="_blank"
               class="flex items-center justify-between rounded-2xl border border-[#EAECFF] px-5 py-3"
             >
               <div class="flex items-center gap-3">
@@ -1882,8 +2032,11 @@
                 src="./public/icons/back-share-icons.png"
                 alt="back-share-icons"
               />
-            </div>
-            <div
+            </a>
+            <a
+              href="#"
+              id="copy-product-link"
+              data-url="https://example.com/product/123"
               class="flex items-center justify-between rounded-2xl border border-[#EAECFF] px-5 py-3 mb-6"
             >
               <div class="flex items-center gap-3">
@@ -1900,14 +2053,13 @@
                 src="./public/icons/back-share-icons.png"
                 alt="back-share-icons"
               />
-            </div>
+            </a>
           </div>
 
           <!-- Add to Cart Button -->
           <button
-            id="mobile-add-to-cart-btn"
+            id="mobile-modal-share-btn-close"
             class="w-full bg-red-600 font-medium hover:bg-red-700 text-white h-[51px] rounded-[10px] flex items-center justify-center gap-3 transition-all duration-300 text-[16px]"
-            disabled
           >
             <span>بازگشت</span>
           </button>
@@ -1915,13 +2067,66 @@
       </div>
     </div>
 
+    <!-- Toast -->
+    <div
+      id="toast"
+      class="fixed top-5 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 z-50"
+    >
+      لینک محصول کپی شد!
+    </div>
+    <!-- //////////////////////////////// -->
+
+    <!-- ************************************** -->
+
     <!-- banners -->
     <div class="container">
       <div class="flex desktop:flex-row flex-col-reverse gap-[9px] mt-10">
         <div class="desktop:flex grid grid-cols-2 gap-[9px]">
+          <!-- Mobile item -->
           <a
             href="#"
-            class="bg-[#FFF3E3] desktop:w-[243px] flex rounded-[13px] desktop:rounded-[20px] items-center"
+            class="bg-[#FFF3E3] desktop:w-[243px] flex desktop:hidden rounded-[13px] desktop:rounded-[20px] items-center h-20 desktop:h-[125px]"
+          >
+            <img
+              class="w-[46px] h-[68px] desktop:w-[65px] desktop:h-[98px] object-contain mr-3"
+              src="./public/images/product-5.png"
+              alt="product"
+            />
+            <div class="flex flex-col gap-1.5">
+              <span
+                class="text-xs desktop:text-[15px] font-bold text-primary-450 ss01"
+                >محصول هدیه برای</span
+              >
+              <span
+                class="text-[8px] desktop:text-xs font-medium text-primary-450"
+                >سفارش بالای ۱ میلیون</span
+              >
+            </div>
+          </a>
+          <a
+            href="#"
+            class="bg-[#FFF3E3] desktop:w-[243px] flex desktop:hidden rounded-[13px] desktop:rounded-[20px] items-center h-20 desktop:h-[125px]"
+          >
+            <img
+              class="w-[53px] h-[77px] desktop:w-[76px] desktop:h-[110px] object-contain"
+              src="./public/images/pack.png"
+              alt="pack"
+            />
+            <div class="flex flex-col gap-1.5">
+              <span
+                class="text-xs desktop:text-[15px] font-bold text-primary-450 ss01"
+                >ارسال با پک کادویی</span
+              >
+              <span
+                class="text-[8px] desktop:text-xs font-medium text-primary-450"
+                >درصورت انتخاب</span
+              >
+            </div>
+          </a>
+          <!-- Mobile item -->
+          <a
+            href="#"
+            class="bg-[#FFF3E3] desktop:w-[243px] flex rounded-[13px] desktop:rounded-[20px] items-center h-20 desktop:h-[125px]"
           >
             <img
               class="w-[64px] h-[58px] desktop:w-[80px] desktop:h-[71px] object-contain"
@@ -1939,9 +2144,11 @@
               >
             </div>
           </a>
+          <!-- Desktop item -->
+
           <a
             href="#"
-            class="bg-[#FFF3E3] desktop:w-[243px] flex rounded-[13px] desktop:rounded-[20px] items-center"
+            class="bg-[#FFF3E3] desktop:w-[243px] hidden desktop:flex rounded-[13px] desktop:rounded-[20px] items-center h-20 desktop:h-[125px]"
           >
             <img
               class="w-[46px] h-[68px] desktop:w-[65px] desktop:h-[98px] object-contain"
@@ -1961,7 +2168,7 @@
           </a>
           <a
             href="#"
-            class="bg-[#FFF3E3] desktop:w-[243px] flex rounded-[13px] desktop:rounded-[20px] items-center"
+            class="bg-[#FFF3E3] desktop:w-[243px] hidden desktop:flex rounded-[13px] desktop:rounded-[20px] items-center h-20 desktop:h-[125px]"
           >
             <img
               class="w-[53px] h-[77px] desktop:w-[76px] desktop:h-[110px] object-contain"
@@ -1979,23 +2186,25 @@
               >
             </div>
           </a>
+          <!-- Desktop item -->
+
           <a
             href="#"
-            class="bg-[#FFF3E3] desktop:w-[243px] desktop:hidden flex rounded-[13px] desktop:rounded-[20px] items-center"
+            class="bg-[#FFF3E3] desktop:w-[243px] desktop:hidden flex rounded-[13px] desktop:rounded-[20px] items-center h-20 desktop:h-[125px]"
           >
             <img
               class="w-[53px] h-[77px] desktop:w-[76px] desktop:h-[110px] object-contain"
-              src="./public/images/pack.png"
+              src="./public/images/green-check-mark-icon.png"
               alt="pack"
             />
             <div class="flex flex-col gap-1.5">
               <span
                 class="text-xs desktop:text-[15px] font-bold text-primary-450 ss01"
-                >ارسال با پک کادویی</span
-              >
+                >قیمت و موجودی
+              </span>
               <span
                 class="text-[8px] desktop:text-xs font-medium text-primary-450"
-                >درصورت انتخاب</span
+                >بروز میباشد</span
               >
             </div>
           </a>
@@ -2004,10 +2213,10 @@
         <!-- discount banner -->
         <a
           href="#"
-          class="bg-secondary-400 relative w-full flex rounded-[20px] items-center overflow-hidden"
+          class="bg-secondary-400 relative w-full flex rounded-[20px] items-center overflow-hidden pr-3 desktop:pr-6 h-[125px]"
         >
           <img
-            class="w-[80px] h-[71px] object-contain"
+            class="w-[77px] h-[92px] desktop:w-auto desktop:h-auto object-contain"
             src="./public/images/product-6.png"
             alt="discount"
           />
@@ -2055,7 +2264,7 @@
         <div class="w-full h-px bg-[#E8E8E8]"></div>
       </div>
       <div class="desktop:flex gap-4 items-center hidden">
-        <h2 class="text-xl desktop:w-[158px]">نظرات مشتریان</h2>
+        <h2 class="text-xl desktop:w-[158px]">دیدگاه کاربران</h2>
         <div class="w-full bg-[#E8E8E8] h-px"></div>
         <button
           id="openCommentDesktop"
@@ -2068,174 +2277,9 @@
       </div>
       <!-- Reviews Embla Carousel -->
       <div class="relative mt-6">
-        <!-- dots -->
-        <div
-          class="absolute left-1/2 p-1.5 rounded-b-xl -translate-x-1/2 bg-white z-10"
-        >
-          <div id="reviews-dots" class="flex justify-center gap-2"></div>
-        </div>
         <div class="embla-reviews__viewport">
           <div class="embla-reviews__container" id="reviews-container">
-            <!-- <div class="embla-reviews__slide">
-              <div class="w-[374px] h-[139px] flex flex-col gap-4 bg-primary-100 rounded-[20px] pr-[28px] pt-[20px] pl-[23px] pb-[25px] shrink-0">
-                <div class="flex justify-between">
-                  <div class="flex gap-4">
-                    <div class="bg-primary-300 p-[11px] rounded-full">
-                      <img
-                        class="size-[32px]"
-                        src="/public/icons/icon-person.png"
-                        alt="avatar"
-                      />
-                    </div>
-                    <div class="flex flex-col">
-                      <span class="font-medium text-primary-550"
-                        >میترا احمدی</span
-                      >
-                      <span class="text-[10px] text-primary-350"
-                        >۱۲ تیر ۱۴۰۴</span
-                      >
-                    </div>
-                  </div>
-
-                  <div class="text-primary-350">
-                    <span class="text-[10px]">۵/</span>
-                    <span class="text-[12px] font-semibold">5</span>
-                  </div>
-                </div>
-
-                <p class="text-[12px] text-[#2D2D2D]">
-                  خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌
-                </p>
-              </div>
-            </div>
-            <div class="embla-reviews__slide">
-              <div class="w-[374px] h-[139px] flex flex-col gap-4 bg-primary-100 rounded-[20px] pr-[28px] pt-[20px] pl-[23px] pb-[25px] shrink-0">
-                <div class="flex justify-between">
-                  <div class="flex gap-4">
-                    <div class="bg-primary-300 p-[11px] rounded-full">
-                      <img
-                        class="size-[32px]"
-                        src="/public/icons/icon-person.png"
-                        alt="avatar"
-                      />
-                    </div>
-                    <div class="flex flex-col">
-                      <span class="font-medium text-primary-550"
-                        >میترا احمدی</span
-                      >
-                      <span class="text-[10px] text-primary-350"
-                        >۱۲ تیر ۱۴۰۴</span
-                      >
-                    </div>
-                  </div>
-
-                  <div class="text-primary-350">
-                    <span class="text-[10px]">۵/</span>
-                    <span class="text-[12px] font-semibold">5</span>
-                  </div>
-                </div>
-
-                <p class="text-[12px] text-[#2D2D2D]">
-                  خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌
-                </p>
-              </div>
-            </div>
-            <div class="embla-reviews__slide">
-              <div class="w-[374px] h-[139px] flex flex-col gap-4 bg-primary-100 rounded-[20px] pr-[28px] pt-[20px] pl-[23px] pb-[25px] shrink-0">
-                <div class="flex justify-between">
-                  <div class="flex gap-4">
-                    <div class="bg-primary-300 p-[11px] rounded-full">
-                      <img
-                        class="size-[32px]"
-                        src="/public/icons/icon-person.png"
-                        alt="avatar"
-                      />
-                    </div>
-                    <div class="flex flex-col">
-                      <span class="font-medium text-primary-550"
-                        >میترا احمدی</span
-                      >
-                      <span class="text-[10px] text-primary-350"
-                        >۱۲ تیر ۱۴۰۴</span
-                      >
-                    </div>
-                  </div>
-
-                  <div class="text-primary-350">
-                    <span class="text-[10px]">۵/</span>
-                    <span class="text-[12px] font-semibold">5</span>
-                  </div>
-                </div>
-
-                <p class="text-[12px] text-[#2D2D2D]">
-                  خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌
-                </p>
-              </div>
-            </div>
-            <div class="embla-reviews__slide">
-              <div class="w-[374px] h-[139px] flex flex-col gap-4 bg-primary-100 rounded-[20px] pr-[28px] pt-[20px] pl-[23px] pb-[25px] shrink-0">
-                <div class="flex justify-between">
-                  <div class="flex gap-4">
-                    <div class="bg-primary-300 p-[11px] rounded-full">
-                      <img
-                        class="size-[32px]"
-                        src="/public/icons/icon-person.png"
-                        alt="avatar"
-                      />
-                    </div>
-                    <div class="flex flex-col">
-                      <span class="font-medium text-primary-550"
-                        >میترا احمدی</span
-                      >
-                      <span class="text-[10px] text-primary-350"
-                        >۱۲ تیر ۱۴۰۴</span
-                      >
-                    </div>
-                  </div>
-
-                  <div class="text-primary-350">
-                    <span class="text-[10px]">۵/</span>
-                    <span class="text-[12px] font-semibold">5</span>
-                  </div>
-                </div>
-
-                <p class="text-[12px] text-[#2D2D2D]">
-                  خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌
-                </p>
-              </div>
-            </div>
-            <div class="embla-reviews__slide">
-              <div class="w-[374px] h-[139px] flex flex-col gap-4 bg-primary-100 rounded-[20px] pr-[28px] pt-[20px] pl-[23px] pb-[25px] shrink-0">
-                <div class="flex justify-between">
-                  <div class="flex gap-4">
-                    <div class="bg-primary-300 p-[11px] rounded-full">
-                      <img
-                        class="size-[32px]"
-                        src="/public/icons/icon-person.png"
-                        alt="avatar"
-                      />
-                    </div>
-                    <div class="flex flex-col">
-                      <span class="font-medium text-primary-550"
-                        >میترا احمدی</span
-                      >
-                      <span class="text-[10px] text-primary-350"
-                        >۱۲ تیر ۱۴۰۴</span
-                      >
-                    </div>
-                  </div>
-
-                  <div class="text-primary-350">
-                    <span class="text-[10px]">۵/</span>
-                    <span class="text-[12px] font-semibold">5</span>
-                  </div>
-                </div>
-
-                <p class="text-[12px] text-[#2D2D2D]">
-                  خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌
-                </p>
-              </div>
-            </div> -->
+            <!-- Items will be rendered here by JavaScript -->
           </div>
         </div>
       </div>
@@ -2297,18 +2341,47 @@
               >در ۴ مدل مختلف</span
             >
           </div>
-          <div
-            class="desktop:mt-6 mt-[17px] flex justify-end desktop:pl-[7px] pl-[10px] mb-7 lg:mb-11"
-          >
-            <div class="desktop:text-xl font-medium">۴۵,۰۰۰</div>
+          <div class="desktop:mt-6 mt-[17px] flex justify-end mb-7 lg:mb-11">
             <div
-              class="text-[6px] desktop:text-[8px] text-[#8B8B8B] -rotate-90 font-medium relative left-2"
+              class="w-full flex items-start justify-between desktop:px-[7px] px-[10px]"
             >
-              تومان
+              <!-- بَجِ تخفیف -->
+              <span
+                class="w-7 h-7 desktop:w-9 desktop:h-9 inline-flex items-center rounded-[8px] text-[11px] desktop:text-[16px] bg-red-100 text-red-600 px-2 py-1 font-medium"
+              >
+                %۵
+              </span>
+
+              <!-- قیمت‌ها + تومان عمودی -->
+              <div class="flex items-center gap-1">
+                <!-- ستون قیمت‌ها -->
+                <div class="flex flex-col-reverse items-end">
+                  <!-- قیمت فعلی -->
+                  <span
+                    class="text-[#C41818] desktop:text-xl font-medium leading-none tabular-nums"
+                  >
+                    ۱۱۰,۰۰۰
+                  </span>
+                  <!-- قیمت قبلی (خط‌خورده) -->
+                  <span
+                    class="text-[#BC6E73] line-through text-[7px] desktop:text-[10px] leading-none mt-1 tabular-nums"
+                  >
+                    ۱۸۵,۰۰۰
+                  </span>
+                </div>
+
+                <!-- تومان عمودی -->
+                <span
+                  class="text-[#8B8B8B] text-[6px] desktop:text-[8px] [writing-mode:vertical-rl] rotate-180 leading-none"
+                >
+                  تومان
+                </span>
+              </div>
             </div>
           </div>
+
           <button
-            class="w-[113px] h-[31px] desktop:w-[164px] desktop:h-[45px] absolute cursor-pointer -bottom-4 left-1/2 -translate-x-1/2 desktop:rounded-xl rounded-[8px] bg-primary-600 font-medium text-white text-[10px] desktop:text-[14px]"
+            class="open-product-selection w-[113px] h-[31px] desktop:w-[164px] desktop:h-[45px] absolute cursor-pointer -bottom-4 left-1/2 -translate-x-1/2 desktop:rounded-xl rounded-[8px] bg-primary-600 font-medium text-white text-[10px] desktop:text-[14px]"
             type="button"
           >
             مشاهده و خرید
@@ -2354,7 +2427,7 @@
             </div>
           </div>
           <button
-            class="w-[113px] h-[31px] desktop:w-[164px] desktop:h-[45px] absolute cursor-pointer -bottom-4 left-1/2 -translate-x-1/2 desktop:rounded-xl rounded-[8px] bg-primary-600 font-medium text-white text-[10px] desktop:text-[14px]"
+            class="open-product-selection w-[113px] h-[31px] desktop:w-[164px] desktop:h-[45px] absolute cursor-pointer -bottom-4 left-1/2 -translate-x-1/2 desktop:rounded-xl rounded-[8px] bg-primary-600 font-medium text-white text-[10px] desktop:text-[14px]"
             type="button"
           >
             مشاهده و خرید
@@ -2400,7 +2473,7 @@
             </div>
           </div>
           <button
-            class="w-[113px] h-[31px] desktop:w-[164px] desktop:h-[45px] absolute cursor-pointer -bottom-4 left-1/2 -translate-x-1/2 desktop:rounded-xl rounded-[8px] bg-primary-600 font-medium text-white text-[10px] desktop:text-[14px]"
+            class="open-product-selection w-[113px] h-[31px] desktop:w-[164px] desktop:h-[45px] absolute cursor-pointer -bottom-4 left-1/2 -translate-x-1/2 desktop:rounded-xl rounded-[8px] bg-primary-600 font-medium text-white text-[10px] desktop:text-[14px]"
             type="button"
           >
             مشاهده و خرید
@@ -2446,7 +2519,7 @@
             </div>
           </div>
           <button
-            class="w-[113px] h-[31px] desktop:w-[164px] desktop:h-[45px] absolute cursor-pointer -bottom-4 left-1/2 -translate-x-1/2 desktop:rounded-xl rounded-[8px] bg-primary-600 font-medium text-white text-[10px] desktop:text-[14px]"
+            class="open-product-selection w-[113px] h-[31px] desktop:w-[164px] desktop:h-[45px] absolute cursor-pointer -bottom-4 left-1/2 -translate-x-1/2 desktop:rounded-xl rounded-[8px] bg-primary-600 font-medium text-white text-[10px] desktop:text-[14px]"
             type="button"
           >
             مشاهده و خرید
@@ -2505,7 +2578,7 @@
             </div>
           </div>
           <img
-            class="desktop:size-auto object-contain size-[120px]"
+            class="desktop:size-auto object-contain size-[120px] mt-4"
             src="./public/images/banner-2.png"
             alt="banner"
           />
@@ -2658,7 +2731,7 @@
         </div>
         <!-- arrow -->
         <img
-          class="object-contain desktop:block hidden"
+          class="object-contain desktop:block mb-6 hidden"
           src="./public/images/arrows/arrow-desktop-1.png"
           alt="arrow"
         />
@@ -2679,7 +2752,7 @@
         </div>
         <!-- arrow -->
         <img
-          class="object-contain desktop:block hidden"
+          class="object-contain mb-20 desktop:block hidden"
           src="./public/images/arrows/arrow-desktop-2.png"
           alt="arrow"
         />
@@ -2721,7 +2794,7 @@
         </div>
         <!-- arrow -->
         <img
-          class="object-contain desktop:block hidden"
+          class="object-contain desktop:block mb-6 hidden"
           src="./public/images/arrows/arrow-desktop-4.png"
           alt="arrow"
         />
@@ -2864,31 +2937,42 @@
         class="flex justify-between desktop:pr-[46px] desktop:pl-[25px] desktop:pt-[26px] desktop:pb-[37px] pt-[18px] pb-[15px] pr-[19px] pl-[23px]"
       >
         <div class="flex items-center gap-[26px]">
-          <div class="flex items-center gap-1.5">
-            <img
-              src="./public/favicon.png"
-              alt="logo"
-              class="size-[50px] object-contain"
-            />
-            <div>
-              <h1 class="text-[22px] ss01 text-primary-600">دلبرباش</h1>
-              <h2 class="text-primary-700">فروشگاه اینترنتی</h2>
-            </div>
-          </div>
+          <a href="#" class="flex items-center gap-1.5">
+            <img src="./public/images/logo-footer.png" alt="logo" class="" />
+          </a>
           <p
-            class="max-w-[412px] text-[10px] leading-[100%] desktop:block hidden"
+            class="max-w-[412px] mt-5 text-[10px] leading-6 desktop:block hidden"
           >
             فروشگاه دلبرباش از سال ۱۳۹۷ تامین محصولات آرایشی و بهداشتی آغاز نمود
             ، هم اینک مفتخر این هستیم در تامین سایر نیازهای بانوان کشور عزیزمان
             خدمت رسانی کنیم.
           </p>
         </div>
-        <img
-          class="w-[207px] h-[79px] object-contain desktop:block hidden"
-          src="./public/images/Namad.png"
-          alt="namad"
-        />
-        <div class="flex desktop:hidden gap-1.5">
+        <div class="flex gap-1.5">
+          <a href="#">
+            <img
+              class="w-[65px] h-[79px] desktop:block hidden"
+              src="./public/images/namad1.png"
+              alt="namad"
+            />
+          </a>
+          <a href="#">
+            <img
+              class="w-[65px] h-[79px] desktop:block hidden"
+              src="./public/images/namad2.png"
+              alt="namad"
+            />
+          </a>
+          <a href="#">
+            <img
+              class="w-[65px] h-[79px] desktop:block hidden"
+              src="./public/images/namad3.png"
+              alt="namad"
+            />
+          </a>
+        </div>
+
+        <div class="flex items-center desktop:hidden gap-1.5">
           <div
             class="size-[38px] rounded-full items-center justify-center bg-[#FAE6E0] flex"
           >
@@ -2933,7 +3017,7 @@
                 <i class="fa-solid fa-phone-flip"></i>
                 <span>تلفن:</span>
               </div>
-              <span class="text-xs text-[#A44A50]">۰۲۱-۸۸۳۸۷۶۶۶</span>
+              <a href="#" class="text-xs text-[#A44A50]">۰۲۱-۸۸۳۸۷۶۶۶</a>
             </div>
           </div>
           <div class="flex font-medium text-[#212E45] gap-6">
@@ -2971,50 +3055,57 @@
       </div>
       <div class="w-full bg-[#ECECEC] h-px mt-4 mb-[38px]"></div>
       <div
-        class="flex justify-between flex-wrap gap-y-[85px] desktop:px-[55px] px-5 mb-[76px]"
+        class="flex justify-between flex-wrap gap-x-[10px] gap-y-[85px] desktop:px-[55px] px-5 mb-[76px]"
       >
+        <!-- صفحات دلبرباش -->
         <div>
           <p class="text-[16px] font-medium">صفحات دلبرباش</p>
           <div class="w-[80px] h-0.5 bg-primary-600 rounded mt-[14px]"></div>
           <ul class="flex flex-col gap-[21px] mt-[18px]">
-            <a href="#">راه های ارتباطی</a>
-            <a href="#">درباره ما</a>
-            <a href="#">مجله‌ی دلبرباش</a>
-            <a href="#">قوانین و مقررات</a>
-            <a href="#">حریم خصوصی کاربران</a>
+            <li><a href="#" class="text-[14px]">راه های ارتباطی</a></li>
+            <li><a href="#" class="text-[14px]">درباره ما</a></li>
+            <li><a href="#" class="text-[14px]">مجله‌ی دلبرباش</a></li>
+            <li><a href="#" class="text-[14px]">قوانین و مقررات</a></li>
+            <li><a href="#" class="text-[14px]">حریم خصوصی کاربران</a></li>
           </ul>
         </div>
+
+        <!-- خدمات مشتریان -->
         <div>
-          <p class="text-[16px] font-medium">صفحات دلبرباش</p>
+          <p class="text-[16px] font-medium">خدمات مشتریان</p>
           <div class="w-[80px] h-0.5 bg-primary-600 rounded mt-[14px]"></div>
           <ul class="flex flex-col gap-[21px] mt-[18px]">
-            <a href="#">راه های ارتباطی</a>
-            <a href="#">درباره ما</a>
-            <a href="#">مجله‌ی دلبرباش</a>
-            <a href="#">قوانین و مقررات</a>
-            <a href="#">حریم خصوصی کاربران</a>
+            <li><a href="#" class="text-[14px]">سبد خرید</a></li>
+            <li><a href="#" class="text-[14px]">رضایت مشتری</a></li>
+            <li><a href="#" class="text-[14px]">سفارشات من</a></li>
+            <li><a href="#" class="text-[14px]">پیگیری سفارش</a></li>
+            <li><a href="#" class="text-[14px]">حساب کاربری</a></li>
           </ul>
         </div>
+
+        <!-- پشتیبانی -->
         <div>
-          <p class="text-[16px] font-medium">صفحات دلبرباش</p>
+          <p class="text-[16px] font-medium">پشتیبانی</p>
           <div class="w-[80px] h-0.5 bg-primary-600 rounded mt-[14px]"></div>
           <ul class="flex flex-col gap-[21px] mt-[18px]">
-            <a href="#">راه های ارتباطی</a>
-            <a href="#">درباره ما</a>
-            <a href="#">مجله‌ی دلبرباش</a>
-            <a href="#">قوانین و مقررات</a>
-            <a href="#">حریم خصوصی کاربران</a>
+            <li><a href="#" class="text-[14px]">شرایط ارسال</a></li>
+            <li><a href="#" class="text-[14px]">سوالات متداول</a></li>
+            <li><a href="#" class="text-[14px]">پشتیبانی اینستاگرام</a></li>
+            <li><a href="#" class="text-[14px]">پشتیبانی تلگرام</a></li>
+            <li><a href="#" class="text-[14px]">آموزش خرید از سایت</a></li>
           </ul>
         </div>
+
+        <!-- فروشگاه دلبرباش -->
         <div>
-          <p class="text-[16px] font-medium">صفحات دلبرباش</p>
+          <p class="text-[16px] font-medium">فروشگاه دلبرباش</p>
           <div class="w-[80px] h-0.5 bg-primary-600 rounded mt-[14px]"></div>
           <ul class="flex flex-col gap-[21px] mt-[18px]">
-            <a href="#">راه های ارتباطی</a>
-            <a href="#">درباره ما</a>
-            <a href="#">مجله‌ی دلبرباش</a>
-            <a href="#">قوانین و مقررات</a>
-            <a href="#">حریم خصوصی کاربران</a>
+            <li><a href="#" class="text-[14px]">همه‌ی محصولات</a></li>
+            <li><a href="#" class="text-[14px]">محصولات تخفیف‌دار</a></li>
+            <li><a href="#" class="text-[14px]">پرفروش‌ترین‌ها</a></li>
+            <li><a href="#" class="text-[14px]">جدیدترین محصولات</a></li>
+            <li><a href="#" class="text-[14px]">محصولات شارژ شده</a></li>
           </ul>
         </div>
       </div>
@@ -3027,7 +3118,9 @@
         <p class="font-light">
           تمامی حقوق مادی و معنوی این سایت متعلق به دلبرباش می‌باشد
         </p>
-        <p class="text-primary-600 font-medium">توسعه و طراحی توسط هیرکاب</p>
+        <a href="https://hirkaweb.com" class="text-primary-600 font-medium"
+          >توسعه و طراحی توسط هیرکاب</a
+        >
       </div>
     </div>
 

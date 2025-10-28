@@ -9,6 +9,11 @@
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
+/* body.modal-open {
+  overflow: hidden;
+  padding-right: var(--scrollbar-width, 0px);
+} */
+
 
 /* RTL support for Persian text */
 .rtl {
@@ -56,7 +61,6 @@
   height: 110px !important;
   transition: height 0.3s ease;
 }
-
 
 .sticky-mobile-navbar {
     position: fixed;

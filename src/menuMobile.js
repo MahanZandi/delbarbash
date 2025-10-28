@@ -79,9 +79,10 @@ function initSearchUI() {
 function openSearch() {
   if (!els.searchBtn || !els.searchBox) return;
   els.searchBtn.classList.add("hidden");
+    els.searchBox.classList.remove("hidden");
   els.searchBox.style.opacity = "1";
   els.searchBox.style.transform = "scaleY(1)";
-  els.searchBackdrop?.classList.add("search-active"); 
+  els.searchBackdrop?.classList.add("search-active");
   // فوکوس روی ورودی (در صورت وجود)
   const input = els.searchBox.querySelector("input");
   setTimeout(() => input?.focus(), 300);
@@ -92,6 +93,8 @@ function closeSearch() {
   els.searchBox.style.opacity = "0";
   els.searchBox.style.transform = "scaleY(0)";
   els.searchBackdrop?.classList.remove("search-active");
+    els.searchBox.classList.add("hidden");
+
 }
 
 
@@ -286,7 +289,7 @@ function initMenuEvents() {
     });
   });
 
-   // ---- Mobile search ----
+  // ---- Mobile search ----
   if (els.searchBtn && els.searchBox && els.searchCloseBtn) {
     els.searchBtn.addEventListener("click", openSearch);
     els.searchCloseBtn.addEventListener("click", closeSearch);
@@ -297,7 +300,7 @@ function initMenuEvents() {
    9. INIT ON PAGE LOAD
    =============================== */
 document.addEventListener("DOMContentLoaded", () => {
-  initSearchUI();     
-  initMenuEvents();   
+  initSearchUI();
+  initMenuEvents();
 });
 

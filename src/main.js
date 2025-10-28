@@ -233,6 +233,7 @@ function updateAddToCartButton() {
 }
 
 function addToCart() {
+  
   if (!selectedColor) {
     alert("لطفاً یک رنگ انتخاب کنید");
     return;
@@ -315,16 +316,26 @@ function updateMobileAddToCartButton() {
 }
 
 function addToCartMobile() {
-  if (!mobileSelectedColor) {
+  const colorItems = document.querySelectorAll(".color-item.available");
+  if (!colorItems) {
     alert("لطفاً یک رنگ انتخاب کنید");
     return;
   }
 
-  console.log("افزودن به سبد خرید (موبایل):", {
-    color: mobileSelectedColor,
-    quantity: mobileQuantity,
-    totalPrice: mobileSelectedColor.price * mobileQuantity,
-  });
+  alert(`به سبد خرید اضافه شد`);
+  closeMobileModal();
+
+  
+  // if (!mobileSelectedColor) {
+  //   alert("لطفاً یک رنگ انتخاب کنید");
+  //   return;
+  // }
+
+  // console.log("افزودن به سبد خرید (موبایل):", {
+  //   color: mobileSelectedColor,
+  //   quantity: mobileQuantity,
+  //   totalPrice: mobileSelectedColor.price * mobileQuantity,
+  // });
 
   alert(`${mobileQuantity} عدد ${mobileSelectedColor.name} به سبد خرید اضافه شد`);
   closeMobileModal();
@@ -340,7 +351,7 @@ function openMobileModal() {
 
   if (modal && modalContent && backdrop) {
     modal.classList.remove("hidden");
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
 
     setTimeout(() => {
       backdrop.classList.remove("opacity-0");
@@ -381,7 +392,7 @@ function openCommentModal() {
   if (modal && modalContent && backdrop) {
     stickyAccordion.classList.add("!z-40");
     modal.classList.remove("hidden");
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
 
     setTimeout(() => {
       backdrop.classList.remove("opacity-0");
@@ -420,11 +431,11 @@ function openshareModal() {
 
   const modal = document.getElementById("mobile-share-product-modal");
   const modalContent = document.getElementById("mobile-share-modal-content");
-  const backdrop = document.getElementById("mobile-share-modal-backdrop"); 
+  const backdrop = document.getElementById("mobile-share-modal-backdrop");
 
   if (modal && modalContent && backdrop) {
     modal.classList.remove("hidden");
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
 
     setTimeout(() => {
       backdrop.classList.remove("opacity-0");
@@ -439,7 +450,7 @@ function openshareModal() {
 function closeshareModal() {
   const modal = document.getElementById("mobile-share-product-modal");
   const modalContent = document.getElementById("mobile-share-modal-content");
-  const backdrop = document.getElementById("mobile-share-modal-backdrop"); 
+  const backdrop = document.getElementById("mobile-share-modal-backdrop");
 
   if (modal && modalContent && backdrop) {
     backdrop.classList.remove("opacity-100");
@@ -453,6 +464,26 @@ function closeshareModal() {
       document.body.style.overflow = "auto";
     }, 300);
   }
+}
+
+function copyProductLink() {
+  const copyLinkBtn = document.getElementById("copy-product-link");
+  const toast = document.getElementById("toast");
+  const productLink = copyLinkBtn.dataset.url;
+  navigator.clipboard.writeText(productLink)
+  navigator.clipboard.writeText(productLink)
+    .then(() => {
+      // نمایش توست
+      toast.classList.remove("opacity-0", "pointer-events-none");
+      toast.classList.add("opacity-100");
+      setTimeout(() => {
+        toast.classList.add("opacity-0", "pointer-events-none");
+        toast.classList.remove("opacity-100");
+      }, 3000);
+    })
+    .catch(err => {
+      console.error("خطا در کپی لینک: ", err);
+    });
 }
 
 /* ===========================
@@ -502,11 +533,11 @@ function openDesktopModal(categoryData) {
         ${categoryData.subcategories
         .map(
           (subcategory) => `
-          <div class="space-y-3">
-            <div class="bg-primary-600 text-white px-4 py-3 rounded-lg text-center font-bold text-base">
+          <ul class="space-y-3">
+            <li class="bg-primary-600 text-white px-4 py-3 rounded-lg text-center font-bold text-base">
               ${subcategory.name}
-            </div>
-            <div class="space-y-2">
+            </li>
+            <li class="space-y-2">
               ${subcategory.items
               .map(
                 (item) => `
@@ -516,8 +547,8 @@ function openDesktopModal(categoryData) {
               `
               )
               .join("")}
-            </div>
-          </div>
+            </li>
+          </ul>
         `
         )
         .join("")}
@@ -525,7 +556,7 @@ function openDesktopModal(categoryData) {
     `;
 
     modal.classList.remove("hidden");
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
 
     setTimeout(() => {
       backdrop.classList.remove("opacity-0");
@@ -622,7 +653,9 @@ function renderReviews() {
 
     const reviewDiv = document.createElement("div");
     reviewDiv.classList.add(
-      "w-[374px]",
+      "w-[270px]",
+      "min-[380px]:w-[320px]",
+      "min-[450px]:w-[374px]",
       "h-[139px]",
       "flex",
       "flex-col",
@@ -777,6 +810,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const commentCloseModal = document.getElementById("comment-close");
   const openShareMobile = document.getElementById("openShareMobile");
   const ShareCloseModal = document.getElementById("mobile-modal-share-close");
+  const ShareBtnClose = document.getElementById("mobile-modal-share-btn-close");
+  const copyLinkBtn = document.getElementById("copy-product-link");
 
   const mobileModalClose = document.getElementById("mobile-modal-close");
   const mobileDecreaseBtn = document.getElementById("mobile-decrease-btn");
@@ -790,6 +825,8 @@ document.addEventListener("DOMContentLoaded", function () {
   if (commentCloseModal) commentCloseModal.addEventListener("click", closeCommentModal);
   if (openShareMobile) openShareMobile.addEventListener("click", openshareModal);
   if (ShareCloseModal) ShareCloseModal.addEventListener("click", closeshareModal);
+  if (ShareBtnClose) ShareBtnClose.addEventListener("click", closeshareModal);
+  if (copyLinkBtn) copyLinkBtn.addEventListener("click", copyProductLink);
 
   if (mobileModalBackdrop) mobileModalBackdrop.addEventListener("click", closeMobileModal);
   if (mobileDecreaseBtn) mobileDecreaseBtn.addEventListener("click", () => updateMobileQuantity(-1));
@@ -803,18 +840,25 @@ document.addEventListener("DOMContentLoaded", function () {
   const viewportNodeMainCarousel = document.querySelector(".embla__viewport");
   const viewportNodeThumbCarousel = document.querySelector(".embla-thumbs__viewport");
   const viewportNodeReviews = document.querySelector(".embla-reviews__viewport");
+  const isMobile = () => window.innerWidth <= 480;
+
 
   // Main & thumbs
   if (viewportNodeMainCarousel) {
     const OPTIONS = { direction: "rtl" };
-    const OPTIONS_THUMBS = { containScroll: "keepSnaps", dragFree: true, direction: "rtl" };
+
+    const OPTIONS_THUMBS = {
+      containScroll: isMobile() ? "trimSnaps" : "keepSnaps",
+      dragFree: true,
+      direction: "rtl",
+      axis: isMobile() ? "y" : "x", // 👈 موبایل: عمودی / دسکتاپ: افقی
+    };
 
     try {
       emblaApiMain = typeof EmblaCarousel === "function" ? EmblaCarousel(viewportNodeMainCarousel, OPTIONS) : null;
       if (viewportNodeThumbCarousel && typeof EmblaCarousel === "function") {
         emblaApiThumb = EmblaCarousel(viewportNodeThumbCarousel, OPTIONS_THUMBS);
       }
-
       // Thumb handlers
       const removeThumbBtnsClickHandlers = addThumbBtnsClickHandlers(emblaApiMain, emblaApiThumb);
       const removeToggleThumbBtnsActive = addToggleThumbBtnsActive(emblaApiMain, emblaApiThumb);
@@ -855,6 +899,18 @@ document.addEventListener("DOMContentLoaded", function () {
     } catch (e) {
       console.error("خطا در ایجاد Embla main/thumb:", e);
     }
+
+    // Re-init thumbs when breakpoint crosses
+    let lastIsMobile = isMobile();
+    window.addEventListener("resize", () => {
+      const nowIsMobile = isMobile();
+      if (!viewportNodeThumbCarousel || nowIsMobile === lastIsMobile) return;
+
+      emblaApiThumb && emblaApiThumb.destroy();
+      emblaApiThumb = EmblaCarousel(viewportNodeThumbCarousel, OPTIONS_THUMBS);
+      lastIsMobile = nowIsMobile;
+    });
+
   } // end main carousel init
 
   // Reviews carousel — اول render کن سپس embla رو بساز
@@ -923,9 +979,75 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+/* ===========================
+  Handle Product Selection
+   =========================== */
+
+function openMobileSelectionProduct(mobileSelection) {
+  if (!mobileSelection) return;
+  setTimeout(() => {
+    mobileSelection.classList.remove("hidden");
+  }, 200);
+
+}
+
+function closeMobileSelectionProduct(mobileSelection) {
+  setTimeout(() => {
+    mobileSelection.classList.add("hidden");
+  }, 100);
+}
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Select all buttons with the class "open-product-selection"
+  const openButtons = document.querySelectorAll(".open-product-selection");
+  // Get the mobile product selection container
+  const mobileSelection = document.getElementById("mobile-product-selection");
+
+  if (openButtons.length) {
+    if (mobileSelection) {
+      openButtons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+          e.stopPropagation();
+          openMobileSelectionProduct(mobileSelection);
+        });
+      });
+    }
+
+    // Close when clicking outside
+    document.addEventListener("click", (e) => {
+      // Do nothing if the mobile selection is not visible
+      if (mobileSelection.classList.contains("hidden")) return;
+
+      // Do nothing if the click is inside the mobile selection
+      if (mobileSelection.contains(e.target)) return;
+
+      // Otherwise, close it
+      closeMobileSelectionProduct(mobileSelection);
+    });
+
+  }
+
+  const addToCartBtn = document.getElementById("mobile-add-to-cart-btn");
   const colorItems = document.querySelectorAll(".color-item.available");
+
+  // تنظیم اولیه دکمه غیرفعال
+  function updateAddToCartBtn() {
+    const activeColor = document.querySelector(".color-item.active");
+    if (activeColor) {
+      // رنگ انتخاب شده: دکمه فعال
+      addToCartBtn.disabled = false;
+      addToCartBtn.classList.remove("bg-[#E0E0E0]", "text-[#B1B1B1]","hover:bg-red-700");
+      addToCartBtn.classList.add("bg-red-600", "text-white");
+    } else {
+      // هیچ رنگی انتخاب نشده: دکمه غیرفعال
+      addToCartBtn.disabled = true;
+      addToCartBtn.classList.remove("bg-red-600", "text-white","hover:bg-red-700");
+      addToCartBtn.classList.add("bg-[#E0E0E0]", "text-[#B1B1B1]");
+    }
+  }
+
 
   colorItems.forEach((item) => {
     item.addEventListener("click", function () {
@@ -942,6 +1064,8 @@ document.addEventListener("DOMContentLoaded", function () {
         checkIcon.classList.remove("hidden");
       }
       console.log("Selected color id:", this.id);
+
+      updateAddToCartBtn();
     });
   });
 });
