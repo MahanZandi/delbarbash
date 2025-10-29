@@ -39,8 +39,6 @@
   display: flex;
   flex-direction: row;
   gap: 8px;
-  /* افقی: اجازه اسکرول عمودی صفحه، دراگ افقی اسلایدر */
-  touch-action: pan-y pinch-zoom;
 }
 
 .embla-thumbs__slide {
@@ -58,17 +56,13 @@
   display: flex;
   touch-action: pan-y pinch-zoom;
   gap: 0.25rem;
-  /* gap-1 for mobile */
   padding-right: 0.25rem;
-  /* padding for first item */
 }
 
 @media (min-width: 1024px) {
   .embla-reviews__container {
     gap: 1.25rem;
-    /* desktop:gap-5 */
     padding-right: 1.25rem;
-    /* desktop padding */
   }
 }
 
@@ -86,8 +80,6 @@
 @media (max-width: 480px) {
  .embla-thumbs__container {
     flex-direction: column;         
-    /* عمودی: اجازه اسکرول افقی صفحه، دراگ عمودی اسلایدر */
-    touch-action: pan-y pinch-zoom; /* 👈 این خیلی مهمه */
     max-height: 335px;
   }  
 

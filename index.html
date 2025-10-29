@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
   <!-- https://www.figma.com/design/asbMnK2Nrrc5MQpqxxCohA/DelbarBash?node-id=220-198&t=j6RmBDpt3VKTfFPO-0 -->
+   <!-- https://github.com/AmirHossein137/delbarbash/tree/main -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -436,7 +437,7 @@
 
             <span>افزودن به علاقه مندی</span>
           </button>
-          <button
+          <button id="openShareDesktop"
             class="border cursor-pointer border-[#E8E8E8] w-[172px] h-[38px] rounded-[10px] flex items-center justify-center gap-[10px]"
           >
             <svg
@@ -1916,10 +1917,10 @@
       ></div>
 
       <!-- Modal content with animation -->
-      <div class="flex items-end h-full relative">
+      <div class="flex items-end lg:items-center justify-center h-full relative"> 
         <div
           id="mobile-share-modal-content"
-          class="bg-white w-full rounded-t-3xl p-6 max-h-[80vh] overflow-y-auto transform translate-y-full transition-transform duration-300 ease-out"
+          class="bg-white w-full min-[480px]:w-[400px] rounded-3xl py-6 px-3 lg:p-6 max-h-[80vh] overflow-y-auto transform translate-y-full transition-transform duration-300 ease-out justify-between"
         >
           <!-- Modal Header -->
           <div class="flex justify-between items-center mb-6">

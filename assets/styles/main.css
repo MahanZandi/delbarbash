@@ -62,6 +62,15 @@
   transition: height 0.3s ease;
 }
 
+#hamburger-backdrop {
+  transition: opacity 0.4s ease, backdrop-filter 0.4s ease;
+  backdrop-filter: blur(0px);
+}
+#hamburger-menu:not(.hidden) #hamburger-backdrop {
+  backdrop-filter: blur(4px);
+}
+
+
 .sticky-mobile-navbar {
     position: fixed;
     top: -16px;
