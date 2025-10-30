@@ -92,7 +92,7 @@
     <!-- top navbar mobile -->
     <nav
       id="mobile-navbar"
-      class="desktop:hidden container px-4 mt-8 transition-all duration-300"
+      class="desktop:hidden container px-4 mt-8 h-[84px] transition-all duration-300"
     >
       <div class="flex justify-between">
         <div class="flex items-center gap-2 w-20">
@@ -167,7 +167,7 @@
     </nav>
 
     <!-- raete && category -->
-    <div class="container flex justify-between items-center mt-[26px]">
+    <div class="container flex justify-between items-center mt-3 desktop:mt-[26px]">
       <ul class="flex items-center gap-[9px] text-[#2D2D2D] text-[12px]">
         <li class="flex items-center gap-[9px]">
           <a href="#">آرایشی</a>
@@ -200,7 +200,7 @@
     >
       <!-- slider -->
       <div
-        class="embla relative w-[95%] min-[480px]:w-[65%] sm:w-[50%] md:w-[35%] lg:w-[30%] desktop:w-[360px]"
+        class="embla relative w-[90%] min-[480px]:w-[65%] sm:w-[50%] md:w-[35%] lg:w-[30%] desktop:w-[360px]"
       >
         <!-- Product slider backdrop for mobile -->
         <div
@@ -209,15 +209,12 @@
         ></div>
         <!-- dots -->
         <div
-          class="absolute max-[480px]:left-[40%] min-[481px]:left-1/2 p-1.5 rounded-b-xl -translate-x-1/2 -top-0.5 p-2 bg-white z-10"
+          class="absolute left-1/2  rounded-b-xl -translate-x-1/2 -top-0.5 p-2 bg-white z-10"
         >
           <div id="slider-dots" class="flex justify-center gap-2"></div>
         </div>
 
-        <div
-          class="max-[480px]:h-[335px] max-[480px]:flex max-[480px]:flex-row-reverse justify-between min-[481px]:flex-col"
-        >
-          <div class="embla__viewport max-[480px]:w-[80%]">
+          <div class="embla__viewport ">
             <div class="embla__container">
               <div class="embla__slide">
                 <div class="embla__slide__number bg-primary-300">
@@ -267,7 +264,7 @@
             </div>
           </div>
           <div
-            class="embla-thumbs max-[480px]:!mt-0 max-[480px]:w-[18%] max-[480px]:ml-2 max-[480px]:flex max-[480px]:flex-col min-[481px]:w-full"
+            class="embla-thumbs "
           >
             <div class="embla-thumbs__viewport">
               <div class="embla-thumbs__container gap-2">
@@ -329,12 +326,11 @@
               </div>
             </div>
           </div>
-        </div>
 
         <!-- arrows button -->
         <button
           id="embla-prev"
-          class="absolute max-[480px]:hidden block top-[133px] desktop:top-[181px] -right-5 bg-white rounded-l-full p-3 transition-all duration-300 z-10"
+          class="absolute  top-[133px] desktop:top-[181px] -right-5 bg-white rounded-l-full p-3 transition-all duration-300 z-10"
           aria-label="previous"
         >
           <svg
@@ -1090,7 +1086,7 @@
     <!-- Mobile Product Selection Button - Fixed -->
     <div
       id="mobile-product-selection"
-      class="fixed hidden bottom-0 left-0 right-0 bg-white pt-[30px] pb-10 px-[37px] desktop:hidden shadow-2xl rounded-t-3xl shadow-black z-40"
+      class="fixed bottom-0 left-0 right-0 bg-white pt-[30px] pb-10 px-[37px] desktop:hidden shadow-2xl rounded-t-3xl shadow-black z-40"
     >
       <button
         id="mobile-select-model-btn"
@@ -1276,18 +1272,17 @@
     </div>
     <!-- //////////////////////////////// -->
     <!-- Mobile Product Selection Modal -->
-    <div id="mobile-product-modal" class="fixed inset-0 z-50 hidden">
+    <div id="mobile-product-modal" class="fixed inset-0 z-50 hidden  ">
       <!-- Backdrop with blur effect -->
       <div
-        id="mobile-modal-backdrop"
+        id="modal-backdrop-product-selection"
         class="absolute inset-0 bg-black/20 bg-opacity-20 backdrop-blur-sm transition-opacity duration-300 opacity-0"
       ></div>
 
       <!-- Modal content with animation -->
-      <div class="flex items-end h-full relative">
         <div
           id="mobile-modal-content"
-          class="bg-white w-full rounded-t-3xl p-6 max-h-[65vh] transform translate-y-full transition-transform duration-300 ease-out flex flex-col overflow-hidden"
+          class="bg-white absolute bottom-0 left-0 w-full rounded-t-3xl p-6 max-h-[65vh] transform translate-y-full transition-transform duration-300 ease-out flex flex-col overflow-hidden"
         >
           <!-- Modal Header -->
           <div class="flex justify-between items-center mb-6">
@@ -1816,14 +1811,13 @@
           <!-- Add to Cart Button -->
           <button
             id="mobile-add-to-cart-btn"
-            class="w-full bg-[#E0E0E0] font-medium text-[#B1B1B1] h-[61px] rounded-[10px] flex items-center justify-center gap-3 transition-all duration-300 text-[16px]"
+            class="w-full py-3 bg-[#E0E0E0] font-medium text-[#B1B1B1]  rounded-[10px] flex items-center justify-center gap-3 transition-all duration-300 text-[16px] "
             disabled
           >
             <i class="fa-solid fa-cart-shopping"></i>
             <span>افزودن به سبد خرید</span>
           </button>
         </div>
-      </div>
     </div>
 
     <!-- Mobile Add Comment Modal -->
@@ -1835,13 +1829,17 @@
       ></div>
 
       <!-- Modal content with animation -->
-      <div
-        class="flex items-end lg:items-center justify-center h-full relative"
-      >
         <div
           id="comment-modal-content"
-          class="bg-white w-full min-[480px]:w-[400px] rounded-3xl py-6 px-3 lg:p-6 max-h-[80vh] overflow-y-auto transform translate-y-full transition-transform duration-300 ease-out justify-between"
-        >
+          class="bg-white absolute  bottom-0 
+            left-1/2 lg:top-1/2 lg:bottom-auto 
+            transform -translate-x-1/2 lg:-translate-y-1/2
+            w-full min-[480px]:w-[400px]
+            rounded-t-3xl lg:rounded-3xl
+            py-6 px-3 lg:p-6
+            max-h-[80vh] overflow-y-auto
+            transition-transform duration-300 ease-out"       
+          >
           <!-- Modal Header -->
           <div class="flex justify-between items-center mb-6">
             <h3 class="text-lg font-semibold text-[#2D2D2D]">
@@ -1905,7 +1903,6 @@
             </button>
           </form>
         </div>
-      </div>
     </div>
 
     <!-- Mobile Share Product  Modal -->
@@ -1917,11 +1914,18 @@
       ></div>
 
       <!-- Modal content with animation -->
-      <div class="flex items-end lg:items-center justify-center h-full relative"> 
         <div
           id="mobile-share-modal-content"
-          class="bg-white w-full min-[480px]:w-[400px] rounded-3xl py-6 px-3 lg:p-6 max-h-[80vh] overflow-y-auto transform translate-y-full transition-transform duration-300 ease-out justify-between"
-        >
+            class="bg-white absolute  bottom-0 
+                      left-1/2 lg:top-1/2 lg:bottom-auto 
+                      transform -translate-x-1/2 lg:-translate-y-1/2
+                      w-full min-[480px]:w-[400px]
+                      rounded-t-3xl lg:rounded-3xl
+                      py-6 px-3 lg:p-6
+                      max-h-[80vh] overflow-y-auto
+                      transition-transform duration-300 ease-out"
+           
+           >
           <!-- Modal Header -->
           <div class="flex justify-between items-center mb-6">
             <h3 class="text-lg font-semibold text-[#2D2D2D]">
@@ -2065,7 +2069,6 @@
             <span>بازگشت</span>
           </button>
         </div>
-      </div>
     </div>
 
     <!-- Toast -->
@@ -3112,7 +3115,7 @@
       </div>
     </div>
 
-    <div class="flex justify-center items-center mb-[36px]">
+    <div class="flex justify-center items-center mb-[36px] pb-30 desktop:pb-0">
       <div
         class="flex items-center flex-wrap gap-1.5 desktop:text-sm text-xs justify-center"
       >

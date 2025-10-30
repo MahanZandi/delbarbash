@@ -77,15 +77,3 @@
 }
 
 
-@media (max-width: 480px) {
- .embla-thumbs__container {
-    flex-direction: column;         
-    max-height: 335px;
-  }  
-
-  .embla-thumbs__slide {
-    flex: 0 0 auto;
-    height: 84px;
-    border-radius: 15px;
-  }
-}

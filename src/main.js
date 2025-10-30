@@ -337,17 +337,18 @@ function addToCartMobile() {
   //   totalPrice: mobileSelectedColor.price * mobileQuantity,
   // });
 
-  alert(`${mobileQuantity} عدد ${mobileSelectedColor.name} به سبد خرید اضافه شد`);
-  closeMobileModal();
+  // alert(`${mobileQuantity} عدد ${mobileSelectedColor.name} به سبد خرید اضافه شد`);
+  // closeMobileModal();
 }
 
 /* ===========================
    Mobile modal open/close
    =========================== */
 function openMobileModal() {
+  console.log("first")
   const modal = document.getElementById("mobile-product-modal");
   const modalContent = document.getElementById("mobile-modal-content");
-  const backdrop = document.getElementById("mobile-modal-backdrop");
+  const backdrop = document.getElementById("modal-backdrop-product-selection");
 
   if (modal && modalContent && backdrop) {
     modal.classList.remove("hidden");
@@ -366,7 +367,7 @@ function openMobileModal() {
 function closeMobileModal() {
   const modal = document.getElementById("mobile-product-modal");
   const modalContent = document.getElementById("mobile-modal-content");
-  const backdrop = document.getElementById("mobile-modal-backdrop");
+  const backdrop = document.getElementById("modal-backdrop-product-selection");
 
   if (modal && modalContent && backdrop) {
     backdrop.classList.remove("opacity-100");
@@ -422,7 +423,7 @@ function closeCommentModal() {
     setTimeout(() => {
       modal.classList.add("hidden");
       document.body.style.overflow = "auto";
-    }, 300);
+    }, 200);
   }
 }
 
@@ -469,7 +470,7 @@ function closeshareModal() {
     setTimeout(() => {
       modal.classList.add("hidden");
       document.body.style.overflow = "auto";
-    }, 300);
+    }, 200);
   }
 }
 
@@ -799,6 +800,8 @@ document.addEventListener("DOMContentLoaded", function () {
   renderMobileColorOptions();
   renderAccordionItems();
 
+
+
   // دسکتاپ quantity buttons
   const decreaseBtn = document.getElementById("decrease-btn");
   const increaseBtn = document.getElementById("increase-btn");
@@ -816,14 +819,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const mobileSelectBtn = document.getElementById("mobile-select-model-btn");
   const commentSelectBtn = document.getElementById("openCommentMobile");
   const commentCloseModal = document.getElementById("comment-close");
+  const commentModalBackdrop = document.getElementById("comment-modal-backdrop");
+
   const openShareMobile = document.getElementById("openShareMobile");
   const openShareDesktop = document.getElementById("openShareDesktop");
 
   const ShareCloseModal = document.getElementById("mobile-modal-share-close");
+  const mobileShareModalBackdrop = document.getElementById("mobile-share-modal-backdrop");
   const ShareBtnClose = document.getElementById("mobile-modal-share-btn-close");
   const copyLinkBtn = document.getElementById("copy-product-link");
 
   const mobileModalClose = document.getElementById("mobile-modal-close");
+  const modalBackdropProductSelection = document.getElementById("modal-backdrop-product-selection");
+
   const mobileDecreaseBtn = document.getElementById("mobile-decrease-btn");
   const mobileIncreaseBtn = document.getElementById("mobile-increase-btn");
   const mobileAddToCartBtn = document.getElementById("mobile-add-to-cart-btn");
@@ -832,10 +840,14 @@ document.addEventListener("DOMContentLoaded", function () {
   if (mobileSelectBtn) mobileSelectBtn.addEventListener("click", openMobileModal);
   if (commentSelectBtn) commentSelectBtn.addEventListener("click", openCommentModal);
   if (mobileModalClose) mobileModalClose.addEventListener("click", closeMobileModal);
+  if (modalBackdropProductSelection) modalBackdropProductSelection.addEventListener("click", closeMobileModal);
+
   if (commentCloseModal) commentCloseModal.addEventListener("click", closeCommentModal);
+  if (commentModalBackdrop) commentModalBackdrop.addEventListener("click", closeCommentModal);
   if (openShareMobile) openShareMobile.addEventListener("click", openshareModal);
   if (openShareDesktop) openShareDesktop.addEventListener("click", openshareModal);
 
+  if (mobileShareModalBackdrop) mobileShareModalBackdrop.addEventListener("click", closeshareModal);
   if (ShareCloseModal) ShareCloseModal.addEventListener("click", closeshareModal);
   if (ShareBtnClose) ShareBtnClose.addEventListener("click", closeshareModal);
   if (copyLinkBtn) copyLinkBtn.addEventListener("click", copyProductLink);
@@ -846,87 +858,94 @@ document.addEventListener("DOMContentLoaded", function () {
   if (mobileAddToCartBtn) mobileAddToCartBtn.addEventListener("click", addToCartMobile);
 
 
-  /* ==============
-     Dynamically update touch-action based on screen size
-     ============== */
-  const viewportNodeThumbCarousel = document.querySelector(".embla-thumbs__viewport");
-  const mediaQuery = window.matchMedia("(max-width: 480px)");
-  const viewportNodeMainCarousel = document.querySelector(".embla__viewport");
-  const isMobile = () => window.innerWidth <= 480;
 
-  function applyTouchAction(e) {
-    if (!viewportNodeThumbCarousel) return;
-    viewportNodeThumbCarousel.style.touchAction = e.matches
-      ? "pan-y pinch-zoom"
-      : "pan-x pinch-zoom";
-  }
-  applyTouchAction(mediaQuery);
-  mediaQuery.addEventListener("change", applyTouchAction);
 
   /* =============
      Initialize Embla — only if viewports exist
      ============= */
+  const viewportNodeMainCarousel = document.querySelector(".embla__viewport");
+  const viewportNodeThumbCarousel = document.querySelector(".embla-thumbs__viewport");
+  const viewportNodeReviews = document.querySelector(".embla-reviews__viewport");
 
+
+  // Main & thumbs
   if (viewportNodeMainCarousel) {
-    const OPTIONS_MAIN = { direction: "rtl" };
-    const getThumbOptions = () => ({
-      containScroll: isMobile() ? "trimSnaps" : "keepSnaps",
+    const OPTIONS = { direction: "rtl" };
+
+    const OPTIONS_THUMBS = {
+      containScroll: "keepSnaps",
       dragFree: true,
       direction: "rtl",
-      axis: isMobile() ? "y" : "x",
-    });
+      axis: "x", // 👈 موبایل: عمودی / دسکتاپ: افقی
+    };
 
-    let emblaApiMain = null;
-    let emblaApiThumb = null;
-
-    function initCarousels() {
-      if (typeof EmblaCarousel !== "function") return;
-
-      if (emblaApiMain) emblaApiMain.destroy();
-      if (emblaApiThumb) emblaApiThumb.destroy();
-
-      emblaApiMain = EmblaCarousel(viewportNodeMainCarousel, OPTIONS_MAIN);
-      if (viewportNodeThumbCarousel)
-        emblaApiThumb = EmblaCarousel(viewportNodeThumbCarousel, getThumbOptions());
-
+    try {
+      emblaApiMain = typeof EmblaCarousel === "function" ? EmblaCarousel(viewportNodeMainCarousel, OPTIONS) : null;
+      if (viewportNodeThumbCarousel && typeof EmblaCarousel === "function") {
+        emblaApiThumb = EmblaCarousel(viewportNodeThumbCarousel, OPTIONS_THUMBS);
+      }
+      // Thumb handlers
       const removeThumbBtnsClickHandlers = addThumbBtnsClickHandlers(emblaApiMain, emblaApiThumb);
       const removeToggleThumbBtnsActive = addToggleThumbBtnsActive(emblaApiMain, emblaApiThumb);
 
-      emblaApiMain.on("destroy", removeThumbBtnsClickHandlers);
-      emblaApiMain.on("destroy", removeToggleThumbBtnsActive);
-      emblaApiThumb.on("destroy", removeThumbBtnsClickHandlers);
-      emblaApiThumb.on("destroy", removeToggleThumbBtnsActive);
+      if (emblaApiMain) {
+        emblaApiMain.on("destroy", removeThumbBtnsClickHandlers);
+        emblaApiMain.on("destroy", removeToggleThumbBtnsActive);
+      }
+      if (emblaApiThumb) {
+        emblaApiThumb.on("destroy", removeThumbBtnsClickHandlers);
+        emblaApiThumb.on("destroy", removeToggleThumbBtnsActive);
+      }
 
-      emblaApiMain.on("init", () => {
-        createDots(emblaApiMain);
-        updateDots(emblaApiMain);
-      });
-      emblaApiMain.on("select", () => updateDots(emblaApiMain));
+      // Dots for main
+      if (emblaApiMain) {
+        emblaApiMain.on("init", () => {
+          createDots(emblaApiMain);
+          updateDots(emblaApiMain);
+        });
+        emblaApiMain.on("select", () => updateDots(emblaApiMain));
+      }
 
+      // Prev / Next buttons
       const prevButton = document.getElementById("embla-prev");
       const nextButton = document.getElementById("embla-next");
-      if (prevButton) prevButton.addEventListener("click", () => emblaApiMain.scrollPrev());
-      if (nextButton) nextButton.addEventListener("click", () => emblaApiMain.scrollNext());
 
-      emblaApiMain.on("init", () =>
-        updateButtonStates(emblaApiMain, prevButton, nextButton)
-      );
-      emblaApiMain.on("select", () =>
-        updateButtonStates(emblaApiMain, prevButton, nextButton)
-      );
+      if (prevButton) {
+        prevButton.addEventListener("click", () => emblaApiMain && emblaApiMain.scrollPrev());
+      }
+      if (nextButton) {
+        nextButton.addEventListener("click", () => emblaApiMain && emblaApiMain.scrollNext());
+      }
+
+      if (emblaApiMain) {
+        emblaApiMain.on("init", () => updateButtonStates(emblaApiMain, prevButton, nextButton));
+        emblaApiMain.on("select", () => updateButtonStates(emblaApiMain, prevButton, nextButton));
+      }
+    } catch (e) {
+      console.error("خطا در ایجاد Embla main/thumb:", e);
     }
 
-    initCarousels();
+  } // end main carousel init
 
-    let lastIsMobile = isMobile();
-    window.addEventListener("resize", () => {
-      const nowIsMobile = isMobile();
-      if (nowIsMobile !== lastIsMobile) {
-        initCarousels();
-        lastIsMobile = nowIsMobile;
+  // Reviews carousel — اول render کن سپس embla رو بساز
+  if (viewportNodeReviews) {
+    renderReviews();
+    try {
+      const REVIEWS_OPTIONS = { direction: "rtl", loop: true, slidesToScroll: 1, containScroll: "trimSnaps" };
+      emblaApiReviews = typeof EmblaCarousel === "function" ? EmblaCarousel(viewportNodeReviews, REVIEWS_OPTIONS) : null;
+
+      if (emblaApiReviews) {
+        emblaApiReviews.on("init", () => {
+          createReviewsDots(emblaApiReviews);
+          updateReviewsDots(emblaApiReviews);
+        });
+        emblaApiReviews.on("select", () => updateReviewsDots(emblaApiReviews));
       }
-    });
-  }// end main carousel init
+    } catch (e) {
+      console.error("خطا در ایجاد Embla reviews:", e);
+    }
+  }
+
 
   const accordionList = document.getElementById("accordion-list");
   const desktopModalBackdrop = document.getElementById("desktop-modal-backdrop");
@@ -997,39 +1016,14 @@ function closeMobileSelectionProduct(mobileSelection) {
   setTimeout(() => {
     mobileSelection.classList.add("hidden");
   }, 100);
+
+  
 }
 
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Select all buttons with the class "open-product-selection"
-  const openButtons = document.querySelectorAll(".open-product-selection");
-  // Get the mobile product selection container
-  const mobileSelection = document.getElementById("mobile-product-selection");
 
-  if (openButtons.length) {
-    if (mobileSelection) {
-      openButtons.forEach((button) => {
-        button.addEventListener("click", (e) => {
-          e.stopPropagation();
-          openMobileSelectionProduct(mobileSelection);
-        });
-      });
-    }
-
-    // Close when clicking outside
-    document.addEventListener("click", (e) => {
-      // Do nothing if the mobile selection is not visible
-      if (mobileSelection.classList.contains("hidden")) return;
-
-      // Do nothing if the click is inside the mobile selection
-      if (mobileSelection.contains(e.target)) return;
-
-      // Otherwise, close it
-      closeMobileSelectionProduct(mobileSelection);
-    });
-
-  }
 
   const addToCartBtn = document.getElementById("mobile-add-to-cart-btn");
   const colorItems = document.querySelectorAll(".color-item.available");
