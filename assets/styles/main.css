@@ -1,8 +1,12 @@
-@import "tailwindcss";
 @import "../fonts/Webfonts/fontiran.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import "./variables.css";
 @import "./utility.css";
-@import "./embla.css";
+/* @import "./embla.css"; */
 
 /* Custom styles can be added here */
 .custom-gradient {
@@ -68,6 +72,88 @@
 }
 #hamburger-menu:not(.hidden) #hamburger-backdrop {
   backdrop-filter: blur(4px);
+}
+
+/* -------------------
+   Embla Styles (Tailwind 3 compatible)
+   ------------------- */
+@layer components {
+  .embla {
+    --slide-spacing: 1rem;
+    --slide-size: 100%;
+    direction: rtl;
+  }
+
+  .embla__viewport {
+    overflow: hidden;
+  }
+
+  .embla__container {
+    display: flex;
+    touch-action: pan-y pinch-zoom;
+    margin-right: calc(var(--slide-spacing) * -1);
+    margin-left: 0;
+  }
+
+  .embla__slide {
+    transform: translate3d(0, 0, 0);
+    flex: 0 0 var(--slide-size);
+    min-width: 0;
+    padding-right: var(--slide-spacing);
+    padding-left: 0;
+  }
+
+  .embla__slide__number {
+    user-select: none;
+    @apply flex justify-center items-center rounded-[25px] desktop:h-[407px];
+  }
+
+  .embla-thumbs {
+    --thumbs-slide-spacing: 0.8rem;
+    --thumbs-slide-height: 6rem;
+    margin-top: var(--thumbs-slide-spacing);
+  }
+
+  .embla-thumbs__container {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .embla-thumbs__slide {
+    flex: 0 0 25%;
+    min-width: 0;
+    @apply rounded-[15px] h-[91px] desktop:h-[110px];
+  }
+
+  .embla-thumbs__viewport {
+    overflow: hidden;
+  }
+
+  /* Reviews Embla Carousel */
+  .embla-reviews__viewport {
+    overflow: hidden;
+  }
+
+  .embla-reviews__container {
+    display: flex;
+    touch-action: pan-y pinch-zoom;
+    gap: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  @media (min-width: 1024px) {
+    .embla-reviews__container {
+      gap: 1.25rem;
+      padding-right: 1.25rem;
+    }
+  }
+
+  .embla-reviews__slide {
+    transform: translate3d(0, 0, 0);
+    flex: 0 0 auto;
+    min-width: 0;
+  }
 }
 
 

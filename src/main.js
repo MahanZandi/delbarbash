@@ -537,8 +537,9 @@ function openDesktopModal(categoryData) {
   const body = document.getElementById("desktop-modal-body");
 
   if (modal && content && backdrop && body) {
+    console.log("yessssssssss")
     body.innerHTML = `
-      <div class="grid grid-cols-6 gap-6">
+      <div class="grid grid-cols-6 gap-6 ">
         ${categoryData.subcategories
         .map(
           (subcategory) => `
@@ -758,11 +759,13 @@ window.addEventListener("scroll", () => {
 
   if (navbar && accordion && backdrop) {
     if (scrollTop > 100) {
+      console.log("scrollTop > 100")
       desktopModalContent.style.top = "150px";
       navbar.classList.add("sticky-navbar");
       accordion.classList.add("sticky-accordion");
       backdrop.classList.add("active");
     } else {
+      console.log("scrollTop <<<< 100")
       desktopModalContent.style.top = "120px";
       navbar.classList.remove("sticky-navbar");
       accordion.classList.remove("sticky-accordion");
@@ -954,10 +957,11 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentIcon = null;
 
   if (accordionList) {
-    console.log("first")
+    
     accordionList.addEventListener(
       "mouseenter",
       (e) => {
+        console.log("first")
         accordionList.classList.add("relative", "bg-white", "z-60");
         const link = e.target.closest("a");
         if (!link) return;

@@ -1,19 +1,19 @@
 @theme {
     /* Font Family */
-    --font-sans: 'IRANYekanX', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-family-sans: 'IRANYekanX', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* --font-sans: 'IRANYekanX', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-family-sans: 'IRANYekanX', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; */
     
     /* Default Tailwind breakpoints */
-    --breakpoint-sm: 640px;
+    /* --breakpoint-sm: 640px;
     --breakpoint-md: 768px;
     --breakpoint-lg: 1024px;
     --breakpoint-xl: 1320px;
     --breakpoint-2xl: 1536px;
-    --breakpoint-desktop: 1300px;
+    --breakpoint-desktop: 1300px; */
 }
 
 @theme {
-    --color-primary-100: #FFF5F5;
+    /* --color-primary-100: #FFF5F5;
     --color-primary-200: #EDE0D0;
     --color-primary-300: #FDDDDF;
     --color-primary-350: #CF7668;
@@ -30,6 +30,6 @@
     --color-secondary-500: #508F43;
     --color-secondary-600: #4BA100;
     --color-secondary-800: #3E644A;
-    --color-secondary-900: #34954E;
+    --color-secondary-900: #34954E; */
 }
 

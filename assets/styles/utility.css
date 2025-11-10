@@ -1,28 +1,13 @@
-.container {
-  margin-inline: auto;
-  padding-inline: 16px;
-  max-width: 100%;
-}
 
-.color-item .title{
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.color-item .title {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .color-item.available.active {
   background-color: #f6e5e5;
-}
-
-.color-item.available.active {
   border-color: #C41818;
-}
-
-
-@media (min-width: 1300px) {
-  .container {
-    padding-inline: 0px;
-    max-width: 1265px;
-  }
 }
