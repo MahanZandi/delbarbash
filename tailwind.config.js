@@ -6,18 +6,18 @@ module.exports = {
       center: true,
       padding: {
         DEFAULT: "16px",
-        desktop: "0px",   
+        desktop: "0px",
       },
       screens: {
         sm: "640px",
         md: "768px",
         lg: "1024px",
-        desktop: "1265px", 
+        desktop: "1280px",
       },
     },
     extend: {
       zIndex: {
-        '60': '60', 
+        '60': '60',
       },
       fontFamily: {
         sans: [
@@ -31,7 +31,8 @@ module.exports = {
       },
       screens: {
         // خود breakpoint دسکتاپ تیلویند برای کلاس‌هایی مثل desktop:flex
-        desktop: "1300px",
+        desktop: "1280px",
+
       },
       colors: {
         primary: {

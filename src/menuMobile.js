@@ -11,10 +11,6 @@ const els = {
   openBtn: document.getElementById("hamburger-btn"),
   closeBtn: document.getElementById("hamburger-close"),
 
-  searchBtn: document.getElementById("searchburger-btn"),
-  searchBox: document.getElementById("searchbox-Mobile"),
-  searchCloseBtn: document.getElementById("mobile-search-close"),
-  searchBackdrop: document.getElementById("sticky-backdrop-mobile"),
 };
 
 /* ===============================
@@ -68,34 +64,6 @@ function fadeOut(el) { el.classList.replace("opacity-100", "opacity-0"); }
 function slideIn(el) { el.classList.replace("translate-x-full", "translate-x-0"); }
 function slideOut(el) { el.classList.replace("translate-x-0", "translate-x-full"); }
 
-// ---- Search helpers (جدید) ----
-function initSearchUI() {
-  if (!els.searchBox) return;
-  els.searchBox.style.opacity = "0";
-  els.searchBox.style.transform = "scaleY(0)";
-  els.searchBox.style.transformOrigin = "top";
-  els.searchBox.style.transition = "all 0.3s ease";
-}
-function openSearch() {
-  if (!els.searchBtn || !els.searchBox) return;
-  els.searchBtn.classList.add("hidden");
-    els.searchBox.classList.remove("hidden");
-  els.searchBox.style.opacity = "1";
-  els.searchBox.style.transform = "scaleY(1)";
-  els.searchBackdrop?.classList.add("search-active");
-  // فوکوس روی ورودی (در صورت وجود)
-  const input = els.searchBox.querySelector("input");
-  setTimeout(() => input?.focus(), 300);
-}
-function closeSearch() {
-  if (!els.searchBtn || !els.searchBox) return;
-  els.searchBtn.classList.remove("hidden")
-  els.searchBox.style.opacity = "0";
-  els.searchBox.style.transform = "scaleY(0)";
-  els.searchBackdrop?.classList.remove("search-active");
-    els.searchBox.classList.add("hidden");
-
-}
 
 
 /* ===============================
@@ -289,18 +257,12 @@ function initMenuEvents() {
     });
   });
 
-  // ---- Mobile search ----
-  if (els.searchBtn && els.searchBox && els.searchCloseBtn) {
-    els.searchBtn.addEventListener("click", openSearch);
-    els.searchCloseBtn.addEventListener("click", closeSearch);
-  }
 }
 
 /* ===============================
    9. INIT ON PAGE LOAD
    =============================== */
 document.addEventListener("DOMContentLoaded", () => {
-  initSearchUI();
   initMenuEvents();
 });
 

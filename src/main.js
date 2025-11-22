@@ -391,9 +391,8 @@ function openCommentModal() {
 
 
   if (modal && modalContent && backdrop) {
-    stickyAccordion.classList.add("!z-40");
+    if (stickyAccordion) stickyAccordion.classList.add("!z-40");
     modal.classList.remove("hidden");
-    // document.body.style.overflow = "hidden";
 
     setTimeout(() => {
       backdrop.classList.remove("opacity-0");
@@ -413,7 +412,7 @@ function closeCommentModal() {
 
 
   if (modal && modalContent && backdrop) {
-    stickyAccordion.classList.remove("!z-40");
+    if (stickyAccordion) stickyAccordion.classList.remove("!z-40");
     backdrop.classList.remove("opacity-100");
     backdrop.classList.add("opacity-0");
 
@@ -498,14 +497,14 @@ function copyProductLink() {
    Accordion rendering
    =========================== */
 const accordionItems = [
-  { id: 1, title: "مراقبت از پوست", icon: "./public/icons/icon-lipstick.png", href: "#skincare" },
-  { id: 2, title: "آرایشی و بهداشتی", icon: "./public/icons/icon-perfume.png", href: "#cosmetics" },
-  { id: 3, title: "لباس و پوشاک", icon: "./public/icons/icon-clothing.png", href: "#clothing" },
-  { id: 4, title: "لوازم خانگی", icon: "./public/icons/icon-cup.png", href: "#home" },
-  { id: 5, title: "لوازم الکتریکی", icon: "./public/icons/icon-lightning-.png", href: "#electric" },
-  { id: 6, title: "لوازم برقی", icon: "./public/icons/icon-hair-dryer.png", href: "#appliances" },
-  { id: 7, title: "خورشیدی", icon: "./public/icons/icon-solar.png", href: "#solar" },
-  { id: 8, title: "دارو و مکمل", icon: "./public/icons/icon-drugs.png", href: "#pharmacy" },
+  { id: 1, title: "آرایشی", icon: "./public/icons/icon-lipstick.png", href: "#skincare" },
+  { id: 2, title: "بهداشتی", icon: "./public/icons/icon-drugs.png", href: "#cosmetics" },
+  { id: 3, title: "عطر و ادکلن", icon: "./public/icons/icon-perfume.png", href: "#clothing" },
+  { id: 4, title: "اکسسوری", icon: "./public/icons/icon-hair-dryer.png", href: "#home" },
+  { id: 5, title: "خانه و آشپزخانه", icon: "./public/icons/icon-cup.png", href: "#electric" },
+  { id: 6, title: "پوشاک", icon: "./public/icons/icon-clothing.png", href: "#appliances" },
+  { id: 7, title: "پک کادویی", icon: "./public/icons/icon-solar.png", href: "#solar" },
+  { id: 8, title: "شارژ شده‌ها", icon: "./public/icons/icon-lightning-.png", href: "#pharmacy" },
 ];
 
 function renderAccordionItems() {
@@ -957,7 +956,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentIcon = null;
 
   if (accordionList) {
-    
+
     accordionList.addEventListener(
       "mouseenter",
       (e) => {
@@ -1021,7 +1020,7 @@ function closeMobileSelectionProduct(mobileSelection) {
     mobileSelection.classList.add("hidden");
   }, 100);
 
-  
+
 }
 
 
@@ -1030,6 +1029,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   const addToCartBtn = document.getElementById("mobile-add-to-cart-btn");
+  const imgAddCart = document.getElementById("mobile-img-add-cart")
+  const disableImgAddCart = document.getElementById("mobile-img-disable-add-cart")
   const colorItems = document.querySelectorAll(".color-item.available");
 
   // تنظیم اولیه دکمه غیرفعال
@@ -1038,11 +1039,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (activeColor) {
       // رنگ انتخاب شده: دکمه فعال
       addToCartBtn.disabled = false;
+      disableImgAddCart.classList.add("hidden")
+      imgAddCart.classList.remove("hidden")
       addToCartBtn.classList.remove("bg-[#E0E0E0]", "text-[#B1B1B1]", "hover:bg-red-700");
       addToCartBtn.classList.add("bg-red-600", "text-white");
     } else {
       // هیچ رنگی انتخاب نشده: دکمه غیرفعال
       addToCartBtn.disabled = true;
+      disableImgAddCart.classList.remove("hidden")
+      imgAddCart.classList.add("hidden")
       addToCartBtn.classList.remove("bg-red-600", "text-white", "hover:bg-red-700");
       addToCartBtn.classList.add("bg-[#E0E0E0]", "text-[#B1B1B1]");
     }
@@ -1052,18 +1057,19 @@ document.addEventListener("DOMContentLoaded", function () {
   colorItems.forEach((item) => {
     item.addEventListener("click", function () {
       colorItems.forEach((el) => {
-        el.classList.remove("active");
+        el.style.borderColor = "#E8E8E8";
+        el.classList.remove("active", "bg-[#F6E5E5]");
         const checkIcon = el.querySelector(".check-icon");
         if (checkIcon) {
           checkIcon.classList.add("hidden");
         }
       });
-      this.classList.add("active");
+      this.classList.add("active", "bg-[#F6E5E5]");
+      this.style.borderColor = "#C41818";
       const checkIcon = this.querySelector(".check-icon");
       if (checkIcon) {
         checkIcon.classList.remove("hidden");
       }
-      console.log("Selected color id:", this.id);
 
       updateAddToCartBtn();
     });
