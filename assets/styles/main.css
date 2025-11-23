@@ -13,10 +13,6 @@
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-/* body.modal-open {
-  overflow: hidden;
-  padding-right: var(--scrollbar-width, 0px);
-} */
 
 
 /* RTL support for Persian text */
@@ -251,7 +247,7 @@
     opacity: 1;
     transform: translateY(0);
   }
-  40% {
+  20% {
     opacity: 1;
     transform: translateY(0);
   }
@@ -270,7 +266,7 @@
     opacity: 0;
     transform: translateY(8px);
   }
-  50% {
+  30% {
     opacity: 0;
     transform: translateY(8px);
   }

@@ -865,69 +865,144 @@ document.addEventListener("DOMContentLoaded", function () {
   /* =============
      Initialize Embla — only if viewports exist
      ============= */
+
   const viewportNodeMainCarousel = document.querySelector(".embla__viewport");
   const viewportNodeThumbCarousel = document.querySelector(".embla-thumbs__viewport");
-  const viewportNodeReviews = document.querySelector(".embla-reviews__viewport");
+  const viewportNodeReviews = document.querySelector(".embla-reviews__viewport"); 
+  const thumbsContainer = document.querySelector(".embla-thumbs__container");
 
 
-  // Main & thumbs
-  if (viewportNodeMainCarousel) {
-    const OPTIONS = { direction: "rtl" };
+  let removeThumbBtnsClickHandlers = null;
+  let removeToggleThumbBtnsActive = null;
 
+  const isMobile = () => window.innerWidth <= 480;
+
+  // ساختن اسلایدر thumbnails بر اساس وضعیت موبایل/دسکتاپ
+  const createThumbEmbla = (viewportNodeThumbCarousel) => {
+    if (!viewportNodeThumbCarousel || typeof EmblaCarousel !== "function") return null;
+
+    const mobile = isMobile();
     const OPTIONS_THUMBS = {
-      containScroll: "keepSnaps",
+      containScroll: mobile ? "trimSnaps" : "keepSnaps",
       dragFree: true,
       direction: "rtl",
-      axis: "x", // 👈 موبایل: عمودی / دسکتاپ: افقی
+      axis: mobile ? "y" : "x", // موبایل: عمودی، دسکتاپ: افقی
     };
 
+    return EmblaCarousel(viewportNodeThumbCarousel, OPTIONS_THUMBS);
+  };
+
+  // وصل‌کردن کلیک روی thumbs به main + active state
+  const setupThumbSync = () => {
+    if (!emblaApiMain || !emblaApiThumb) return;
+
+    if (removeThumbBtnsClickHandlers) {
+      removeThumbBtnsClickHandlers();
+    }
+    if (removeToggleThumbBtnsActive) {
+      removeToggleThumbBtnsActive();
+    }
+
+    removeThumbBtnsClickHandlers = addThumbBtnsClickHandlers(emblaApiMain, emblaApiThumb);
+    removeToggleThumbBtnsActive = addToggleThumbBtnsActive(emblaApiMain, emblaApiThumb);
+
+    emblaApiMain.on("destroy", removeThumbBtnsClickHandlers);
+    emblaApiMain.on("destroy", removeToggleThumbBtnsActive);
+    emblaApiThumb.on("destroy", removeThumbBtnsClickHandlers);
+    emblaApiThumb.on("destroy", removeToggleThumbBtnsActive);
+  };
+
+
+  if (viewportNodeMainCarousel) {
+    const OPTIONS_MAIN = { direction: "rtl" };
+
     try {
-      emblaApiMain = typeof EmblaCarousel === "function" ? EmblaCarousel(viewportNodeMainCarousel, OPTIONS) : null;
+      // Main
+      emblaApiMain =
+        typeof EmblaCarousel === "function"
+          ? EmblaCarousel(viewportNodeMainCarousel, OPTIONS_MAIN)
+          : null;
+
+      // Thumbs
       if (viewportNodeThumbCarousel && typeof EmblaCarousel === "function") {
-        emblaApiThumb = EmblaCarousel(viewportNodeThumbCarousel, OPTIONS_THUMBS);
-      }
-      // Thumb handlers
-      const removeThumbBtnsClickHandlers = addThumbBtnsClickHandlers(emblaApiMain, emblaApiThumb);
-      const removeToggleThumbBtnsActive = addToggleThumbBtnsActive(emblaApiMain, emblaApiThumb);
-
-      if (emblaApiMain) {
-        emblaApiMain.on("destroy", removeThumbBtnsClickHandlers);
-        emblaApiMain.on("destroy", removeToggleThumbBtnsActive);
-      }
-      if (emblaApiThumb) {
-        emblaApiThumb.on("destroy", removeThumbBtnsClickHandlers);
-        emblaApiThumb.on("destroy", removeToggleThumbBtnsActive);
+        emblaApiThumb = createThumbEmbla(viewportNodeThumbCarousel);
       }
 
-      // Dots for main
+      if (thumbsContainer) {
+        thumbsContainer.style.touchAction = isMobile()
+          ? "pan-y pinch-zoom"
+          : "pan-y";
+      }
+
+      setupThumbSync();
+
+      // Dots برای main
       if (emblaApiMain) {
         emblaApiMain.on("init", () => {
           createDots(emblaApiMain);
           updateDots(emblaApiMain);
         });
-        emblaApiMain.on("select", () => updateDots(emblaApiMain));
+
+        emblaApiMain.on("select", () => {
+          updateDots(emblaApiMain);
+        });
       }
 
       // Prev / Next buttons
       const prevButton = document.getElementById("embla-prev");
       const nextButton = document.getElementById("embla-next");
 
-      if (prevButton) {
-        prevButton.addEventListener("click", () => emblaApiMain && emblaApiMain.scrollPrev());
+      if (prevButton && emblaApiMain) {
+        prevButton.addEventListener("click", () => {
+          emblaApiMain && emblaApiMain.scrollPrev();
+        });
       }
-      if (nextButton) {
-        nextButton.addEventListener("click", () => emblaApiMain && emblaApiMain.scrollNext());
+
+      if (nextButton && emblaApiMain) {
+        nextButton.addEventListener("click", () => {
+          emblaApiMain && emblaApiMain.scrollNext();
+        });
       }
 
       if (emblaApiMain) {
-        emblaApiMain.on("init", () => updateButtonStates(emblaApiMain, prevButton, nextButton));
-        emblaApiMain.on("select", () => updateButtonStates(emblaApiMain, prevButton, nextButton));
+        emblaApiMain.on("init", () => {
+          updateButtonStates(emblaApiMain, prevButton, nextButton);
+        });
+        emblaApiMain.on("select", () => {
+          updateButtonStates(emblaApiMain, prevButton, nextButton);
+        });
       }
     } catch (e) {
       console.error("خطا در ایجاد Embla main/thumb:", e);
     }
 
-  } // end main carousel init
+    // Re-init thumbs when breakpoint crosses
+    let lastIsMobile = isMobile();
+
+    window.addEventListener("resize", () => {
+      const nowIsMobile = isMobile();
+      if (!viewportNodeThumbCarousel || nowIsMobile === lastIsMobile) return;
+
+      // 1) destroy & re-init با options جدید
+      if (emblaApiThumb) {
+        emblaApiThumb.destroy();
+        emblaApiThumb = null;
+      }
+
+      emblaApiThumb = createThumbEmbla(viewportNodeThumbCarousel);
+
+      setupThumbSync();
+
+      if (thumbsContainer) {
+        thumbsContainer.style.touchAction = "none";
+        requestAnimationFrame(() => {
+          thumbsContainer.style.touchAction = "pan-y pinch-zoom";
+        });
+      }
+
+      lastIsMobile = nowIsMobile;
+    });
+  }  // end main carousel init
 
   // Reviews carousel — اول render کن سپس embla رو بساز
   if (viewportNodeReviews) {

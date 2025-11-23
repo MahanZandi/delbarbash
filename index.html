@@ -17,7 +17,7 @@
     <!-- top navbar desktop -->
     <nav
       id="desktop-navbar"
-      class="desktop:flex  hidden items-center justify-between container mt-[26px] transition-all duration-300"
+      class="desktop:flex hidden items-center justify-between container mt-[26px] transition-all duration-300"
     >
       <!-- link & search bar & logo container -->
       <div class="flex gap-5">
@@ -53,9 +53,11 @@
               placeholder="جستجو کنید ...."
               class="w-full h-full rounded-[9px] border-none outline-none p-2 placeholder:font-light placeholder:text-[#9A9A9A] placeholder:text-[10px]"
             />
-            <i
-              class="fa-solid fa-magnifying-glass text-[#BABABA] absolute left-[12px] top-[50%] translate-y-[-50%] bg-white"
-            ></i>
+            <img
+              class="size-[15px] absolute left-[12px] top-[50%] translate-y-[-50%]"
+              src="./public/icons/search-icon.png"
+              alt="search-icon"
+            />
           </div>
         </div>
         <ul class="flex items-center gap-[26px]">
@@ -107,7 +109,7 @@
       class="desktop:hidden container px-4 mt-8 h-[84px] transition-all duration-300"
     >
       <div class="flex justify-between">
-        <div class="flex items-center ">
+        <div class="flex items-center">
           <button
             id="hamburger-btn"
             class="size-[36px] items-center justify-center rounded-[8px] border border-[#E8E8E8] flex bg-white"
@@ -169,16 +171,17 @@
           placeholder="جستجو کنید ...."
           class="w-full h-full rounded-[9px] border-none bg-transparent outline-none pl-2 pr-3 placeholder:font-light placeholder:text-[#9A9A9A] placeholder:text-[10px]"
         />
-        <i
-          class="fa-solid fa-magnifying-glass text-[#BABABA] px-2"
-          aria-hidden="true"
-        ></i>
+        <img
+          class="size-[15px] absolute left-[12px] top-[50%] translate-y-[-50%]"
+          src="./public/icons/search-icon.png"
+          alt="search-icon"
+        />
       </div>
     </nav>
     <!-- nav links accordion desktop -->
     <nav
       id="desktop-accordion"
-      class="nav-accordion-link container mt-1.5 desktop:flex  hidden transition-all duration-300"
+      class="nav-accordion-link container mt-1.5 desktop:flex hidden transition-all duration-300"
     >
       <ul
         id="accordion-list"
@@ -190,7 +193,7 @@
 
     <!-- raete && category -->
     <div
-      class="container flex justify-between items-center mt-5 desktop:mt-[26px] "
+      class="container flex justify-between items-center mt-5 desktop:mt-[26px]"
     >
       <ul class="flex items-center gap-[9px] text-[#2D2D2D] text-[12px]">
         <li class="flex items-center gap-[9px]">
@@ -220,11 +223,11 @@
 
     <!-- product -->
     <div
-      class="flex mt-[27px] container desktop:justify-between justify-center "
+      class="flex mt-[27px] container desktop:justify-between justify-center"
     >
       <!-- slider -->
       <div
-        class="embla relative w-[90%] min-[480px]:w-[65%] sm:w-[50%] md:w-[35%] lg:w-[30%] desktop:w-[360px]"
+        class="embla relative w-[95%] min-[480px]:w-[65%] sm:w-[50%] md:w-[35%] lg:w-[30%] desktop:w-[360px]"
       >
         <!-- Product slider backdrop for mobile -->
         <div
@@ -233,117 +236,125 @@
         ></div>
         <!-- dots -->
         <div
-          class="absolute left-1/2 rounded-b-xl -translate-x-1/2 -top-0.5 p-2 bg-white z-10"
+          class="absolute max-[480px]:left-[40%] min-[481px]:left-1/2 p-1.5 rounded-b-xl -translate-x-1/2 -top-0.5  bg-white z-10"
         >
           <div id="slider-dots" class="flex justify-center gap-2"></div>
         </div>
 
-        <div class="embla__viewport">
-          <div class="embla__container">
-            <div class="embla__slide">
-              <div class="embla__slide__number bg-primary-300">
-                <img
-                  class="w-[205px] h-[335px] desktop:w-[241px] desktop:h-[344px] object-contain"
-                  src="./public/images/product-1.png"
-                  alt="heart icon"
-                />
+        <div
+          class="max-[480px]:h-[335px] max-[480px]:flex max-[480px]:flex-row-reverse justify-between min-[481px]:flex-col"
+        >
+          <div class="embla__viewport max-[480px]:w-[80%]">
+            <div class="embla__container">
+              <div class="embla__slide">
+                <div class="embla__slide__number bg-primary-300">
+                  <img
+                    class="w-[205px] h-[335px] desktop:w-[241px] desktop:h-[344px] object-contain"
+                    src="./public/images/product-1.png"
+                    alt="heart icon"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="embla__slide">
-              <div class="embla__slide__number bg-primary-300">
-                <img
-                  class="w-[205px] h-[335px] desktop:w-[241px] desktop:h-[344px] object-contain"
-                  src="./public/images/product-2.png"
-                  alt="heart icon"
-                />
+              <div class="embla__slide">
+                <div class="embla__slide__number bg-primary-300">
+                  <img
+                    class="w-[205px] h-[335px] desktop:w-[241px] desktop:h-[344px] object-contain"
+                    src="./public/images/product-2.png"
+                    alt="heart icon"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="embla__slide">
-              <div class="embla__slide__number bg-primary-300">
-                <img
-                  class="w-[205px] h-[335px] desktop:w-[241px] desktop:h-[344px] object-contain"
-                  src="./public/images/product-3.png"
-                  alt="heart icon"
-                />
+              <div class="embla__slide">
+                <div class="embla__slide__number bg-primary-300">
+                  <img
+                    class="w-[205px] h-[335px] desktop:w-[241px] desktop:h-[344px] object-contain"
+                    src="./public/images/product-3.png"
+                    alt="heart icon"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="embla__slide">
-              <div class="embla__slide__number bg-primary-300">
-                <img
-                  class="w-[205px] h-[335px] desktop:w-[241px] desktop:h-[344px] object-contain"
-                  src="./public/images/product-4.png"
-                  alt="heart icon"
-                />
+              <div class="embla__slide">
+                <div class="embla__slide__number bg-primary-300">
+                  <img
+                    class="w-[205px] h-[335px] desktop:w-[241px] desktop:h-[344px] object-contain"
+                    src="./public/images/product-4.png"
+                    alt="heart icon"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="embla__slide">
-              <div class="embla__slide__number bg-primary-300">
-                <img
-                  class="w-[205px] h-[335px] desktop:w-[241px] desktop:h-[344px] object-contain"
-                  src="./public/images/product-2.png"
-                  alt="heart icon"
-                />
+              <div class="embla__slide">
+                <div class="embla__slide__number bg-primary-300">
+                  <img
+                    class="w-[205px] h-[335px] desktop:w-[241px] desktop:h-[344px] object-contain"
+                    src="./public/images/product-2.png"
+                    alt="heart icon"
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="embla-thumbs">
-          <div class="embla-thumbs__viewport">
-            <div class="embla-thumbs__container gap-2">
+          <div
+            class="embla-thumbs max-[480px]:!mt-0 max-[480px]:w-[18%] max-[480px]:ml-2 max-[480px]:flex max-[480px]:flex-col min-[481px]:w-full"
+          >
+            <div class="embla-thumbs__viewport overflow-hidden">
               <div
-                class="embla-thumbs__slide embla-thumbs__slide--selected bg-primary-300 flex justify-center items-center"
+                class="embla-thumbs__container flex flex-row gap-2 max-[480px]:flex-col max-[480px]:max-h-[335px]"
               >
-                <button type="button">
-                  <img
-                    class="object-contain w-[50px] h-[50px] min-[480px]:w-[80px] min-[480px]:h-[80px]"
-                    src="./public/images/product-1.png"
-                    alt="product-1"
-                  />
-                </button>
-              </div>
-              <div
-                class="embla-thumbs__slide bg-primary-300 flex justify-center items-center"
-              >
-                <button type="button">
-                  <img
-                    class="object-contain w-[50px] h-[50px] min-[480px]:w-[80px] min-[480px]:h-[80px]"
-                    src="./public/images/product-2.png"
-                    alt="product-2"
-                  />
-                </button>
-              </div>
-              <div
-                class="embla-thumbs__slide bg-primary-300 flex justify-center items-center"
-              >
-                <button type="button">
-                  <img
-                    class="object-contain w-[50px] h-[50px] min-[480px]:w-[80px] min-[480px]:h-[80px]"
-                    src="./public/images/product-3.png"
-                    alt="product-3"
-                  />
-                </button>
-              </div>
-              <div
-                class="embla-thumbs__slide bg-primary-300 flex justify-center items-center"
-              >
-                <button type="button">
-                  <img
-                    class="object-contain w-[50px] h-[50px] min-[480px]:w-[80px] min-[480px]:h-[80px]"
-                    src="./public/images/product-4.png"
-                    alt="product-3"
-                  />
-                </button>
-              </div>
-              <div
-                class="embla-thumbs__slide bg-primary-300 flex justify-center items-center"
-              >
-                <button type="button">
-                  <img
-                    class="object-contain w-[50px] h-[50px] min-[480px]:w-[80px] min-[480px]:h-[80px]"
-                    src="./public/images/product-2.png"
-                    alt="product-2"
-                  />
-                </button>
+                <div
+                  class="embla-thumbs__slide embla-thumbs__slide--selected bg-primary-300 flex justify-center items-center flex-[0_0_25%] rounded-[15px] h-[91px] desktop:h-[110px] max-[480px]:flex-[0_0_auto] max-[480px]:h-[84px] max-[480px]:rounded-[15px]"
+                >
+                  <button type="button">
+                    <img
+                      class="object-contain size-[50px] min-[480px]:size-[80px]"
+                      src="./public/images/product-1.png"
+                      alt="product-1"
+                    />
+                  </button>
+                </div>
+                <div
+                  class="embla-thumbs__slide embla-thumbs__slide--selected bg-primary-300 flex justify-center items-center flex-[0_0_25%] rounded-[15px] h-[91px] desktop:h-[110px] max-[480px]:flex-[0_0_auto] max-[480px]:h-[84px] max-[480px]:rounded-[15px]"
+                >
+                  <button type="button">
+                    <img
+                      class="object-contain size-[50px] min-[480px]:size-[80px]"
+                      src="./public/images/product-2.png"
+                      alt="product-2"
+                    />
+                  </button>
+                </div>
+                <div
+                  class="embla-thumbs__slide embla-thumbs__slide--selected bg-primary-300 flex justify-center items-center flex-[0_0_25%] rounded-[15px] h-[91px] desktop:h-[110px] max-[480px]:flex-[0_0_auto] max-[480px]:h-[84px] max-[480px]:rounded-[15px]"
+                >
+                  <button type="button">
+                    <img
+                      class="object-contain size-[50px] min-[480px]:size-[80px]"
+                      src="./public/images/product-3.png"
+                      alt="product-3"
+                    />
+                  </button>
+                </div>
+                <div
+                  class="embla-thumbs__slide embla-thumbs__slide--selected bg-primary-300 flex justify-center items-center flex-[0_0_25%] rounded-[15px] h-[91px] desktop:h-[110px] max-[480px]:flex-[0_0_auto] max-[480px]:h-[84px] max-[480px]:rounded-[15px]"
+                >
+                  <button type="button">
+                    <img
+                      class="object-contain size-[50px] min-[480px]:size-[80px]"
+                      src="./public/images/product-4.png"
+                      alt="product-3"
+                    />
+                  </button>
+                </div>
+                <div
+                  class="embla-thumbs__slide embla-thumbs__slide--selected bg-primary-300 flex justify-center items-center flex-[0_0_25%] rounded-[15px] h-[91px] desktop:h-[110px] max-[480px]:flex-[0_0_auto] max-[480px]:h-[84px] max-[480px]:rounded-[15px]"
+                >
+                  <button type="button">
+                    <img
+                      class="object-contain size-[50px] min-[480px]:size-[80px]"
+                      src="./public/images/product-2.png"
+                      alt="product-2"
+                    />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -352,7 +363,7 @@
         <!-- arrows button -->
         <button
           id="embla-prev"
-          class="absolute top-[133px] desktop:top-[181px] -right-5 bg-white rounded-l-full p-3 transition-all duration-300 z-10"
+          class="absolute max-[480px]:hidden block top-[133px] desktop:top-[181px] -right-5 bg-white rounded-l-full p-3 transition-all duration-300 z-10"
           aria-label="previous"
         >
           <svg
@@ -494,7 +505,7 @@
         class="border border-[#E8E8E8] rounded-xl p-[15px] w-[375px] desktop:block hidden"
       >
         <!-- title -->
-        <h3 class="text-xs text-[#2D2D2D] mb-[17px] text-center">
+        <h3 class="text-xs font-medium text-[#2D2D2D] mb-[17px] text-center">
           انتخاب مدل محصول
         </h3>
         <!-- color selection one Row Item -->
@@ -973,23 +984,31 @@
 
         <!-- quantity selector -->
         <div class="flex items-center justify-between my-[25px] text-[#2D2D2D]">
-          <div class="flex items-center gap-4">
+          <div class="flex items-center gap-1.5">
             <button
               id="increase-btn"
               class="size-[30px] rounded-full border border-[#E8E8E8] flex items-center justify-center cursor-pointer"
             >
-              <i class="fa-solid fa-plus"></i>
+              <img
+                class="size-[29px]"
+                src="./public/icons/plus-icon.png"
+                alt="sub"
+              />
             </button>
             <span
               id="quantity-display"
-              class="text-2xl font-bold text-primary-600"
+              class="text-2xl font-bold text-primary-600 w-7 flex items-center justify-center"
               >۱</span
             >
             <button
               id="decrease-btn"
               class="size-[30px] rounded-full border border-[#E8E8E8] flex items-center justify-center cursor-pointer"
             >
-              <i class="fa-solid fa-minus"></i>
+              <img
+                class="size-[29px]"
+                src="./public/icons/sub-icon.png"
+                alt="plus-icon"
+              />
             </button>
           </div>
           <div class="flex">
@@ -999,8 +1018,41 @@
             >
               ۱۴۵,۰۰۰
             </div>
-            <div class="text-xs text-gray-500 -rotate-90 relative left-[10px]">
+            <div
+              class="text-[10px] text-gray-500 font-medium -rotate-90 relative left-[12px]"
+            >
               تومان
+            </div>
+          </div>
+          <div class="hidden flex justify-end">
+            <div
+              class="w-full flex items-start justify-between desktop:px-[7px] px-[10px]"
+            >
+              <!-- قیمت‌ها + تومان عمودی -->
+              <div class="flex items-center gap-1">
+                <!-- ستون قیمت‌ها -->
+                <div class="flex flex-col-reverse items-end">
+                  <!-- قیمت فعلی -->
+                  <span
+                    class="text-[#C41818] text-[18px] font-medium leading-none tabular-nums"
+                  >
+                    ۱۱۰,۰۰۰
+                  </span>
+                  <!-- قیمت قبلی (خط‌خورده) -->
+                  <span
+                    class="text-[#8B8B8B] line-through text-[10px] font-medium leading-none mt-1 tabular-nums"
+                  >
+                    ۱۸۵,۰۰۰
+                  </span>
+                </div>
+
+                <!-- تومان عمودی -->
+                <span
+                  class="text-[#8B8B8B] text-[10px] [writing-mode:vertical-rl] font-medium rotate-180 leading-none"
+                >
+                  تومان
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -1105,10 +1157,9 @@
         </span>
       </div>
       <div>
-                      <p class="text-xs font-medium text-[#4BA100] mt-[22px]">
-            موجودی و قیمت کالا بروز میباشد.
-          </p>
-
+        <p class="text-xs font-medium text-[#4BA100] mt-[22px]">
+          موجودی و قیمت کالا بروز میباشد.
+        </p>
       </div>
     </div>
 
@@ -1315,7 +1366,7 @@
       >
         <!-- Modal Header -->
         <div class="flex justify-between items-center mb-6">
-          <h3 class="text-lg font-semibold text-[#2D2D2D] w-full text-center">
+          <h3 class="text-[17px] font-medium text-[#2D2D2D] w-full text-center">
             انتخاب مدل محصول
           </h3>
           <button
@@ -1799,31 +1850,72 @@
           <div class="flex items-center gap-2">
             <button
               id="mobile-increase-btn"
-              class="size-[30px] rounded-full border border-[#E8E8E8] flex items-center justify-center cursor-pointer"
+              class="rounded-full border border-[#E8E8E8] flex items-center justify-center cursor-pointer"
             >
-              <i class="fa-solid fa-plus"></i>
+              <img
+                class="size-[40px]"
+                src="./public/icons/plus-icon.png"
+                alt="sub"
+              />
             </button>
             <span
               id="mobile-quantity-display"
-              class="text-2xl font-semibold text-primary-600 w-7 text-center "
+              class="text-[35px] font-semibold text-primary-600 w-9 flex items-center justify-center"
               >۱</span
             >
             <button
               id="mobile-decrease-btn"
-              class="size-[30px] rounded-full border border-[#E8E8E8] flex items-center justify-center cursor-pointer"
+              class="rounded-full border border-[#E8E8E8] flex items-center justify-center cursor-pointer"
             >
-              <i class="fa-solid fa-minus"></i>
+              <img
+                class="size-[40px]"
+                src="./public/icons/sub-icon.png"
+                alt="plus-icon"
+              />
             </button>
           </div>
           <div class="flex">
             <div
               id="mobile-price-display"
-              class="text-[26px] font-semibold text-[#2D2D2D]"
+              class="text-[28px] font-medium text-[#2D2D2D]"
             >
               ۴۵,۰۰۰
             </div>
-            <div class="text-[10px] font-semibold text-gray-500 -rotate-90 relative left-[10px]">
+            <div
+              class="text-[12px] font-medium text-gray-500 -rotate-90 relative left-[12px]"
+            >
               تومان
+            </div>
+          </div>
+          <div class="hidden flex justify-end">
+            <div
+              class="w-full flex items-start justify-between desktop:px-[7px] px-[10px]"
+            >
+              <!-- قیمت‌ها + تومان عمودی -->
+              <div class="flex items-center gap-1">
+                <!-- ستون قیمت‌ها -->
+                <div class="flex flex-col-reverse items-end">
+                  <!-- قیمت فعلی -->
+                  <span
+                    class="text-[#C41818] text-[20px] font-medium leading-none tabular-nums"
+                  >
+                    ۱۱۰,۰۰۰
+                  </span>
+                  <!-- قیمت قبلی (خط‌خورده) -->
+                  <span
+                    class="text-[#8B8B8B] line-through text-[12px] font-medium leading-none mt-1 tabular-nums"
+                  >
+                    ۱۸۵,۰۰۰
+                  </span>
+                </div>
+
+                <!-- تومان عمودی -->
+                <span
+                  class="text-[#8B8B8B] text-[12px] [writing-mode:vertical-rl] font-medium rotate-180 leading-none"
+                >
+                  تومان
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -1865,7 +1957,7 @@
       >
         <!-- Modal Header -->
         <div class="flex justify-between items-center mb-6">
-          <h3 class=" text-[#2D2D2D] w-full text-center mr-3">
+          <h3 class="text-[17px] font-medium text-[#2D2D2D] w-full text-center mr-3">
             ثبت دیدگاه برای محصول
           </h3>
           <button id="comment-close" class="text-gray-500 hover:text-gray-700">
@@ -1940,7 +2032,7 @@
       >
         <!-- Modal Header -->
         <div class="flex justify-between items-center mb-6">
-          <h3 class="text-lg font-semibold text-[#2D2D2D] w-full text-center">
+          <h3 class="text-[17px] font-medium text-[#2D2D2D] w-full text-center">
             اشتراک گذاری محصول
           </h3>
           <button
@@ -2096,7 +2188,7 @@
 
     <!-- banners -->
     <div class="container">
-      <div class="flex desktop:flex-row  flex-col-reverse gap-[9px] mt-10">
+      <div class="flex desktop:flex-row flex-col-reverse gap-[9px] mt-10">
         <div class="desktop:flex grid grid-cols-2 gap-[9px]">
           <!-- Mobile item -->
           <a
@@ -2302,7 +2394,7 @@
     </div>
 
     <!-- same products -->
-    <div class="container mt-16 ">
+    <div class="container mt-16">
       <!-- title -->
       <div class="flex items-center desktop:hidden">
         <div class="w-full h-px bg-[#E8E8E8]"></div>
@@ -2357,9 +2449,9 @@
               >در ۴ مدل مختلف</span
             >
           </div>
-          <div class="desktop:mt-6 mt-[17px] flex justify-end mb-7 lg:mb-11">
+          <div class="desktop:mt-6 mt-[17px] flex justify-end mb-7 lg:mb-11 ">
             <div
-              class="w-full flex items-start justify-between desktop:px-[7px] px-[10px]"
+              class="w-full flex items-start justify-between px-[10px]"
             >
               <!-- بَجِ تخفیف -->
               <span
@@ -2374,13 +2466,13 @@
                 <div class="flex flex-col-reverse items-end">
                   <!-- قیمت فعلی -->
                   <span
-                    class="text-[#C41818] desktop:text-xl font-medium leading-none tabular-nums"
+                    class="text-[#C41818] text-[18px] desktop:text-xl font-medium leading-none tabular-nums -mt-1"
                   >
                     ۱۱۰,۰۰۰
                   </span>
                   <!-- قیمت قبلی (خط‌خورده) -->
                   <span
-                    class="text-[#BC6E73] line-through text-[7px] desktop:text-[10px] leading-none mt-1 tabular-nums"
+                    class="text-[#BC6E73] line-through text-[7px] font-medium desktop:text-[10px] leading-none mt-1 tabular-nums"
                   >
                     ۱۸۵,۰۰۰
                   </span>
@@ -2388,7 +2480,7 @@
 
                 <!-- تومان عمودی -->
                 <span
-                  class="text-[#8B8B8B] text-[6px] desktop:text-[8px] [writing-mode:vertical-rl] rotate-180 leading-none"
+                  class="text-[6px] desktop:text-[8px] text-[#8B8B8B] -rotate-90 font-medium "
                 >
                   تومان
                 </span>
@@ -2545,7 +2637,7 @@
     </div>
 
     <!-- banners 2 -->
-    <div class="container mt-[60px] ">
+    <div class="container mt-[60px]">
       <!-- title -->
       <div class="flex flex-col items-center gap-2 font-medium">
         <h2 class="text-[#2D2D2D] text-xl">دیگر دسته‌بندی های فروشگاه</h2>
@@ -2649,7 +2741,7 @@
     </div>
 
     <!-- support -->
-    <div class="container mt-[68px] ">
+    <div class="container mt-[68px]">
       <!-- title -->
       <div class="flex flex-col items-center gap-2 font-medium">
         <h2 class="text-[#2D2D2D] text-xl">پشتیبانی و پاسخگویی سوالات</h2>
@@ -2719,7 +2811,7 @@
     </div>
 
     <!-- buy steps -->
-    <div class="container mt-[68px] ">
+    <div class="container mt-[68px]">
       <!-- title -->
       <div class="flex flex-col items-center gap-2 font-medium">
         <h2 class="text-[#2D2D2D] text-xl">مراحل خرید و دریافت سفارش</h2>
@@ -2947,7 +3039,7 @@
 
     <!-- footer -->
     <div
-      class="border container mb-[21px] border-[#ECECEC] rounded-[20px] bg-gray-50 desktop:mt-[93px] mt-11 "
+      class="border container mb-[21px] border-[#ECECEC] rounded-[20px] bg-gray-50 desktop:mt-[93px] mt-11"
     >
       <div
         class="flex justify-between desktop:pr-[46px] desktop:pl-[25px] desktop:pt-[26px] desktop:pb-[37px] pt-[18px] pb-[15px] pr-[19px] pl-[23px]"
@@ -3132,7 +3224,7 @@
       </div>
     </div>
 
-    <div class="flex justify-center items-center mb-[36px] pb-30 desktop:pb-0 ">
+    <div class="flex justify-center items-center mb-[36px] pb-30 desktop:pb-0">
       <div
         class="flex items-center flex-wrap gap-1.5 desktop:text-sm text-xs justify-center"
       >
