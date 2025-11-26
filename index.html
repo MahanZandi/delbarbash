@@ -17,7 +17,7 @@
     <!-- top navbar desktop -->
     <nav
       id="desktop-navbar"
-      class="desktop:flex hidden items-center justify-between container mt-[26px] transition-all duration-300"
+      class="sticky-navbar desktop:flex hidden items-center justify-between container transition-all duration-300"
     >
       <!-- link & search bar & logo container -->
       <div class="flex gap-5">
@@ -28,18 +28,18 @@
               <img src="./public/favicon.png" alt="logo" class="size-[36px]" />
             </a>
             <div>
-              <h1 class="text-[16px] ss01 text-primary-600">دلبرباش</h1>
+              <h1 class="text-[18px] ss01 text-[#C41818]">دلبرباش</h1>
               <div class="relative w-24 h-[14px] overflow-hidden">
                 <h2
-                  class="text-[10px] text-primary-700 absolute inset-0 logo-text1"
+                  class="text-[10px] font-medium  text-[#860A0A] absolute inset-0 logo-text1"
                 >
                   فروشگاه اینترنتی
                 </h2>
 
                 <h2
-                  class="text-[10px] text-primary-700 absolute inset-0 logo-text2"
+                  class="text-[10px] font-medium text-[#860A0A] absolute inset-0 logo-text2"
                 >
-                  من یک دلبر هستم
+                  من یک دلبرم
                 </h2>
               </div>
             </div>
@@ -106,7 +106,7 @@
     <!-- top navbar mobile -->
     <nav
       id="mobile-navbar"
-      class="desktop:hidden container px-4 mt-8 h-[84px] transition-all duration-300"
+      class="sticky-mobile-navbar desktop:hidden container px-4 pt-5 h-[84px] transition-all duration-300"
     >
       <div class="flex justify-between">
         <div class="flex items-center">
@@ -118,7 +118,7 @@
           </button>
         </div>
         <!-- logo -->
-        <div class="h-[38px] relative w-[75px]">
+        <div class="h-[38px] relative w-[70px]">
           <a href="#" class="logo-img-wrap">
             <img
               src="./public/favicon.png"
@@ -127,19 +127,19 @@
             />
           </a>
           <div class="logo-text-wrapper w-full absolute top-0 right-0">
-            <h1 class="text-[16px] ss01 text-primary-600">دلبرباش</h1>
+            <h1 class="text-[18px] ss01 text-[#C41818]">دلبرباش</h1>
 
             <div class="relative w-full h-[14px] overflow-hidden">
               <h2
-                class="text-[10px] text-primary-700 absolute inset-0 logo-text1"
+                class="text-[10px] font-medium text-[#860A0A] absolute inset-0 logo-text1"
               >
                 فروشگاه اینترنتی
               </h2>
 
               <h2
-                class="text-[10px] text-primary-700 absolute inset-0 logo-text2"
+                class="text-[10px] font-medium text-[#860A0A] absolute inset-0 logo-text2"
               >
-                من یک دلبر هستم
+                من یک دلبرم
               </h2>
             </div>
           </div>
@@ -181,7 +181,7 @@
     <!-- nav links accordion desktop -->
     <nav
       id="desktop-accordion"
-      class="nav-accordion-link container mt-1.5 desktop:flex hidden transition-all duration-300"
+      class="sticky-accordion nav-accordion-link container mt-1.5 desktop:flex hidden transition-all duration-300 "
     >
       <ul
         id="accordion-list"
@@ -193,7 +193,7 @@
 
     <!-- raete && category -->
     <div
-      class="container flex justify-between items-center mt-5 desktop:mt-[26px]"
+      class="container flex justify-between items-center mt-10 desktop:mt-[26px]"
     >
       <ul class="flex items-center gap-[9px] text-[#2D2D2D] text-[12px]">
         <li class="flex items-center gap-[9px]">
@@ -236,7 +236,7 @@
         ></div>
         <!-- dots -->
         <div
-          class="absolute max-[480px]:left-[40%] min-[481px]:left-1/2 p-1.5 rounded-b-xl -translate-x-1/2 -top-0.5  bg-white z-10"
+          class="absolute max-[480px]:left-[40%] min-[481px]:left-1/2 p-1.5 rounded-b-xl -translate-x-1/2 -top-0.5 bg-white z-10"
         >
           <div id="slider-dots" class="flex justify-center gap-2"></div>
         </div>
@@ -987,39 +987,60 @@
           <div class="flex items-center gap-1.5">
             <button
               id="increase-btn"
-              class="size-[30px] rounded-full border border-[#E8E8E8] flex items-center justify-center cursor-pointer"
+              class="size-[30px] rounded-full border border-[#D3D3D3] flex items-center justify-center cursor-pointer"
             >
-              <img
-                class="size-[29px]"
-                src="./public/icons/plus-icon.png"
-                alt="sub"
-              />
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.90228 14.0282V5.77631"
+                  stroke="black"
+                  stroke-width="0.991482"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M5.77633 9.90228L14.0282 9.90228"
+                  stroke="black"
+                  stroke-width="0.991482"
+                  stroke-linecap="round"
+                />
+              </svg>
             </button>
             <span
               id="quantity-display"
-              class="text-2xl font-bold text-primary-600 w-7 flex items-center justify-center"
+              class="text-2xl font-medium text-primary-600 w-7 flex items-center justify-center"
               >۱</span
             >
             <button
               id="decrease-btn"
-              class="size-[30px] rounded-full border border-[#E8E8E8] flex items-center justify-center cursor-pointer"
+              class="size-[30px] rounded-full border border-[#D3D3D3] flex items-center justify-center cursor-pointer"
             >
-              <img
-                class="size-[29px]"
-                src="./public/icons/sub-icon.png"
-                alt="plus-icon"
-              />
+              <svg
+                width="13"
+                height="1"
+                viewBox="0 0 13 1"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.495743 0.495728H12.0484"
+                  stroke="black"
+                  stroke-width="0.991482"
+                  stroke-linecap="round"
+                />
+              </svg>
             </button>
           </div>
           <div class="flex">
-            <div
-              id="price-display"
-              class="text-[26px] font-bold text-[#2D2D2D]"
-            >
+            <div id="price-display" class="text-[26px] text-[#2D2D2D]">
               ۱۴۵,۰۰۰
             </div>
             <div
-              class="text-[10px] text-gray-500 font-medium -rotate-90 relative left-[12px]"
+              class="text-[10px] font-medium text-gray-500 -rotate-90 relative left-[12px]"
             >
               تومان
             </div>
@@ -1189,7 +1210,7 @@
       <!-- Modal Content -->
       <div
         id="desktop-modal-content"
-        class="absolute top-[120px] pt-2.5 left-1/2 transform -translate-x-1/2 container transition-all duration-300 opacity-0 scale-95"
+        class="absolute top-[111px] pt-2.5 left-1/2 transform -translate-x-1/2 container transition-all duration-300 opacity-0 scale-95"
       >
         <!-- Modal Body -->
         <div id="desktop-modal-body" class="p-8 bg-white rounded-xl shadow-2xl">
@@ -1850,34 +1871,58 @@
           <div class="flex items-center gap-2">
             <button
               id="mobile-increase-btn"
-              class="rounded-full border border-[#E8E8E8] flex items-center justify-center cursor-pointer"
+              class="size-[47px] rounded-full border border-[#D3D3D3] flex items-center justify-center cursor-pointer"
             >
-              <img
-                class="size-[40px]"
-                src="./public/icons/plus-icon.png"
-                alt="sub"
-              />
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15.6943 22.2337V9.15503"
+                  stroke="black"
+                  stroke-width="1.57143"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M9.15497 15.6945L22.2336 15.6945"
+                  stroke="black"
+                  stroke-width="1.57143"
+                  stroke-linecap="round"
+                />
+              </svg>
             </button>
             <span
               id="mobile-quantity-display"
-              class="text-[35px] font-semibold text-primary-600 w-9 flex items-center justify-center"
+              class="text-[44px] font-medium text-primary-600 w-9 flex items-center justify-center"
               >۱</span
             >
             <button
               id="mobile-decrease-btn"
-              class="rounded-full border border-[#E8E8E8] flex items-center justify-center cursor-pointer"
+              class="size-[47px] rounded-full border border-[#D3D3D3] flex items-center justify-center cursor-pointer"
             >
-              <img
-                class="size-[40px]"
-                src="./public/icons/sub-icon.png"
-                alt="plus-icon"
-              />
+              <svg
+                width="20"
+                height="2"
+                viewBox="0 0 20 2"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.785645 0.785706H19.0958"
+                  stroke="black"
+                  stroke-width="1.57143"
+                  stroke-linecap="round"
+                />
+              </svg>
             </button>
           </div>
           <div class="flex">
             <div
               id="mobile-price-display"
-              class="text-[28px] font-medium text-[#2D2D2D]"
+              class="text-[32px] font-normal text-[#2D2D2D]"
             >
               ۴۵,۰۰۰
             </div>
@@ -1922,21 +1967,43 @@
         <!-- Add to Cart Button -->
         <button
           id="mobile-add-to-cart-btn"
-          class="w-full py-3.5 bg-[#E0E0E0] font-medium text-[#B1B1B1] rounded-[10px] flex items-center justify-center gap-3 transition-all duration-300 text-[16px]"
+          class="w-full py-3.5 bg-[#E0E0E0] font-medium text-[#B1B1B1] rounded-[10px] flex items-center justify-center gap-3 transition-all duration-300 text-[20px]"
           disabled
         >
-          <img
+          <svg
             id="mobile-img-add-cart"
-            class="hidden"
-            src="./public/icons/icon-add-to-cart.png"
-            alt="سبد خرید"
-          />
-          <img
+            width="34"
+            height="34"
+            viewBox="0 0 34 34"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M29.6888 16.2179L30.0823 13.8768C30.339 12.3453 30.4673 11.5809 30.0555 11.0789C29.6451 10.5768 28.8892 10.5768 27.3788 10.5768H6.46755C4.95717 10.5768 4.20127 10.5768 3.79089 11.0789C3.37909 11.5809 3.50884 12.3453 3.76409 13.8768L5.46204 24.0025C6.02473 27.3589 6.30537 29.0357 7.45473 30.0313C8.60268 31.0256 10.2583 31.0256 13.5696 31.0256H16.9232M19.7437 25.3845H31.0258M25.3847 31.0256V19.7435M24.6796 10.5768C24.6796 8.51972 23.8624 6.54684 22.4078 5.09223C20.9532 3.63763 18.9803 2.82043 16.9232 2.82043C14.8661 2.82043 12.8932 3.63763 11.4386 5.09223C9.98398 6.54684 9.16678 8.51972 9.16678 10.5768"
+              stroke="white"
+              stroke-width="2.11538"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+
+          <svg
             id="mobile-img-disable-add-cart"
-            class="size-[21px]"
-            src="./public/icons/icon-add-to-cart-disable.png"
-            alt="سبد خرید"
-          />
+            width="30"
+            height="31"
+            viewBox="0 0 30 31"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M27.2206 14.4552L27.614 12.1141C27.8707 10.5826 27.999 9.81825 27.5872 9.3162C27.1769 8.81415 26.421 8.81415 24.9106 8.81415H3.99929C2.48891 8.81415 1.73301 8.81415 1.32263 9.3162C0.91083 9.81825 1.04057 10.5826 1.29583 12.1141L2.99378 22.2398C3.55647 25.5962 3.83711 27.273 4.98647 28.2686C6.13442 29.2629 7.79006 29.2629 11.1013 29.2629H14.4549M17.2754 23.6218H28.5575M22.9165 29.2629V17.9808M22.2113 8.81415C22.2113 6.75702 21.3942 4.78415 19.9395 3.32954C18.4849 1.87493 16.5121 1.05774 14.4549 1.05774C12.3978 1.05774 10.4249 1.87493 8.97032 3.32954C7.51571 4.78415 6.69852 6.75702 6.69852 8.81415"
+              stroke="#B1B1B1"
+              stroke-width="2.11538"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+
           <span>افزودن به سبد خرید</span>
         </button>
       </div>
@@ -1957,7 +2024,9 @@
       >
         <!-- Modal Header -->
         <div class="flex justify-between items-center mb-6">
-          <h3 class="text-[17px] font-medium text-[#2D2D2D] w-full text-center mr-3">
+          <h3
+            class="text-[17px] font-medium text-[#2D2D2D] w-full text-center mr-3"
+          >
             ثبت دیدگاه برای محصول
           </h3>
           <button id="comment-close" class="text-gray-500 hover:text-gray-700">
@@ -2449,10 +2518,8 @@
               >در ۴ مدل مختلف</span
             >
           </div>
-          <div class="desktop:mt-6 mt-[17px] flex justify-end mb-7 lg:mb-11 ">
-            <div
-              class="w-full flex items-start justify-between px-[10px]"
-            >
+          <div class="desktop:mt-6 mt-[17px] flex justify-end mb-7 lg:mb-11">
+            <div class="w-full flex items-start justify-between px-[10px]">
               <!-- بَجِ تخفیف -->
               <span
                 class="w-7 h-7 desktop:w-9 desktop:h-9 inline-flex items-center rounded-[8px] text-[11px] desktop:text-[16px] bg-red-100 text-red-600 px-2 py-1 font-medium"
@@ -2480,7 +2547,7 @@
 
                 <!-- تومان عمودی -->
                 <span
-                  class="text-[6px] desktop:text-[8px] text-[#8B8B8B] -rotate-90 font-medium "
+                  class="text-[6px] desktop:text-[8px] text-[#8B8B8B] -rotate-90 font-medium"
                 >
                   تومان
                 </span>
