@@ -6,7 +6,6 @@
 
 @import "./variables.css";
 @import "./utility.css";
-/* @import "./embla.css"; */
 
 /* Custom styles can be added here */
 .custom-gradient {
@@ -36,7 +35,7 @@
 }
 
 #sticky-backdrop.active {
-    height:165px;
+    height:120px;
 }
 
 /* Sticky mobile navbar backdrop */
@@ -154,8 +153,8 @@
 
 
 .sticky-mobile-navbar {
-    position: fixed;
-    top: -16px;
+    position: sticky;
+    top: 0px;
     left: 0;
     right: 0;
     z-index: 50;
@@ -163,8 +162,9 @@
 }
 
 .sticky-navbar {
-    position: fixed;
-    top: 26px;
+    position: sticky;
+    /* top: 26px; */
+    top: 15px;
     left: 0;
     right: 0;
     z-index: 50;
@@ -172,8 +172,8 @@
 }
 
 .sticky-accordion {
-    position: fixed;
-    top: 94px;
+    position: sticky;
+    top:62px;
     left: 0;
     right: 0;
     z-index: 60;
@@ -200,35 +200,48 @@
     border-radius: 10px;
 }
 
- @keyframes text1Anim {
-    0% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    50% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
-  @keyframes text2Anim {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    50% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
+@keyframes text1Anim {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
   }
+  1% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  45% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(25px); 
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+}
+
+@keyframes text2Anim {
+  0% {
+    opacity: 0;
+    transform: translateY(25px); 
+  }
+  45% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
   .logo-text1 {
     animation: text1Anim 10s ease-in-out infinite;
@@ -243,15 +256,15 @@
     opacity: 0;
     transform: translateY(-6px);
   }
-  10% {
+  1% {
     opacity: 1;
     transform: translateY(0);
   }
-  20% {
+  33% {
     opacity: 1;
     transform: translateY(0);
   }
-  50% {
+  34% {
     opacity: 0;
     transform: translateY(-6px);
   }
@@ -266,15 +279,15 @@
     opacity: 0;
     transform: translateY(8px);
   }
-  30% {
+  33% {
     opacity: 0;
     transform: translateY(8px);
   }
-  60% {
+  34% {
     opacity: 1;
     transform: translateY(0);
   }
-  90% {
+  99% {
     opacity: 1;
     transform: translateY(0);
   }
@@ -284,12 +297,67 @@
   }
 }
 
+@keyframes mobileText1Cycle {
+  0%,
+  33% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  34% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  66% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  67%,
+  100% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+}
+
+@keyframes mobileText2Cycle {
+  0%,
+  66% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  67% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  99% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+}
+
 @media (max-width: 1280px) {
   .logo-img {
-    animation: mobileImgCycle 20s ease-in-out infinite;
+    animation: mobileImgCycle 15s ease-in-out infinite;
   }
 
   .logo-text-wrapper {
-    animation: mobileTextCycle 20s ease-in-out infinite;
+    animation: mobileTextCycle 15s ease-in-out infinite;
   }
+
+  .logo-text1 {
+    animation: mobileText1Cycle 15s ease-in-out infinite;
+  }
+
+  .logo-text2 {
+    animation: mobileText2Cycle 15s ease-in-out infinite;
+  }
+
 }
+

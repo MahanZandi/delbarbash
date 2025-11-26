@@ -241,7 +241,6 @@ function renderSubCategories(title, subcategories) {
    =============================== */
 function initMenuEvents() {
   const openBtn = document.getElementById("hamburger-btn");
-  console.log("openBtn :", openBtn)
   openBtn?.addEventListener("click", openHamburgerMenu);
   els.closeBtn?.addEventListener("click", closeHamburgerMenu);
   els.backdrop?.addEventListener("click", closeHamburgerMenu);

@@ -345,7 +345,6 @@ function addToCartMobile() {
    Mobile modal open/close
    =========================== */
 function openMobileModal() {
-  console.log("first")
   const modal = document.getElementById("mobile-product-modal");
   const modalContent = document.getElementById("mobile-modal-content");
   const backdrop = document.getElementById("modal-backdrop-product-selection");
@@ -489,7 +488,7 @@ function copyProductLink() {
       }, 3000);
     })
     .catch(err => {
-      console.error("خطا در کپی لینک: ", err);
+      // console.error("خطا در کپی لینک: ", err);
     });
 }
 
@@ -536,7 +535,6 @@ function openDesktopModal(categoryData) {
   const body = document.getElementById("desktop-modal-body");
 
   if (modal && content && backdrop && body) {
-    console.log("yessssssssss")
     body.innerHTML = `
       <div class="grid grid-cols-6 gap-6 ">
         ${categoryData.subcategories
@@ -631,7 +629,7 @@ const reviews = [
   },
   {
     name: "علیرضا رضایی", date: "۱۵ مرداد ۱۴۰۴", rating: 4, comment: "بسیار خوب، فقط کمی زمان تحویل طول کشید.",
-    avatar: "/public/images/motor.png"
+    avatar: "./public/images/motor.png"
   },
   {
     name: "میترا احمدی", date: "۱۲ تیر ۱۴۰۴", rating: 5, comment: "خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌",
@@ -639,7 +637,7 @@ const reviews = [
   },
   {
     name: "علیرضا رضایی", date: "۱۵ مرداد ۱۴۰۴", rating: 4, comment: "بسیار خوب، فقط کمی زمان تحویل طول کشید.",
-    avatar: "/public/images/motor.png"
+    avatar: "./public/images/motor.png"
   },
   {
     name: "میترا احمدی", date: "۱۲ تیر ۱۴۰۴", rating: 5, comment: "خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌",
@@ -647,7 +645,7 @@ const reviews = [
   },
   {
     name: "علیرضا رضایی", date: "۱۵ مرداد ۱۴۰۴", rating: 4, comment: "بسیار خوب، فقط کمی زمان تحویل طول کشید.",
-    avatar: "/public/images/motor.png"
+    avatar: "./public/images/motor.png"
   },
 ];
 
@@ -678,7 +676,7 @@ function renderReviews() {
       "shrink-0"
     );
 
-    const avatar = review.avatar || "/public/icons/icon-person.png";
+    const avatar = review.avatar || "./public/icons/icon-person.png";
 
     reviewDiv.innerHTML = `
         <div class="flex justify-between">
@@ -757,17 +755,9 @@ window.addEventListener("scroll", () => {
   const desktopModalContent = document.getElementById("desktop-modal-content");
 
   if (navbar && accordion && backdrop) {
-    if (scrollTop > 100) {
-      console.log("scrollTop > 100")
-      desktopModalContent.style.top = "150px";
-      navbar.classList.add("sticky-navbar");
-      accordion.classList.add("sticky-accordion");
+    if (scrollTop > 60) {
       backdrop.classList.add("active");
     } else {
-      console.log("scrollTop <<<< 100")
-      desktopModalContent.style.top = "120px";
-      navbar.classList.remove("sticky-navbar");
-      accordion.classList.remove("sticky-accordion");
       backdrop.classList.remove("active");
     }
   }
@@ -777,10 +767,8 @@ window.addEventListener("scroll", () => {
 
   if (mobileNavbar && mobileBackdrop) {
     if (scrollTop > 50) {
-      mobileNavbar.classList.add("sticky-mobile-navbar");
       mobileBackdrop.classList.add("active");
     } else {
-      mobileNavbar.classList.remove("sticky-mobile-navbar");
       mobileBackdrop.classList.remove("active");
     }
   }
@@ -868,7 +856,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const viewportNodeMainCarousel = document.querySelector(".embla__viewport");
   const viewportNodeThumbCarousel = document.querySelector(".embla-thumbs__viewport");
-  const viewportNodeReviews = document.querySelector(".embla-reviews__viewport"); 
+  const viewportNodeReviews = document.querySelector(".embla-reviews__viewport");
   const thumbsContainer = document.querySelector(".embla-thumbs__container");
 
 
@@ -973,7 +961,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
     } catch (e) {
-      console.error("خطا در ایجاد Embla main/thumb:", e);
+      // console.error("خطا در ایجاد Embla main/thumb:", e);
     }
 
     // Re-init thumbs when breakpoint crosses
@@ -1019,7 +1007,7 @@ document.addEventListener("DOMContentLoaded", function () {
         emblaApiReviews.on("select", () => updateReviewsDots(emblaApiReviews));
       }
     } catch (e) {
-      console.error("خطا در ایجاد Embla reviews:", e);
+      // console.error("خطا در ایجاد Embla reviews:", e);
     }
   }
 
@@ -1035,7 +1023,6 @@ document.addEventListener("DOMContentLoaded", function () {
     accordionList.addEventListener(
       "mouseenter",
       (e) => {
-        console.log("first")
         accordionList.classList.add("relative", "bg-white", "z-60");
         const link = e.target.closest("a");
         if (!link) return;
@@ -1101,49 +1088,55 @@ function closeMobileSelectionProduct(mobileSelection) {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-
-
   const addToCartBtn = document.getElementById("mobile-add-to-cart-btn");
-  const imgAddCart = document.getElementById("mobile-img-add-cart")
-  const disableImgAddCart = document.getElementById("mobile-img-disable-add-cart")
+  const imgAddCart = document.getElementById("mobile-img-add-cart");
+  const disableImgAddCart = document.getElementById("mobile-img-disable-add-cart");
   const colorItems = document.querySelectorAll(".color-item.available");
 
-  // تنظیم اولیه دکمه غیرفعال
   function updateAddToCartBtn() {
     const activeColor = document.querySelector(".color-item.active");
+
     if (activeColor) {
       // رنگ انتخاب شده: دکمه فعال
       addToCartBtn.disabled = false;
-      disableImgAddCart.classList.add("hidden")
-      imgAddCart.classList.remove("hidden")
-      addToCartBtn.classList.remove("bg-[#E0E0E0]", "text-[#B1B1B1]", "hover:bg-red-700");
+      disableImgAddCart.classList.add("hidden");
+      imgAddCart.classList.remove("hidden");
+      addToCartBtn.classList.remove(
+        "bg-[#E0E0E0]",
+        "text-[#B1B1B1]"
+      );
       addToCartBtn.classList.add("bg-red-600", "text-white");
     } else {
       // هیچ رنگی انتخاب نشده: دکمه غیرفعال
       addToCartBtn.disabled = true;
-      disableImgAddCart.classList.remove("hidden")
-      imgAddCart.classList.add("hidden")
-      addToCartBtn.classList.remove("bg-red-600", "text-white", "hover:bg-red-700");
+      disableImgAddCart.classList.remove("hidden");
+      imgAddCart.classList.add("hidden");
+      addToCartBtn.classList.remove("bg-red-600", "text-white");
       addToCartBtn.classList.add("bg-[#E0E0E0]", "text-[#B1B1B1]");
     }
   }
 
+  // 👈 خیلی مهم: وضعیت اولیه
+  updateAddToCartBtn();
 
   colorItems.forEach((item) => {
     item.addEventListener("click", function () {
+      const alreadyActive = this.classList.contains("active");
+
+      // اول همه رو خالی کن
       colorItems.forEach((el) => {
         el.style.borderColor = "#E8E8E8";
         el.classList.remove("active", "bg-[#F6E5E5]");
         const checkIcon = el.querySelector(".check-icon");
-        if (checkIcon) {
-          checkIcon.classList.add("hidden");
-        }
+        if (checkIcon) checkIcon.classList.add("hidden");
       });
-      this.classList.add("active", "bg-[#F6E5E5]");
-      this.style.borderColor = "#C41818";
-      const checkIcon = this.querySelector(".check-icon");
-      if (checkIcon) {
-        checkIcon.classList.remove("hidden");
+
+      // اگر روی همین رنگِ فعال دوباره کلیک شده بود → دیگه فعالش نکن (یعنی لغو انتخاب)
+      if (!alreadyActive) {
+        this.classList.add("active", "bg-[#F6E5E5]");
+        this.style.borderColor = "#C41818";
+        const checkIcon = this.querySelector(".check-icon");
+        if (checkIcon) checkIcon.classList.remove("hidden");
       }
 
       updateAddToCartBtn();
