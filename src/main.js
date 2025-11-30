@@ -4,6 +4,10 @@
 // <script src="https://cdn.jsdelivr.net/npm/embla-carousel/embla-carousel.umd.js"></script>
 // <script src="/js/main.js" defer></script>
 
+  //<!-- https://www.figma.com/design/asbMnK2Nrrc5MQpqxxCohA/DelbarBash?node-id=220-198&t=j6RmBDpt3VKTfFPO-0 -->
+ // <!-- https://github.com/AmirHossein137/delbarbash/tree/main -->
+
+
 let emblaApiMain = null;
 let emblaApiThumb = null;
 let emblaApiReviews = null;
