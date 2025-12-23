@@ -202,47 +202,19 @@
 
 
 @keyframes text1Anim {
-  0% {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  1% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  45% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  50% {
-    opacity: 0;
-    transform: translateY(25px); 
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(25px);
-  }
+  0%   { opacity: 0; transform: translateY(25px); }
+  2%   { opacity: 1; transform: translateY(0); }
+  45%  { opacity: 1; transform: translateY(0); }
+  48%  { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 0; transform: translateY(25px); }
 }
-
 @keyframes text2Anim {
-  0% {
-    opacity: 0;
-    transform: translateY(25px); 
-  }
-  45% {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(0); 
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0%   { opacity: 0; transform: translateY(25px); }
+  48%  { opacity: 0; transform: translateY(25px); } 
+  51%  { opacity: 1; transform: translateY(0); }  
+  98%  { opacity: 1; transform: translateY(0); }    
+  100% { opacity: 0; transform: translateY(25px); }
 }
-
   .logo-text1 {
     animation: text1Anim 10s ease-in-out infinite;
   }
