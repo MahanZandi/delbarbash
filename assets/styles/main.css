@@ -9,51 +9,51 @@
 
 /* Custom styles can be added here */
 .custom-gradient {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 
 
 /* RTL support for Persian text */
 .rtl {
-    direction: rtl;
-    text-align: right;
+  direction: rtl;
+  text-align: right;
 }
 
 /* Sticky navbar backdrop */
 #sticky-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 0;
-    z-index: 35;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.7);
-    transition: height 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  z-index: 35;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.7);
+  transition: height 0.3s ease;
 }
 
 #sticky-backdrop.active {
-    height:120px;
+  height: 120px;
 }
 
 /* Sticky mobile navbar backdrop */
 #sticky-backdrop-mobile {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 0;
-    z-index: 35;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.7);
-    transition: height 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  z-index: 35;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.7);
+  transition: height 0.3s ease;
 }
 
 #sticky-backdrop-mobile.active {
-    height: 115px;
+  height: 115px;
 }
 
 #sticky-backdrop-mobile.active.search-active {
@@ -65,6 +65,7 @@
   transition: opacity 0.4s ease, backdrop-filter 0.4s ease;
   backdrop-filter: blur(0px);
 }
+
 #hamburger-menu:not(.hidden) #hamburger-backdrop {
   backdrop-filter: blur(4px);
 }
@@ -153,93 +154,137 @@
 
 
 .sticky-mobile-navbar {
-    position: sticky;
-    top: 0px;
-    left: 0;
-    right: 0;
-    z-index: 50;
-    background: transparent;
+  position: sticky;
+  top: 0px;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: transparent;
 }
 
 .sticky-navbar {
-    position: sticky;
-    /* top: 26px; */
-    top: 15px;
-    left: 0;
-    right: 0;
-    z-index: 50;
-    background: transparent;
+  position: sticky;
+  /* top: 26px; */
+  top: 15px;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: transparent;
 }
 
 .sticky-accordion {
-    position: sticky;
-    top:62px;
-    left: 0;
-    right: 0;
-    z-index: 60;
-    background: transparent;
+  position: sticky;
+  top: 62px;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  background: transparent;
 }
 
 .caret {
-    transition: transform 0.25s ease;
+  transition: transform 0.25s ease;
 }
 
 
 ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(90, 90, 90, 0.2);
-    border-radius: 10px;
+  background-color: rgba(90, 90, 90, 0.2);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(70, 70, 70, 0.1);
-    border-radius: 10px;
+  background: rgba(70, 70, 70, 0.1);
+  border-radius: 10px;
 }
 
 
 @keyframes text1Anim {
-  0%   { opacity: 0; transform: translateY(25px); }
-  2%   { opacity: 1; transform: translateY(0); }
-  45%  { opacity: 1; transform: translateY(0); }
-  48%  { opacity: 0; transform: translateY(25px); }
-  100% { opacity: 0; transform: translateY(25px); }
-}
-@keyframes text2Anim {
-  0%   { opacity: 0; transform: translateY(25px); }
-  48%  { opacity: 0; transform: translateY(25px); } 
-  51%  { opacity: 1; transform: translateY(0); }  
-  98%  { opacity: 1; transform: translateY(0); }    
-  100% { opacity: 0; transform: translateY(25px); }
-}
-  .logo-text1 {
-    animation: text1Anim 10s ease-in-out infinite;
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
   }
 
-  .logo-text2 {
-    animation: text2Anim 10s ease-in-out infinite;
+  1% {
+    opacity: 1;
+    transform: translateY(0);
   }
+
+  48% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  49% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+}
+
+@keyframes text2Anim {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  51% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  99% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+}
+
+.logo-text1 {
+  animation: text1Anim 10s ease-in-out infinite;
+}
+
+.logo-text2 {
+  animation: text2Anim 10s ease-in-out infinite;
+}
 
 @keyframes mobileImgCycle {
   0% {
     opacity: 0;
     transform: translateY(-6px);
   }
+
   1% {
     opacity: 1;
     transform: translateY(0);
   }
+
   33% {
     opacity: 1;
     transform: translateY(0);
   }
+
   34% {
     opacity: 0;
     transform: translateY(-6px);
   }
+
   100% {
     opacity: 0;
     transform: translateY(-6px);
@@ -251,18 +296,22 @@
     opacity: 0;
     transform: translateY(8px);
   }
+
   33% {
     opacity: 0;
     transform: translateY(8px);
   }
+
   34% {
     opacity: 1;
     transform: translateY(0);
   }
+
   99% {
     opacity: 1;
     transform: translateY(0);
   }
+
   100% {
     opacity: 0;
     transform: translateY(8px);
@@ -270,6 +319,7 @@
 }
 
 @keyframes mobileText1Cycle {
+
   0%,
   33% {
     opacity: 0;
@@ -280,6 +330,7 @@
     opacity: 1;
     transform: translateY(0);
   }
+
   66% {
     opacity: 1;
     transform: translateY(0);
@@ -293,6 +344,7 @@
 }
 
 @keyframes mobileText2Cycle {
+
   0%,
   66% {
     opacity: 0;
@@ -303,6 +355,7 @@
     opacity: 1;
     transform: translateY(0);
   }
+
   99% {
     opacity: 1;
     transform: translateY(0);
@@ -332,4 +385,3 @@
   }
 
 }
-

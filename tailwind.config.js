@@ -25,7 +25,7 @@ module.exports = {
           "Lahzeh",
           "sans-serif",
         ],
-        lahzehFamily: ["LahzehFamily", "sans-serif"],
+        // lahzehFamily: ["LahzehFamily", "sans-serif"],
       },
       screens: {
         // خود breakpoint دسکتاپ تیلویند برای کلاس‌هایی مثل desktop:flex
