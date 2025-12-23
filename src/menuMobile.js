@@ -120,7 +120,7 @@ function renderSubMenu(title, items) {
         <button id="subMenu-close" class="w-8 h-8 border border-primary-600 rounded-full flex items-center justify-center">
           <img src="./public/icons/arrow-back-icon.png" alt="Back" />
         </button>
-        <h2 class="font-medium text-primary-600">${title}</h2>
+        <h2 class="font-medium text-primary-600 text-base">${title}</h2>
       </div>
       <nav class="flex flex-col gap-[34px]"></nav>
     </div>
@@ -136,7 +136,7 @@ function renderSubMenu(title, items) {
     link.innerHTML = `
     <span class="flex items-center gap-2">
       <img src="${item.icon}" alt="${item.title}" class="w-7 h-7 object-contain" />
-      <span class="text-[#9A6767]">${item.title}</span>
+      <span class="text-[#9A6767] text-lg">${item.title}</span>
     </span>
     ${hasSubs ? '<i class="fa-solid fa-chevron-left text-primary-600"></i>' : ""}
   `;
@@ -164,11 +164,13 @@ function renderSubCategories(title, subcategories) {
         <button id="subcategories-close" class="w-8 h-8 border border-primary-600 rounded-full flex items-center justify-center">
           <img src="./public/icons/arrow-back-icon.png" alt="Back" />
         </button>
-        <h2 class="font-medium text-primary-600">${title}</h2>
+        <h2 class="font-medium text-primary-600 text-lg">${title}</h2>
       </div>
       <div id="categories-accordion"></div>
     </div>
   `;
+
+  
 
   const root = els.subcategorieSubMenu.querySelector("#categories-accordion");
 

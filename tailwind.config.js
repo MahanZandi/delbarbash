@@ -21,13 +21,11 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          "IRANYekanX",
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "'Segoe UI'",
-          "Roboto",
+          "LahzehFaNum",
+          "Lahzeh",
           "sans-serif",
         ],
+        lahzehFamily: ["LahzehFamily", "sans-serif"],
       },
       screens: {
         // خود breakpoint دسکتاپ تیلویند برای کلاس‌هایی مثل desktop:flex

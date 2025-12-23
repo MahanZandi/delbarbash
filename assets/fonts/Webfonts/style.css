@@ -1,12 +1,12 @@
 @import url(fontiran.css); /* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
 body {
-	font-family: IRANYekanX  !important;
+	font-family: "LahzehFaNum","Lahzeh","LahzehFamily" !important;
 	direction: rtl;
 	background-color: #cdcdcd;
 	margin: 0;
 }
 h1, h2, h3, h4, h5, h6,input, textarea {
-	font-family: IRANYekanX !important;
+	font-family: "LahzehFaNum", "Lahzeh","LahzehFamily" !important;
 }
 h1 {
 	font-weight: bold;

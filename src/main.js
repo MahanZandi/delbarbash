@@ -520,8 +520,8 @@ function renderAccordionItems() {
     listItem.innerHTML = `
       <a href="${item.href}" class="flex items-center cursor-pointer  justify-between transition-all text-primary-400">
           <img src="${item.icon}" alt="${item.title}" class="size-[24px] object-contain pl-[5px]">
-          <span class="text-sm pl-[10px]">${item.title}</span>
-          <i class="fa-solid fa-angle-down arrow-down-icon"></i>
+          <span class="text-xs pl-[10px]">${item.title}</span>
+          <i class="text-xs fa-solid fa-angle-down arrow-down-icon"></i>
       </a>
     `;
     accordionList.appendChild(listItem);
@@ -545,14 +545,14 @@ function openDesktopModal(categoryData) {
         .map(
           (subcategory) => `
           <ul class="space-y-3">
-            <li class="bg-primary-600 text-white px-4 py-3 rounded-lg text-center font-bold text-base">
+            <li class="bg-primary-600 text-white px-4 py-3 rounded-lg text-center font-medium text-sm">
               ${subcategory.name}
             </li>
             <li class="space-y-2">
               ${subcategory.items
               .map(
                 (item) => `
-                <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-2 rounded-lg text-right text-sm transition-colors">
+                <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-2 rounded-lg text-right font-medium text-xs transition-colors">
                   ${item}
                 </button>
               `
@@ -628,23 +628,23 @@ const categoryData = {
    =========================== */
 const reviews = [
   {
-    name: "میترا احمدی", date: "۱۲ تیر ۱۴۰۴", rating: 5, comment: "خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌",
+    name: "میترا احمدی", date: "۱۲ تیر ۱۴۰۴", rating: "۵", comment: "خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌",
     avatar: ""
   },
   {
-    name: "علیرضا رضایی", date: "۱۵ مرداد ۱۴۰۴", rating: 4, comment: "بسیار خوب، فقط کمی زمان تحویل طول کشید.",
+    name: "علیرضا رضایی", date: "۱۵ مرداد ۱۴۰۴", rating: "۴", comment: "بسیار خوب، فقط کمی زمان تحویل طول کشید.",
     avatar: "./public/images/motor.png"
   },
   {
-    name: "میترا احمدی", date: "۱۲ تیر ۱۴۰۴", rating: 5, comment: "خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌",
+    name: "میترا احمدی", date: "۱۲ تیر ۱۴۰۴", rating: "۵", comment: "خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌",
     avatar: ""
   },
   {
-    name: "علیرضا رضایی", date: "۱۵ مرداد ۱۴۰۴", rating: 4, comment: "بسیار خوب، فقط کمی زمان تحویل طول کشید.",
+    name: "علیرضا رضایی", date: "۱۵ مرداد ۱۴۰۴", rating: "۴", comment: "بسیار خوب، فقط کمی زمان تحویل طول کشید.",
     avatar: "./public/images/motor.png"
   },
   {
-    name: "میترا احمدی", date: "۱۲ تیر ۱۴۰۴", rating: 5, comment: "خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌",
+    name: "میترا احمدی", date: "۱۲ تیر ۱۴۰۴", rating: "۵", comment: "خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌",
     avatar: ""
   },
   {
@@ -689,8 +689,8 @@ function renderReviews() {
                     <img class="size-[32px]" src="${avatar}" alt="person">
                 </div>
                 <div class="flex-col flex">
-                    <span class="font-medium text-primary-550">${review.name}</span>
-                    <span class="text-[10px] text-primary-350">${review.date}</span>
+                    <span class="font-medium text-sm text-primary-550">${review.name}</span>
+                    <span class="mt-1 text-[10px] text-primary-350">${review.date}</span>
                 </div>
             </div>
             <div class="text-primary-350">

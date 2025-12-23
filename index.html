@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+  <!-- https://www.figma.com/design/asbMnK2Nrrc5MQpqxxCohA/DelbarBash?node-id=220-198&t=j6RmBDpt3VKTfFPO-0 -->
+  <!-- https://github.com/AmirHossein137/delbarbash/tree/main -->
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,10 +29,10 @@
               <img src="./public/favicon.png" alt="logo" class="size-[36px]" />
             </a>
             <div>
-              <h1 class="text-[18px] ss01 text-[#C41818]">دلبرباش</h1>
+              <h1 class="text-[16.5px] font-black text-[#C41818]">دلبرباش</h1>
               <div class="relative w-24 h-[14px] overflow-hidden">
                 <h2
-                  class="text-[10px] font-medium  text-[#860A0A] absolute inset-0 logo-text1"
+                  class="text-[10px] font-medium font-lahzehFamily text-[#860A0A] absolute inset-0 logo-text1"
                 >
                   فروشگاه اینترنتی
                 </h2>
@@ -58,34 +61,40 @@
             />
           </div>
         </div>
-        <ul class="flex items-center gap-[26px]">
+        <ul class="flex items-center gap-[3rem]">
           <li>
-            <a href="#" class="hover:text-[#C41818]"> محصولات </a>
+            <a href="#" class="text-[10px] hover:text-[#C41818]"> محصولات </a>
           </li>
           <li>
-            <a href="#" class="hover:text-[#C41818]"> جدیدترین </a>
+            <a href="#" class="text-[10px] hover:text-[#C41818]"> جدیدترین </a>
           </li>
           <li>
-            <a href="#" class="hover:text-[#C41818]"> پرفروش ترین </a>
+            <a href="#" class="text-[10px] hover:text-[#C41818]">
+              پرفروش ترین
+            </a>
           </li>
           <li>
-            <a href="#" class="hover:text-[#C41818]"> ٪ تخفیف دار </a>
+            <a href="#" class="text-[10px] hover:text-[#C41818]">
+              ٪ تخفیف دار
+            </a>
           </li>
           <li>
-            <a href="#" class="hover:text-[#C41818]"> محصولات رایگان </a>
+            <a href="#" class="text-[10px] hover:text-[#C41818]">
+              محصولات رایگان
+            </a>
           </li>
         </ul>
       </div>
       <!-- nav buttons -->
       <div class="flex gap-1.5">
-        <a href="#" class="rounded-[8px] border border-[#E8E8E8] p-1.5">
+        <a href="#" class="rounded-[8px] border border-[#E8E8E8] p-[5px]">
           <img
             class="size-[24px]"
             src="./public/icons/save-icon.png"
             alt="save icon"
           />
         </a>
-        <a href="#" class="rounded-[8px] border border-[#E8E8E8] p-1.5">
+        <a href="#" class="rounded-[8px] border border-[#E8E8E8] p-[5px]">
           <img
             class="size-[24px]"
             src="./public/icons/cart-icon.png"
@@ -125,11 +134,11 @@
             />
           </a>
           <div class="logo-text-wrapper w-full absolute top-0 right-0">
-            <h1 class="text-[18px] ss01 text-[#C41818]">دلبرباش</h1>
+            <h1 class="text-[16.5px] font-black text-[#C41818]">دلبرباش</h1>
 
             <div class="relative w-full h-[14px] overflow-hidden">
               <h2
-                class="text-[10px] font-medium text-[#860A0A] absolute inset-0 logo-text1"
+                class="text-[10px] font-medium font-lahzehFamily text-[#860A0A] absolute inset-0 logo-text1"
               >
                 فروشگاه اینترنتی
               </h2>
@@ -179,7 +188,7 @@
     <!-- nav links accordion desktop -->
     <nav
       id="desktop-accordion"
-      class="sticky-accordion nav-accordion-link container mt-1.5 desktop:flex hidden transition-all duration-300 "
+      class="sticky-accordion nav-accordion-link container mt-1.5 desktop:flex hidden transition-all duration-300"
     >
       <ul
         id="accordion-list"
@@ -193,7 +202,7 @@
     <div
       class="container flex justify-between items-center mt-10 desktop:mt-[26px]"
     >
-      <ul class="flex items-center gap-[9px] text-[#2D2D2D] text-[12px]">
+      <ul class="flex items-center gap-[9px] text-[#2D2D2D] text-xs">
         <li class="flex items-center gap-[9px]">
           <a href="#">آرایشی</a>
           <img src="./public/icons/icon-arrow-left.png" alt="icon-arrow-left" />
@@ -215,7 +224,9 @@
           <img src="./public/icons/icon-full-star.png" alt="star icon" />
           <img src="./public/icons/icon-mini-star.png" alt="star icon" />
         </ul>
-        <span class="text-[7px] text-[#898989]">۴.۵ از ۷,۷۸۹ دیدگاه</span>
+        <span class="text-[7px] text-[#898989] text-left"
+          >۴.۵ از ۷,۷۸۹ دیدگاه</span
+        >
       </div>
     </div>
 
@@ -411,7 +422,16 @@
         class="border text-[#2D2D2D] py-[20px] px-[29px] rounded-xl border-[#E8E8E8] w-[490px] desktop:block hidden"
       >
         <!-- FIXME i dont have font lahzeh -->
-        <h2 class="text-[32px] font-bold">رژمدادی پیچی ویولت</h2>
+        <div class="flex items-center justify-between">
+          <h2 class="text-[32px] font-bold">رژمدادی پیچی ویولت</h2>
+
+          <!-- بَجِ تخفیف -->
+          <span
+            class="inline-flex items-center rounded-[10px] text-[11px] desktop:text-[20px] bg-red-100 text-red-600 px-2 py-1 font-medium"
+          >
+            %۵ <span>تخفیف</span>
+          </span>
+        </div>
         <div class="mt-6 text-xs">توضیحات محصول :</div>
         <p class="leading-[250%] mt-[10px] text-xs">
           - طراحی مدادی با قابلیت چرخشی (پیچی) برای استفاده آسان
@@ -430,7 +450,7 @@
           <br />
           - فاقد سرب و مواد مضر
         </p>
-        <div class="flex font-light text-xs gap-4 mt-[22px]">
+        <div class="flex text-xs gap-4 mt-[22px]">
           <span>دسته :</span>
           <span class="text-primary-500">
             <a href="#" class="hover:underline">خرید لوازم آرایشی اصل</a>,
@@ -503,7 +523,7 @@
         class="border border-[#E8E8E8] rounded-xl p-[15px] w-[375px] desktop:block hidden"
       >
         <!-- title -->
-        <h3 class="text-xs font-medium text-[#2D2D2D] mb-[17px] text-center">
+        <h3 class="text-xs text-[#2D2D2D] mb-[17px] text-center">
           انتخاب مدل محصول
         </h3>
         <!-- color selection one Row Item -->
@@ -982,96 +1002,34 @@
 
         <!-- quantity selector -->
         <div class="flex items-center justify-between my-[25px] text-[#2D2D2D]">
-          <div class="flex items-center gap-1.5">
+          <div class="flex items-center gap-4">
             <button
               id="increase-btn"
-              class="size-[30px] rounded-full border border-[#D3D3D3] flex items-center justify-center cursor-pointer"
+              class="size-[30px] rounded-full border border-[#E8E8E8] flex items-center justify-center cursor-pointer"
             >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9.90228 14.0282V5.77631"
-                  stroke="black"
-                  stroke-width="0.991482"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M5.77633 9.90228L14.0282 9.90228"
-                  stroke="black"
-                  stroke-width="0.991482"
-                  stroke-linecap="round"
-                />
-              </svg>
+              <i class="fa-solid fa-plus"></i>
             </button>
             <span
               id="quantity-display"
-              class="text-2xl font-medium text-primary-600 w-7 flex items-center justify-center"
+              class="text-2xl font-bold text-primary-600"
               >۱</span
             >
             <button
               id="decrease-btn"
-              class="size-[30px] rounded-full border border-[#D3D3D3] flex items-center justify-center cursor-pointer"
+              class="size-[30px] rounded-full border border-[#E8E8E8] flex items-center justify-center cursor-pointer"
             >
-              <svg
-                width="13"
-                height="1"
-                viewBox="0 0 13 1"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0.495743 0.495728H12.0484"
-                  stroke="black"
-                  stroke-width="0.991482"
-                  stroke-linecap="round"
-                />
-              </svg>
+              <i class="fa-solid fa-minus"></i>
             </button>
           </div>
           <div class="flex">
-            <div id="price-display" class="text-[26px] text-[#2D2D2D]">
+            <div
+              id="price-display"
+              class="text-[26px] font-bold text-[#2D2D2D]"
+            >
               ۱۴۵,۰۰۰
             </div>
-            <div
-              class="text-[10px] font-medium text-gray-500 -rotate-90 relative left-[12px]"
-            >
+            <div class="text-xs text-gray-500 -rotate-90 relative left-[10px]">
               تومان
-            </div>
-          </div>
-          <div class="hidden flex justify-end">
-            <div
-              class="w-full flex items-start justify-between desktop:px-[7px] px-[10px]"
-            >
-              <!-- قیمت‌ها + تومان عمودی -->
-              <div class="flex items-center gap-1">
-                <!-- ستون قیمت‌ها -->
-                <div class="flex flex-col-reverse items-end">
-                  <!-- قیمت فعلی -->
-                  <span
-                    class="text-[#C41818] text-[18px] font-medium leading-none tabular-nums"
-                  >
-                    ۱۱۰,۰۰۰
-                  </span>
-                  <!-- قیمت قبلی (خط‌خورده) -->
-                  <span
-                    class="text-[#8B8B8B] line-through text-[10px] font-medium leading-none mt-1 tabular-nums"
-                  >
-                    ۱۸۵,۰۰۰
-                  </span>
-                </div>
-
-                <!-- تومان عمودی -->
-                <span
-                  class="text-[#8B8B8B] text-[10px] [writing-mode:vertical-rl] font-medium rotate-180 leading-none"
-                >
-                  تومان
-                </span>
-              </div>
             </div>
           </div>
         </div>
@@ -1089,16 +1047,26 @@
     </div>
 
     <!-- product info mobile -->
-    <div class="flex desktop:hidden justify-center mt-[11px]">
-      <h1 class="text-2xl font-bold ss01 text-[#2D2D2D]">رژمدادی پیچی ویولت</h1>
+
+    <div
+      class="container flex desktop:hidden justify-center mt-[1rem] gap-1 sm:gap-3"
+    >
+      <h2 class="text-[22px] font-bold ss01 text-[#2D2D2D]">
+        رژمدادی پیچی ویولت
+      </h2>
+      <span
+        class="inline-flex items-center rounded-[10px] text-[10px] bg-red-100 text-red-600 px-2 py-1 font-medium"
+      >
+        %۵ <span>تخفیف</span>
+      </span>
     </div>
     <div class="container mt-[18px] desktop:hidden">
       <div class="flex justify-center text-primary-600">
-        <div id="price-display" class="text-[26px] font-bold">۱۴۵,۰۰۰</div>
-        <div class="text-xs -rotate-90 relative left-[10px]">تومان</div>
+        <div id="price-display" class="text-[26px] font-semibold">۴۵,۰۰۰</div>
+        <div class="text-[9px] -rotate-90 relative left-[10px]">تومان</div>
       </div>
       <div class="flex justify-between items-center mt-[35px]">
-        <div class="text-[#2D2D2D] font-medium">توضیحات محصول:</div>
+        <div class="text-[#2D2D2D] text-sm font-medium">توضیحات محصول:</div>
         <div class="flex gap-1">
           <div
             class="w-[158px] h-[38px] rounded-[10px] text-[#2D2D2D] border border-[#E8E8E8] items-center justify-center flex gap-2"
@@ -1189,10 +1157,10 @@
     >
       <button
         id="mobile-select-model-btn"
-        class="w-full bg-[#C41818] font-medium hover:bg-red-700 text-white h-[51px] rounded-[12px] flex items-center justify-center gap-3 cursor-pointer text-[16px]"
+        class="w-full bg-[#C41818] font-medium hover:bg-red-700 text-white h-[51px] rounded-[12px] flex items-center justify-center gap-3 cursor-pointer"
       >
         <i class="fa-solid fa-cart-shopping"></i>
-        <span>انتخاب مدل و خرید (۶ مدل)</span>
+        <span>انتخاب مدل و خرید <span class="text-xs">(۶ مدل)</span></span>
       </button>
     </div>
 
@@ -1237,8 +1205,12 @@
             </a>
 
             <div>
-              <h1 class="text-lg font-bold text-primary-600">دلبرباش</h1>
-              <p class="text-xs text-primary-700">فروشگاه اینترنت</p>
+              <h1 class="font-black text-primary-600">دلبرباش</h1>
+              <p
+                class="text-[10px] font-lahzehFamily font-medium text-primary-700"
+              >
+                فروشگاه اینترنتی
+              </p>
             </div>
           </div>
           <button
@@ -1257,28 +1229,28 @@
               id="open-product-categories"
               class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors"
             >
-              <span class="text-[#9A6767]">دسته بندی محصولات</span>
+              <span class="text-[#9A6767] text-lg">دسته بندی محصولات</span>
               <i class="fa-solid fa-chevron-left text-primary-600"></i>
             </a>
             <a
               href="#"
               class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors"
             >
-              <span class="text-[#9A6767]">فروشگاه دلبرباش</span>
+              <span class="text-[#9A6767] text-lg">فروشگاه دلبرباش</span>
               <i class="fa-solid fa-chevron-left text-primary-600"></i>
             </a>
             <a
               href="#"
               class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors"
             >
-              <span class="text-[#9A6767]">مجله دلبرباش</span>
+              <span class="text-[#9A6767] text-lg">مجله دلبرباش</span>
               <i class="fa-solid fa-chevron-left text-primary-600"></i>
             </a>
             <a
               href="#"
               class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors"
             >
-              <span class="text-[#9A6767]" class="text-[#9A6767]"
+              <span class="text-[#9A6767]" class="text-[#9A6767] text-lg"
                 >کد مرسولات</span
               >
               <i class="fa-solid fa-chevron-left text-primary-600"></i>
@@ -1287,7 +1259,7 @@
               href="#"
               class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors"
             >
-              <span class="text-[#9A6767]" class="text-[#9A6767]"
+              <span class="text-[#9A6767]" class="text-[#9A6767] text-lg"
                 >شرایط ارسال</span
               >
               <i class="fa-solid fa-chevron-left text-primary-600"></i>
@@ -1296,7 +1268,7 @@
               href="#"
               class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors"
             >
-              <span class="text-[#9A6767]" class="text-[#9A6767]"
+              <span class="text-[#9A6767]" class="text-[#9A6767] text-lg"
                 >تماس با ما</span
               >
               <i class="fa-solid fa-chevron-left text-primary-600"></i>
@@ -1305,21 +1277,21 @@
               href="#"
               class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors"
             >
-              <span class="text-[#9A6767]">تخفیف دار</span>
+              <span class="text-[#9A6767] text-lg">تخفیف دار</span>
               <i class="fa-solid fa-chevron-left text-primary-600"></i>
             </a>
             <a
               href="#"
               class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors"
             >
-              <span class="text-[#9A6767]">محصولات جدید</span>
+              <span class="text-[#9A6767] text-lg">محصولات جدید</span>
               <i class="fa-solid fa-chevron-left text-primary-600"></i>
             </a>
             <a
               href="#"
               class="flex items-center justify-between text-gray-800 hover:text-primary-600 transition-colors"
             >
-              <span class="text-[#9A6767]">محصولات رایگان</span>
+              <span class="text-[#9A6767] text-lg">محصولات رایگان</span>
               <i class="fa-solid fa-chevron-left text-primary-600"></i>
             </a>
           </nav>
@@ -1348,7 +1320,7 @@
 
           <!-- Login Button -->
           <button
-            class="w-full bg-primary-600 text-white py-3 rounded-lg font-medium hover:bg-primary-700 transition-colors mt-8"
+            class="w-full bg-primary-600 text-white py-3 rounded-lg text-sm font-medium hover:bg-primary-700 transition-colors mt-8"
           >
             ورود / ثبت نام
           </button>
@@ -1383,7 +1355,7 @@
       >
         <!-- Modal Header -->
         <div class="flex justify-between items-center mb-6">
-          <h3 class="text-[17px] font-medium text-[#2D2D2D] w-full text-center">
+          <h3 class="text-[17px] text-[#2D2D2D] w-full text-center">
             انتخاب مدل محصول
           </h3>
           <button
@@ -1488,7 +1460,7 @@
               <div
                 class="flex items-center justify-between text-xs text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره ۱</span>
+                <span class="title"> شماره ۱</span>
                 <div
                   class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
                 >
@@ -1503,7 +1475,7 @@
               <div
                 class="flex items-center justify-between text-xs text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره 2</span>
+                <span class="title"> شماره 2</span>
                 <div
                   class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
                 >
@@ -1518,7 +1490,7 @@
               <div
                 class="flex items-center justify-between text-xs text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره 3</span>
+                <span class="title"> شماره 3</span>
                 <div
                   class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
                 >
@@ -1533,7 +1505,7 @@
               <div
                 class="flex pt-0.5 items-center justify-between text-xs text-[#2D2D2D]"
               >
-                <span class="text-[#A6A6A6]">رنگ شماره 4</span>
+                <span class="text-[#A6A6A6]"> شماره 4</span>
                 <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
               </div>
             </div>
@@ -1544,7 +1516,7 @@
               <div
                 class="flex pt-0.5 items-center justify-between text-xs text-[#2D2D2D]"
               >
-                <span class="text-[#A6A6A6]">رنگ شماره 5</span>
+                <span class="text-[#A6A6A6]"> شماره 5</span>
                 <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
               </div>
             </div>
@@ -1555,7 +1527,7 @@
               <div
                 class="flex items-center justify-between text-xs text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره 6</span>
+                <span class="title"> شماره 6</span>
                 <div
                   class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
                 >
@@ -1570,7 +1542,7 @@
               <div
                 class="flex items-center justify-between text-xs text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره 7</span>
+                <span class="title"> شماره 7</span>
                 <div
                   class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
                 >
@@ -1585,7 +1557,7 @@
               <div
                 class="flex items-center justify-between text-xs text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره 8</span>
+                <span class="title"> شماره 8</span>
                 <div
                   class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
                 >
@@ -1600,7 +1572,7 @@
               <div
                 class="flex items-center justify-between text-xs text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره 9</span>
+                <span class="title"> شماره 9</span>
                 <div
                   class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
                 >
@@ -1615,7 +1587,7 @@
               <div
                 class="flex pt-0.5 items-center justify-between text-xs text-[#2D2D2D]"
               >
-                <span class="text-[#A6A6A6]">رنگ شماره 10</span>
+                <span class="text-[#A6A6A6]"> شماره 10</span>
                 <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
               </div>
             </div>
@@ -1629,7 +1601,7 @@
               <div
                 class="flex items-center justify-between text-xs text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره ۱</span>
+                <span class="title"> شماره ۱</span>
                 <div
                   class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
                 >
@@ -1644,7 +1616,7 @@
               <div
                 class="flex items-center justify-between text-xs text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره 2</span>
+                <span class="title"> شماره 2</span>
                 <div
                   class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
                 >
@@ -1659,7 +1631,7 @@
               <div
                 class="flex items-center justify-between text-xs text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره 3</span>
+                <span class="title"> شماره 3</span>
                 <div
                   class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
                 >
@@ -1672,7 +1644,7 @@
               class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
             >
               <div class="flex flex-col justify-center text-xs text-[#2D2D2D]">
-                <span class="text-[#A6A6A6]">رنگ شماره 4</span>
+                <span class="text-[#A6A6A6]"> شماره 4</span>
                 <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
               </div>
             </div>
@@ -1681,7 +1653,7 @@
               class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
             >
               <div class="flex flex-col justify-center text-xs text-[#2D2D2D]">
-                <span class="text-[#A6A6A6]">رنگ شماره 5</span>
+                <span class="text-[#A6A6A6]"> شماره 5</span>
                 <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
               </div>
             </div>
@@ -1692,7 +1664,7 @@
               <div
                 class="flex items-center justify-between text-xs text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره 6</span>
+                <span class="title"> شماره 6</span>
                 <div
                   class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
                 >
@@ -1707,7 +1679,7 @@
               <div
                 class="flex items-center justify-between text-xs text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره 7</span>
+                <span class="title"> شماره 7</span>
                 <div
                   class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
                 >
@@ -1722,7 +1694,7 @@
               <div
                 class="flex items-center justify-between text-xs text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره 8</span>
+                <span class="title"> شماره 8</span>
                 <div
                   class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
                 >
@@ -1737,7 +1709,7 @@
               <div
                 class="flex items-center justify-between text-xs text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره 9</span>
+                <span class="title"> شماره 9</span>
                 <div
                   class="check-icon hidden bg-[#EAB9B9] w-5 h-5 flex items-center justify-center rounded-md"
                 >
@@ -1750,7 +1722,7 @@
               class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
             >
               <div class="flex flex-col justify-center text-xs text-[#2D2D2D]">
-                <span class="text-[#A6A6A6]">رنگ شماره 10</span>
+                <span class="text-[#A6A6A6]"> شماره 10</span>
                 <span class="text-[#A00000] text-[8px]">اتمام موجودی</span>
               </div>
             </div>
@@ -1764,7 +1736,7 @@
               <div
                 class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره ۱</span>
+                <span class="title"> شماره ۱</span>
               </div>
             </div>
             <div
@@ -1774,7 +1746,7 @@
               <div
                 class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره 2</span>
+                <span class="title"> شماره 2</span>
               </div>
             </div>
             <div
@@ -1784,7 +1756,7 @@
               <div
                 class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره 3</span>
+                <span class="title"> شماره 3</span>
               </div>
             </div>
             <div
@@ -1792,10 +1764,12 @@
               class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
             >
               <div
-                class="flex flex-col justify-center text-[8px] text-[#2D2D2D]"
+                class="flex flex-col justify-center text-[10px] text-[#2D2D2D]"
               >
-                <span class="text-[#A6A6A6]">رنگ شماره 4</span>
-                <span class="text-[#A00000] text-[7px]">اتمام موجودی</span>
+                <span class="text-[#A6A6A6]"> شماره 4</span>
+                <span class="text-[#A00000] text-[7px] max-[340px]:text-[6px]"
+                  >اتمام موجودی</span
+                >
               </div>
             </div>
             <div
@@ -1803,10 +1777,12 @@
               class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
             >
               <div
-                class="flex flex-col justify-center text-[8px] text-[#2D2D2D]"
+                class="flex flex-col justify-center text-[10px] text-[#2D2D2D]"
               >
-                <span class="text-[#A6A6A6]">رنگ شماره 5</span>
-                <span class="text-[#A00000] text-[7px]">اتمام موجودی</span>
+                <span class="text-[#A6A6A6]"> شماره 5</span>
+                <span class="text-[#A00000] text-[7px] max-[340px]:text-[6px]"
+                  >اتمام موجودی</span
+                >
               </div>
             </div>
             <div
@@ -1816,7 +1792,7 @@
               <div
                 class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره 6</span>
+                <span class="title"> شماره 6</span>
               </div>
             </div>
             <div
@@ -1826,7 +1802,7 @@
               <div
                 class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره 7</span>
+                <span class="title"> شماره 7</span>
               </div>
             </div>
             <div
@@ -1836,7 +1812,7 @@
               <div
                 class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره 8</span>
+                <span class="title"> شماره 8</span>
               </div>
             </div>
             <div
@@ -1846,7 +1822,7 @@
               <div
                 class="flex items-center justify-between text-[10px] text-[#2D2D2D]"
               >
-                <span class="title">رنگ شماره 9</span>
+                <span class="title"> شماره 9</span>
               </div>
             </div>
             <div
@@ -1854,10 +1830,12 @@
               class="color-item unavailable relative h-[44px] rounded-[10px] py-[10px] px-2 cursor-pointer transition-all border border-[#E8E8E8]"
             >
               <div
-                class="flex flex-col justify-center text-[8px] text-[#2D2D2D]"
+                class="flex flex-col justify-center text-[10px] text-[#2D2D2D]"
               >
-                <span class="text-[#A6A6A6]">رنگ شماره 10</span>
-                <span class="text-[#A00000] text-[7px]">اتمام موجودی</span>
+                <span class="text-[#A6A6A6]"> شماره 10</span>
+                <span class="text-[#A00000] text-[7px] max-[340px]:text-[6px]"
+                  >اتمام موجودی</span
+                >
               </div>
             </div>
           </div>
@@ -1938,13 +1916,13 @@
                 <div class="flex flex-col-reverse items-end">
                   <!-- قیمت فعلی -->
                   <span
-                    class="text-[#C41818] text-[20px] font-medium leading-none tabular-nums"
+                    class="text-[#C41818] text-[20px] font-medium leading-none"
                   >
                     ۱۱۰,۰۰۰
                   </span>
                   <!-- قیمت قبلی (خط‌خورده) -->
                   <span
-                    class="text-[#8B8B8B] line-through text-[12px] font-medium leading-none mt-1 tabular-nums"
+                    class="text-[#8B8B8B] line-through text-[12px] font-medium leading-none mt-1"
                   >
                     ۱۸۵,۰۰۰
                   </span>
@@ -2016,13 +1994,11 @@
       <!-- Modal content with animation -->
       <div
         id="comment-modal-content"
-        class="bg-white absolute bottom-0 left-1/2 lg:top-1/2 lg:bottom-auto transform -translate-x-1/2 lg:-translate-y-1/2 w-full min-[480px]:w-[400px] rounded-t-3xl lg:rounded-3xl py-6 px-3 lg:p-6 max-h-[80vh] overflow-y-auto transition-transform duration-300 ease-out"
+        class="bg-white absolute bottom-0 left-1/2 lg:top-1/2 lg:bottom-auto transform -translate-x-1/2 lg:-translate-y-1/2 w-full min-[480px]:w-[430px] rounded-t-3xl lg:rounded-3xl py-6 px-3 lg:p-6 max-h-[80vh] overflow-y-auto transition-transform duration-300 ease-out"
       >
         <!-- Modal Header -->
         <div class="flex justify-between items-center mb-6">
-          <h3
-            class="text-[17px] font-medium text-[#2D2D2D] w-full text-center mr-3"
-          >
+          <h3 class="text-[17px] text-[#2D2D2D] w-full text-center mr-3">
             ثبت دیدگاه برای محصول
           </h3>
           <button id="comment-close" class="text-gray-500 hover:text-gray-700">
@@ -2038,7 +2014,7 @@
           </div>
           <div class="grid grid-cols-2 gap-3 mb-3">
             <div class="flex flex-col gap-2">
-              <label for="name" class="text-sm text-[#2D2D2D]"
+              <label for="name" class="text-[11px] text-[#2D2D2D]"
                 >نام نمایشی</label
               >
               <input
@@ -2049,9 +2025,11 @@
               />
             </div>
             <div class="flex flex-col gap-2">
-              <div class="flex items-center gap-3 text-sm">
-                <label for="email" class="text-[#2D2D2D]">ایمیل</label>
-                <span class="text-[#7E7E7E] text-[8px]"
+              <div class="flex items-center gap-3 max-[390px]:gap-2">
+                <label for="email" class="text-[11px] text-[#2D2D2D]"
+                  >ایمیل</label
+                >
+                <span class="text-[#7E7E7E] text-[8px] max-[390px]:text-[6px]"
                   >نشانی ایمیل شما منتشر نخواهد شد. </span
                 >
               </div>
@@ -2074,7 +2052,7 @@
           </div>
 
           <button
-            class="text-lg text-white font-semibold w-full bg-[#860A0A] h-[60px] rounded-xl mt-6 cursor-pointer"
+            class="text-xl text-white font-medium w-full bg-[#860A0A] h-[60px] rounded-xl mt-6 cursor-pointer"
           >
             ثبت دیدگاه
           </button>
@@ -2097,7 +2075,7 @@
       >
         <!-- Modal Header -->
         <div class="flex justify-between items-center mb-6">
-          <h3 class="text-[17px] font-medium text-[#2D2D2D] w-full text-center">
+          <h3 class="text-[17px] text-[#2D2D2D] w-full text-center">
             اشتراک گذاری محصول
           </h3>
           <button
@@ -2263,7 +2241,7 @@
             />
             <div class="flex flex-col gap-1.5">
               <span
-                class="text-xs desktop:text-[15px] font-bold text-primary-450 ss01"
+                class="text-xs desktop:text-[15px] font-bold text-primary-450"
                 >محصول هدیه برای</span
               >
               <span
@@ -2283,7 +2261,7 @@
             />
             <div class="flex flex-col gap-1.5">
               <span
-                class="text-xs desktop:text-[15px] font-bold text-primary-450 ss01"
+                class="text-xs desktop:text-[15px] font-bold text-primary-450"
                 >ارسال با پک کادویی</span
               >
               <span
@@ -2326,7 +2304,7 @@
             />
             <div class="flex flex-col gap-1.5">
               <span
-                class="text-xs desktop:text-[15px] font-bold text-primary-450 ss01"
+                class="text-xs desktop:text-[15px] font-bold text-primary-450"
                 >محصول هدیه برای</span
               >
               <span
@@ -2346,7 +2324,7 @@
             />
             <div class="flex flex-col gap-1.5">
               <span
-                class="text-xs desktop:text-[15px] font-bold text-primary-450 ss01"
+                class="text-xs desktop:text-[15px] font-bold text-primary-450"
                 >ارسال با پک کادویی</span
               >
               <span
@@ -2390,19 +2368,19 @@
             alt="discount"
           />
           <div class="flex flex-col gap-1.5 text-secondary-500">
-            <span class="text-xl font-bold ss01">کرم دور چشم Milk</span>
+            <span class="text-xl font-bold">کرم دور چشم Milk</span>
             <div class="flex gap-1.5">
-              <span class="text-[15px] line-through">۵۵,۹۰۰</span>
-              <span class="text-[16px] ss01 font-bold">
+              <span class="text-[#508F43B2] text-xs line-through">۵۵,۹۰۰</span>
+              <span class="text-xs font-bold">
                 ۴۴,۸۰۰
-                <span class="text-[8px] font-normal">تومان</span>
+                <span class="text-[8px] font-medium">تومان</span>
               </span>
             </div>
           </div>
           <div
-            class="absolute top-2 -left-5 w-[80px] h-[24px] bg-[#FF0051] transform -rotate-45 flex justify-center items-center text-white font-medium"
+            class="absolute top-2 -left-5 w-[80px] h-[24px] bg-[#FF0051] transform -rotate-45 flex justify-center items-center text-xs text-white font-medium"
           >
-            %۳۰
+            ٪۵۰
             <div
               class="absolute top-0 left-0 w-0 h-0 border-t-[12px] border-r-[12px] border-b-[12px] border-l-0 border-t-transparent border-r-[#FF0051] border-b-transparent"
             ></div>
@@ -2419,29 +2397,27 @@
       <!-- title -->
       <div class="flex items-center desktop:hidden">
         <div class="w-full h-px bg-[#E8E8E8]"></div>
-        <div
-          class="flex text-[16px] gap-2 w-[300px] items-center justify-center font-medium text-primary-600"
-        >
+        <div class="text-[16px] w-[330px] font-medium text-primary-600">
           <button
             id="openCommentMobile"
-            class="openComment flex items-center gap-2 whitespace-nowrap cursor-pointer"
+            class="openComment flex items-center gap-2 whitespace-nowrap cursor-pointer mx-auto"
           >
             <img src="./public/images/comment.svg" alt="comment" />
-            <span class="text-[#C41818] text-sm">ثبت دیدگاه</span>
+            <span class="text-[#C41818]">ثبت دیدگاه</span>
           </button>
         </div>
         <div class="w-full h-px bg-[#E8E8E8]"></div>
       </div>
       <div class="desktop:flex gap-4 items-center hidden">
-        <h2 class="text-xl desktop:w-[158px]">دیدگاه کاربران</h2>
+        <h2 class="text-xl font-medium desktop:w-[170px]">دیدگاه کاربران</h2>
         <div class="w-full bg-[#E8E8E8] h-px"></div>
         <button
           id="openCommentDesktop"
-          class="openComment desktop:w-[120px] flex items-center gap-2 whitespace-nowrap cursor-pointer"
+          class="openComment desktop:w-[140px] flex items-center gap-2 whitespace-nowrap cursor-pointer"
         >
           <img src="./public/images/comment.svg" alt="comment" />
 
-          <span class="text-[#C41818] text-sm">ثبت دیدگاه</span>
+          <span class="text-[#C41818] font-medium">ثبت دیدگاه</span>
         </button>
       </div>
       <!-- Reviews Embla Carousel -->
@@ -2454,15 +2430,47 @@
       </div>
     </div>
 
+    <!-- No Comment -->
+    <div class="container mt-[50px] hidden">
+      <!-- title -->
+      <div class="flex items-center">
+        <div class="w-full h-px bg-[#E8E8E8] desktop:hidden"></div>
+        <div class="text-[16px] w-fit font-medium">
+          <button
+            class="openComment flex items-center gap-2 text-[#2D2D2D] whitespace-nowrap cursor-pointer px-2 text-lg desktop:text-xl font-medium"
+          >
+            دیدگاه کاربران
+          </button>
+        </div>
+        <div class="w-full h-px bg-[#E8E8E8]"></div>
+      </div>
+      <div
+        class="desktop:flex gap-4 items-center justify-center flex-col w-fit mx-auto mt-8"
+      >
+        <button
+          id="openCommentDesktop"
+          class="openComment flex items-center gap-3 whitespace-nowrap cursor-pointer mx-auto"
+        >
+          <img src="./public/images/comment.svg" alt="comment" />
+
+          <span class="text-[#C41818] font-medium">ثبت دیدگاه</span>
+        </button>
+        <p class="text-[#A5A5A5] font-medium mt-3">
+          دیدگاهی برای این محصول ثبت نشده
+        </p>
+      </div>
+    </div>
+
     <!-- same products -->
     <div class="container mt-16">
       <!-- title -->
       <div class="flex items-center desktop:hidden">
         <div class="w-full h-px bg-[#E8E8E8]"></div>
         <div
-          class="flex flex-col text-[16px] w-[340px] items-center justify-center font-medium"
+          class="flex text-[16px] w-fit gap-1 items-center justify-center font-medium"
         >
-          <span class="text-[#2D2D2D]">محصولات مرتبط</span>
+          <span class="text-[#2D2D2D] mr-2">محصولات </span>
+          <span class="text-[#2D2D2D] ml-2">مرتبط</span>
         </div>
         <div class="w-full h-px bg-[#E8E8E8]"></div>
       </div>
@@ -2472,10 +2480,10 @@
         مشاهده بیشتر
       </div>
       <div class="desktop:flex hidden gap-4 items-center mt-6">
-        <h2 class="text-xl desktop:w-[168px]">محصولات مرتبط</h2>
+        <h2 class="text-xl font-medium desktop:w-[190px]">محصولات مرتبط</h2>
         <div class="w-full bg-[#E8E8E8] h-px"></div>
         <span
-          class="text-primary-600 text-xs font-medium desktop:w-[100px] cursor-pointer"
+          class="text-primary-600 text-xs font-medium desktop:w-[120px] cursor-pointer"
           >مشاهده بیشتر</span
         >
       </div>
@@ -2514,24 +2522,20 @@
             <div class="w-full flex items-start justify-between px-[10px]">
               <!-- بَجِ تخفیف -->
               <span
-                class="w-7 h-7 desktop:w-9 desktop:h-9 inline-flex items-center rounded-[8px] text-[11px] desktop:text-[16px] bg-red-100 text-red-600 px-2 py-1 font-medium"
+                class="w-7 h-7 desktop:w-9 desktop:h-9 flex items-center justify-center rounded-[8px] text-[11px] desktop:text-[16px] bg-red-100 text-red-600 font-medium"
               >
                 %۵
               </span>
 
-              <!-- قیمت‌ها + تومان عمودی -->
               <div class="flex items-center gap-1">
-                <!-- ستون قیمت‌ها -->
-                <div class="flex flex-col-reverse items-end">
-                  <!-- قیمت فعلی -->
+                <div class="flex flex-col-reverse items-end gap-1">
                   <span
-                    class="text-[#C41818] text-[18px] desktop:text-xl font-medium leading-none tabular-nums -mt-1"
+                    class="text-[#C41818] text-sm desktop:text-xl font-medium leading-none -mt-1"
                   >
                     ۱۱۰,۰۰۰
                   </span>
-                  <!-- قیمت قبلی (خط‌خورده) -->
                   <span
-                    class="text-[#BC6E73] line-through text-[7px] font-medium desktop:text-[10px] leading-none mt-1 tabular-nums"
+                    class="text-[#BC6E73] line-through text-[7px] font-medium desktop:text-[10px] leading-none mt-1"
                   >
                     ۱۸۵,۰۰۰
                   </span>
@@ -2584,9 +2588,9 @@
             >
           </div>
           <div
-            class="desktop:mt-6 mt-[17px] flex justify-end desktop:pl-[7px] pl-[10px] mb-7 lg:mb-11"
+            class="desktop:mt-6 mt-[17px] flex justify-end gap-[2px] desktop:pl-[7px] pl-[10px] mb-7 lg:mb-11"
           >
-            <div class="desktop:text-xl font-medium">۴۵,۰۰۰</div>
+            <div class="text-sm desktop:text-xl font-medium">۴۵,۰۰۰</div>
             <div
               class="text-[6px] desktop:text-[8px] text-[#8B8B8B] -rotate-90 font-medium relative left-2"
             >
@@ -2630,9 +2634,9 @@
             >
           </div>
           <div
-            class="desktop:mt-6 mt-[17px] flex justify-end desktop:pl-[7px] pl-[10px] mb-7 lg:mb-11"
+            class="desktop:mt-6 mt-[17px] flex justify-end gap-[2px] desktop:pl-[7px] pl-[10px] mb-7 lg:mb-11"
           >
-            <div class="desktop:text-xl font-medium">۴۵,۰۰۰</div>
+            <div class="text-sm desktop:text-xl font-medium">۴۵,۰۰۰</div>
             <div
               class="text-[6px] desktop:text-[8px] text-[#8B8B8B] -rotate-90 font-medium relative left-2"
             >
@@ -2676,9 +2680,9 @@
             >
           </div>
           <div
-            class="desktop:mt-6 mt-[17px] flex justify-end desktop:pl-[7px] pl-[10px] mb-7 lg:mb-11"
+            class="desktop:mt-6 mt-[17px] flex justify-end gap-[2px] desktop:pl-[7px] pl-[10px] mb-7 lg:mb-11"
           >
-            <div class="desktop:text-xl font-medium">۴۵,۰۰۰</div>
+            <div class="text-sm desktop:text-xl font-medium">۴۵,۰۰۰</div>
             <div
               class="text-[6px] desktop:text-[8px] text-[#8B8B8B] -rotate-90 font-medium relative left-2"
             >
@@ -2699,8 +2703,10 @@
     <div class="container mt-[60px]">
       <!-- title -->
       <div class="flex flex-col items-center gap-2 font-medium">
-        <h2 class="text-[#2D2D2D] text-xl">دیگر دسته‌بندی های فروشگاه</h2>
-        <p class="text-[#A44A50]">تمام نیاز های یک دلبر</p>
+        <h2 class="text-[#2D2D2D] font-medium text-xl">
+          دیگر دسته‌بندی های فروشگاه
+        </h2>
+        <p class="text-[#A44A50] text-sm font-medium">تمام نیاز های یک دلبر</p>
       </div>
       <!-- banners -->
       <div class="grid mt-6 desktop:grid-cols-2 gap-4 desktop:gap-[27px]">
@@ -2803,8 +2809,12 @@
     <div class="container mt-[68px]">
       <!-- title -->
       <div class="flex flex-col items-center gap-2 font-medium">
-        <h2 class="text-[#2D2D2D] text-xl">پشتیبانی و پاسخگویی سوالات</h2>
-        <p class="text-[#A44A50]">در رابطه با شیوه‌ی خرید و محصولات</p>
+        <h2 class="text-[#2D2D2D] font-medium text-xl">
+          پشتیبانی و پاسخگویی سوالات
+        </h2>
+        <p class="text-[#A44A50] font-medium text-sm">
+          در رابطه با شیوه‌ی خرید و محصولات
+        </p>
       </div>
       <!-- support items -->
       <div
@@ -2815,9 +2825,7 @@
           class="relative flex desktop:flex-row flex-col pt-[19px] desktop:pt-0 h-[180px] sm:h-[194px] justify-between desktop:px-[40px] bg-[#DDF8D2] rounded-[20px] items-center"
         >
           <div class="flex flex-col gap-[15px] text-secondary-900">
-            <p
-              class="text-[15px] md:text-[20px] desktop:text-[28px] font-bold ss01"
-            >
+            <p class="text-[15px] md:text-[20px] desktop:text-[28px] font-bold">
               پشتیبانی در واتس آپ
             </p>
             <div
@@ -2873,8 +2881,10 @@
     <div class="container mt-[68px]">
       <!-- title -->
       <div class="flex flex-col items-center gap-2 font-medium">
-        <h2 class="text-[#2D2D2D] text-xl">مراحل خرید و دریافت سفارش</h2>
-        <p class="text-[#A44A50]">
+        <h2 class="text-[#2D2D2D] font-medium text-xl">
+          مراحل خرید و دریافت سفارش
+        </h2>
+        <p class="text-[#A44A50] font-medium text-sm">
           شما در مراحل ارسال و ثبت پیامک دریافت میکنید.
         </p>
       </div>
@@ -3110,9 +3120,13 @@
               <img src="./public/favicon.png" alt="logo" class="size-[36px]" />
             </a>
             <div>
-              <h1 class="text-[22px] ss01 text-primary-600">دلبرباش</h1>
+              <h1 class="text-[23px] font-black text-primary-600">دلبرباش</h1>
               <div class="overflow-hidden">
-                <h2 class="text-[14px] text-primary-700">فروشگاه اینترنتی</h2>
+                <h2
+                  class="text-[14px] font-lahzehFamily font-medium text-primary-700"
+                >
+                  فروشگاه اینترنتی
+                </h2>
               </div>
             </div>
           </div>
@@ -3189,7 +3203,7 @@
             <div
               class="flex desktop:items-center gap-2 desktop:gap-[21px] desktop:flex-row flex-col"
             >
-              <div class="flex gap-1.5 items-center">
+              <div class="flex gap-1.5 items-center text-sm font-medium">
                 <i class="fa-solid fa-phone-flip"></i>
                 <span>تلفن:</span>
               </div>
@@ -3200,7 +3214,7 @@
             <div
               class="flex desktop:items-center gap-2 desktop:gap-[21px] desktop:flex-row flex-col"
             >
-              <div class="flex gap-1.5 items-center">
+              <div class="flex gap-1.5 items-center text-sm">
                 <i class="fa-regular fa-clock"></i>
                 <span>ساعت کاری:</span>
               </div>
@@ -3287,9 +3301,7 @@
       <div
         class="flex items-center flex-wrap gap-1.5 desktop:text-sm text-xs justify-center"
       >
-        <p class="font-light">
-          تمامی حقوق مادی و معنوی این سایت متعلق به دلبرباش می‌باشد
-        </p>
+        <p>تمامی حقوق مادی و معنوی این سایت متعلق به دلبرباش می‌باشد</p>
         <a href="https://hirkaweb.com" class="text-primary-600 font-medium"
           >توسعه و طراحی توسط هیرکاب</a
         >

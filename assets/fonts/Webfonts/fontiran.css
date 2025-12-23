@@ -18,124 +18,151 @@ This set of fonts are used in this project under the license: (.....)
 **/
 
 
+/* Lahzeh font */
 @font-face {
-	font-family: IRANYekanX;
-	font-style: normal;
-	font-weight: 100;
-	src: url('../assets/fonts/Webfonts/woff/IRANYekanX-Thin.woff') format('woff'),   
-	url('../assets/fonts/Webfonts/woff2/IRANYekanX-Thin.woff2') format('woff2');		
-}
-
-@font-face {
-	font-family: IRANYekanX;
+	font-family: "Lahzeh";
 	font-style: normal;
 	font-weight: 200;
-	src: url('../assets/fonts/Webfonts/woff/IRANYekanX-UltraLight.woff') format('woff'),   
-	url('../assets/fonts/Webfonts/woff2/IRANYekanX-UltraLight.woff2') format('woff2');	
+	font-display: swap;
+	src: url("../assets/fonts/Webfonts/woff2/Lahzeh-ExtraLight.woff2") format("woff2"),
+		url("../assets/fonts/Webfonts/woff/Lahzeh-ExtraLight.woff") format("woff");
 }
 
 @font-face {
-	font-family: IRANYekanX;
+	font-family: "Lahzeh";
 	font-style: normal;
-	font-weight: 300;
-	src: url('../assets/fonts/Webfonts/woff/IRANYekanX-Light.woff') format('woff'),   
-	url('../assets/fonts/Webfonts/woff2/IRANYekanX-Light.woff2') format('woff2');		 
+	font-weight: 400;
+	font-display: swap;
+	src: url("../assets/fonts/Webfonts/woff2/Lahzeh-Regular.woff2") format("woff2"),
+		url("../assets/fonts/Webfonts/woff/Lahzeh-Regular.woff") format("woff");
 }
 
 @font-face {
-	font-family: IRANYekanX;
+	font-family: "Lahzeh";
 	font-style: normal;
-	font-weight: 500;
-	src: url('../assets/fonts/Webfonts/woff/IRANYekanX-Medium.woff') format('woff'),   
-	url('../assets/fonts/Webfonts/woff2/IRANYekanX-Medium.woff2') format('woff2');		 
+	font-weight: 700;
+	font-display: swap;
+	src: url("../assets/fonts/Webfonts/woff2/Lahzeh-Bold.woff2") format("woff2"),
+		url("../assets/fonts/Webfonts/woff/Lahzeh-Bold.woff") format("woff");
 }
 
 @font-face {
-	font-family: IRANYekanX;
-	font-style: normal;
-	font-weight: 600;
-	src: url('../assets/fonts/Webfonts/woff/IRANYekanX-DemiBold.woff') format('woff'),   
-	url('../assets/fonts/Webfonts/woff2/IRANYekanX-DemiBold.woff2') format('woff2');	 
-}
-
-@font-face {
-	font-family: IRANYekanX;
+	font-family: "Lahzeh";
 	font-style: normal;
 	font-weight: 800;
-	src: url('../assets/fonts/Webfonts/woff/IRANYekanX-ExtraBold.woff') format('woff'),   
-	url('../assets/fonts/Webfonts/woff2/IRANYekanX-ExtraBold.woff2') format('woff2');		 
+	font-display: swap;
+	src: url("../assets/fonts/Webfonts/woff2/Lahzeh-ExtraBold.woff2") format("woff2"),
+		url("../assets/fonts/Webfonts/woff/Lahzeh-ExtraBold.woff") format("woff");
+}
+
+
+@font-face {
+	font-family: "LahzehFaNum";
+	font-style: normal;
+	font-weight: 200;
+	font-display: swap;
+	src: url("../assets/fonts/Webfonts/woff2/Lahzeh-FaNum-ExtraLight.woff2") format("woff2"),
+		url("../assets/fonts/Webfonts/woff/Lahzeh-FaNum-ExtraLight.woff") format("woff");
+}
+
+
+
+
+@font-face {
+	font-family: "LahzehFaNum";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("../assets/fonts/Webfonts/woff2/Lahzeh-FaNum-Regular.woff2") format("woff2"),
+		url("../assets/fonts/Webfonts/woff/Lahzeh-FaNum-Regular.woff") format("woff");
+}
+
+
+@font-face {
+	font-family: "LahzehFaNum";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("../assets/fonts/Webfonts/woff2/Lahzeh-FaNum-Bold.woff2") format("woff2"),
+		url("../assets/fonts/Webfonts/woff/Lahzeh-FaNum-Bold.woff") format("woff");
+}
+
+
+@font-face {
+	font-family: "LahzehFaNum";
+	font-style: normal;
+	font-weight: 800;
+	font-display: swap;
+	src: url("../assets/fonts/Webfonts/woff2/Lahzeh-FaNum-ExtraBold.woff2") format("woff2"),
+		url("../assets/fonts/Webfonts/woff/Lahzeh-FaNum-ExtraBold.woff") format("woff");
 }
 
 @font-face {
-	font-family: IRANYekanX;
+	font-family: "LahzehFamily";
 	font-style: normal;
+	font-weight: 200;
+	font-display: swap;
+	src: url("../assets/fonts/ttf/Lahzeh-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "LahzehFamily";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("../assets/fonts/ttf/Lahzeh-Regular.ttf") format("truetype");
+}
+
+
+
+
+@font-face {
+	font-family: "LahzehFamily";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("../assets/fonts/ttf/Lahzeh-Bold.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "LahzehFamily";
+	font-style: normal;
+	font-weight: 800;
+	font-display: swap;
+	src: url("../assets/fonts/ttf/Lahzeh-ExtraBold.ttf") format("truetype");
+}
+
+
+
+.ss01 {
+	-moz-font-feature-settings: "ss01";
+	-webkit-font-feature-settings: "ss01";
+	font-feature-settings: "ss01";
+
 	font-weight: 900;
-	src: url('../assets/fonts/Webfonts/woff/IRANYekanX-Black.woff') format('woff'),   
-	url('../assets/fonts/Webfonts/woff2/IRANYekanX-Black.woff2') format('woff2');		 
-}
-@font-face {
-	font-family: IRANYekanX;
-	font-style: normal;
-	font-weight: 950;
-	src: url('../assets/fonts/Webfonts/woff/IRANYekanX-ExtraBlack.woff') format('woff'),   
-	url('../assets/fonts/Webfonts/woff2/IRANYekanX-ExtraBlack.woff2') format('woff2');		 
 }
 
-@font-face {
-	font-family: IRANYekanX;
-	font-style: normal;
-	font-weight: 1000;
-	src: url('../assets/fonts/Webfonts/woff/IRANYekanX-Heavy.woff') format('woff'),   
-	url('../assets/fonts/Webfonts/woff2/IRANYekanX-Heavy.woff2') format('woff2');		 
+.ss02 {
+	-moz-font-feature-settings: "ss02";
+	-webkit-font-feature-settings: "ss02";
+	font-feature-settings: "ss02";
+
 }
 
-@font-face {
-	font-family: IRANYekanX;
-	font-style: normal;
-	font-weight: bold;
-	src: url('../assets/fonts/Webfonts/woff/IRANYekanX-Bold.woff') format('woff'),   
-	url('../assets/fonts/Webfonts/woff2/IRANYekanX-Bold.woff2') format('woff2');	 
+.ss03 {
+	-moz-font-feature-settings: "ss03";
+	-webkit-font-feature-settings: "ss03";
+	font-feature-settings: "ss03";
+
 }
 
-@font-face {
-	font-family: IRANYekanX;
-	font-style: normal;
-	font-weight: normal;
-	src: url('../assets/fonts/Webfonts/woff/IRANYekanX-Regular.woff') format('woff'),   
-	url('../assets/fonts/Webfonts/woff2/IRANYekanX-Regular.woff2') format('woff2');	
+.ss04 {
+	-moz-font-feature-settings: "ss04";
+	-webkit-font-feature-settings: "ss04";
+	font-feature-settings: "ss04";
+
 }
-
-
-
-
-  .ss01 {
-      -moz-font-feature-settings: "ss01";
-      -webkit-font-feature-settings: "ss01";
-      font-feature-settings: "ss01";
-
-      font-weight: 900;
-  }
-  .ss02 {
-      -moz-font-feature-settings: "ss02";
-      -webkit-font-feature-settings: "ss02";
-      font-feature-settings: "ss02";
-
-  }
-  .ss03 {
-      -moz-font-feature-settings: "ss03";
-      -webkit-font-feature-settings: "ss03";
-      font-feature-settings: "ss03";
-
-  }
-
- .ss04 {
-      -moz-font-feature-settings: "ss04";
-      -webkit-font-feature-settings: "ss04";
-      font-feature-settings: "ss04";
-	  
-  }
 
 .rtl-text {
-  direction: ltr
+	direction: rtl
 }
-
