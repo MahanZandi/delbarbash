@@ -500,14 +500,14 @@ function copyProductLink() {
    Accordion rendering
    =========================== */
 const accordionItems = [
-  { id: 1, title: "آرایشی", icon: "./public/icons/icon-lipstick.png", href: "#skincare" },
-  { id: 2, title: "بهداشتی", icon: "./public/icons/icon-drugs.png", href: "#cosmetics" },
-  { id: 3, title: "عطر و ادکلن", icon: "./public/icons/icon-perfume.png", href: "#clothing" },
-  { id: 4, title: "اکسسوری", icon: "./public/icons/icon-hair-dryer.png", href: "#home" },
-  { id: 5, title: "خانه و آشپزخانه", icon: "./public/icons/icon-cup.png", href: "#electric" },
-  { id: 6, title: "پوشاک", icon: "./public/icons/icon-clothing.png", href: "#appliances" },
-  { id: 7, title: "پک کادویی", icon: "./public/icons/icon-solar.png", href: "#solar" },
-  { id: 8, title: "شارژ شده‌ها", icon: "./public/icons/icon-lightning-.png", href: "#pharmacy" },
+  { id: 1, title: "آرایشی", icon: "./public/icons/lipstick.svg", href: "#skincare" },
+  { id: 2, title: "بهداشتی", icon: "./public/icons/drugs.svg", href: "#cosmetics" },
+  { id: 3, title: "عطر و ادکلن", icon: "./public/icons/perfume.svg", href: "#clothing" },
+  { id: 4, title: "اکسسوری", icon: "./public/icons/hair-dryer.svg", href: "#home" },
+  { id: 5, title: "خانه و آشپزخانه", icon: "./public/icons/cup.svg", href: "#electric" },
+  { id: 6, title: "پوشاک", icon: "./public/icons/clothing.svg", href: "#appliances" },
+  { id: 7, title: "پک کادویی", icon: "./public/icons/solar.svg", href: "#solar" },
+  { id: 8, title: "شارژ شده‌ها", icon: "./public/icons/lightning.svg", href: "#pharmacy" },
 ];
 
 function renderAccordionItems() {

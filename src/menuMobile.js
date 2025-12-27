@@ -21,7 +21,7 @@ const menuData = {
     title: "دسته بندی محصولات",
     items: [
       {
-        id: 1, title: "آرایشی", icon: "./public/icons/icon-lipstick.png", href: "#skincare",
+        id: 1, title: "آرایشی", icon: "./public/icons/lipstick.svg", href: "#skincare",
         subcategories: [
           { name: "پاک‌کننده", items: ["پن صابون", "ژل شستشو", "میکسلار واتر", "تونر", "اسکراب", "همه محصولات پاک‌کننده"] },
           { name: "مرطوب‌کننده", items: ["کرم روز", "کرم شب", "سرم", "لوسیون بدن", "کرم دور چشم", "همه محصولات مرطوب‌کننده"] },
@@ -32,7 +32,7 @@ const menuData = {
         ],
       },
       {
-        id: 2, title: "بهداشتی", icon: "./public/icons/icon-drugs.png", href: "#cosmetics",
+        id: 2, title: "بهداشتی", icon: "./public/icons/drugs.svg", href: "#cosmetics",
         subcategories: [
           { name: "چشم", items: ["سایه", "ریمل", "ریمل رنگی", "خط چشم", "خط چشم رنگی", "مداد چشم", "مداد هاشور ابرو", "مژه", "فرمژه", "صابون ابرو", "همه محصولات چشم"] },
           { name: "لب", items: ["رژ لب جامد", "رژ لب مایع", "پک رژ لب", "بالم لب", "برق لب", "تینت لب", "لیپ گلاس", "خط لب", "حجم دهنده لب", "همه محصولات لب"] },
@@ -42,12 +42,12 @@ const menuData = {
           { name: "دیگر ملزومات", items: ["پک آرایشی", "رنگ مو", "مو کلیپسی", "همه محصولات آرایشی"] },
         ],
       },
-      { id: 3, title: "عطر و ادکلن", icon: "./public/icons/icon-perfume.png", href: "#clothing" },
-      { id: 4, title: "اکسسوری", icon: "./public/icons/icon-hair-dryer.png", href: "#home" },
-      { id: 5, title: "خانه و آشپزخانه", icon: "./public/icons/icon-cup.png", href: "#electric" },
-      { id: 6, title: "پوشاک", icon: "./public/icons/icon-clothing.png", href: "#appliances" },
-      { id: 7, title: "پک کادویی", icon: "./public/icons/icon-solar.png", href: "#solar" },
-      { id: 8, title: "شارژ شده‌ها", icon: "./public/icons/icon-lightning-.png", href: "#pharmacy" },
+      { id: 3, title: "عطر و ادکلن", icon: "./public/icons/perfume.svg", href: "#clothing" },
+      { id: 4, title: "اکسسوری", icon: "./public/icons/hair-dryer.svg", href: "#home" },
+      { id: 5, title: "خانه و آشپزخانه", icon: "./public/icons/cup.svg", href: "#electric" },
+      { id: 6, title: "پوشاک", icon: "./public/icons/clothing.svg", href: "#appliances" },
+      { id: 7, title: "پک کادویی", icon: "./public/icons/solar.svg", href: "#solar" },
+      { id: 8, title: "شارژ شده‌ها", icon: "./public/icons/lightning.svg", href: "#pharmacy" },
     ],
   },
 };
