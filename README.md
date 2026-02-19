@@ -117,11 +117,11 @@ Write your JavaScript code in `src/main.js` using modern ES6+ syntax:
 
 ## 📄 License
 
-This project is open source and available under the MIT License.
+This project is open source and available under the MIT License. Why? Read in index.html.
 
 ## 👤 Author
 
-Your Name - [GitHub Profile](https://github.com/yourusername)
+Mahan Zandi - [GitHub Profile](https://github.com/MahanZandi/)
 
 ---
 
