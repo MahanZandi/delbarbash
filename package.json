@@ -4,8 +4,9 @@
   "description": "A simple vanilla HTML, CSS, JS project with Tailwind CSS v4",
   "main": "index.html",
   "scripts": {
-    "dev": "npx tailwindcss -i ./assets/styles/main.css -o ./dist/main.css --watch",
-    "build": "npx tailwindcss -i ./assets/styles/main.css -o ./dist/main.css --minify"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [
     "html",
@@ -19,6 +20,7 @@
     "embla-carousel": "^8.6.0"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.14"
+    "tailwindcss": "^3.4.14",
+    "vite": "^7.3.1"
   }
 }
