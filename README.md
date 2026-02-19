@@ -124,7 +124,7 @@ This project is open source and available under the [MIT License](LICENSE).
 **Mahan Zandi**
 
 [![GitHub](https://img.shields.io/badge/GitHub-MahanZandi-black?style=for-the-badge&logo=github)](https://github.com/MahanZandi/)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-blue?style=for-the-badge&logo=google-chrome)](https://mahanzandi.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-blue?style=for-the-badge&logo=google-chrome)](https://mahanzandi.ir)
 
 </div>
 
