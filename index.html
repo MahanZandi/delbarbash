@@ -66,8 +66,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Delbarbash</title>
-  <link rel="stylesheet" href="./dist/main.css" />
   <link rel="icon" type="image/x-icon" href="./public/favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        container: {
+          center: true,
+          padding: { DEFAULT: "16px", desktop: "0px" },
+          screens: { sm: "640px", md: "768px", lg: "1024px", desktop: "1280px" }
+        },
+        extend: {
+          zIndex: { '60': '60' },
+          fontFamily: { sans: ["LahzehFaNum", "Lahzeh", "sans-serif"] },
+          screens: { desktop: "1280px" },
+          colors: {
+            primary: { 100: "#FFF5F5", 200: "#EDE0D0", 300: "#FDDDDF", 350: "#CF7668", 400: "#9A6767", 450: "#984F53", 500: "#A44A50", 550: "#924335", 600: "#C41818", 700: "#860A0A", 800: "#840B35" },
+            secondary: { 200: "#D2F8DE", 400: "#E5F8D2", 500: "#508F43", 600: "#4BA100", 800: "#3E644A", 900: "#34954E" }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @font-face { font-family: "Lahzeh"; font-weight: 200; font-display: swap; src: url("./assets/fonts/Webfonts/woff2/Lahzeh-ExtraLight.woff2") format("woff2"); }
+    @font-face { font-family: "Lahzeh"; font-weight: 400; font-display: swap; src: url("./assets/fonts/Webfonts/woff2/Lahzeh-Regular.woff2") format("woff2"); }
+    @font-face { font-family: "Lahzeh"; font-weight: 700; font-display: swap; src: url("./assets/fonts/Webfonts/woff2/Lahzeh-Bold.woff2") format("woff2"); }
+    @font-face { font-family: "Lahzeh"; font-weight: 800; font-display: swap; src: url("./assets/fonts/Webfonts/woff2/Lahzeh-ExtraBold.woff2") format("woff2"); }
+    @font-face { font-family: "LahzehFaNum"; font-weight: 200; font-display: swap; src: url("./assets/fonts/Webfonts/woff2/Lahzeh-FaNum-ExtraLight.woff2") format("woff2"); }
+    @font-face { font-family: "LahzehFaNum"; font-weight: 400; font-display: swap; src: url("./assets/fonts/Webfonts/woff2/Lahzeh-FaNum-Regular.woff2") format("woff2"); }
+    @font-face { font-family: "LahzehFaNum"; font-weight: 700; font-display: swap; src: url("./assets/fonts/Webfonts/woff2/Lahzeh-FaNum-Bold.woff2") format("woff2"); }
+    @font-face { font-family: "LahzehFaNum"; font-weight: 800; font-display: swap; src: url("./assets/fonts/Webfonts/woff2/Lahzeh-FaNum-ExtraBold.woff2") format("woff2"); }
+    .ss01 { -moz-font-feature-settings: "ss01"; -webkit-font-feature-settings: "ss01"; font-feature-settings: "ss01"; font-weight: 900; }
+    .custom-gradient { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    .rtl { direction: rtl; text-align: right; }
+    #sticky-backdrop { position: fixed; top: 0; left: 0; right: 0; height: 0; z-index: 35; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.7); transition: height 0.3s ease; }
+    #sticky-backdrop.active { height: 120px; }
+    #sticky-backdrop-mobile { position: fixed; top: 0; left: 0; right: 0; height: 0; z-index: 35; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.7); transition: height 0.3s ease; }
+    #sticky-backdrop-mobile.active { height: 115px; }
+    #sticky-backdrop-mobile.active.search-active { height: 110px !important; transition: height 0.3s ease; }
+    #hamburger-backdrop { transition: opacity 0.4s ease, backdrop-filter 0.4s ease; backdrop-filter: blur(0px); }
+    #hamburger-menu:not(.hidden) #hamburger-backdrop { backdrop-filter: blur(4px); }
+    .embla { --slide-spacing: 1rem; --slide-size: 100%; direction: rtl; }
+    .embla__viewport { overflow: hidden; }
+    .embla__container { display: flex; touch-action: pan-y pinch-zoom; margin-right: calc(var(--slide-spacing) * -1); margin-left: 0; }
+    .embla__slide { transform: translate3d(0, 0, 0); flex: 0 0 var(--slide-size); min-width: 0; padding-right: var(--slide-spacing); padding-left: 0; }
+    .embla__slide__number { user-select: none; display: flex; justify-content: center; align-items: center; border-radius: 25px; }
+    @media (min-width: 1280px) { .embla__slide__number { height: 407px; } }
+    .embla-thumbs { --thumbs-slide-spacing: 0.8rem; --thumbs-slide-height: 6rem; margin-top: var(--thumbs-slide-spacing); }
+    .embla-thumbs__container { display: flex; flex-direction: row; gap: 8px; }
+    .embla-thumbs__slide { flex: 0 0 25%; min-width: 0; border-radius: 15px; height: 91px; }
+    @media (min-width: 1280px) { .embla-thumbs__slide { height: 110px; } }
+    .embla-thumbs__viewport { overflow: hidden; }
+    .embla-reviews__viewport { overflow: hidden; }
+    .embla-reviews__container { display: flex; touch-action: pan-y pinch-zoom; gap: 0.25rem; padding-right: 0.25rem; }
+    @media (min-width: 1024px) { .embla-reviews__container { gap: 1.25rem; padding-right: 1.25rem; } }
+    .embla-reviews__slide { transform: translate3d(0, 0, 0); flex: 0 0 auto; min-width: 0; }
+    .sticky-mobile-navbar { position: sticky; top: 0px; left: 0; right: 0; z-index: 50; background: transparent; }
+    .sticky-navbar { position: sticky; top: 15px; left: 0; right: 0; z-index: 50; background: transparent; }
+    .sticky-accordion { position: sticky; top: 62px; left: 0; right: 0; z-index: 60; background: transparent; }
+    .caret { transition: transform 0.25s ease; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-thumb { background-color: rgba(90, 90, 90, 0.2); border-radius: 10px; }
+    ::-webkit-scrollbar-track { background: rgba(70, 70, 70, 0.1); border-radius: 10px; }
+    @keyframes text1Anim { 0% { opacity: 0; transform: translateY(25px); } 1% { opacity: 1; transform: translateY(0); } 48% { opacity: 1; transform: translateY(0); } 49% { opacity: 0; transform: translateY(25px); } 100% { opacity: 0; transform: translateY(25px); } }
+    @keyframes text2Anim { 0% { opacity: 0; transform: translateY(25px); } 50% { opacity: 0; transform: translateY(25px); } 51% { opacity: 1; transform: translateY(0); } 99% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(25px); } }
+    .logo-text1 { animation: text1Anim 10s ease-in-out infinite; }
+    .logo-text2 { animation: text2Anim 10s ease-in-out infinite; }
+    @keyframes mobileImgCycle { 0% { opacity: 0; transform: translateY(-6px); } 1% { opacity: 1; transform: translateY(0); } 33% { opacity: 1; transform: translateY(0); } 34% { opacity: 0; transform: translateY(-6px); } 100% { opacity: 0; transform: translateY(-6px); } }
+    @keyframes mobileTextCycle { 0% { opacity: 0; transform: translateY(8px); } 33% { opacity: 0; transform: translateY(8px); } 34% { opacity: 1; transform: translateY(0); } 99% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(8px); } }
+    @keyframes mobileText1Cycle { 0%, 33% { opacity: 0; transform: translateY(25px); } 34% { opacity: 1; transform: translateY(0); } 66% { opacity: 1; transform: translateY(0); } 67%, 100% { opacity: 0; transform: translateY(25px); } }
+    @keyframes mobileText2Cycle { 0%, 66% { opacity: 0; transform: translateY(25px); } 67% { opacity: 1; transform: translateY(0); } 99% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(25px); } }
+    @media (max-width: 1280px) { .logo-img { animation: mobileImgCycle 15s ease-in-out infinite; } .logo-text-wrapper { animation: mobileTextCycle 15s ease-in-out infinite; } .logo-text1 { animation: mobileText1Cycle 15s ease-in-out infinite; } .logo-text2 { animation: mobileText2Cycle 15s ease-in-out infinite; } }
+    .color-item .title { height: 20px; display: flex; align-items: center; justify-content: center; }
+    .color-item.available.active { background-color: #f6e5e5; border-color: #C41818; }
+  </style>
 </head>
 
 <body class="font-sans overflow-x-hidden">
