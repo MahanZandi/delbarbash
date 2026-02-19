@@ -82,34 +82,6 @@ npm run build
 
 Simply open `index.html` in your browser!
 
-## 📁 Project Structure
-
-```
-delbarbash/
-├── 📄 index.html           # Main HTML file
-├── 📁 assets/
-│   ├── fonts/             # Persian fonts (IRANYekanX)
-│   └── styles/            # Custom CSS files
-├── 📁 public/
-│   ├── images/            # Image assets
-│   └── icons/             # SVG icons
-├── 📁 src/
-│   ├── main.js            # Main JavaScript
-│   └── menuMobile.js      # Mobile menu logic
-├── 📦 package.json        # Dependencies
-└── ⚙️ tailwind.config.js  # Tailwind configuration
-```
-
-## 🎯 Key Features
-
-- 🎨 **Beautiful UI** - Modern Persian design with attention to detail
-- 📱 **Mobile First** - Optimized for all devices and screen sizes
-- ⚡ **Fast Performance** - Lightweight and optimized for speed
-- 🌐 **RTL Support** - Native right-to-left language support
-- 🎭 **Smooth Animations** - Custom CSS animations for better UX
-- 🛒 **E-Commerce Ready** - Product cards, cart, and checkout UI
-- 🔍 **SEO Friendly** - Semantic HTML5 markup
-- ♿ **Accessible** - WCAG compliant components
 
 ## 📄 License
 
