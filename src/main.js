@@ -500,14 +500,14 @@ function copyProductLink() {
    Accordion rendering
    =========================== */
 const accordionItems = [
-  { id: 1, title: "آرایشی", icon: "./public/icons/lipstick.svg", href: "#skincare" },
-  { id: 2, title: "بهداشتی", icon: "./public/icons/drugs.svg", href: "#cosmetics" },
-  { id: 3, title: "عطر و ادکلن", icon: "./public/icons/perfume.svg", href: "#clothing" },
-  { id: 4, title: "اکسسوری", icon: "./public/icons/hair-dryer.svg", href: "#home" },
-  { id: 5, title: "خانه و آشپزخانه", icon: "./public/icons/cup.svg", href: "#electric" },
-  { id: 6, title: "پوشاک", icon: "./public/icons/clothing.svg", href: "#appliances" },
-  { id: 7, title: "پک کادویی", icon: "./public/icons/solar.svg", href: "#solar" },
-  { id: 8, title: "شارژ شده‌ها", icon: "./public/icons/lightning.svg", href: "#pharmacy" },
+  { id: 1, title: "آرایشی", icon: "/icons/lipstick.svg", href: "#skincare" },
+  { id: 2, title: "بهداشتی", icon: "/icons/drugs.svg", href: "#cosmetics" },
+  { id: 3, title: "عطر و ادکلن", icon: "/icons/perfume.svg", href: "#clothing" },
+  { id: 4, title: "اکسسوری", icon: "/icons/hair-dryer.svg", href: "#home" },
+  { id: 5, title: "خانه و آشپزخانه", icon: "/icons/cup.svg", href: "#electric" },
+  { id: 6, title: "پوشاک", icon: "/icons/clothing.svg", href: "#appliances" },
+  { id: 7, title: "پک کادویی", icon: "/icons/solar.svg", href: "#solar" },
+  { id: 8, title: "شارژ شده‌ها", icon: "/icons/lightning.svg", href: "#pharmacy" },
 ];
 
 function renderAccordionItems() {
@@ -633,7 +633,7 @@ const reviews = [
   },
   {
     name: "علیرضا رضایی", date: "۱۵ مرداد ۱۴۰۴", rating: "۴", comment: "بسیار خوب، فقط کمی زمان تحویل طول کشید.",
-    avatar: "./public/images/motor.png"
+    avatar: "/images/motor.png"
   },
   {
     name: "میترا احمدی", date: "۱۲ تیر ۱۴۰۴", rating: "۵", comment: "خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌",
@@ -641,7 +641,7 @@ const reviews = [
   },
   {
     name: "علیرضا رضایی", date: "۱۵ مرداد ۱۴۰۴", rating: "۴", comment: "بسیار خوب، فقط کمی زمان تحویل طول کشید.",
-    avatar: "./public/images/motor.png"
+    avatar: "/images/motor.png"
   },
   {
     name: "میترا احمدی", date: "۱۲ تیر ۱۴۰۴", rating: "۵", comment: "خرید ازاین وبسایت بشدت رضایت بخشه ... عالیه 👌",
@@ -649,7 +649,7 @@ const reviews = [
   },
   {
     name: "علیرضا رضایی", date: "۱۵ مرداد ۱۴۰۴", rating: 4, comment: "بسیار خوب، فقط کمی زمان تحویل طول کشید.",
-    avatar: "./public/images/motor.png"
+    avatar: "/images/motor.png"
   },
 ];
 
@@ -680,7 +680,7 @@ function renderReviews() {
       "shrink-0"
     );
 
-    const avatar = review.avatar || "./public/icons/icon-person.png";
+    const avatar = review.avatar || "/icons/icon-person.png";
 
     reviewDiv.innerHTML = `
         <div class="flex justify-between">
